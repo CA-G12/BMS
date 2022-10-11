@@ -1,0 +1,27 @@
+{
+  "name": "bms",
+  "version": "1.0.0",
+  "description": "Building owners and managers face hardships to manage users' services, their payment schedules, and their history manually. That would cause huge problems like wasting some time and effort. Managers encounter these problems to track the users' histories, and all of these operations are done with paperwork that is not durable",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node dist/index.js",
+    "dev": "cross-env NODE_ENV=development ts-node-dev server/index.ts",
+    "client": "cd client/ && npm start",
+    "test": "cross-env NODE_ENV=test jest -i",
+    "build": "tsc -p .",
+    "heroku-postbuild": "npm run build && cd client/ && npm i && npm run build",
+    "eslint:fix": "eslint --fix",
+    "lint": "eslint --ext .ts server/ && eslint --ext .tsx client/src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CA-G12/BMS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CA-G12/BMS/issues"
+  },
+  "homepage": "https://github.com/CA-G12/BMS#readme"
+}
