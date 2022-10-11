@@ -18,7 +18,7 @@
 [Database Link](https://drawsql.app/teams/mohjaps/diagrams/flats)
 
 
-![dentoro](https://user-images.githubusercontent.com/88391328/195069054-fab15dbb-20eb-43d4-863d-861bf8f5885a.png)
+![BMS](https://user-images.githubusercontent.com/88391328/195069054-fab15dbb-20eb-43d4-863d-861bf8f5885a.png)
 ## **User Stories**  :: 
 
 ### **User who is an apartment owner** :house:
