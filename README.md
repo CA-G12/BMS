@@ -13,6 +13,12 @@
 
 - A building management system helps property owners do just that. The software solution we’ll introduce you to today not only streamlines previously tedious administrative tasks, but the software also better engages residents and helps create a stronger sense of community. 
 
+## **Database**  ::
+
+[Database Link](https://drawsql.app/teams/mohjaps/diagrams/flats)
+
+
+![dentoro](https://user-images.githubusercontent.com/88391328/195069054-fab15dbb-20eb-43d4-863d-861bf8f5885a.png)
 ## **User Stories**  :: 
 
 ### **User who is an apartment owner** :house:
@@ -56,12 +62,12 @@
 [View Prototype](https://www.figma.com/file/ttfzEpAPWIZCNEJKUzad1I/Building-Management-System-wireframe?node-id=0%3A1)
 
 ------------------------
-![dentoro]()
+
 
 ## :pushpin: **How to Launch App Locally** :- 
 
 *  clone this repo by typing this command in the terminal:  
-`git clone https://github.com/CA-G12`
+`git clone https://github.com/CA-G12/BMS.git`
 
 *  Run `npm i` to install the packages for the app as general.
 
@@ -109,12 +115,12 @@ Now you can view the app live in the Browser!
 
 You can use this email and password for Admin testing only
 
-:email: Email:`admin@admin.com` 
+:email: Phone:`0591000100` 
 :lock: Password:`password`
 
 You can use this email and password for User testing only
 
-:email: Email:`user@user.com` 
+:email: Phone:`0591000200` 
 :lock: Password:`password`
 
 ## **Technologies** :computer: :-
