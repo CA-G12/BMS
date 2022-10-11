@@ -1,0 +1,20 @@
+{
+  "name": "bms",
+  "version": "1.0.0",
+  "description": "- Building owners and managers face hardships to manage users' services, their payment schedules, and their history manually. That would cause huge problems like wasting some time and effort. Managers encounter these problems to track the users' histories, and all of these operations are done with paperwork that is not durable.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CA-G12/BMS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CA-G12/BMS/issues"
+  },
+  "homepage": "https://github.com/CA-G12/BMS#readme"
+}
