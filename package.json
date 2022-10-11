@@ -4,7 +4,11 @@
   "description": "- Building owners and managers face hardships to manage users' services, their payment schedules, and their history manually. That would cause huge problems like wasting some time and effort. Managers encounter these problems to track the users' histories, and all of these operations are done with paperwork that is not durable.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start.server": "cross-env NODE_ENV=PRODUCTION ts-node-esm --transpile-only ./Server/index.ts",
+    "start.client": "cd Client && npm start",
+    "dev": "cross-env NODE_ENV=DEVELOPMENT ts-node-dev --respawn --transpile-only ./Server/index.ts",
+    "test": "cross-env NODE_ENV=TESTING jest",
+    "eslint:fix": "eslint --fix"
   },
   "repository": {
     "type": "git",
