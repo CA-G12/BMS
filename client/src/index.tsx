@@ -8,7 +8,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <ConfigProvider locale={ar_EG}>
+  <ConfigProvider direction="rtl" locale={ar_EG}>
     <App />
   </ConfigProvider>
 );
+
