@@ -4,7 +4,7 @@
   "description": "Building owners and managers face hardships to manage users' services, their payment schedules, and their history manually. That would cause huge problems like wasting some time and effort. Managers encounter these problems to track the users' histories, and all of these operations are done with paperwork that is not durable",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node dist/index.js",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
     "dev": "cross-env NODE_ENV=development ts-node-dev server/index.ts",
     "client": "cd client/ && npm start",
     "test": "cross-env NODE_ENV=test jest -i",
@@ -23,5 +23,42 @@
   "bugs": {
     "url": "https://github.com/CA-G12/BMS/issues"
   },
-  "homepage": "https://github.com/CA-G12/BMS#readme"
+  "homepage": "https://github.com/CA-G12/BMS#readme",
+  "dependencies": {
+    "babel-jest": "^27.5.1",
+    "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "joi": "^17.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "nanoid": "^3.3.3",
+    "pg": "^8.7.3",
+    "ts-jest": "^27.1.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/compression": "^1.7.2",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.1",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.25",
+    "@types/nodemailer": "^6.4.4",
+    "@types/pg": "^8.6.5",
+    "@types/pg-escape": "^0.2.1",
+    "@types/supertest": "^2.0.12",
+    "@types/uniqid": "^5.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "cross-env": "^7.0.3",
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.8.4"
+  }
 }
