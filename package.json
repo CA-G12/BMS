@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/CA-G12/BMS/issues"
   },
-  "homepage": "https://github.com/CA-G12/BMS#readme"
+  "homepage": "https://github.com/CA-G12/BMS#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0"
+  }
 }
