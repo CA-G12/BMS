@@ -1,28 +1,30 @@
-import { boolean } from "joi";
+import { Sequelize } from 'sequelize';
 
-const { sequelize } =require('sequelize');
+import dotenv from 'dotenv';
 
-require("dotenv").config();
+dotenv.config();
 
-const { NODE_ENV, DEV_DB_URL, TEST_DB_URL, DATABASE_URL } = process.env;
+const {
+  NODE_ENV, DEV_DB_URL, TEST_DB_URL, DATABASE_URL,
+} = process.env;
 
-let url:string = "" || undefined;
-let ssl:object | boolean = false;
+let url:string = '' || undefined;
+let ssl : object | boolean = false;
 switch (NODE_ENV) {
-  case "development":
+  case 'development':
     url = DEV_DB_URL;
     break;
-  case "production":
+  case 'production':
     url = DATABASE_URL;
     ssl = { rejectUnauthorized: false };
     break;
-  case "test":
+  case 'test':
     url = TEST_DB_URL;
     break;
   default:
-    throw new Error("The database url is invalid!");
+    throw new Error('The database url is invalid!');
 }
-if(!url)  throw new Error("The database url is invalid!");
+if (!url) throw new Error('The database url is invalid!');
 
-const sequelizeConfig = new sequelize(url);
+const sequelizeConfig = new Sequelize(url);
 export default sequelizeConfig;
