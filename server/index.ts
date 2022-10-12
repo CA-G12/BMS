@@ -1,7 +1,8 @@
 import app from './app';
 
-const port:number = app.get("port");
+const port = app.get('port') as number;
 
 app.listen(port, () => {
-    console.log(`http://localhost:${ port }`);
+  // eslint-disable-next-line no-console
+  console.log(`http://localhost:${port}`);
 });
