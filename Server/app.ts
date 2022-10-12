@@ -11,18 +11,13 @@ const {
   env: { PORT, NODE_ENV },
 } = process;
 dotenv.config();
-app.set('port' , PORT||5000)
-
-
+app.set('port' , PORT || 5000)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(compression());
 app.use(cookieParser());
-
-
-console.log('dev');
-
-
-
+app.use('/',(req,res) =>{
+  res.send('hello bms')
+})
 export default app;
