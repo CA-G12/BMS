@@ -5,33 +5,36 @@ import {
   CreationOptional,
   DataTypes,
 } from 'sequelize';
-import sequelize from '../database/connection';
+import sequelize from '../database/config/connection';
 
-export class Users extends Model<
-InferAttributes<Users>,
-InferCreationAttributes<Users>
-> {
-  declare id: CreationOptional<number>;
+interface UsersModel
+  extends Model<
+  InferAttributes<UsersModel>,
+  InferCreationAttributes<UsersModel>
+  > {
+  id: CreationOptional<number>
 
-  declare first_name?: string;
+  first_name?: string
 
-  declare last_name?: string;
+  last_name?: string
 
-  declare email?: string;
+  email?: string
 
-  declare phone_number?: string;
+  phone_number?: string
 
-  declare creation_date?: Date;
+  creation_date?: Date
 
-  declare roles?: 'ADMIN' | 'USER';
+  roles?: 'ADMIN' | 'USER'
 
-  declare hased_password?: string;
+  hased_password?: string
 }
 
-Users.init(
+const Users = sequelize.define<UsersModel>(
+  'Transactions',
   {
     id: {
-      type: DataTypes.GUID,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       autoIncrement: true,
       primaryKey: true,
     },
@@ -70,9 +73,6 @@ Users.init(
       },
       allowNull: false,
     },
-  },
-  {
-    sequelize,
   },
 );
 

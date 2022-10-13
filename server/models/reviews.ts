@@ -5,31 +5,34 @@ import {
   CreationOptional,
   DataTypes,
 } from 'sequelize';
-import sequelize from '../database/connection';
+import sequelize from '../database/config/connection';
 
-export class Reviews extends Model<
-InferAttributes<Reviews>,
-InferCreationAttributes<Reviews>
-> {
-  declare id: CreationOptional<number>;
+interface ReviewsModel
+  extends Model<
+  InferAttributes<ReviewsModel>,
+  InferCreationAttributes<ReviewsModel>
+  > {
+  id: CreationOptional<number>
 
-  declare title?: string;
+  title?: string
 
-  declare description?: Text;
+  description?: Text
 
-  declare points?: number;
+  points?: number
 
-  declare is_shown?: boolean;
+  is_shown?: boolean
 
-  declare creation_date?: Date;
+  creation_date?: Date
 
-  declare user_id?: number;
+  user_id?: number
 }
 
-Reviews.init(
+const Reviews = sequelize.define<ReviewsModel>(
+  'Reviews',
   {
     id: {
-      type: DataTypes.GUID,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       autoIncrement: true,
       primaryKey: true,
     },
@@ -61,9 +64,6 @@ Reviews.init(
       type: DataTypes.NUMBER,
       allowNull: false,
     },
-  },
-  {
-    sequelize,
   },
 );
 

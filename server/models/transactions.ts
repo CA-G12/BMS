@@ -4,28 +4,31 @@ import {
   InferCreationAttributes,
   CreationOptional,
   DataTypes,
-} from "sequelize";
-import sequelize from "../database/connection";
+} from 'sequelize';
+import sequelize from '../database/config/connection';
 
-export class Transactions extends Model<
-InferAttributes<Transactions>,
-InferCreationAttributes<Transactions>
-> {
-  declare id: CreationOptional<number>;
+interface TransactionsModel
+  extends Model<
+  InferAttributes<TransactionsModel>,
+  InferCreationAttributes<TransactionsModel>
+  > {
+  id: CreationOptional<number>
 
-  declare title?: string;
+  title?: string
 
-  declare description?: Text;
+  description?: Text
 
-  declare creation_date?: Date;
+  creation_date?: Date
 
-  declare user_id?: number;
+  user_id?: number
 }
 
-Transactions.init(
+const Transactions = sequelize.define<TransactionsModel>(
+  'Transactions',
   {
     id: {
-      type: DataTypes.GUID,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       autoIncrement: true,
       primaryKey: true,
     },
@@ -46,9 +49,6 @@ Transactions.init(
       allowNull: false,
     },
   },
-  {
-    sequelize,
-  }
 );
 
 export default Transactions;
