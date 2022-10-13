@@ -9,14 +9,12 @@ const {
 } = process.env;
 
 let url:string = '' || undefined;
-let ssl : object | boolean = false;
 switch (NODE_ENV) {
   case 'development':
     url = DEV_DB_URL;
     break;
   case 'production':
     url = DATABASE_URL;
-    ssl = { rejectUnauthorized: false };
     break;
   case 'test':
     url = TEST_DB_URL;
