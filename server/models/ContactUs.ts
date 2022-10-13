@@ -27,7 +27,7 @@ const ContactUsModel = sequelize.define<ContactUsModel>(
     id: {
       primaryKey: true,
       autoIncrement: true,
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
     },
     name: {
       type: DataTypes.STRING,
@@ -51,7 +51,6 @@ const ContactUsModel = sequelize.define<ContactUsModel>(
     },
     creation_date: {
       type: DataTypes.DATE,
-      allowNull: false,
     },
   },
 );

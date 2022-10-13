@@ -24,7 +24,7 @@ const ComplaintsModel = sequelize.define<ComplaintsModel>('Complaint', {
   id: {
     primaryKey: true,
     autoIncrement: true,
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
   },
 
   title: {
@@ -39,7 +39,6 @@ const ComplaintsModel = sequelize.define<ComplaintsModel>('Complaint', {
 
   creation_date: {
     type: DataTypes.DATE,
-    allowNull: false,
   },
 
   is_solved: {
