@@ -1,33 +1,24 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-const Services = sequelize.define('Services', {
+const Announcement = sequelize.define('Announcements', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  name: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  price: {
-    type: DataTypes.DECIMAL,
-    allowNull: false,
-  },
-  is_fixed: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-
-  },
-  description: {
+  start_date: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  is_open: {
-    type: DataTypes.BOOLEAN,
+  end_date: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
 });
 
-export default Services;
+export default Announcement;

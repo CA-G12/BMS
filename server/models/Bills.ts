@@ -1,29 +1,18 @@
-import {
-  CreationOptional, Model, DataTypes,
-} from 'sequelize';
+import { DataTypes } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-interface BillsModel
-  extends Model {
-  id: CreationOptional<number>
-  total_price: number
-  flat_id: number
-  is_open: boolean
-  services: string
-}
-
-const Bills = sequelize.define<BillsModel>('Bills', {
+const Bills = sequelize.define('Bills', {
   id: {
+    type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    type: DataTypes.INTEGER,
   },
   total_price: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.DECIMAL,
     allowNull: false,
   },
   flat_id: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   is_open: {
@@ -31,7 +20,7 @@ const Bills = sequelize.define<BillsModel>('Bills', {
     allowNull: false,
   },
   services: {
-    type: DataTypes.STRING,
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false,
   },
 });

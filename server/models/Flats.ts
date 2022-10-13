@@ -1,25 +1,14 @@
-import {
-  CreationOptional, Model, DataTypes,
-} from 'sequelize';
+import { DataTypes } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-interface FlatsModel
-  extends Model {
-  id: CreationOptional<number>
-  area : number
-  notes: string
-  is_active: boolean
-  owner_id: number
-}
-
-const Flats = sequelize.define<FlatsModel>('Flats', {
+const Flats = sequelize.define('Flats', {
   id: {
+    type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    type: DataTypes.INTEGER,
   },
   area: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.DECIMAL,
     allowNull: false,
   },
   notes: {
@@ -31,7 +20,7 @@ const Flats = sequelize.define<FlatsModel>('Flats', {
     allowNull: false,
   },
   owner_id: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 });

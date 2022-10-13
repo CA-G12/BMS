@@ -1,8 +1,14 @@
 import app from './app';
+import sequelize from './database/config/connection';
 
 const port = app.get('port') as number;
 
-app.listen(port, () => {
+sequelize.sync()
+  .then(() => {
+    app.listen(port, () => {
+      // eslint-disable-next-line no-console
+      console.log(`The Server is running on http://localhost:${port}`);
+    });
+  })
   // eslint-disable-next-line no-console
-  console.log(`http://localhost:${port}`);
-});
+  .catch(() => console.log('Error on synchronizing db'));
