@@ -14,8 +14,8 @@ interface AnnouncementsModel
   > {
   id: CreationOptional<number>
   title: string
-  startDate: Date
-  endDate: Date
+  start_date: Date
+  end_date: Date
 }
 
 const Announcements = sequelize.define<AnnouncementsModel>('Announcements', {
@@ -28,11 +28,11 @@ const Announcements = sequelize.define<AnnouncementsModel>('Announcements', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  startDate: {
+  start_date: {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  endDate: {
+  end_date: {
     type: DataTypes.DATE,
     allowNull: false,
   },

@@ -15,16 +15,16 @@ interface AdvertisementsModel
   id: CreationOptional<number>
   title: string
   description: string
-  startDate: Date
-  endDate: Date
+  start_date: Date
+  end_date: Date
   image: string
 }
 
 const Advertisements = sequelize.define<AdvertisementsModel>('Advertisements', {
   id: {
     primaryKey: true,
-    type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV4,
+    autoIncrement: true,
+    type: DataTypes.NUMBER,
   },
   title: {
     type: DataTypes.STRING,
@@ -34,11 +34,11 @@ const Advertisements = sequelize.define<AdvertisementsModel>('Advertisements', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  startDate: {
+  start_date: {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  endDate: {
+  end_date: {
     type: DataTypes.DATE,
     allowNull: false,
   },
