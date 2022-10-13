@@ -1,27 +1,8 @@
-import {
-  Sequelize,
-  Model,
-  DataTypes,
-  CreationOptional,
-  InferAttributes,
-  InferCreationAttributes,
-} from 'sequelize';
+import { DataTypes } from 'sequelize';
 
-const sequelize = new Sequelize('../database/config/connection');
+import sequelize from '../database/config/connection';
 
-interface ContactUsModel
-  extends Model< InferAttributes <ContactUsModel>,
-  InferCreationAttributes <ContactUsModel> > {
-  id: CreationOptional<number>;
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  description: string;
-  creation_date: Date;
-}
-
-const ContactUsModel = sequelize.define<ContactUsModel>(
+const ContactUsModel = sequelize.define(
   'ContactUs',
   {
     id: {
@@ -48,9 +29,6 @@ const ContactUsModel = sequelize.define<ContactUsModel>(
     description: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    creation_date: {
-      type: DataTypes.DATE,
     },
   },
 );

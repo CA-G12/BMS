@@ -1,26 +1,8 @@
-import {
-  Sequelize,
-  Model,
-  DataTypes,
-  CreationOptional,
-  InferAttributes,
-  InferCreationAttributes,
-} from 'sequelize';
+import { DataTypes } from 'sequelize';
 
-const sequelize = new Sequelize('../database/config/connection');
+import sequelize from '../database/config/connection';
 
-interface ComplaintsModel
-  extends Model< InferAttributes <ComplaintsModel>,
-  InferCreationAttributes <ComplaintsModel> > {
-  id: CreationOptional<number>;
-  title: string;
-  description: string;
-  creation_date: Date;
-  is_solved: boolean;
-  user_id: number;
-}
-
-const ComplaintsModel = sequelize.define<ComplaintsModel>('Complaint', {
+const ComplaintsModel = sequelize.define('Complaint', {
   id: {
     primaryKey: true,
     autoIncrement: true,
@@ -36,18 +18,13 @@ const ComplaintsModel = sequelize.define<ComplaintsModel>('Complaint', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-
-  creation_date: {
-    type: DataTypes.DATE,
-  },
-
   is_solved: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
 
   user_id: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 });
