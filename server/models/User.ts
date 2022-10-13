@@ -7,41 +7,36 @@ const User = sequelize.define(
   'Transactions',
   {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
     first_name: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     last_name: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING,
       allowNull: true,
       validate: {
         isEmail: true,
       },
     },
     phone_number: {
-      type: DataTypes.STRING(14),
+      type: DataTypes.STRING,
       unique: true,
       allowNull: false,
-    },
-    creation_date: {
-      type: DataTypes.DATE,
-      defaultValue: Date(),
     },
     roles: {
       type: DataTypes.ENUM('ADMIN', 'USER'),
       allowNull: false,
     },
     hased_password: {
-      type: DataTypes.STRING(64),
+      type: DataTypes.STRING,
       validate: {
         is: /^[0-9a-f]{64}$/i,
       },
