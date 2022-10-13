@@ -12,27 +12,27 @@ interface AnnouncementsModel
   InferAttributes<AnnouncementsModel>,
   InferCreationAttributes<AnnouncementsModel>
   > {
-  id: CreationOptional<string>
-  Title: string
-  StartDate: Date
-  EndDate: Date
+  id: CreationOptional<number>
+  title: string
+  startDate: Date
+  endDate: Date
 }
 
 const Announcements = sequelize.define<AnnouncementsModel>('Announcements', {
   id: {
     primaryKey: true,
-    type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV4,
+    autoIncrement: true,
+    type: DataTypes.NUMBER,
   },
-  Title: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  StartDate: {
+  startDate: {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  EndDate: {
+  endDate: {
     type: DataTypes.DATE,
     allowNull: false,
   },

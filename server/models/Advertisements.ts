@@ -12,12 +12,12 @@ interface AdvertisementsModel
   InferAttributes<AdvertisementsModel>,
   InferCreationAttributes<AdvertisementsModel>
   > {
-  id: CreationOptional<string>
-  Title: string
-  Description: string
-  StartDate: Date
-  EndDate: Date
-  Image: string
+  id: CreationOptional<number>
+  title: string
+  description: string
+  startDate: Date
+  endDate: Date
+  image: string
 }
 
 const Advertisements = sequelize.define<AdvertisementsModel>('Advertisements', {
@@ -26,23 +26,23 @@ const Advertisements = sequelize.define<AdvertisementsModel>('Advertisements', {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
   },
-  Title: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  Description: {
+  description: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  StartDate: {
+  startDate: {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  EndDate: {
+  endDate: {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  Image: {
+  image: {
     type: DataTypes.STRING,
     allowNull: false,
   },
