@@ -42,10 +42,10 @@ const Transactions = sequelize.define<TransactionsModel>(
     },
     creation_date: {
       type: DataTypes.DATE,
-      defaultValue: new Date(),
+      defaultValue: Date(),
     },
     user_id: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },

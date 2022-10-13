@@ -7,26 +7,23 @@ import {
 } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-interface UsersModel
-  extends Model<
-  InferAttributes<UsersModel>,
-  InferCreationAttributes<UsersModel>
-  > {
+export interface UsersModel
+  extends Model {
   id: CreationOptional<number>
 
-  first_name?: string
+  first_name: string
 
-  last_name?: string
+  last_name: string
 
-  email?: string
+  email: string
 
-  phone_number?: string
+  phone_number: string
 
-  creation_date?: Date
+  creation_date: string
 
-  roles?: 'ADMIN' | 'USER'
+  roles: 'ADMIN' | 'USER'
 
-  hased_password?: string
+  hased_password: string
 }
 
 const Users = sequelize.define<UsersModel>(
@@ -60,7 +57,7 @@ const Users = sequelize.define<UsersModel>(
     },
     creation_date: {
       type: DataTypes.DATE,
-      defaultValue: new Date(),
+      defaultValue: Date(),
     },
     roles: {
       type: DataTypes.ENUM('ADMIN', 'USER'),

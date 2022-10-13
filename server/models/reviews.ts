@@ -22,7 +22,7 @@ interface ReviewsModel
 
   is_shown?: boolean
 
-  creation_date?: Date
+  creation_date?: string
 
   user_id?: number
 }
@@ -45,10 +45,10 @@ const Reviews = sequelize.define<ReviewsModel>(
       allowNull: true,
     },
     points: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        min: 1,
+        min: 0,
         max: 5,
       },
     },
@@ -58,10 +58,10 @@ const Reviews = sequelize.define<ReviewsModel>(
     },
     creation_date: {
       type: DataTypes.DATE,
-      defaultValue: new Date(),
+      defaultValue: Date(),
     },
     user_id: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
