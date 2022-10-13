@@ -4,7 +4,9 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
-import { Announcement, Advertisement } from './models';
+import {
+  Announcement, Advertisement, Bills, Flats, Services,
+} from './models';
 
 dotenv.config();
 
@@ -33,6 +35,21 @@ app.get('/announcements', async (req, res) => {
 app.get('/advertisements', async (req, res) => {
   const data = await Advertisement.findAll();
   res.json({ message: 'Advertisements', data });
+});
+
+app.get('/bills', async (req, res) => {
+  const data = await Bills.findAll();
+  res.json({ message: 'Bills', data });
+});
+
+app.get('/flats', async (req, res) => {
+  const data = await Flats.findAll();
+  res.json({ message: 'Flats', data });
+});
+
+app.get('/services', async (req, res) => {
+  const data = await Services.findAll();
+  res.json({ message: 'Services', data });
 });
 
 if (NODE_ENV === 'production') {
