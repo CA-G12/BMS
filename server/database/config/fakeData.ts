@@ -45,4 +45,5 @@ const Advertisements = [
   },
 
 ];
+
 export { Announcements, Advertisements };
