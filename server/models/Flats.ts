@@ -1,18 +1,14 @@
 import {
-  InferAttributes, InferCreationAttributes, CreationOptional, Model, DataTypes,
+  CreationOptional, Model, DataTypes,
 } from 'sequelize';
 import sequelize from '../database/config/connection';
 
 interface FlatsModel
-  extends Model<
-  InferAttributes<FlatsModel>,
-  InferCreationAttributes<FlatsModel>
-  > {
+  extends Model {
   id: CreationOptional<number>
   area : number
   notes: string
   is_active: boolean
-  creation_date: Date
   owner_id: number
 }
 
@@ -20,7 +16,7 @@ const Flats = sequelize.define<FlatsModel>('Flats', {
   id: {
     primaryKey: true,
     autoIncrement: true,
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
   },
   area: {
     type: DataTypes.NUMBER,
@@ -32,11 +28,6 @@ const Flats = sequelize.define<FlatsModel>('Flats', {
   },
   is_active: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
-
-  },
-  creation_date: {
-    type: DataTypes.DATE,
     allowNull: false,
   },
   owner_id: {

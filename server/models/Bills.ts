@@ -1,15 +1,11 @@
 import {
-  InferAttributes, InferCreationAttributes, CreationOptional, Model, DataTypes,
+  CreationOptional, Model, DataTypes,
 } from 'sequelize';
 import sequelize from '../database/config/connection';
 
 interface BillsModel
-  extends Model<
-  InferAttributes<BillsModel>,
-  InferCreationAttributes<BillsModel>
-  > {
+  extends Model {
   id: CreationOptional<number>
-  creation_date : Date
   total_price: number
   flat_id: number
   is_open: boolean
@@ -20,11 +16,7 @@ const Bills = sequelize.define<BillsModel>('Bills', {
   id: {
     primaryKey: true,
     autoIncrement: true,
-    type: DataTypes.NUMBER,
-  },
-  creation_date: {
-    type: DataTypes.STRING,
-    allowNull: false,
+    type: DataTypes.INTEGER,
   },
   total_price: {
     type: DataTypes.NUMBER,
@@ -37,7 +29,6 @@ const Bills = sequelize.define<BillsModel>('Bills', {
   is_open: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
-
   },
   services: {
     type: DataTypes.STRING,

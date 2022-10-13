@@ -1,13 +1,10 @@
 import {
-  InferAttributes, InferCreationAttributes, CreationOptional, Model, DataTypes,
+  CreationOptional, Model, DataTypes,
 } from 'sequelize';
 import sequelize from '../database/config/connection';
 
 interface ServicesModel
-  extends Model<
-  InferAttributes<ServicesModel>,
-  InferCreationAttributes<ServicesModel>
-  > {
+  extends Model {
   id: CreationOptional<number>
   name : string
   price: number
@@ -20,7 +17,7 @@ const Services = sequelize.define<ServicesModel>('Services', {
   id: {
     primaryKey: true,
     autoIncrement: true,
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
   },
   name: {
     type: DataTypes.STRING,
@@ -42,7 +39,6 @@ const Services = sequelize.define<ServicesModel>('Services', {
   is_open: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
-
   },
 });
 
