@@ -1,33 +1,28 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-const Services = sequelize.define('Services', {
+const Bill = sequelize.define('Bill', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  price: {
+  total_price: {
     type: DataTypes.DECIMAL,
     allowNull: false,
   },
-  is_fixed: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-
-  },
-  description: {
-    type: DataTypes.STRING,
+  flat_id: {
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   is_open: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
+  services: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+    allowNull: false,
+  },
 });
 
-export default Services;
+export default Bill;

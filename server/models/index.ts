@@ -1,9 +1,9 @@
 import Advertisement from './Advertisement';
 import Announcement from './Announcement';
-import Bills from './Bills';
-import Flats from './Flats';
-import Services from './Services';
+import Bill from './Bill';
+import Flat from './Flat';
+import Service from './Service';
 
 export {
-  Bills, Flats, Services, Announcement, Advertisement,
+  Bill, Flat, Service, Announcement, Advertisement,
 };
