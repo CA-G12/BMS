@@ -3,7 +3,7 @@ import sequelize from './database/config/connection';
 
 const port = app.get('port') as number;
 
-sequelize.sync({ force: true }) // TODO: To be reomved later when DB is 100% ready
+sequelize.sync()
   .then(() => {
     app.listen(port, () => {
       // eslint-disable-next-line no-console

@@ -24,5 +24,5 @@ switch (NODE_ENV) {
 }
 if (!url) throw new Error('The database url is invalid!');
 
-const sequelizeConfig = new Sequelize(url);
+const sequelizeConfig = new Sequelize(url, { logging: false, dialect: 'postgres' });
 export default sequelizeConfig;

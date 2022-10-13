@@ -1,29 +1,9 @@
 import {
-  Model,
-  InferAttributes,
-  InferCreationAttributes,
-  CreationOptional,
   DataTypes,
 } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-interface TransactionsModel
-  extends Model<
-  InferAttributes<TransactionsModel>,
-  InferCreationAttributes<TransactionsModel>
-  > {
-  id: CreationOptional<number>
-
-  title?: string
-
-  description?: Text
-
-  creation_date?: Date
-
-  user_id?: number
-}
-
-const Transactions = sequelize.define<TransactionsModel>(
+const Transaction = sequelize.define(
   'Transactions',
   {
     id: {
@@ -51,4 +31,4 @@ const Transactions = sequelize.define<TransactionsModel>(
   },
 );
 
-export default Transactions;
+export default Transaction;

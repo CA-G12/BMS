@@ -1,33 +1,9 @@
 import {
-  Model,
-  InferAttributes,
-  InferCreationAttributes,
-  CreationOptional,
   DataTypes,
 } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-interface ReviewsModel
-  extends Model<
-  InferAttributes<ReviewsModel>,
-  InferCreationAttributes<ReviewsModel>
-  > {
-  id: CreationOptional<number>
-
-  title?: string
-
-  description?: Text
-
-  points?: number
-
-  is_shown?: boolean
-
-  creation_date?: string
-
-  user_id?: number
-}
-
-const Reviews = sequelize.define<ReviewsModel>(
+const Review = sequelize.define(
   'Reviews',
   {
     id: {
@@ -67,4 +43,4 @@ const Reviews = sequelize.define<ReviewsModel>(
   },
 );
 
-export default Reviews;
+export default Review;

@@ -1,18 +1,28 @@
 import sequelize from './connection';
+import
+{
+  Announcements, Advertisements, Users, Reviews, Transactions,
+}
+  from './fakeData';
+
 import {
-  reviews, transactions, users,
-} from './fakeData';
-import {
-  Reviews, Transactions, Users,
+  Announcement, Advertisement, Review, User, Transaction,
 } from '../../models/index';
 
-const dbConnect = () => sequelize.sync();
-
 const insertDB = async () => {
-  await sequelize.sync({ force: true });
-  await Users.bulkCreate(users);
-  await Transactions.bulkCreate(transactions);
-  await Reviews.bulkCreate(reviews);
+  try {
+    await sequelize.sync({ force: true });
+    await Announcement.bulkCreate(Announcements);
+    await Advertisement.bulkCreate(Advertisements);
+    await Review.bulkCreate(Reviews);
+    await User.bulkCreate(Users);
+    await Transaction.bulkCreate(Transactions);
+
+    // eslint-disable-next-line no-console
+    console.log('Build Database Successfully');
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.log('Build Database Failed', err);
+  }
 };
 insertDB();
-export default dbConnect;

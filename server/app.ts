@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
+import { Announcement, Advertisement } from './models';
 
 dotenv.config();
 
@@ -23,6 +24,16 @@ if (NODE_ENV === 'development') {
 }
 
 // app.use('/api/v1', router);
+
+app.get('/announcements', async (req, res) => {
+  const data = await Announcement.findAll();
+  res.json({ message: 'Announcements', data });
+});
+
+app.get('/advertisements', async (req, res) => {
+  const data = await Advertisement.findAll();
+  res.json({ message: 'Advertisements', data });
+});
 
 if (NODE_ENV === 'production') {
   app.use(express.static(join(__dirname, '..', 'client', 'build')));

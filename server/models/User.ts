@@ -1,32 +1,9 @@
 import {
-  Model,
-  InferAttributes,
-  InferCreationAttributes,
-  CreationOptional,
   DataTypes,
 } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-export interface UsersModel
-  extends Model {
-  id: CreationOptional<number>
-
-  first_name: string
-
-  last_name: string
-
-  email: string
-
-  phone_number: string
-
-  creation_date: string
-
-  roles: 'ADMIN' | 'USER'
-
-  hased_password: string
-}
-
-const Users = sequelize.define<UsersModel>(
+const User = sequelize.define(
   'Transactions',
   {
     id: {
@@ -73,4 +50,4 @@ const Users = sequelize.define<UsersModel>(
   },
 );
 
-export default Users;
+export default User;

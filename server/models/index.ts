@@ -1,6 +1,6 @@
-export { default as Transactions } from './transactions';
-export { default as Reviews } from './reviews';
-export { default as Users } from './users';
+export { default as Transaction } from './Transaction';
+export { default as Review } from './Review';
+export { default as User } from './User';
 
-export { default as Announcements } from './Announcements';
-export { default as Advertisements } from './Advertisements';
+export { default as Announcement } from './Announcement';
+export { default as Advertisement } from './Advertisement';
