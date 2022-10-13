@@ -10,20 +10,21 @@ import {
 const sequelize = new Sequelize('../database/config/connection');
 
 interface ComplaintsModel
-  extends Model<InferAttributes<ComplaintsModel>,
-  InferCreationAttributes<ComplaintsModel>> {
+  extends Model< InferAttributes <ComplaintsModel>,
+  InferCreationAttributes <ComplaintsModel> > {
   id: CreationOptional<number>;
   title: string;
   description: string;
-  creationDate: Date;
-  isSolved: boolean;
-  userId: number;
+  creation_date: Date;
+  is_solved: boolean;
+  user_id: number;
 }
 
 const ComplaintsModel = sequelize.define<ComplaintsModel>('Complaint', {
   id: {
     primaryKey: true,
-    type: DataTypes.INTEGER.UNSIGNED,
+    autoIncrement: true,
+    type: DataTypes.NUMBER,
   },
 
   title: {
@@ -36,17 +37,17 @@ const ComplaintsModel = sequelize.define<ComplaintsModel>('Complaint', {
     allowNull: false,
   },
 
-  creationDate: {
+  creation_date: {
     type: DataTypes.DATE,
     allowNull: false,
   },
 
-  isSolved: {
+  is_solved: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
 
-  userId: {
+  user_id: {
     type: DataTypes.NUMBER,
     allowNull: false,
   },
