@@ -4,7 +4,6 @@ const Users = [{
   last_name: 'Cotte',
   email: 'jcotte0@people.com.cn',
   phone_number: '318-530-6030',
-  creation_date: '12/2/2021',
   roles: 'ADMIN',
   hased_password: 'eDuvQFk2tKR',
 }, {
@@ -13,7 +12,6 @@ const Users = [{
   last_name: 'Belt',
   email: 'gbelt1@thetimes.co.uk',
   phone_number: '235-783-1177',
-  creation_date: '2/16/2022',
   roles: 'USER',
   hased_password: 'j1Lwy1VL3k',
 }, {
@@ -22,7 +20,6 @@ const Users = [{
   last_name: 'Lobe',
   email: 'tlobe2@angelfire.com',
   phone_number: '498-722-9258',
-  creation_date: '4/8/2022',
   roles: 'USER',
   hased_password: 'UuXPw5W7H',
 }, {
@@ -31,7 +28,6 @@ const Users = [{
   last_name: 'Gravey',
   email: 'mgravey3@slideshare.net',
   phone_number: '172-408-5906',
-  creation_date: '1/8/2022',
   roles: 'USER',
   hased_password: '3ZzMhbjfY6',
 }, {
@@ -40,7 +36,6 @@ const Users = [{
   last_name: 'Scogin',
   email: 'cscogin4@nytimes.com',
   phone_number: '910-220-7086',
-  creation_date: '6/29/2022',
   roles: 'USER',
   hased_password: '1edtRkJrJz1',
 }, {
@@ -49,7 +44,6 @@ const Users = [{
   last_name: 'Frail',
   email: 'bfrail5@google.com.br',
   phone_number: '178-978-2984',
-  creation_date: '11/29/2021',
   roles: 'USER',
   hased_password: 'FBL5ZQ8',
 }, {
@@ -58,7 +52,6 @@ const Users = [{
   last_name: 'Justis',
   email: 'bjustis6@state.gov',
   phone_number: '153-758-3576',
-  creation_date: '9/29/2022',
   roles: 'USER',
   hased_password: 'rqynGoZr6XJ1',
 }, {
@@ -67,7 +60,6 @@ const Users = [{
   last_name: 'Saltsberg',
   email: 'esaltsberg7@naver.com',
   phone_number: '746-342-8706',
-  creation_date: '1/17/2022',
   roles: 'USER',
   hased_password: 'NOj9CbSR',
 }, {
@@ -76,7 +68,6 @@ const Users = [{
   last_name: 'McGairl',
   email: 'cmcgairl8@livejournal.com',
   phone_number: '839-484-5210',
-  creation_date: '3/21/2022',
   roles: 'USER',
   hased_password: 'a82tTF',
 }, {
@@ -85,7 +76,6 @@ const Users = [{
   last_name: 'Shannahan',
   email: 'cshannahan9@wunderground.com',
   phone_number: '916-108-1812',
-  creation_date: '7/16/2022',
   roles: 'USER',
   hased_password: 'VWqe6ZR',
 }, {
@@ -94,7 +84,6 @@ const Users = [{
   last_name: 'Nadin',
   email: 'enadina@php.net',
   phone_number: '900-620-7479',
-  creation_date: '3/27/2022',
   roles: 'USER',
   hased_password: 'CfBoa3bYZkPr',
 }, {
@@ -103,7 +92,6 @@ const Users = [{
   last_name: 'Bront',
   email: 'mbrontb@phpbb.com',
   phone_number: '959-720-9384',
-  creation_date: '9/3/2022',
   roles: 'USER',
   hased_password: 'bVVXcX3nLF',
 }, {
@@ -112,7 +100,6 @@ const Users = [{
   last_name: 'Scoggans',
   email: 'sscoggansc@noaa.gov',
   phone_number: '521-649-4149',
-  creation_date: '3/22/2022',
   roles: 'USER',
   hased_password: 'D5PQW7u7jv3',
 }, {
@@ -121,7 +108,6 @@ const Users = [{
   last_name: 'Johnigan',
   email: 'ejohnigand@blinklist.com',
   phone_number: '148-222-5388',
-  creation_date: '1/11/2022',
   roles: 'USER',
   hased_password: 'bVDwvHM',
 }, {
@@ -130,7 +116,6 @@ const Users = [{
   last_name: 'Binks',
   email: 'abinkse@flickr.com',
   phone_number: '907-611-5915',
-  creation_date: '11/26/2021',
   roles: 'USER',
   hased_password: 'OT3k2suBFF9X',
 }, {
@@ -139,7 +124,6 @@ const Users = [{
   last_name: 'Bridge',
   email: 'lbridgef@columbia.edu',
   phone_number: '813-752-6434',
-  creation_date: '11/4/2021',
   roles: 'USER',
   hased_password: 'L1g4CHQWq5',
 }, {
@@ -148,7 +132,6 @@ const Users = [{
   last_name: 'Jayme',
   email: 'ajaymeg@nifty.com',
   phone_number: '588-244-3150',
-  creation_date: '4/28/2022',
   roles: 'USER',
   hased_password: 'ojldRgoVO',
 }, {
@@ -157,7 +140,6 @@ const Users = [{
   last_name: 'Ivanyushkin',
   email: 'bivanyushkinh@behance.net',
   phone_number: '390-816-5923',
-  creation_date: '7/2/2022',
   roles: 'USER',
   hased_password: 'zBZRkc7qlYA',
 }, {
@@ -166,7 +148,6 @@ const Users = [{
   last_name: 'Stranio',
   email: 'jstranioi@ibm.com',
   phone_number: '405-527-5827',
-  creation_date: '6/27/2022',
   roles: 'USER',
   hased_password: 'kvd7ziyp',
 }, {
@@ -175,7 +156,6 @@ const Users = [{
   last_name: 'Allridge',
   email: 'gallridgej@latimes.com',
   phone_number: '330-739-1479',
-  creation_date: '1/6/2022',
   roles: 'USER',
   hased_password: 'zgGeNhGc',
 }];
@@ -186,7 +166,6 @@ const Reviews = [{
   description: 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
   points: 2,
   is_shown: false,
-  creation_date: '9/13/2022',
   user_id: 15,
 }, {
   id: 2,
@@ -194,7 +173,6 @@ const Reviews = [{
   description: 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.',
   points: 2,
   is_shown: false,
-  creation_date: '5/20/2022',
   user_id: 14,
 }, {
   id: 3,
@@ -202,7 +180,6 @@ const Reviews = [{
   description: 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.',
   points: 0,
   is_shown: false,
-  creation_date: '3/25/2022',
   user_id: 1,
 }, {
   id: 4,
@@ -210,7 +187,6 @@ const Reviews = [{
   description: 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.',
   points: 2,
   is_shown: false,
-  creation_date: '2/10/2022',
   user_id: 20,
 }, {
   id: 5,
@@ -218,7 +194,6 @@ const Reviews = [{
   description: 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.',
   points: 0,
   is_shown: true,
-  creation_date: '12/13/2021',
   user_id: 14,
 }, {
   id: 6,
@@ -226,7 +201,6 @@ const Reviews = [{
   description: 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.',
   points: 4,
   is_shown: true,
-  creation_date: '11/1/2021',
   user_id: 20,
 }, {
   id: 7,
@@ -234,7 +208,6 @@ const Reviews = [{
   description: 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
   points: 2,
   is_shown: false,
-  creation_date: '12/20/2021',
   user_id: 10,
 }, {
   id: 8,
@@ -242,7 +215,6 @@ const Reviews = [{
   description: 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
   points: 3,
   is_shown: true,
-  creation_date: '8/12/2022',
   user_id: 3,
 }, {
   id: 9,
@@ -250,7 +222,6 @@ const Reviews = [{
   description: 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',
   points: 2,
   is_shown: true,
-  creation_date: '2/12/2022',
   user_id: 15,
 }, {
   id: 10,
@@ -258,7 +229,6 @@ const Reviews = [{
   description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
   points: 0,
   is_shown: true,
-  creation_date: '6/23/2022',
   user_id: 17,
 }, {
   id: 11,
@@ -266,7 +236,6 @@ const Reviews = [{
   description: 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
   points: 4,
   is_shown: false,
-  creation_date: '6/19/2022',
   user_id: 3,
 }, {
   id: 12,
@@ -274,7 +243,6 @@ const Reviews = [{
   description: 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
   points: 1,
   is_shown: true,
-  creation_date: '2/9/2022',
   user_id: 12,
 }, {
   id: 13,
@@ -282,7 +250,6 @@ const Reviews = [{
   description: 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.',
   points: 3,
   is_shown: false,
-  creation_date: '10/12/2022',
   user_id: 8,
 }, {
   id: 14,
@@ -290,7 +257,6 @@ const Reviews = [{
   description: 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
   points: 5,
   is_shown: false,
-  creation_date: '8/21/2022',
   user_id: 16,
 }, {
   id: 15,
@@ -298,7 +264,6 @@ const Reviews = [{
   description: 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',
   points: 5,
   is_shown: false,
-  creation_date: '8/25/2022',
   user_id: 7,
 }, {
   id: 16,
@@ -306,7 +271,6 @@ const Reviews = [{
   description: 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
   points: 2,
   is_shown: false,
-  creation_date: '10/29/2021',
   user_id: 18,
 }, {
   id: 17,
@@ -314,7 +278,6 @@ const Reviews = [{
   description: 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.',
   points: 1,
   is_shown: true,
-  creation_date: '10/5/2022',
   user_id: 13,
 }, {
   id: 18,
@@ -322,7 +285,6 @@ const Reviews = [{
   description: 'Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
   points: 2,
   is_shown: false,
-  creation_date: '7/7/2022',
   user_id: 13,
 }, {
   id: 19,
@@ -330,7 +292,6 @@ const Reviews = [{
   description: 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.',
   points: 0,
   is_shown: true,
-  creation_date: '3/3/2022',
   user_id: 8,
 }, {
   id: 20,
@@ -338,131 +299,20 @@ const Reviews = [{
   description: 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.',
   points: 3,
   is_shown: true,
-  creation_date: '10/30/2021',
   user_id: 4,
 }];
 
 const Transactions = [{
-  id: 1,
-  title: 'Developer I',
-  description: 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.',
-  creation_date: '4/8/2022',
+  title: 'DeveloperI',
+  description: 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.',
   user_id: 8,
-}, {
-  id: 2,
-  title: 'Senior Editor',
-  description: 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
-  creation_date: '1/11/2022',
+},
+{
+  title: 'SeniorEditor',
+  description: 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
   user_id: 9,
-}, {
-  id: 3,
-  title: 'Graphic Designer',
-  description: 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.',
-  creation_date: '2/4/2022',
-  user_id: 20,
-}, {
-  id: 4,
-  title: 'Analog Circuit Design manager',
-  description: 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
-  creation_date: '4/17/2022',
-  user_id: 17,
-}, {
-  id: 5,
-  title: 'Librarian',
-  description: 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
-  creation_date: '11/1/2021',
-  user_id: 4,
-}, {
-  id: 6,
-  title: 'Librarian',
-  description: 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.',
-  creation_date: '9/1/2022',
-  user_id: 13,
-}, {
-  id: 7,
-  title: 'Actuary',
-  description: 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.',
-  creation_date: '7/5/2022',
-  user_id: 16,
-}, {
-  id: 8,
-  title: 'Accountant III',
-  description: 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',
-  creation_date: '4/24/2022',
-  user_id: 6,
-}, {
-  id: 9,
-  title: 'Cost Accountant',
-  description: 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.',
-  creation_date: '7/7/2022',
-  user_id: 6,
-}, {
-  id: 10,
-  title: 'Senior Financial Analyst',
-  description: 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.',
-  creation_date: '1/16/2022',
-  user_id: 11,
-}, {
-  id: 11,
-  title: 'Research Assistant I',
-  description: 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
-  creation_date: '8/13/2022',
-  user_id: 17,
-}, {
-  id: 12,
-  title: 'Internal Auditor',
-  description: 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.',
-  creation_date: '3/6/2022',
-  user_id: 12,
-}, {
-  id: 13,
-  title: 'Internal Auditor',
-  description: 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
-  creation_date: '11/11/2021',
-  user_id: 4,
-}, {
-  id: 14,
-  title: 'Teacher',
-  description: 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',
-  creation_date: '9/16/2022',
-  user_id: 18,
-}, {
-  id: 15,
-  title: 'Programmer IV',
-  description: 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.',
-  creation_date: '9/15/2022',
-  user_id: 13,
-}, {
-  id: 16,
-  title: 'Senior Sales Associate',
-  description: 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
-  creation_date: '9/15/2022',
-  user_id: 1,
-}, {
-  id: 17,
-  title: 'VP Product Management',
-  description: 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.',
-  creation_date: '1/13/2022',
-  user_id: 10,
-}, {
-  id: 18,
-  title: 'Occupational Therapist',
-  description: 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
-  creation_date: '8/30/2022',
-  user_id: 3,
-}, {
-  id: 19,
-  title: 'Dental Hygienist',
-  description: 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
-  creation_date: '5/4/2022',
-  user_id: 10,
-}, {
-  id: 20,
-  title: 'Computer Systems Analyst IV',
-  description: 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
-  creation_date: '5/14/2022',
-  user_id: 9,
-}];
+},
+];
 
 const Announcements = [
   {
