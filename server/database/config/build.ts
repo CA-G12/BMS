@@ -14,9 +14,17 @@ const insertDB = async () => {
     await sequelize.sync({ force: true });
     await Announcement.bulkCreate(Announcements);
     await Advertisement.bulkCreate(Advertisements);
-    await Review.bulkCreate(Reviews);
     await User.bulkCreate(Users);
+    await Review.bulkCreate(Reviews);
     await Transaction.bulkCreate(Transactions);
+
+    // Relaships
+    Transaction.hasOne(User, {
+      foreignKey: 'user_id',
+    });
+    Review.hasOne(User, {
+      foreignKey: 'user_id',
+    });
 
     // eslint-disable-next-line no-console
     console.log('Build Database Successfully');
