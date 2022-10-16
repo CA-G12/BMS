@@ -5,7 +5,8 @@ import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
 import {
-  Announcement, Advertisement, User, Payment, Review,
+  AnnouncementModel, AdvertisementModel, BillModel, FlatModel, ServiceModel, UserModel,
+  PaymentModel,
 } from './models';
 
 dotenv.config();
@@ -28,28 +29,41 @@ if (NODE_ENV === 'development') {
 // app.use('/api/v1', router);
 
 app.get('/announcements', async (req, res) => {
-  const data = await Announcement.findAll();
+  const data = await AnnouncementModel.findAll();
   res.json({ message: 'Announcements', data });
 });
 
 app.get('/advertisements', async (req, res) => {
-  const data = await Advertisement.findAll();
+  const data = await AdvertisementModel.findAll();
   res.json({ message: 'Advertisements', data });
 });
 
 app.get('/Users', async (req, res) => {
-  const data = await User.findAll();
+  const data = await UserModel.findAll();
   res.json({ message: 'Users', data });
 });
 
 app.get('/Payments', async (req, res) => {
-  const data = await Payment.findAll();
+  const data = await PaymentModel.findAll();
   res.json({ message: 'Payments', data });
 });
 
-app.get('/Reviews', async (req, res) => {
-  const data = await Review.findAll();
-  res.json({ message: 'Reviews', data });
+app.get('/bill', async (req, res) => {
+  const data = await BillModel.findAll();
+  res.json({
+    message: 'Bill',
+    data,
+  });
+});
+
+app.get('/flat', async (req, res) => {
+  const data = await FlatModel.findAll();
+  res.json({ message: 'Flat', data });
+});
+
+app.get('/service', async (req, res) => {
+  const data = await ServiceModel.findAll();
+  res.json({ message: 'Service', data });
 });
 
 if (NODE_ENV === 'production') {
