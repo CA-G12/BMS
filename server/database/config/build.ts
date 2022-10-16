@@ -1,17 +1,20 @@
 import sequelize from './connection';
 import {
-  Announcements, Advertisements,
+  announcements, advertisements, bills, flats, services,
 } from './fakeData';
 
 import {
-  Announcement, Advertisement,
+  Announcement, Advertisement, BillModel, FlatModel, ServiceModel,
 } from '../../models/index';
 
 const insertDB = async () => {
   try {
     await sequelize.sync({ force: true });
-    await Announcement.bulkCreate(Announcements);
-    await Advertisement.bulkCreate(Advertisements);
+    await Announcement.bulkCreate(announcements);
+    await Advertisement.bulkCreate(advertisements);
+    await FlatModel.bulkCreate(flats);
+    await BillModel.bulkCreate(bills);
+    await ServiceModel.bulkCreate(services);
 
     // eslint-disable-next-line no-console
     console.log('Build Database Successfully');
