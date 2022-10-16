@@ -5,7 +5,7 @@ import {
 
 import {
   Announcement, Advertisement, ComplaintsModel, ContactUsModel,
-} from '../../models/index';
+} from '../../models';
 
 const insertDB = async () => {
   try {
