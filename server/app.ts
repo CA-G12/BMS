@@ -5,7 +5,8 @@ import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
 import {
-  Announcement, Advertisement, BillModel, FlatModel, ServiceModel,
+  ComplaintsModel, ContactUsModel,
+  Announcement, Advertisement, Bill, FlatModel, Service,
 } from './models';
 
 dotenv.config();
@@ -38,7 +39,7 @@ app.get('/advertisements', async (req, res) => {
 });
 
 app.get('/bill', async (req, res) => {
-  const data = await BillModel.findAll();
+  const data = await Bill.findAll();
   res.json({
     message: 'Bill',
     data,
@@ -51,10 +52,19 @@ app.get('/flat', async (req, res) => {
 });
 
 app.get('/service', async (req, res) => {
-  const data = await ServiceModel.findAll();
+  const data = await Service.findAll();
   res.json({ message: 'Service', data });
 });
 
+app.get('/complaints', async (req, res) => {
+  const data = await ComplaintsModel.findAll();
+  res.json({ message: 'Complaints', data });
+});
+
+app.get('/contactUs', async (req, res) => {
+  const data = await ContactUsModel.findAll();
+  res.json({ message: 'ContactUs', data });
+});
 if (NODE_ENV === 'production') {
   app.use(express.static(join(__dirname, '..', 'client', 'build')));
   app.get('*', (req, res) => {
@@ -63,5 +73,4 @@ if (NODE_ENV === 'production') {
 }
 
 app.set('port', PORT || 5000);
-
 export default app;
