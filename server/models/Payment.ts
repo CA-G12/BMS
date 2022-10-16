@@ -4,7 +4,7 @@ import {
 import sequelize from '../database/config/connection';
 
 const Payment = sequelize.define(
-  'Payments',
+  'Payment',
   {
     id: {
       type: DataTypes.INTEGER,

@@ -4,7 +4,7 @@ import {
 import sequelize from '../database/config/connection';
 
 const User = sequelize.define(
-  'Transactions',
+  'User',
   {
     id: {
       type: DataTypes.INTEGER,

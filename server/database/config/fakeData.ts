@@ -1,4 +1,4 @@
-const Users = [
+const users = [
   {
     id: 1,
     first_name: 'أحمد',
@@ -46,7 +46,7 @@ const Users = [
   },
 ];
 
-const Reviews = [
+const reviews = [
   {
     title: 'ادارة رائعة',
     description: 'يوجد في البرج ادارة قادرة على ادارة جميع خدمات البرج بكفائة',
@@ -70,7 +70,7 @@ const Reviews = [
   },
 ];
 
-const Payments = [
+const payments = [
   {
     title: 'دفع فاتورة',
     description:
@@ -91,7 +91,7 @@ const Payments = [
   },
 ];
 
-const Announcements = [
+const announcements = [
   {
     title:
       'تنبيه لسكان البرج الكرام: فصل الطاقة الشمسية على الساعة السابعة مساء اليوم',
@@ -112,7 +112,7 @@ const Announcements = [
   },
 ];
 
-const Advertisements = [
+const advertisements = [
   {
     title: 'شقة متاحة',
     description:
@@ -142,5 +142,5 @@ const Advertisements = [
 ];
 
 export {
-  Announcements, Advertisements, Users, Reviews, Payments,
+  announcements, advertisements, users, reviews, payments,
 };
