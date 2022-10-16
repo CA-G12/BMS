@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-named-as-default
 import app from './app';
 import sequelize from './database/config/connection';
 

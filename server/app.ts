@@ -6,7 +6,7 @@ import { join } from 'path';
 import morgan from 'morgan';
 import {
   AnnouncementModel, AdvertisementModel, BillModel, FlatModel, ServiceModel, UserModel,
-  PaymentModel,
+  PaymentModel, ComplaintsModel, ContactUsModel,
 } from './models';
 
 dotenv.config();
@@ -66,6 +66,15 @@ app.get('/service', async (req, res) => {
   res.json({ message: 'Service', data });
 });
 
+app.get('/complaints', async (req, res) => {
+  const data = await ComplaintsModel.findAll();
+  res.json({ message: 'Complaints', data });
+});
+
+app.get('/contactUs', async (req, res) => {
+  const data = await ContactUsModel.findAll();
+  res.json({ message: 'ContactUs', data });
+});
 if (NODE_ENV === 'production') {
   app.use(express.static(join(__dirname, '..', 'client', 'build')));
   app.get('*', (req, res) => {
@@ -74,5 +83,4 @@ if (NODE_ENV === 'production') {
 }
 
 app.set('port', PORT || 5000);
-
 export default app;

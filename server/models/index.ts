@@ -5,6 +5,8 @@ import AdvertisementModel from './Advertisement';
 import AnnouncementModel from './Announcement';
 import BillModel from './Bill';
 import ServiceModel from './Service';
+import ComplaintsModel from './Complaints';
+import ContactUsModel from './ContactUs';
 
 FlatModel.hasMany(BillModel);
 BillModel.belongsTo(FlatModel);
@@ -17,5 +19,5 @@ PaymentModel.belongsTo(BillModel);
 
 export {
   PaymentModel, UserModel, BillModel, FlatModel, ServiceModel, AnnouncementModel,
-  AdvertisementModel,
+  AdvertisementModel, ComplaintsModel, ContactUsModel,
 };
