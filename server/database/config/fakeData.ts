@@ -45,11 +45,6 @@ const contactUs = [
     description: 'تفاصيل الرسالة',
   },
 ];
-// const AnnouncementsType = {
-//   title: string,
-//   startDate: string,
-//   endDate: string,
-// };
 const Announcements = [
   {
     title: 'تنبيه لسكان البرج الكرام: فصل الطاقة الشمسية على الساعة السابعة مساء اليوم',
@@ -93,5 +88,7 @@ const Advertisements = [
 
 ];
 
-export { Announcements, Advertisements,   complaints,
-  contactUs };
+export {
+  Announcements, Advertisements, complaints,
+  contactUs,
+};
