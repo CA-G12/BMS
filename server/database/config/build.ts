@@ -1,10 +1,10 @@
 import sequelize from './connection';
 import {
-  announcements, advertisements, bills, flats, services,
+  announcements, advertisements, services, bills, flats, complaints, contactUs,
 } from './fakeData';
 
 import {
-  Announcement, Advertisement, BillModel, FlatModel, ServiceModel,
+  Announcement, Advertisement, BillModel, FlatModel, ServiceModel, ComplaintsModel, ContactUsModel,
 } from '../../models/index';
 
 const insertDB = async () => {
@@ -15,6 +15,8 @@ const insertDB = async () => {
     await FlatModel.bulkCreate(flats);
     await BillModel.bulkCreate(bills);
     await ServiceModel.bulkCreate(services);
+    await ComplaintsModel.bulkCreate(complaints);
+    await ContactUsModel.bulkCreate(contactUs);
 
     // eslint-disable-next-line no-console
     console.log('Build Database Successfully');

@@ -41,6 +41,50 @@ const advertisements = [
 
 ];
 
+const complaints = [
+  {
+    title: 'شكوى رقم 1',
+    description: 'تفاصيل الشكوى',
+    is_solved: true,
+    user_id: 1,
+  },
+  {
+    title: 'شكوى رقم 2',
+    description: 'تفاصيل الشكوى',
+    is_solved: true,
+    user_id: 2,
+  },
+  {
+    title: 'شكوى رقم 3',
+    description: 'تفاصيل الشكوى',
+    is_solved: true,
+    user_id: 3,
+  },
+];
+
+const contactUs = [
+  {
+    name: 'محمد أمين',
+    email: 'examplegmail.com',
+    phone: '059200000',
+    subject: 'حارس عمارة',
+    description: 'تفاصيل الرسالة',
+  },
+  {
+    name: 'محمد أمين',
+    email: 'example@gmail.com',
+    phone: '059200000',
+    subject: 'حارس عمارة',
+    description: 'تفاصيل الرسالة',
+  },
+  {
+    name: 'محمد أمين',
+    email: 'example@gmail.com',
+    phone: '059200000',
+    subject: 'حارس عمارة',
+    description: 'تفاصيل الرسالة',
+  },
+];
 const services = [
   {
     name: 'خدمات عامة',
@@ -283,5 +327,5 @@ const flats = [
 ];
 
 export {
-  announcements, advertisements, services, bills, flats,
+  announcements, advertisements, services, bills, flats, complaints, contactUs,
 };
