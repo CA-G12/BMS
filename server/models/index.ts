@@ -1,32 +1,26 @@
+import PaymentModel from './Payment';
+import UserModel from './User';
 import FlatModel from './Flat';
-import Advertisement from './Advertisement';
-import Announcement from './Announcement';
+import AdvertisementModel from './Advertisement';
+import AnnouncementModel from './Announcement';
 import BillModel from './Bill';
 import ServiceModel from './Service';
 import ComplaintsModel from './Complaints';
 import ContactUsModel from './ContactUs';
 
-FlatModel.hasMany(BillModel, {
-});
+FlatModel.hasMany(BillModel);
+BillModel.belongsTo(FlatModel);
 
-BillModel.belongsTo(FlatModel, {
-  foreignKey: 'flat_id',
-});
+UserModel.hasMany(FlatModel);
+FlatModel.belongsTo(UserModel);
 
-// ComplaintsModel.hasMany(User, {
-// });
+BillModel.hasMany(PaymentModel);
+PaymentModel.belongsTo(BillModel);
 
-// User.belongsTo(ComplaintsModel, {
-//   foreignKey: 'user_id',
-// });
-
-// User.hasMany(FlatModel, {
-//   foreignKey: 'owner_id',
-// });
-// FlatModel.belongsTo(User, {
-//   foreignKey: 'owner_id',
-// });
+UserModel.hasMany(ComplaintsModel);
+ComplaintsModel.belongsTo(UserModel);
 
 export {
-  BillModel, FlatModel, ServiceModel, Announcement, Advertisement, ComplaintsModel, ContactUsModel,
+  PaymentModel, UserModel, BillModel, FlatModel, ServiceModel, AnnouncementModel,
+  AdvertisementModel, ComplaintsModel, ContactUsModel,
 };

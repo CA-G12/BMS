@@ -1,19 +1,23 @@
 import sequelize from './connection';
 import {
-  announcements, advertisements, services, bills, flats, complaints, contactUs,
+  announcements, advertisements, bills, flats, services, users, payments, complaints, contactUs,
 } from './fakeData';
 
 import {
-  Announcement, Advertisement, BillModel, FlatModel, ServiceModel, ComplaintsModel, ContactUsModel,
+  AnnouncementModel, AdvertisementModel, BillModel, FlatModel, ServiceModel, UserModel,
+  PaymentModel, ComplaintsModel, ContactUsModel,
 } from '../../models/index';
 
 const insertDB = async () => {
   try {
     await sequelize.sync({ force: true });
-    await Announcement.bulkCreate(announcements);
-    await Advertisement.bulkCreate(advertisements);
+    await AnnouncementModel.bulkCreate(announcements);
+    await AdvertisementModel.bulkCreate(advertisements);
+    await ServiceModel.bulkCreate(services);
+    await UserModel.bulkCreate(users);
     await FlatModel.bulkCreate(flats);
     await BillModel.bulkCreate(bills);
+    await PaymentModel.bulkCreate(payments);
     await ServiceModel.bulkCreate(services);
     await ComplaintsModel.bulkCreate(complaints);
     await ContactUsModel.bulkCreate(contactUs);

@@ -5,8 +5,8 @@ import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
 import {
-  ComplaintsModel, ContactUsModel,
-  Announcement, Advertisement, BillModel, FlatModel, ServiceModel,
+  AnnouncementModel, AdvertisementModel, BillModel, FlatModel, ServiceModel, UserModel,
+  PaymentModel, ComplaintsModel, ContactUsModel,
 } from './models';
 
 dotenv.config();
@@ -29,13 +29,23 @@ if (NODE_ENV === 'development') {
 // app.use('/api/v1', router);
 
 app.get('/announcements', async (req, res) => {
-  const data = await Announcement.findAll();
+  const data = await AnnouncementModel.findAll();
   res.json({ message: 'Announcements', data });
 });
 
 app.get('/advertisements', async (req, res) => {
-  const data = await Advertisement.findAll();
+  const data = await AdvertisementModel.findAll();
   res.json({ message: 'Advertisements', data });
+});
+
+app.get('/Users', async (req, res) => {
+  const data = await UserModel.findAll();
+  res.json({ message: 'Users', data });
+});
+
+app.get('/Payments', async (req, res) => {
+  const data = await PaymentModel.findAll();
+  res.json({ message: 'Payments', data });
 });
 
 app.get('/bill', async (req, res) => {

@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-const Advertisement = sequelize.define('Advertisements', {
+const Advertisement = sequelize.define('Advertisement', {
   id: {
     primaryKey: true,
     autoIncrement: true,
