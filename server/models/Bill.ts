@@ -11,6 +11,10 @@ const Bill = sequelize.define('Bill', {
     type: DataTypes.DECIMAL,
     allowNull: false,
   },
+  flat_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
   is_open: {
     type: DataTypes.BOOLEAN,
     allowNull: false,

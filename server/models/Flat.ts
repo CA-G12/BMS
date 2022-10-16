@@ -7,6 +7,10 @@ const Flat = sequelize.define('Flat', {
     primaryKey: true,
     autoIncrement: true,
   },
+  flat_number: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
   area: {
     type: DataTypes.DECIMAL,
     allowNull: false,
@@ -17,6 +21,10 @@ const Flat = sequelize.define('Flat', {
   },
   is_active: {
     type: DataTypes.BOOLEAN,
+    allowNull: false,
+  },
+  owner_id: {
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 
