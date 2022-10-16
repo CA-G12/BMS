@@ -6,7 +6,7 @@ import { join } from 'path';
 import morgan from 'morgan';
 import {
   ComplaintsModel, ContactUsModel,
-  Announcement, Advertisement, Bill, FlatModel, Service,
+  Announcement, Advertisement, BillModel, FlatModel, ServiceModel,
 } from './models';
 
 dotenv.config();
@@ -39,7 +39,7 @@ app.get('/advertisements', async (req, res) => {
 });
 
 app.get('/bill', async (req, res) => {
-  const data = await Bill.findAll();
+  const data = await BillModel.findAll();
   res.json({
     message: 'Bill',
     data,
@@ -52,7 +52,7 @@ app.get('/flat', async (req, res) => {
 });
 
 app.get('/service', async (req, res) => {
-  const data = await Service.findAll();
+  const data = await ServiceModel.findAll();
   res.json({ message: 'Service', data });
 });
 
