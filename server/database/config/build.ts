@@ -1,13 +1,13 @@
 import sequelize from './connection';
 import
 {
-  Announcements, Advertisements, Users, Reviews, Transactions,
+  Announcements, Advertisements, Users, Reviews, Payments,
 }
   from './fakeData';
 
 import {
-  Announcement, Advertisement, Review, User, Transaction,
-} from '../../models/index';
+  Announcement, Advertisement, Review, User, Payment,
+} from '../../models';
 
 const insertDB = async () => {
   try {
@@ -16,15 +16,7 @@ const insertDB = async () => {
     await Advertisement.bulkCreate(Advertisements);
     await User.bulkCreate(Users);
     await Review.bulkCreate(Reviews);
-    await Transaction.bulkCreate(Transactions);
-
-    // Relaships
-    Transaction.hasOne(User, {
-      foreignKey: 'user_id',
-    });
-    Review.hasOne(User, {
-      foreignKey: 'user_id',
-    });
+    await Payment.bulkCreate(Payments);
 
     // eslint-disable-next-line no-console
     console.log('Build Database Successfully');

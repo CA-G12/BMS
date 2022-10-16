@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
 import {
-  Announcement, Advertisement, User, Transaction, Review,
+  Announcement, Advertisement, User, Payment, Review,
 } from './models';
 
 dotenv.config();
@@ -42,9 +42,9 @@ app.get('/Users', async (req, res) => {
   res.json({ message: 'Users', data });
 });
 
-app.get('/Transactions', async (req, res) => {
-  const data = await Transaction.findAll();
-  res.json({ message: 'Transactions', data });
+app.get('/Payments', async (req, res) => {
+  const data = await Payment.findAll();
+  res.json({ message: 'Payments', data });
 });
 
 app.get('/Reviews', async (req, res) => {

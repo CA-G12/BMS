@@ -3,8 +3,8 @@ import {
 } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-const Transaction = sequelize.define(
-  'Processes',
+const Payment = sequelize.define(
+  'Payments',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -26,4 +26,4 @@ const Transaction = sequelize.define(
   },
 );
 
-export default Transaction;
+export default Payment;

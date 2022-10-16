@@ -1,6 +1,19 @@
-export { default as Transaction } from './Transaction';
-export { default as Review } from './Review';
-export { default as User } from './User';
+import Payment from './Payment';
+import Review from './Review';
+import User from './User';
+import Announcement from './Announcement';
+import Advertisement from './Advertisement';
 
-export { default as Announcement } from './Announcement';
-export { default as Advertisement } from './Advertisement';
+Payment.hasOne(User, {
+  foreignKey: 'user_id',
+});
+User.belongsTo(Payment);
+
+Review.hasOne(User, {
+  foreignKey: 'user_id',
+});
+User.belongsTo(Review);
+
+export {
+  Payment, Review, User, Announcement, Advertisement,
+};
