@@ -4,18 +4,21 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
+import { clientError, serverError } from './middleware';
 import {
   AnnouncementModel, AdvertisementModel, BillModel, FlatModel, ServiceModel, UserModel,
   PaymentModel, ComplaintsModel, ContactUsModel,
 } from './models';
 
-dotenv.config();
 
-const app = express();
+dotenv.config();
 
 const {
   env: { PORT, NODE_ENV },
 } = process;
+
+const app = express();
+app.set('port', PORT || 5000);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -82,5 +85,8 @@ if (NODE_ENV === 'production') {
   });
 }
 
-app.set('port', PORT || 5000);
+app.use(clientError);
+app.use(serverError);
+
+
 export default app;
