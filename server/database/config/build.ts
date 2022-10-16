@@ -4,7 +4,7 @@ import {
 } from './fakeData';
 
 import {
-  Announcement, Advertisement, BillModule, FlatModule, ServiceModule,
+  Announcement, Advertisement, BillModel, FlatModel, ServiceModel,
 } from '../../models/index';
 
 const insertDB = async () => {
@@ -12,13 +12,14 @@ const insertDB = async () => {
     await sequelize.sync({ force: true });
     await Announcement.bulkCreate(announcements);
     await Advertisement.bulkCreate(advertisements);
-    await FlatModule.bulkCreate(flats);
-    await BillModule.bulkCreate(bills);
-    await ServiceModule.bulkCreate(services);
+    await FlatModel.bulkCreate(flats);
+    await BillModel.bulkCreate(bills);
+    await ServiceModel.bulkCreate(services);
 
     // eslint-disable-next-line no-console
     console.log('Build Database Successfully');
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log('Build Database Failed', err);
   }
 };

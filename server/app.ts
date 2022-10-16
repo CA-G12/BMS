@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
 import {
-  Announcement, Advertisement, BillModule, FlatModule, ServiceModule,
+  Announcement, Advertisement, BillModel, FlatModel, ServiceModel,
 } from './models';
 
 dotenv.config();
@@ -38,7 +38,7 @@ app.get('/advertisements', async (req, res) => {
 });
 
 app.get('/bill', async (req, res) => {
-  const data = await BillModule.findAll();
+  const data = await BillModel.findAll();
   res.json({
     message: 'Bill',
     data,
@@ -46,12 +46,12 @@ app.get('/bill', async (req, res) => {
 });
 
 app.get('/flat', async (req, res) => {
-  const data = await FlatModule.findAll();
+  const data = await FlatModel.findAll();
   res.json({ message: 'Flat', data });
 });
 
 app.get('/service', async (req, res) => {
-  const data = await ServiceModule.findAll();
+  const data = await ServiceModel.findAll();
   res.json({ message: 'Service', data });
 });
 

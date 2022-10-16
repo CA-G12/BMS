@@ -1,24 +1,24 @@
-import FlatModule from './Flat';
+import FlatModel from './Flat';
 import Advertisement from './Advertisement';
 import Announcement from './Announcement';
-import BillModule from './Bill';
-import ServiceModule from './Service';
+import BillModel from './Bill';
+import ServiceModel from './Service';
 
-FlatModule.hasMany(BillModule, {
+FlatModel.hasMany(BillModel, {
   foreignKey: 'flat_id',
 });
 
-BillModule.belongsTo(FlatModule, {
+BillModel.belongsTo(FlatModel, {
   foreignKey: 'flat_id',
 });
 
-// User.hasMany(FlatModule, {
+// User.hasMany(FlatModel, {
 //   foreignKey: 'owner_id',
 // });
-// FlatModule.belongsTo(User, {
+// FlatModel.belongsTo(User, {
 //   foreignKey: 'owner_id',
 // });
 
 export {
-  BillModule, FlatModule, ServiceModule, Announcement, Advertisement,
+  BillModel, FlatModel, ServiceModel, Announcement, Advertisement,
 };

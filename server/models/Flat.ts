@@ -23,11 +23,6 @@ const Flat = sequelize.define('Flat', {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
-  owner_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-
 });
 
 export default Flat;
