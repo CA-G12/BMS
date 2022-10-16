@@ -43,20 +43,20 @@ const advertisements = [
 
 const complaints = [
   {
-    title: 'فاتورة رقم 1',
-    description: 'تفاصيل الفاتورة',
+    title: 'شكوى رقم 1',
+    description: 'تفاصيل الشكوى',
     is_solved: true,
     user_id: 1,
   },
   {
-    title: 'فاتورة رقم 2',
-    description: 'تفاصيل الفاتورة',
+    title: 'شكوى رقم 2',
+    description: 'تفاصيل الشكوى',
     is_solved: true,
     user_id: 2,
   },
   {
-    title: 'فاتورة رقم 3',
-    description: 'تفاصيل الفاتورة',
+    title: 'شكوى رقم 3',
+    description: 'تفاصيل الشكوى',
     is_solved: true,
     user_id: 3,
   },
@@ -65,22 +65,22 @@ const complaints = [
 const contactUs = [
   {
     name: 'محمد أمين',
-    email: 'تفاصيل الفاتورة',
-    phone: '000-000-000',
+    email: 'examplegmail.com',
+    phone: '059200000',
     subject: 'حارس عمارة',
     description: 'تفاصيل الرسالة',
   },
   {
     name: 'محمد أمين',
-    email: 'تفاصيل الفاتورة',
-    phone: '000-000-000',
+    email: 'example@gmail.com',
+    phone: '059200000',
     subject: 'حارس عمارة',
     description: 'تفاصيل الرسالة',
   },
   {
     name: 'محمد أمين',
-    email: 'تفاصيل الفاتورة',
-    phone: '000-000-000',
+    email: 'example@gmail.com',
+    phone: '059200000',
     subject: 'حارس عمارة',
     description: 'تفاصيل الرسالة',
   },

@@ -7,12 +7,18 @@ import ComplaintsModel from './Complaints';
 import ContactUsModel from './ContactUs';
 
 FlatModel.hasMany(BillModel, {
-  foreignKey: 'flat_id',
 });
 
 BillModel.belongsTo(FlatModel, {
   foreignKey: 'flat_id',
 });
+
+// ComplaintsModel.hasMany(User, {
+// });
+
+// User.belongsTo(ComplaintsModel, {
+//   foreignKey: 'user_id',
+// });
 
 // User.hasMany(FlatModel, {
 //   foreignKey: 'owner_id',

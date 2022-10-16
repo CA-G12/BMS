@@ -17,6 +17,9 @@ const ContactUsModel = sequelize.define(
     email: {
       type: DataTypes.STRING,
       allowNull: true,
+      validate: {
+        isEmail: true,
+      },
     },
     phone: {
       type: DataTypes.STRING,
