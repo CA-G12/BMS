@@ -122,19 +122,19 @@ const complaints = [
     title: 'شكوى رقم 1',
     description: 'تفاصيل الشكوى',
     is_solved: true,
-    user_id: 1,
+    UserId: 1,
   },
   {
     title: 'شكوى رقم 2',
     description: 'تفاصيل الشكوى',
     is_solved: true,
-    user_id: 2,
+    UserId: 2,
   },
   {
     title: 'شكوى رقم 3',
     description: 'تفاصيل الشكوى',
     is_solved: true,
-    user_id: 3,
+    UserId: 3,
   },
 ];
 

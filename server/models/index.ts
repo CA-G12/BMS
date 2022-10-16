@@ -17,6 +17,9 @@ FlatModel.belongsTo(UserModel);
 BillModel.hasMany(PaymentModel);
 PaymentModel.belongsTo(BillModel);
 
+UserModel.hasMany(ComplaintsModel);
+ComplaintsModel.belongsTo(UserModel);
+
 export {
   PaymentModel, UserModel, BillModel, FlatModel, ServiceModel, AnnouncementModel,
   AdvertisementModel, ComplaintsModel, ContactUsModel,
