@@ -5,7 +5,7 @@ const users = [
     last_name: 'سعيد',
     email: 'jcotte0@people.com.cn',
     phone_number: '0591000100',
-    roles: 'admin',
+    role: 'admin',
     hased_password: '$2y$10$MKpnqAAinu5wjl/MYRc3U.XApWTaEexvI4DMaJA.XZTou5lvpSPfu',
   },
   {
@@ -14,7 +14,7 @@ const users = [
     last_name: 'عمر',
     email: 'gbelt1@thetimes.co.uk',
     phone_number: '0591000200',
-    roles: 'user',
+    role: 'user',
     hased_password: '$2y$10$ROMcXqVNwbepoV6ZdTsTa.6/iego9a72vzSK70pF/S8Oxe/y8tLeO',
   },
   {
@@ -23,7 +23,7 @@ const users = [
     last_name: 'عبد الله',
     email: 'tlobe2@angelfire.com',
     phone_number: '498-722-9258',
-    roles: 'user',
+    role: 'user',
     hased_password: '$2y$10$NrRa5y454oIukcfU/iNDruP2iEJPm9UGlHqyhZiyd5mY1fy2vULkG',
   },
   {
@@ -32,7 +32,7 @@ const users = [
     last_name: 'محمد',
     email: 'mgravey3@slideshare.net',
     phone_number: '172-408-5906',
-    roles: 'user',
+    role: 'user',
     hased_password: '$2y$10$dOSPYdqciJCM9U10HiWtCOg9j6jpMD69rMPV/2LI/dDL4SxLATkNG',
   },
   {
@@ -41,7 +41,7 @@ const users = [
     last_name: 'سليم',
     email: 'cscogin4@nytimes.com',
     phone_number: '910-220-7086',
-    roles: 'user',
+    role: 'user',
     hased_password: '$2y$10$6Y1AcLQDLM7vSSu1A5dj9e61YgCFACEXoBP3NxJ4qX/1SeUUXLFtm',
   },
 ];
