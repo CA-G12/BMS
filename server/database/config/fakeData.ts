@@ -51,19 +51,19 @@ const payments = [
     title: 'دفع فاتورة',
     description:
       'لقد قمت بدفع فاتورة بقيمة 80 شيكل',
-    user_id: 4,
+    BillId: 4,
   },
   {
     title: 'دفع فاتورة',
     description:
       'لقد قمت بدفع فاتورة بقيمة 70 شيكل',
-    user_id: 3,
+    BillId: 3,
   },
   {
     title: 'دفع فاتورة',
     description:
       'لقد قمت بدفع فاتورة بقيمة 90 شيكل',
-    user_id: 5,
+    BillId: 1,
   },
 ];
 
@@ -158,7 +158,7 @@ const services = [
 const bills = [
   {
     total_price: 315,
-    flat_id: 1,
+    FlatId: 1,
     is_open: true,
     services: [
       {
@@ -200,7 +200,7 @@ const bills = [
   },
   {
     total_price: 370,
-    flat_id: 2,
+    FlatId: 2,
     is_open: true,
     services: [
       {
@@ -242,7 +242,7 @@ const bills = [
   },
   {
     total_price: 255,
-    flat_id: 3,
+    FlatId: 3,
     is_open: true,
     services: [
       {
@@ -284,7 +284,7 @@ const bills = [
   },
   {
     total_price: 355,
-    flat_id: 4,
+    FlatId: 4,
     is_open: true,
     services: [
       {
@@ -333,28 +333,28 @@ const flats = [
     area: 180,
     notes: 'شقة غربية',
     is_active: true,
-    owner_id: 1,
+    UserId: 1,
   },
   {
     flat_number: 102,
     area: 160,
     notes: 'شقة جنوبية',
     is_active: true,
-    owner_id: 2,
+    UserId: 2,
   },
   {
     flat_number: 103,
     area: 120,
     notes: 'شقة شرقية',
     is_active: true,
-    owner_id: 3,
+    UserId: 3,
   },
   {
     flat_number: 104,
     area: 180,
     notes: 'شقة شمالية',
     is_active: true,
-    owner_id: 4,
+    UserId: 4,
   },
 ];
 

@@ -13,11 +13,11 @@ const insertDB = async () => {
     await sequelize.sync({ force: true });
     await AnnouncementModel.bulkCreate(announcements);
     await AdvertisementModel.bulkCreate(advertisements);
+    await ServiceModel.bulkCreate(services);
     await UserModel.bulkCreate(users);
-    await PaymentModel.bulkCreate(payments);
     await FlatModel.bulkCreate(flats);
     await BillModel.bulkCreate(bills);
-    await ServiceModel.bulkCreate(services);
+    await PaymentModel.bulkCreate(payments);
 
     // eslint-disable-next-line no-console
     console.log('Build Database Successfully');

@@ -6,27 +6,14 @@ import AnnouncementModel from './Announcement';
 import BillModel from './Bill';
 import ServiceModel from './Service';
 
-FlatModel.hasMany(BillModel, {
-  foreignKey: 'flat_id',
-});
+FlatModel.hasMany(BillModel);
+BillModel.belongsTo(FlatModel);
 
-BillModel.belongsTo(FlatModel, {
-  foreignKey: 'flat_id',
-});
+UserModel.hasMany(FlatModel);
+FlatModel.belongsTo(UserModel);
 
-UserModel.hasMany(FlatModel, {
-  foreignKey: 'owner_id',
-});
-FlatModel.belongsTo(UserModel, {
-  foreignKey: 'owner_id',
-});
-
-UserModel.hasMany(PaymentModel, {
-  foreignKey: 'user_id',
-});
-PaymentModel.belongsTo(UserModel, {
-  foreignKey: 'user_id',
-});
+BillModel.hasMany(PaymentModel);
+PaymentModel.belongsTo(BillModel);
 
 export {
   PaymentModel, UserModel, BillModel, FlatModel, ServiceModel, AnnouncementModel,
