@@ -32,7 +32,7 @@ const User = sequelize.define(
       allowNull: false,
     },
     roles: {
-      type: DataTypes.ENUM('ADMIN', 'USER'),
+      type: DataTypes.ENUM('admin', 'user'),
       allowNull: false,
     },
     hased_password: {
