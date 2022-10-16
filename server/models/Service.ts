@@ -18,7 +18,6 @@ const Service = sequelize.define('Service', {
   is_fixed: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
-
   },
   description: {
     type: DataTypes.STRING,

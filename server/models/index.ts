@@ -1,9 +1,9 @@
 import Advertisement from './Advertisement';
 import Announcement from './Announcement';
-import Bill from './Bill';
-import Flat from './Flat';
-import Service from './Service';
+import BillModule from './Bill';
+import FlatModule from './Flat';
+import ServiceModule from './Service';
 
 export {
-  Bill, Flat, Service, Announcement, Advertisement,
+  BillModule, FlatModule, ServiceModule, Announcement, Advertisement,
 };

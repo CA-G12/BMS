@@ -48,16 +48,23 @@ const Advertisements = [
 
 const Services = [
   {
+    name: 'خدمات عامة',
+    price: 100,
+    is_fixed: true,
+    description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+    is_open: true,
+  },
+  {
     name: 'مياه صحية',
     price: 50,
-    is_fixed: true,
+    is_fixed: false,
     description: 'مياه صحية على مدار 24 ساعة',
     is_open: true,
   },
   {
     name: 'مياه حلوة',
     price: 20,
-    is_fixed: true,
+    is_fixed: false,
     description: 'مياه حلوة صالحة للشرب',
     is_open: true,
   },
@@ -68,26 +75,141 @@ const Services = [
     description: 'يتم قراءة عداد الكهرباء كل شهر',
     is_open: true,
   },
+  {
+    name: 'مصف سيارات',
+    price: 25,
+    is_fixed: true,
+    description: 'مصف سيارات لسكان البرج',
+    is_open: true,
+  },
 ];
 
 const Bills = [
   {
-    total_price: 130,
+    total_price: 315,
     flat_id: 101,
     is_open: true,
-    services: ['كهرباء', 'مياه صحية', 'مياه حلوة'],
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        is_fixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        is_open: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 50,
+        is_fixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        is_open: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 20,
+        is_fixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        is_open: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 120,
+        is_fixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        is_open: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        is_fixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        is_open: true,
+      },
+    ],
   },
   {
-    total_price: 200,
+    total_price: 370,
     flat_id: 102,
     is_open: true,
-    services: ['كهرباء', 'مياه صحية', 'مياه حلوة'],
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        is_fixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        is_open: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 70,
+        is_fixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        is_open: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 15,
+        is_fixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        is_open: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 160,
+        is_fixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        is_open: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        is_fixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        is_open: true,
+      },
+    ],
   },
   {
-    total_price: 100,
+    total_price: 255,
     flat_id: 103,
     is_open: true,
-    services: ['كهرباء', 'مياه صحية', 'مياه حلوة'],
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        is_fixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        is_open: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 40,
+        is_fixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        is_open: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 10,
+        is_fixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        is_open: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 80,
+        is_fixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        is_open: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        is_fixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        is_open: true,
+      },
+    ],
   },
 ];
 
@@ -109,6 +231,12 @@ const Flats = [
     notes: 'شقة شرقية',
     is_active: true,
     owner_id: 3,
+  },
+  {
+    area: 180,
+    notes: 'شقة شمالية',
+    is_active: true,
+    owner_id: 4,
   },
 ];
 

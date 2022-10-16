@@ -13,16 +13,13 @@ const Flat = sequelize.define('Flat', {
   },
   notes: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   is_active: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
-  owner_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
+
 });
 
 export default Flat;
