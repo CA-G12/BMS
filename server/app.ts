@@ -9,7 +9,7 @@ import {
   AnnouncementModel, AdvertisementModel, BillModel, FlatModel, ServiceModel, UserModel,
   PaymentModel, ComplaintsModel, ContactUsModel,
 } from './models';
-
+import router from './routes';
 
 dotenv.config();
 
@@ -36,10 +36,11 @@ app.get('/announcements', async (req, res) => {
   res.json({ message: 'Announcements', data });
 });
 
-app.get('/advertisements', async (req, res) => {
-  const data = await AdvertisementModel.findAll();
-  res.json({ message: 'Advertisements', data });
-});
+app.use(router);
+// app.get('/advertisements', async (req, res) => {
+//   const data = await AdvertisementModel.findAll();
+//   res.json({ message: 'Advertisements', data });
+// });
 
 app.get('/Users', async (req, res) => {
   const data = await UserModel.findAll();
@@ -87,6 +88,5 @@ if (NODE_ENV === 'production') {
 
 app.use(clientError);
 app.use(serverError);
-
 
 export default app;

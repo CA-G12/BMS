@@ -2,8 +2,7 @@
 import { Router } from 'express';
 import { getAdvertisements } from '../controllers/user';
 
-const router = Router();
-router.use(getAdvertisements);
+const userRouter = Router();
 
-export default router;
-
+userRouter.get('api/v1/advertisements/', getAdvertisements);
+module.exports = userRouter;
