@@ -19,7 +19,7 @@ const FlatCard: React.FC<FlatCardProps> = ({ info }) => (
     cover={<img alt="example" src="https://images.pexels.com/photos/7534561/pexels-photo-7534561.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />}
   >
     <div className="iconsAndArea">
-      <p className="area">{info.area}</p>
+      <p className="area">{`$ ${info.area}`}</p>
       <div className="icons">
         <i className="ri-chat-1-fill" />
         <PhoneOutlined />

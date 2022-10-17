@@ -1,5 +1,5 @@
-import { FlatCard, FlatContainer } from './landingPage';
+import { FlatCard, FlatContainer, VideoSection } from './landingPage';
 
 export {
-  FlatCard, FlatContainer,
+  FlatCard, FlatContainer, VideoSection,
 };

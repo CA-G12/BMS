@@ -3,7 +3,7 @@
   justify-content: space-evenly;
 }
 .ant-card-cover img {
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px !important;
 }
 
 .flatCard img {
@@ -32,10 +32,13 @@
 }
 .firstP {
   color: #546681;
+  text-align: right;
 }
 .secondeP {
   color: #99a2b3;
+  text-align: right;
 }
+
 .details {
   display: flex;
   justify-content: space-between;
@@ -49,7 +52,7 @@
 }
 .flatContainer .flatCard {
   margin-bottom: 50px;
-  border-radius: 10px;
+  border-radius: 10px ;
 
 }
 .flatCard .ant-card-body .btn {
@@ -74,4 +77,9 @@
 .flatContainerComponent p {
   color : #99A2B3;
 
+}
+
+.videoSection .video {
+  width: 100% !important;
+  height: 435px !important;
 }
