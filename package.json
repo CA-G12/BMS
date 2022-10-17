@@ -10,7 +10,7 @@
     "test": "cross-env NODE_ENV=test jest -i",
     "build": "tsc -p .",
     "heroku-postbuild": "npm run build && cd client/ && npm i && npm run build",
-    "db:seed": "cross-env NODE_ENV=development ts-node server/database/config/build.ts",
+    "db:seed": "cross-env SEED=true NODE_ENV=development ts-node server/database/config/build.ts",
     "eslint:fix": "eslint --fix",
     "lint": "eslint --ext .ts server/ && eslint --ext .tsx client/src/"
   },

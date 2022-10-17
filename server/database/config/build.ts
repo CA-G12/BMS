@@ -29,5 +29,8 @@ const insertDB = async () => {
     console.log('Build Database Failed', err);
   }
 };
-insertDB();
+if (process.env.SEED) {
+  insertDB();
+}
+
 export default insertDB;
