@@ -1,0 +1,77 @@
+.flatContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ant-card-cover img {
+  border-radius: 10px;
+}
+
+.flatCard img {
+    height: 222px;
+}
+.iconsAndArea {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconsAndArea .icons i {
+  padding: 0px 3px;
+  color: #546681;
+}
+
+.iconsAndArea .area {
+  color: #5138ec;
+}
+.oneDetail {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.oneDetail p {
+  padding: 0px 3px;
+}
+.firstP {
+  color: #546681;
+}
+.secondeP {
+  color: #99a2b3;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details .oneDetail i {
+  color: #5138ec;
+}
+.details .oneDetail p {
+  color: #666666;
+}
+.flatContainer .flatCard {
+  margin-bottom: 50px;
+  border-radius: 10px;
+
+}
+.flatCard .ant-card-body .btn {
+  background-color: #5138ec;
+  width: 120px;
+  border-radius: 3px;
+  margin-top: 8px;
+
+}
+
+.flatContainerComponent {
+  background-color: #F6F8FA;
+  text-align: center;
+}
+
+.flatContainerComponent h2 {
+  color: #546681;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+.flatContainerComponent p {
+  color : #99A2B3;
+
+}

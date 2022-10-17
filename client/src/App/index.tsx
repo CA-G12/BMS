@@ -1,14 +1,13 @@
 import { FC } from 'react';
 import './style.css';
-import { Button } from 'antd';
-import { LeftSquareOutlined } from '@ant-design/icons';
+import 'remixicon/fonts/remixicon.css';
 
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css';
+import { FlatContainer } from '../components';
 
 const App: FC = () => (
   <div className="App">
-    <Button type="primary">Button</Button>
-    <LeftSquareOutlined />
+    <FlatContainer />
   </div>
 );
 
