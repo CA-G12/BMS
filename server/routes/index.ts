@@ -1,9 +1,8 @@
-/* eslint-disable import/no-import-module-exports */
 import { Router } from 'express';
-import { getAdvertisements } from '../controllers/user';
+import adsRouter from './adsRouter';
 
 const router = Router();
-router.use(getAdvertisements);
+
+router.use('/advertisements', adsRouter);
 
 export default router;
-
