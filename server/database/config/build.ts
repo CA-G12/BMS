@@ -30,3 +30,4 @@ const insertDB = async () => {
   }
 };
 insertDB();
+export default insertDB;
