@@ -30,7 +30,7 @@ const App: React.FC<AdProps> = ({ info }) => (
             borderRadius: '5px',
           }}
         >
-          انقر هنا
+          انقر للمزيد
         </Button>,
       ]}
     >
