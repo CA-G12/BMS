@@ -9,7 +9,7 @@ const { Content } = Layout;
 
 const App: React.FC = () => (
   <Layout style={{ backgroundColor: '#FFFFFF' }}>
-    <Title>تعرف عليينا</Title>
+    <Title>تعرف علينا</Title>
     <Content
       style={{
         padding: '16px 100px', display: 'flex', gap: 100, width: 1500,
@@ -18,7 +18,7 @@ const App: React.FC = () => (
       <Paragraph
         style={{
           width: 700,
-          paddingRight: 150,
+          paddingRight: 100,
           float: 'right',
           paddingTop: 16,
           fontSize: 'large',
@@ -26,7 +26,7 @@ const App: React.FC = () => (
         }}
       >
         سلسلة أبراج الحساينة هوم , هو سلسلة من المباني تأسست عام 2009 سلسلة
-        أبراج الحساينة هوم , هو سلسلة من المباني تأسست عام 2009 سلسلة أبراج
+        أبراج الحساينة هوم, وهي سلسلة , هو سلسلة من المباني تأسست عام 2009 سلسلة أبراج
         الحساينة هوم , هو سلسلة من المباني تأسست عام 2009 سلسلة أبراج الحساينة
         هوم , هو سلسلة من المباني تأسست عام 2009 سلسلة أبراج الحساينة هوم , هو
         سلسلة من المباني تأسست عام 2009 سلسلة أبراج الحساينة هوم , هو سلسلة من
