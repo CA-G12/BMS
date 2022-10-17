@@ -1,18 +1,16 @@
 import {
-  Button, Form, Input, ConfigProvider, Layout,
+  Button, Form, Input, Layout, Image,
 } from 'antd';
-import 'antd/dist/antd.css';
 import './style.css';
-import React from 'react';
 import { Title } from './index';
 
+const { Content } = Layout;
 const { Item } = Form;
 
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 16 },
 };
-const { Content } = Layout;
 
 const ContactUs: React.FC = () => {
   const onFinish = (values: object) => {
@@ -21,7 +19,6 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-  // eslint-disable-next-line max-len
     <Layout style={{ backgroundColor: '#fff', margin: '0 115px' }}>
       <Title>تواصل معنا</Title>
       <Content
@@ -31,20 +28,27 @@ const ContactUs: React.FC = () => {
       >
         <div className="services">
           <Form {...layout} name="nest-messages" onFinish={onFinish}>
-            <Item name={['user', 'name']} label="الاسم" rules={[{ required: true }]}>
-              <Input />
+            <Item name="name" label="الاسم" rules={[{ required: true }]}>
+              <Input placeholder="الاسم" />
             </Item>
-            <Item name={['user', 'email']} label="الايميل" rules={[{ type: 'email' }]}>
-              <Input />
+            <Item
+              name="email"
+              label="البريد الإلكتروني"
+              rules={[{ required: true, type: 'email', message: 'يرجى إدخال بريد إلكتروني صحيح' }]}
+            >
+              <Input placeholder="البريد الإلكتروني" />
             </Item>
-            <Item name={['user', 'phone']} label="رقم الجوال" rules={[{ required: true }]}>
-              <Input />
+            <Item name="phone" label="رقم الجوال" rules={[{ required: true }]}>
+              <Input
+                type="tel"
+                placeholder="رقم الجوال"
+              />
             </Item>
-            <Item name={['user', 'address']} label="العنوان" rules={[{ required: true }]}>
-              <Input />
+            <Item name="subject" label="الموضوع" rules={[{ required: true }]}>
+              <Input placeholder="موضوع الرسالة" />
             </Item>
-            <Item name={['user', 'message']} label="الرسالة" rules={[{ required: true }]}>
-              <Input.TextArea />
+            <Item name="message" label="الرسالة" rules={[{ required: true }]}>
+              <Input.TextArea placeholder="أدخل رسالتك هنا" />
             </Item>
             <Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
               <Button type="primary" htmlType="submit">
@@ -54,7 +58,11 @@ const ContactUs: React.FC = () => {
           </Form>
 
           <div className="img img-contact">
-            <img src="https://images.pexels.com/photos/38271/ipad-map-tablet-internet-38271.jpeg" alt="contact" />
+            <Image
+              preview={false}
+              src="https://images.pexels.com/photos/38271/ipad-map-tablet-internet-38271.jpeg"
+              alt="contact"
+            />
           </div>
         </div>
       </Content>

@@ -30,19 +30,20 @@ ul.ant-timeline.ant-timeline-right.ant-timeline-rtl {
     font-size: 18px;
 }
 
-.ant-form-rtl .ant-form-item-label {
+.services .ant-form-rtl .ant-form-item-label {
+    margin: 0 20px;
     text-align: right;
 }
 
-.ant-form {
+.services .ant-form {
     width: 100%;
     background: #F6F8FA;
     padding: 16px;
     border-radius: 0.5rem;
 }
-.ant-col-8 {
+.services .ant-col-8 {
     flex: 0 0 20.333333%;
 }
-.ant-col-offset-8.ant-col-rtl {
+.services .ant-col-offset-8 .ant-col-rtl {
     margin-right: 20.333333%;
 }
