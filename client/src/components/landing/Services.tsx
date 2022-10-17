@@ -1,7 +1,4 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-tabs */
 /* eslint-disable max-len */
-import { ClockCircleOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import './style.css';
 import { Timeline, ConfigProvider, Layout } from 'antd';
@@ -23,7 +20,8 @@ const Services: React.FC = () => (
         <div className="services">
           <Timeline mode="right">
             {
-              DataStatic.map((x, i) => <Timeline.Item key={i}>{x.content}</Timeline.Item>)
+              DataStatic.map((x) => (
+                <Timeline.Item key={x.id}>{x.content}</Timeline.Item>))
             }
           </Timeline>
 

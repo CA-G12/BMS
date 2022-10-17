@@ -39,8 +39,9 @@ module.exports = {
     ],
     "rules": {
         "linebreak-style": 0,
-        "max-len": ["error", { "code": 80 }],
-        "react/function-component-definition": [2, {"namedComponents": "arrow-function",  "unnamedComponents": "arrow-function"}]
+        "max-len": ["error", { "code": 120 }],
+        "react/function-component-definition": [2, {"namedComponents": "arrow-function",  "unnamedComponents": "arrow-function"}],
+        "react/jsx-props-no-spreading": [0]
 
     }
 }

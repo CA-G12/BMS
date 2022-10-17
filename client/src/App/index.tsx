@@ -10,3 +10,5 @@ const App: FC = () => (
     <LandingPage />
   </div>
 );
+
+export default App;
