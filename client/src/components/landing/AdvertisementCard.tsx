@@ -4,9 +4,9 @@ import React from 'react';
 const { Meta } = Card;
 type AdsType = {
   id:number;
-  img: string;
+  image: string;
   title: string;
-  des: string;
+  description: string;
 };
   type AdProps = { info:AdsType };
 const App: React.FC<AdProps> = ({ info }) => (
@@ -19,7 +19,7 @@ const App: React.FC<AdProps> = ({ info }) => (
         <img
           style={{ height: 200 }}
           alt="Advertisement"
-          src={info.img}
+          src={info.image}
         />
           )}
       actions={[
@@ -37,7 +37,7 @@ const App: React.FC<AdProps> = ({ info }) => (
       <Meta
         style={{ height: 120 }}
         title={info.title}
-        description={info.des}
+        description={info.description}
       />
     </Card>
   </Col>
