@@ -1,6 +1,6 @@
 import React from 'react';
 
-const App: React.FC <any> = ({ children }) => (
+const Title: React.FC <any> = ({ children }) => (
   <h1
     style={{
       fontSize: 'x-large',
@@ -13,4 +13,4 @@ const App: React.FC <any> = ({ children }) => (
     {children}
   </h1>
 );
-export default App;
+export default Title;

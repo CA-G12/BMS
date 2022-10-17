@@ -9,7 +9,7 @@ type AdsType = {
   description: string;
 };
   type AdProps = { info:AdsType };
-const App: React.FC<AdProps> = ({ info }) => (
+const AdvertisementCard: React.FC<AdProps> = ({ info }) => (
 // export default function App({ info } : AdProps) {
 //   return (
   <Col span={8}>
@@ -42,4 +42,4 @@ const App: React.FC<AdProps> = ({ info }) => (
     </Card>
   </Col>
 );
-export default App;
+export default AdvertisementCard;

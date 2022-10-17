@@ -7,7 +7,7 @@ const { Paragraph } = Typography;
 
 const { Content } = Layout;
 
-const App: React.FC = () => (
+const AboutUs: React.FC = () => (
   <Layout style={{ backgroundColor: '#FFFFFF' }}>
     <Title>تعرف علينا</Title>
     <Content
@@ -43,4 +43,4 @@ const App: React.FC = () => (
     </Content>
   </Layout>
 );
-export default App;
+export default AboutUs;

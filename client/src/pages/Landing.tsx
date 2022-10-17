@@ -1,11 +1,11 @@
 import React from 'react';
 import { AboutUs, AdsContainer } from '../components/landing';
 
-const App: React.FC = () => (
+const LandingPage: React.FC = () => (
   <>
     <AboutUs />
     <AdsContainer />
   </>
 );
 
-export default App;
+export default LandingPage;

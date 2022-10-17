@@ -1,8 +1,9 @@
 /* eslint-disable max-len */
-import { Row } from 'antd';
+import { Row, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AdvertisementCard from './AdvertisementCard';
+import { Title } from './index';
 
 type AdsType = {
   id: number;
@@ -11,42 +12,31 @@ type AdsType = {
   description: string;
 };
 
-const App: React.FC = () => {
+const AdsContainer: React.FC = () => {
   const [Advertisement, setAvertisement] = useState<Array<AdsType> | null>([]);
   const fetchData = async () => {
     try {
       const { data } = await axios.get('api/v1/advertisements/');
       return data;
     } catch (err) {
-      console.log(err);
+      message.error('حدث خطأ ما');
     }
   };
   useEffect(() => {
     (async () => {
       try {
         const data = await fetchData();
-        console.log(data);
         setAvertisement(data.data);
       } catch (err) {
-        console.log(err);
+        message.error('حدث خطأ ما');
       }
     })();
   }, []);
-  console.log(Advertisement);
 
   return (
     <div style={{ backgroundColor: '#F6F8FA', paddingBottom: 30 }}>
-      <h1
-        style={{
-          fontSize: 'x-large',
-          padding: '16px',
-          textAlign: 'center',
-          color: '#475E6B',
-          fontWeight: 'bolder',
-        }}
-      >
-        الإعلانات
-      </h1>
+      <Title>الإعلانات </Title>
+
       <div
         className="site-card-wrapper"
         style={{ padding: '16px 200px', textAlign: 'center' }}
@@ -61,4 +51,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default AdsContainer;
