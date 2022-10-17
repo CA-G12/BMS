@@ -14,23 +14,16 @@ type AdsType = {
 
 const AdsContainer: React.FC = () => {
   const [Advertisement, setAvertisement] = useState<Array<AdsType> | null>([]);
-  const fetchData = async () => {
-    try {
-      const { data } = await axios.get('api/v1/advertisements/');
-      return data;
-    } catch (err) {
-      message.error('حدث خطأ ما');
-    }
+
+  const fetchData = () => {
+    axios.get('api/v1/advertisements/')
+      .then(({ data }) => {
+        setAvertisement(data as Array<AdsType>);
+      }).catch(() => message.error('حدث خطأ ما'));
   };
+
   useEffect(() => {
-    (async () => {
-      try {
-        const data = await fetchData();
-        setAvertisement(data.data);
-      } catch (err) {
-        message.error('حدث خطأ ما');
-      }
-    })();
+    fetchData();
   }, []);
 
   return (
