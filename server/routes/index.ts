@@ -4,6 +4,6 @@ import { getFlats } from '../controllers';
 
 const userRouter = Router();
 
-userRouter.use('/flats', getFlats);
+userRouter.get('/flats', getFlats);
 
 export default userRouter;
