@@ -1,15 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC } from 'react';
 import './style.css';
-import { Button } from 'antd';
-import { LeftSquareOutlined } from '@ant-design/icons';
+import { LandingPage } from '../pages';
 
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 const App: FC = () => (
   <div className="App">
-    <Button type="primary">Button</Button>
-    <LeftSquareOutlined />
+    <LandingPage />
   </div>
 );
-
-export default App;
