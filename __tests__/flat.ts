@@ -1,19 +1,3 @@
-// const supertest = require('supertest');
-// const app = require('../app');
-
-// describe('Get a Flats', () => {
-//   test('Get all flats', (done) => {
-//     supertest(app)
-//       .get('/api/v1/flats')
-//       .expect('Content-Type', /json/)
-//       .end((err, res) => {
-//         if (err) return done(err);
-//         expect(res.body.data.length).toEqual(4);
-//         return done();
-//       });
-//   });
-// });
-
 import request from 'supertest';
 import app from '../server/app';
 import insertDB from '../server/database/config/build';
