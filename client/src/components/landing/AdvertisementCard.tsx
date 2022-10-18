@@ -12,25 +12,14 @@ type AdsType = {
 const AdvertisementCard: React.FC<AdProps> = ({ info }) => (
   <Col span={8}>
     <Card
-      style={{ width: 300, height: 400 }}
+      style={{ width: 300, height: 400, borderRadius: 5 }}
       cover={(
         <img
-          style={{ height: 200 }}
+          style={{ height: 200, borderRadius: '5px 5px 0px 0px' }}
           alt="Advertisement"
           src={info.image}
         />
           )}
-      actions={[
-        <Button
-          style={{
-            backgroundColor: '#475E6B',
-            color: 'white',
-            borderRadius: '5px',
-          }}
-        >
-          انقر للمزيد
-        </Button>,
-      ]}
     >
       <Meta
         style={{ height: 120 }}
