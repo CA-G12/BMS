@@ -8,7 +8,7 @@ const contactSchema = object({
   phone: string().min(10).required(),
   subject: string().required(),
   description: string().required(),
-
 });
+
 
 export default contactSchema;
