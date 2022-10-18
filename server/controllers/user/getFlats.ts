@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { FlatModel } from '../models';
+import { FlatModel } from '../../models';
 
 export default async (req:Request, res:Response, next: NextFunction) => {
   try {

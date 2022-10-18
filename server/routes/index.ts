@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import adsRouter from './adsRouter';
-import flat from './flat';
+import flatRouter from './flatRouter';
 
 const router = Router();
 
 router.use('/advertisements', adsRouter);
-router.use('/flats', flat);
+router.use('/flats', flatRouter);
 
 export default router;

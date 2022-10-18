@@ -1,7 +1,7 @@
 import {
   Request, Response, NextFunction,
 } from 'express';
-import { AdvertisementModel } from '../models';
+import { AdvertisementModel } from '../../models';
 
 export default async (req:Request, res:Response, next:NextFunction) => {
   try {
