@@ -3,7 +3,7 @@ import { Row, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AdvertisementCard from './AdvertisementCard';
-import { Title } from './index';
+import { Title, Loading, NoData } from './index';
 
 type AdsType = {
   id: number;
@@ -13,17 +13,22 @@ type AdsType = {
 };
 
 const AdsContainer: React.FC = () => {
-  const [Advertisement, setAvertisement] = useState<Array<AdsType> | null>([]);
-
-  const fetchData = () => {
-    axios.get('api/v1/advertisements/')
-      .then(({ data }) => {
-        setAvertisement(data as Array<AdsType>);
+  const [advertisements, setAdvertisements] = useState<Array<AdsType>>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const fetchData = (signal: AbortSignal) => {
+    axios.get('api/v1/advertisements/', { signal })
+      .then(({ data: { data } }) => {
+        setAdvertisements(data as Array<AdsType>);
+        setLoading(false);
       }).catch(() => message.error('حدث خطأ ما'));
   };
 
   useEffect(() => {
-    fetchData();
+    setLoading(true);
+    const controller = new AbortController();
+    const { signal } = controller;
+    fetchData(signal);
+    return () => controller.abort();
   }, []);
 
   return (
@@ -35,9 +40,12 @@ const AdsContainer: React.FC = () => {
         style={{ padding: '16px 200px', textAlign: 'center' }}
       >
         <Row gutter={16}>
-          {Advertisement ? Advertisement.map((ad) => (
-            <AdvertisementCard info={ad} />
-          )) : <h1>noData</h1>}
+          {
+          // eslint-disable-next-line no-nested-ternary
+          (loading) ? <Loading /> : (advertisements.length > 0 ? advertisements.map((advertisement) => (
+            <AdvertisementCard key={advertisement.id} info={advertisement} />
+          )) : <NoData />)
+}
         </Row>
       </div>
     </div>
