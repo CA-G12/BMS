@@ -1,8 +1,10 @@
-import { message } from 'antd';
+import { message, Typography } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Loading, NoData } from '../index';
 import FlatCard from './FlatCard';
+
+const { Title } = Typography;
 
 type FreeFlatType = {
   id: number,
@@ -29,8 +31,8 @@ const FlatContainer: React.FC = () => {
   return (
 
     <div className="flatContainerComponent">
-      <h2>شقق متاحة</h2>
-      <p>هنالك شقق متوفرة بمساحات مختلفة</p>
+      <Title level={2} className="HeaderOfFLat">شقق متاحة</Title>
+      <Title level={5} className="PargraphOfFLat">هنالك شقق متوفرة بمساحات مختلفة</Title>
       <div className="flatContainer">
         {
           // eslint-disable-next-line no-nested-ternary

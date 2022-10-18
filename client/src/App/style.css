@@ -31,11 +31,12 @@
   padding: 0px 3px;
 }
 .firstP {
-  color: #546681;
+  color: #546681 !important;
   text-align: right;
+  font-size: 20px !important;
 }
 .secondeP {
-  color: #99a2b3;
+  color: #99a2b3 !important;
   text-align: right;
 }
 
@@ -59,8 +60,10 @@
   background-color: #5138ec;
   width: 120px;
   border-radius: 3px;
+  text-align: center;
+  justify-content: flex-start;
+  display: flex;
   margin-top: 8px;
-
 }
 
 .flatContainerComponent {
@@ -68,13 +71,13 @@
   text-align: center;
 }
 
-.flatContainerComponent h2 {
+.HeaderOfFLat  {
   color: #546681;
   font-size: 24px;
   font-weight: bold;
   padding-top: 15px;
 }
-.flatContainerComponent p {
+.PargraphOfFLat  {
   color : #99A2B3;
 
 }
