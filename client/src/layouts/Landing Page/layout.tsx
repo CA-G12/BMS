@@ -3,13 +3,13 @@ import Footer from './footer';
 import Header from './header';
 
 type LayoutProps = {
-  Children: React.ReactNode[]
+  children: React.ReactNode[]
 };
 
-const Layout: FC<LayoutProps> = ({ Children }) => (
+const Layout: FC<LayoutProps> = ({ children }) => (
   <>
     <Header />
-    {Children}
+    {children}
     <Footer />
   </>
 );
