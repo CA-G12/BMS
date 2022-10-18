@@ -3,7 +3,7 @@ import { Row, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AdvertisementCard from './AdvertisementCard';
-import { Title } from './index';
+import { Title, Loading, NoData } from './index';
 
 type AdsType = {
   id: number;
@@ -13,25 +13,24 @@ type AdsType = {
 };
 
 const AdsContainer: React.FC = () => {
-  const [Advertisement, setAvertisement] = useState<Array<AdsType> | null>([]);
-  const fetchData = async () => {
-    try {
-      const { data } = await axios.get('api/v1/advertisements/');
-      return data;
-    } catch (err) {
-      message.error('حدث خطأ ما');
-    }
+  const [advertisement, setAdvertisement] = useState<Array<AdsType> | null>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const fetchData = (signal: AbortSignal) => {
+    axios.get('api/v1/advertisements/', { signal })
+      .then(({ data: { data } }) => {
+        setAdvertisement(data as Array<AdsType>);
+      }).catch(() => message.error('حدث خطأ ما'));
   };
   useEffect(() => {
-    (async () => {
-      try {
-        const data = await fetchData();
-        setAvertisement(data.data);
-      } catch (err) {
-        message.error('حدث خطأ ما');
-      }
-    })();
+    setLoading(true);
+    const controller = new AbortController();
+    const { signal } = controller;
+    fetchData(signal);
+    console.log(loading);
+
+    return () => { controller.abort(); setLoading(false); };
   }, []);
+  console.log('2', loading);
 
   return (
     <div style={{ backgroundColor: '#F6F8FA', paddingBottom: 30 }}>
@@ -42,9 +41,12 @@ const AdsContainer: React.FC = () => {
         style={{ padding: '16px 200px', textAlign: 'center' }}
       >
         <Row gutter={16}>
-          {Advertisement ? Advertisement.map((ad) => (
-            <AdvertisementCard info={ad} />
-          )) : <h1>noData</h1>}
+          {
+          // eslint-disable-next-line no-nested-ternary
+          (!loading) ? <Loading /> : (advertisement ? advertisement.map((ad) => (
+            <AdvertisementCard key={ad.id} info={ad} />
+          )) : <NoData />)
+}
         </Row>
       </div>
     </div>

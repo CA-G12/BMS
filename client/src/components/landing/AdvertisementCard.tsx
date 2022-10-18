@@ -10,8 +10,6 @@ type AdsType = {
 };
   type AdProps = { info:AdsType };
 const AdvertisementCard: React.FC<AdProps> = ({ info }) => (
-// export default function App({ info } : AdProps) {
-//   return (
   <Col span={8}>
     <Card
       style={{ width: 300, height: 400 }}
