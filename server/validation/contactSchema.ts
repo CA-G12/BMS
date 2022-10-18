@@ -10,5 +10,4 @@ const contactSchema = object({
   description: string().required(),
 });
 
-
 export default contactSchema;
