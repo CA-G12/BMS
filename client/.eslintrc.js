@@ -39,7 +39,7 @@ module.exports = {
     ],
     "rules": {
         "linebreak-style": 0,
-        "max-len": 'off',
+        "max-len": "off",
         "react/function-component-definition": [2, {"namedComponents": "arrow-function",  "unnamedComponents": "arrow-function"}]
 
     }

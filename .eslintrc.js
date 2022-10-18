@@ -11,18 +11,6 @@ module.exports = {
     'airbnb-typescript/base'
   ],
   overrides: [],
-  // overrides: [
-  //   {
-  //     files: ['*.ts', '*.tsx'],
-  //     extends: [
-  //       'plugin:@typescript-eslint/recommended',
-  //       'plugin:@typescript-eslint/recommended-requiring-type-checking',
-  //     ],
-  //     parserOptions: {
-  //       project: ['./tsconfig.json'],
-  //     },
-  //   },
-  // ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -37,5 +25,5 @@ module.exports = {
     'linebreak-style': 0,
     'consistent-return': 'off'
   },
-  ignorePatterns: ['__test__/*', 'dist/*']
+  ignorePatterns: ['__tests__/*', 'dist/*']
 }
