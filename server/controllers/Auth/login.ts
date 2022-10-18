@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import loginValidation from '../../validation';
 import { UserModel } from '../../models';
 import CustomError from '../../helpers';
-import { GenerateToken } from '../../middleware';
+// import { GenerateToken } from '../../middleware';
 
 const login = async (req, res, next) => {
   try {
@@ -16,11 +16,11 @@ const login = async (req, res, next) => {
         'المستخدم غير موجود',
       );
     }
-    const {
-      role, id, hashed_password,
-    } = user;
+    // const {
+    //   role, id, hashed_password,
+    // } = user;
 
-    const comparePasswordResult = await bcrypt.compare(password, hashed_password);
+    const comparePasswordResult = await bcrypt.compare(password, 'hashed_password');
     if (!comparePasswordResult) {
       throw new CustomError(
         404,
@@ -28,9 +28,9 @@ const login = async (req, res, next) => {
       );
     }
 
-    GenerateToken({
-      phoneNumber, id, role,
-    }, res, next);
+    // GenerateToken({
+    //   phoneNumber, id, role,
+    // }, res, next);
   } catch (err) {
     next(err);
   }
