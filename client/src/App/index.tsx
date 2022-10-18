@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC } from 'react';
 import './style.css';
 import { LandingPage } from '../pages';

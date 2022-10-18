@@ -1,7 +1,9 @@
 import React from 'react';
+import { Typography } from 'antd';
 
-const App: React.FC <any> = ({ children }) => (
-  <h1
+const { Title } = Typography;
+const TitleComp: React.FC<any> = ({ children }) => (
+  <Title
     style={{
       fontSize: 'x-large',
       padding: '16px',
@@ -11,6 +13,6 @@ const App: React.FC <any> = ({ children }) => (
     }}
   >
     {children}
-  </h1>
+  </Title>
 );
-export default App;
+export default TitleComp;

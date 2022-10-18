@@ -1,11 +1,15 @@
 import React from 'react';
-import { Services, ContactUs } from '../components/landing';
+import {
+  AboutUs, AdsContainer, Services, ContactUs,
+} from '../components/landing';
 
-const App: React.FC = () => (
+const LandingPage: React.FC = () => (
   <>
+    <AboutUs />
+    <AdsContainer />
     <Services />
     <ContactUs />
   </>
 );
 
-export default App;
+export default LandingPage;
