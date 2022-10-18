@@ -1,3 +1,3 @@
-import addContact from './landingpage/contactus';
+import addContact from './contactus/contactus';
 
 export default addContact;
