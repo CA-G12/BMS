@@ -13,21 +13,22 @@ type AdsType = {
 };
 
 const AdsContainer: React.FC = () => {
-  const [advertisement, setAdvertisement] = useState<Array<AdsType> | null>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [advertisements, setAdvertisements] = useState<Array<AdsType>>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const fetchData = (signal: AbortSignal) => {
     axios.get('api/v1/advertisements/', { signal })
       .then(({ data: { data } }) => {
-        setAdvertisement(data as Array<AdsType>);
+        setAdvertisements(data as Array<AdsType>);
+        setLoading(false);
       }).catch(() => message.error('حدث خطأ ما'));
   };
+
   useEffect(() => {
     setLoading(true);
     const controller = new AbortController();
     const { signal } = controller;
     fetchData(signal);
-
-    return () => { controller.abort(); setLoading(false); };
+    return () => controller.abort();
   }, []);
 
   return (
@@ -41,8 +42,8 @@ const AdsContainer: React.FC = () => {
         <Row gutter={16}>
           {
           // eslint-disable-next-line no-nested-ternary
-          (!loading) ? <Loading /> : (advertisement ? advertisement.map((ad) => (
-            <AdvertisementCard key={ad.id} info={ad} />
+          (loading) ? <Loading /> : (advertisements.length > 0 ? advertisements.map((advertisement) => (
+            <AdvertisementCard key={advertisement.id} info={advertisement} />
           )) : <NoData />)
 }
         </Row>
