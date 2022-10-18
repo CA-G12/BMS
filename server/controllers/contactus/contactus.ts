@@ -4,41 +4,22 @@ import contactSchema from '../../validation';
 import CustomError from '../../helpers';
 
 const addContact: RequestHandler = async (req, res, next) => {
-  /*
- get data from form +
- validation +
- query +
- add data +
- get result +
- return result as response +
- */
-
   try {
     const {
       name, email, phone, subject, description,
-    } = req.body;
-
-    const validationResult = await contactSchema.validate(
-      {
-        name, email, phone, subject, description,
-      },
+    } = await contactSchema.validate(
+      req.body,
       { abortEarly: false },
     );
-    console.log('Validation Result: ', validationResult);
-    if (!validationResult) {
-      // TODO: Validate Inputs Result
-    }
 
-    const cerateResult = await ContactUsModel.create(req.body);
-    console.log('Create Data Result: ', cerateResult);
+    const data = await ContactUsModel.create({
+      name, email, phone, subject, description,
+    });
 
-    if (!cerateResult) {
-      // TODO: Validate Create Data Result
-    }
-    return res.status(201).json({ message: 'Add Contact is Successfully', status: 201 });
+    return res.status(201).json({ message: 'Add Contact Successfully', data });
   } catch (error) {
     if (error.name === 'ValidationError') {
-      return next(new CustomError(400, error.errors[0]));
+      return next(new CustomError(400, error.errors));
     }
     return next(error);
   }
