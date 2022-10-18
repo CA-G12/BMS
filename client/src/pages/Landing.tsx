@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  AboutUs, AdsContainer, Services, ContactUs,
+  AboutUs, AdsContainer, VideoSection, FlatContainer, Services, ContactUs,
 } from '../components/landing';
 
 const LandingPage: React.FC = () => (
@@ -8,6 +8,8 @@ const LandingPage: React.FC = () => (
     <AboutUs />
     <AdsContainer />
     <Services />
+    <FlatContainer />
+    <VideoSection />
     <ContactUs />
   </>
 );
