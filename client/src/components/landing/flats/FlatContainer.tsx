@@ -1,3 +1,4 @@
+import NoData from '../NoData';
 import FlatCard from './FlatCard';
 
 type FreeFlatType = {
@@ -28,7 +29,7 @@ const FlatContainer: React.FC = () => (
     <h2>شقق متاحة</h2>
     <p>هنالك شقق متوفرة بمساحات مختلفة</p>
     <div className="flatContainer">
-      {flatsData.map((flatCard) => <FlatCard info={flatCard} />)}
+      {(flatsData.length !== 0) ? (flatsData.map((flatCard) => (<FlatCard info={flatCard} />))) : (<NoData />)}
     </div>
   </div>
 );
