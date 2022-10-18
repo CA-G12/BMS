@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import NoData from '../NoData';
+import { Loading, NoData } from '../index';
 import FlatCard from './FlatCard';
 
 type FreeFlatType = {
@@ -32,7 +32,10 @@ const FlatContainer: React.FC = () => {
       <h2>شقق متاحة</h2>
       <p>هنالك شقق متوفرة بمساحات مختلفة</p>
       <div className="flatContainer">
-        {(flats.length !== 0) ? (flats.map((flatCard) => (<FlatCard key={flatCard.id} info={flatCard} />))) : (<NoData />)}
+        {
+          // eslint-disable-next-line no-nested-ternary
+          (loading) ? <Loading /> : (flats.length !== 0) ? (flats.map((flatCard) => (<FlatCard key={flatCard.id} info={flatCard} />))) : (<NoData />)
+        }
       </div>
     </div>
   );
