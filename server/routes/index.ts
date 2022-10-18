@@ -1,9 +1,10 @@
-/* eslint-disable import/no-import-module-exports */
 import { Router } from 'express';
-import { getFlats } from '../controllers';
+import adsRouter from './adsRouter';
+import flat from './flat';
 
-const userRouter = Router();
+const router = Router();
 
-userRouter.get('/flats', getFlats);
+router.use('/advertisements', adsRouter);
+router.use('/flats', flat);
 
-export default userRouter;
+export default router;
