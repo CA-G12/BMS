@@ -1,14 +1,13 @@
 import { FC } from 'react';
-import './style.css';
 import { LandingPage } from '../pages';
+import './style.css';
+import 'remixicon/fonts/remixicon.css';
 
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
-import Login from '../pages/Auth/Login';
+import 'antd/dist/antd.css';
 
 const App: FC = () => (
   <div className="App">
-    {/* <LandingPage /> */}
-    <Login />
+    <LandingPage />
   </div>
 );
 
