@@ -26,11 +26,9 @@ const AdsContainer: React.FC = () => {
     const controller = new AbortController();
     const { signal } = controller;
     fetchData(signal);
-    console.log(loading);
 
     return () => { controller.abort(); setLoading(false); };
   }, []);
-  console.log('2', loading);
 
   return (
     <div style={{ backgroundColor: '#F6F8FA', paddingBottom: 30 }}>
