@@ -6,7 +6,7 @@ const users = [
     email: 'jcotte0@people.com.cn',
     phone_number: '0591000100',
     role: 'admin',
-    hased_password: '$2y$10$MKpnqAAinu5wjl/MYRc3U.XApWTaEexvI4DMaJA.XZTou5lvpSPfu',
+    hashed_password: '$2y$10$MKpnqAAinu5wjl/MYRc3U.XApWTaEexvI4DMaJA.XZTou5lvpSPfu',
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const users = [
     email: 'gbelt1@thetimes.co.uk',
     phone_number: '0591000200',
     role: 'user',
-    hased_password: '$2y$10$ROMcXqVNwbepoV6ZdTsTa.6/iego9a72vzSK70pF/S8Oxe/y8tLeO',
+    hashed_password: '$2y$10$ROMcXqVNwbepoV6ZdTsTa.6/iego9a72vzSK70pF/S8Oxe/y8tLeO',
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const users = [
     email: 'tlobe2@angelfire.com',
     phone_number: '498-722-9258',
     role: 'user',
-    hased_password: '$2y$10$NrRa5y454oIukcfU/iNDruP2iEJPm9UGlHqyhZiyd5mY1fy2vULkG',
+    hashed_password: '$2y$10$NrRa5y454oIukcfU/iNDruP2iEJPm9UGlHqyhZiyd5mY1fy2vULkG',
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const users = [
     email: 'mgravey3@slideshare.net',
     phone_number: '172-408-5906',
     role: 'user',
-    hased_password: '$2y$10$dOSPYdqciJCM9U10HiWtCOg9j6jpMD69rMPV/2LI/dDL4SxLATkNG',
+    hashed_password: '$2y$10$dOSPYdqciJCM9U10HiWtCOg9j6jpMD69rMPV/2LI/dDL4SxLATkNG',
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const users = [
     email: 'cscogin4@nytimes.com',
     phone_number: '910-220-7086',
     role: 'user',
-    hased_password: '$2y$10$6Y1AcLQDLM7vSSu1A5dj9e61YgCFACEXoBP3NxJ4qX/1SeUUXLFtm',
+    hashed_password: '$2y$10$6Y1AcLQDLM7vSSu1A5dj9e61YgCFACEXoBP3NxJ4qX/1SeUUXLFtm',
   },
 ];
 
