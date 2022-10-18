@@ -29,7 +29,7 @@ const FlatContainer: React.FC = () => (
     <h2>شقق متاحة</h2>
     <p>هنالك شقق متوفرة بمساحات مختلفة</p>
     <div className="flatContainer">
-      {(flatsData.length !== 0) ? (flatsData.map((flatCard) => (<FlatCard info={flatCard} />))) : (<NoData />)}
+      {(flatsData.length !== 0) ? (flatsData.map((flatCard) => (<FlatCard key={flatCard.id} info={flatCard} />))) : (<NoData />)}
     </div>
   </div>
 );
