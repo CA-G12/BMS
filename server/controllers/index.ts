@@ -1,2 +1,2 @@
 /* eslint-disable import/prefer-default-export */
-export { getFlats, getAdvertisements } from './user';
+export { getFlats, getAdvertisements, signUp } from './user';
