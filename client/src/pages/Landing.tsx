@@ -1,15 +1,16 @@
 import React from 'react';
 import {
-  AboutUs, AdsContainer, Title, VideoSection, FlatContainer,
+  AboutUs, AdsContainer, VideoSection, FlatContainer, Services, ContactUs,
 } from '../components/landing';
 
 const LandingPage: React.FC = () => (
   <>
     <AboutUs />
     <AdsContainer />
-    <Title />
+    <Services />
     <FlatContainer />
     <VideoSection />
+    <ContactUs />
   </>
 );
 
