@@ -4,12 +4,12 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
-import { clientError, serverError } from './middleware';
+import { clientError, serverError, Authenticate } from './middleware';
 import {
   AnnouncementModel, AdvertisementModel, BillModel, FlatModel, ServiceModel, UserModel,
   PaymentModel, ComplaintsModel, ContactUsModel,
 } from './models';
-
+import routers from './routes';
 
 dotenv.config();
 
@@ -28,6 +28,8 @@ app.use(cookieParser());
 if (NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+app.use(Authenticate);
 
 // app.use('/api/v1', router);
 
@@ -85,8 +87,8 @@ if (NODE_ENV === 'production') {
   });
 }
 
+app.use(routers);
 app.use(clientError);
 app.use(serverError);
-
 
 export default app;
