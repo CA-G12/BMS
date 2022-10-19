@@ -1,7 +1,7 @@
 import { RequestHandler } from 'express';
 import { ContactUsModel } from '../../models';
 import { contactSchema } from '../../validation';
-import CustomError from '../../helpers';
+import { CustomError } from '../../helpers';
 
 const addContact: RequestHandler = async (req, res, next) => {
   try {
