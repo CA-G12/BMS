@@ -10,7 +10,7 @@ InferCreationAttributes<UserModelInterface>> {
   last_name: string,
   email: string,
   phone_number: string,
-  role: 'admin' | 'user',
+  role: string,
   hashed_password: string,
 }
 
