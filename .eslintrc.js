@@ -23,7 +23,8 @@ module.exports = {
   ],
   rules: {
     'linebreak-style': 0,
-    'consistent-return': 'off'
+    'consistent-return': 'off',
+    'max-len': 'off'
   },
   ignorePatterns: ['__tests__/*', 'dist/*']
 }
