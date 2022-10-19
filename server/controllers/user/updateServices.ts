@@ -13,7 +13,7 @@ export default async (req:Request, res:Response, next: NextFunction) => {
       where: { id },
       returning: true,
     });
-    res.json({ data });
+    res.json({ data: data[1] });
   } catch (err) {
     next(err);
   }
