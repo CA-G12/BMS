@@ -1,7 +1,17 @@
-import { DataTypes } from 'sequelize';
+import {
+  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes, DecimalDataType,
+} from 'sequelize';
+
 import sequelize from '../database/config/connection';
 
-const Bill = sequelize.define('Bill', {
+interface BillModelInterface extends Model<InferAttributes<BillModelInterface>,
+InferCreationAttributes<BillModelInterface>> {
+  id: CreationOptional<number>;
+  total_price: DecimalDataType,
+  is_open: boolean,
+  services: Array<JSON>,
+}
+const Bill = sequelize.define<BillModelInterface>('Bill', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

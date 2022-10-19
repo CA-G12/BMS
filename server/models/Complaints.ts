@@ -1,8 +1,18 @@
-import { DataTypes } from 'sequelize';
+import {
+  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
+} from 'sequelize';
 
 import sequelize from '../database/config/connection';
 
-const ComplaintsModel = sequelize.define('Complaint', {
+interface ComplaintsModelInterface extends Model<InferAttributes<ComplaintsModelInterface>,
+InferCreationAttributes<ComplaintsModelInterface>> {
+  id: CreationOptional<number>;
+  title: string,
+  description: string,
+  is_solved: boolean,
+}
+
+const ComplaintsModel = sequelize.define<ComplaintsModelInterface>('Complaint', {
   id: {
     primaryKey: true,
     autoIncrement: true,

@@ -1,7 +1,17 @@
-import { DataTypes } from 'sequelize';
+import {
+  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
+} from 'sequelize';
+
 import sequelize from '../database/config/connection';
 
-const Announcement = sequelize.define('Announcements', {
+interface AnnouncementModelInterface extends Model<InferAttributes<AnnouncementModelInterface>,
+InferCreationAttributes<AnnouncementModelInterface>> {
+  id: CreationOptional<number>;
+  title: string,
+  start_date: string,
+  end_date: string,
+}
+const Announcement = sequelize.define<AnnouncementModelInterface>('Announcements', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
