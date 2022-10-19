@@ -1,3 +1,4 @@
 import loginValidation from './loginValidation';
+import contactSchema from './contactSchema';
 
-export default loginValidation;
+export { loginValidation, contactSchema };

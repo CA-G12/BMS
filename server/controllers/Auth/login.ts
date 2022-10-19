@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import loginValidation from '../../validation';
+import { loginValidation } from '../../validation';
 import { UserModel } from '../../models';
 import CustomError from '../../helpers';
 // import { GenerateToken } from '../../middleware';
