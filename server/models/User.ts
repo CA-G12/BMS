@@ -22,9 +22,6 @@ const User = sequelize.define(
     email: {
       type: DataTypes.STRING,
       allowNull: true,
-      validate: {
-        isEmail: true,
-      },
     },
     phone_number: {
       type: DataTypes.STRING,
@@ -33,13 +30,10 @@ const User = sequelize.define(
     },
     role: {
       type: DataTypes.ENUM('admin', 'user'),
-      allowNull: false,
+      defaultValue: 'user',
     },
     hashed_password: {
       type: DataTypes.STRING,
-      validate: {
-        is: /^[0-9a-f]{64}$/i,
-      },
       allowNull: false,
     },
   },
