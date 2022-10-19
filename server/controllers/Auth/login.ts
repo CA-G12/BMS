@@ -31,7 +31,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
       );
     }
     GenerateToken({
-      phoneNumber, id, role,
+      id, role,
     }, res, next);
   } catch (err) {
     if (err.name === 'ValidationError') {

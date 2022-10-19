@@ -1,25 +1,11 @@
-import {
-  Request, Response, NextFunction,
-} from 'express';
+import { Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { CustomError, signToken, verifyToken } from '../helpers';
+import { IUserPayload, IRequestPayload } from '../interfaces/IUserPayload';
 
 dotenv.config();
 
-interface IPayload {
-  id: number;
-  role: string;
-  phoneNumber: string
-}
-
-interface MyRequest extends Request {
-  user: {
-    role: string;
-    id: number
-  }
-}
-
-const GenerateToken = async (payload: IPayload, res: Response, next: NextFunction) => {
+const GenerateToken = async (payload: IUserPayload, res: Response, next: NextFunction) => {
   try {
     const token = await signToken(payload);
     res.cookie('token', token).json({ message: 'Logged in Successfully' });
@@ -28,10 +14,10 @@ const GenerateToken = async (payload: IPayload, res: Response, next: NextFunctio
   }
 };
 
-const Authenticate = async (req: MyRequest, res: Response, next: NextFunction) => {
+const Authenticate = async (req: IRequestPayload, res: Response, next: NextFunction) => {
   try {
     const { token } = req.cookies;
-    const user: { id: number, role: string } = await verifyToken(token);
+    const user: IUserPayload = await verifyToken(token);
     req.user = {
       role: user.role,
       id: user.id,
@@ -42,7 +28,7 @@ const Authenticate = async (req: MyRequest, res: Response, next: NextFunction) =
   }
 };
 
-const Authorize = (req: MyRequest, res: Response, next: NextFunction, user_role: string) => {
+const Authorize = (req: IRequestPayload, res: Response, next: NextFunction, user_role: string) => {
   try {
     if (!req.user) {
       throw new CustomError(
