@@ -9,12 +9,17 @@ const {
 } = process.env;
 
 let url:string = '' || undefined;
+let ssl : boolean | object = false;
+
 switch (NODE_ENV) {
   case 'development':
     url = DEV_DB_URL;
     break;
   case 'production':
     url = DATABASE_URL;
+    ssl = {
+      rejectUnauthorized: false,
+    };
     break;
   case 'test':
     url = TEST_DB_URL;
@@ -22,7 +27,14 @@ switch (NODE_ENV) {
   default:
     throw new Error('The database url is invalid!');
 }
+
 if (!url) throw new Error('The database url is invalid!');
 
-const sequelizeConfig = new Sequelize(url, { logging: false, dialect: 'postgres' });
+const sequelizeConfig = new Sequelize(url, {
+  logging: false,
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl,
+  },
+});
 export default sequelizeConfig;
