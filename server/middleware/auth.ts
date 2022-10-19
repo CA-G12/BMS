@@ -16,6 +16,7 @@ const GenerateToken = (payload, res, next) => {
 };
 
 const Authenticate = (req, res, next) => {
+  console.log('Authenticate');
   const { token } = req.cookies;
   JWT.verify(token, SECRET_KEY, (err, data) => {
     if (!err) {

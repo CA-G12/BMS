@@ -1,9 +1,20 @@
 import {
-  DataTypes,
+  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
 } from 'sequelize';
 import sequelize from '../database/config/connection';
 
-const User = sequelize.define(
+interface UserModelInterface extends Model<InferAttributes<UserModelInterface>,
+InferCreationAttributes<UserModelInterface>> {
+  id: CreationOptional<number>;
+  first_name: string,
+  last_name: string,
+  email: string,
+  phone_number: string,
+  role: 'admin' | 'user',
+  hashed_password: string,
+}
+
+const User = sequelize.define<UserModelInterface>(
   'User',
   {
     id: {
@@ -37,9 +48,6 @@ const User = sequelize.define(
     },
     hashed_password: {
       type: DataTypes.STRING,
-      validate: {
-        is: /^[0-9a-f]{64}$/i,
-      },
       allowNull: false,
     },
   },
