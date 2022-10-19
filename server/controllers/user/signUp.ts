@@ -1,11 +1,11 @@
-// import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { hash } from 'bcrypt';
 import { UserModel } from '../../models';
 import { SignUpSchema } from '../../validation';
 import CustomError from '../../helpers';
 import {GenerateToken} from '../../middleware'
 
-const signUp = async (req, res, next) => {
+const signUp = async (req:Request, res:Response, next:NextFunction) => {
   try {
     const {
       firstName, lastName, phoneNumber, email, password,
@@ -21,11 +21,15 @@ const signUp = async (req, res, next) => {
         '  الرقم مستخدم حاليا',
       );
       const hashedPassword = await hash(password, 10);
-      const cerateResult = await UserModel.create(req.body, hashed_password: hashedPassword);
+      const cerateResult = await UserModel.create(...req.body, hashed_password: hashedPassword);
       GenerateToken({name: firstName, phone_number: phoneNumber}, res, next)
       }
   } catch (err) {
-    next(err);
+    if (err.name === 'ValidationError') {
+      next(new CustomError(400, err.details[0].message));
+    } else {
+      next(err);
+    }
   }
 };
 

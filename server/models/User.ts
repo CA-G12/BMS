@@ -35,7 +35,7 @@ const User = sequelize.define(
       type: DataTypes.ENUM('admin', 'user'),
       allowNull: false,
     },
-    hased_password: {
+    hashed_password: {
       type: DataTypes.STRING,
       validate: {
         is: /^[0-9a-f]{64}$/i,
