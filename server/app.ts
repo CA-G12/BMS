@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
 import {
-  clientError, serverError, Authenticate,
+  clientError, serverError,
 } from './middleware';
 
 import router from './routes';
@@ -27,8 +27,6 @@ app.use(cookieParser());
 if (NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
-
-app.use(Authenticate);
 
 app.use('/api/v1', router);
 
