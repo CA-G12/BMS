@@ -12,14 +12,14 @@ type billServices = {
   description: string,
   isOpen: boolean,
 };
-interface BillModelInterface extends Model<InferAttributes<BillModelInterface>,
-InferCreationAttributes<BillModelInterface>> {
+interface InferBillModel extends Model<InferAttributes<InferBillModel>,
+InferCreationAttributes<InferBillModel>> {
   id: CreationOptional<number>;
   total_price: number,
   is_open: boolean,
   services: Array<billServices>,
 }
-const Bill = sequelize.define<BillModelInterface>('Bill', {
+const Bill = sequelize.define<InferBillModel>('Bill', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

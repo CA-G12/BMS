@@ -1,11 +1,11 @@
 import {
-  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes, DecimalDataType,
+  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
 } from 'sequelize';
 
 import sequelize from '../database/config/connection';
 
-interface ServiceModelInterface extends Model<InferAttributes<ServiceModelInterface>,
-InferCreationAttributes<ServiceModelInterface>> {
+interface InferServiceModel extends Model<InferAttributes<InferServiceModel>,
+InferCreationAttributes<InferServiceModel>> {
   id: CreationOptional<number>;
   name: string,
   price: number,
@@ -13,7 +13,7 @@ InferCreationAttributes<ServiceModelInterface>> {
   description: string,
   is_open: boolean
 }
-const Service = sequelize.define<ServiceModelInterface>('Service', {
+const Service = sequelize.define<InferServiceModel>('Service', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

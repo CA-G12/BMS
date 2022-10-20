@@ -1,18 +1,18 @@
 import {
-  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes, DecimalDataType,
+  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
 } from 'sequelize';
 
 import sequelize from '../database/config/connection';
 
-interface FlatModelInterface extends Model<InferAttributes<FlatModelInterface>,
-InferCreationAttributes<FlatModelInterface>> {
+interface InferFlatModel extends Model<InferAttributes<InferFlatModel>,
+InferCreationAttributes<InferFlatModel>> {
   id: CreationOptional<number>;
   flat_number: number,
   area: number,
   notes: string,
   is_active: boolean,
 }
-const Flat = sequelize.define<FlatModelInterface>('Flat', {
+const Flat = sequelize.define<InferFlatModel>('Flat', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

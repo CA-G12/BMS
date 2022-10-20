@@ -4,13 +4,13 @@ import {
 
 import sequelize from '../database/config/connection';
 
-interface PaymentModelInterface extends Model<InferAttributes<PaymentModelInterface>,
-InferCreationAttributes<PaymentModelInterface>> {
+interface InferPaymentModel extends Model<InferAttributes<InferPaymentModel>,
+InferCreationAttributes<InferPaymentModel>> {
   id: CreationOptional<number>;
   title: string,
   description: string,
 }
-const Payment = sequelize.define<PaymentModelInterface>(
+const Payment = sequelize.define<InferPaymentModel>(
   'Payment',
   {
     id: {

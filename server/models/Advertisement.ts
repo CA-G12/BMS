@@ -4,8 +4,8 @@ import {
 
 import sequelize from '../database/config/connection';
 
-interface AdvertisementModelInterface extends Model<InferAttributes<AdvertisementModelInterface>,
-InferCreationAttributes<AdvertisementModelInterface>> {
+interface InferAdvertisementModel extends Model<InferAttributes<InferAdvertisementModel>,
+InferCreationAttributes<InferAdvertisementModel>> {
   id: CreationOptional<number>;
   title: string,
   description: string,
@@ -13,7 +13,7 @@ InferCreationAttributes<AdvertisementModelInterface>> {
   end_date: string,
   image: string,
 }
-const Advertisement = sequelize.define<AdvertisementModelInterface>('Advertisement', {
+const Advertisement = sequelize.define<InferAdvertisementModel>('Advertisement', {
   id: {
     primaryKey: true,
     autoIncrement: true,

@@ -4,15 +4,15 @@ import {
 
 import sequelize from '../database/config/connection';
 
-interface ComplaintsModelInterface extends Model<InferAttributes<ComplaintsModelInterface>,
-InferCreationAttributes<ComplaintsModelInterface>> {
+interface InferComplaintsModel extends Model<InferAttributes<InferComplaintsModel>,
+InferCreationAttributes<InferComplaintsModel>> {
   id: CreationOptional<number>;
   title: string,
   description: string,
   is_solved: boolean,
 }
 
-const ComplaintsModel = sequelize.define<ComplaintsModelInterface>('Complaint', {
+const ComplaintsModel = sequelize.define<InferComplaintsModel>('Complaint', {
   id: {
     primaryKey: true,
     autoIncrement: true,

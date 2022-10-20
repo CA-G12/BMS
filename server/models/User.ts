@@ -4,8 +4,8 @@ import {
 
 import sequelize from '../database/config/connection';
 
-interface UserModelInterface extends Model<InferAttributes<UserModelInterface>,
-InferCreationAttributes<UserModelInterface>> {
+interface InferUserModel extends Model<InferAttributes<InferUserModel>,
+InferCreationAttributes<InferUserModel>> {
   id: CreationOptional<number>;
   first_name: string,
   last_name: string,
@@ -14,7 +14,7 @@ InferCreationAttributes<UserModelInterface>> {
   role: string,
   hased_password: string,
 }
-const User = sequelize.define<UserModelInterface>(
+const User = sequelize.define<InferUserModel>(
   'User',
   {
     id: {

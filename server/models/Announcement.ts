@@ -4,14 +4,14 @@ import {
 
 import sequelize from '../database/config/connection';
 
-interface AnnouncementModelInterface extends Model<InferAttributes<AnnouncementModelInterface>,
-InferCreationAttributes<AnnouncementModelInterface>> {
+interface InferAnnouncementModel extends Model<InferAttributes<InferAnnouncementModel>,
+InferCreationAttributes<InferAnnouncementModel>> {
   id: CreationOptional<number>;
   title: string,
   start_date: string,
   end_date: string,
 }
-const Announcement = sequelize.define<AnnouncementModelInterface>('Announcements', {
+const Announcement = sequelize.define<InferAnnouncementModel>('Announcements', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
