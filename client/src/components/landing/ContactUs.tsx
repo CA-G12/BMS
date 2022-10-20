@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import {
-  Button, Form, Input, Layout, Image,
+  Button, Form, Input, Layout, Image, message,
 } from 'antd';
-import './style.css';
 import { Title } from './index';
-import sendContactUs from '../../services/contactUsApi';
+import ContactUsApiCall from '../../services/contactUsApi';
+import './style.css';
 import { IContactUsModel } from '../../Models/contactUs';
-import { BaseURL } from '../../Utilities/apiConsts';
 
 const { Content } = Layout;
 const { Item } = Form;
@@ -18,19 +15,14 @@ const layout = {
 };
 
 const ContactUs: React.FC = () => {
-  const onFinish = (values: object) => {
-    // eslint-disable-next-line no-console
-    console.log(values);
-  };
-  const [userData, setUserData] = useState<IContactUsModel>({
-    name: '', email: '', phoneNumber: '', subject: '', description: '',
-  });
-  const navigation = useNavigate();
-  const submitHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    sendContactUs(userData)
-      .then(() => navigation(BaseURL))
-      .catch((err) => console.log(err));
+  const [form] = Form.useForm();
+  const onFinish = (values: IContactUsModel) => {
+    ContactUsApiCall(values)
+      .then(() => {
+        form.resetFields();
+        return message.success('تم إرسال الشكوى بنجاح');
+      })
+      .catch(() => message.error('حدث خطأ ما، يرجى المحاولة لاحقًا'));
   };
 
   return (
@@ -42,12 +34,10 @@ const ContactUs: React.FC = () => {
         }}
       >
         <div className="services">
-          <Form name="nest-messages" onFinish={onFinish}>
+          <Form name="nest-messages" form={form} onFinish={onFinish}>
             <Item name="name" label="الاسم" rules={[{ required: true }]}>
               <Input
                 placeholder="الاسم"
-                onChange={(e) => setUserData({ ...userData, name: e.target.value })}
-                value={userData.name}
               />
             </Item>
 
@@ -58,8 +48,6 @@ const ContactUs: React.FC = () => {
             >
               <Input
                 placeholder="البريد الإلكتروني"
-                onChange={(e) => setUserData({ ...userData, email: e.target.value })}
-                value={userData.email}
               />
             </Item>
 
@@ -67,29 +55,23 @@ const ContactUs: React.FC = () => {
               <Input
                 type="tel"
                 placeholder="رقم الجوال"
-                onChange={(e) => setUserData({ ...userData, phoneNumber: e.target.value })}
-                value={userData.phoneNumber}
               />
             </Item>
 
             <Item name="subject" label="الموضوع" rules={[{ required: true }]}>
               <Input
                 placeholder="موضوع الرسالة"
-                onChange={(e) => setUserData({ ...userData, subject: e.target.value })}
-                value={userData.subject}
               />
             </Item>
 
             <Item name="description" label="الرسالة" rules={[{ required: true }]}>
               <Input.TextArea
                 placeholder="أدخل رسالتك هنا"
-                onChange={(e) => setUserData({ ...userData, description: e.target.value })}
-                value={userData.description}
               />
             </Item>
 
             <Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-              <Button type="primary" htmlType="submit" onSubmit={submitHandler}>
+              <Button type="primary" htmlType="submit">
                 أرسل طلبك
               </Button>
             </Item>

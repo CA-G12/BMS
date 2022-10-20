@@ -11,7 +11,6 @@ const addContact: RequestHandler = async (req, res, next) => {
       req.body,
       { abortEarly: false },
     );
-
     const data = await ContactUsModel.create({
       name, email, phone, subject, description,
     });
