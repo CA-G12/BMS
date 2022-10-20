@@ -10,10 +10,6 @@ import {
 } from '../components/adminDashboard';
 
 const App: FC = () => (
-  // <>
-  //   <AdminDashboard />
-  //   <LandingPage />
-  // </>
   <Routes>
     <Route path="/" element={<LandingPage />} />
     <Route path="/admin" element={<AdminDashboard />}>
