@@ -6,7 +6,7 @@ import sequelize from '../database/config/connection';
 
 interface FlatModelInterface extends Model<InferAttributes<FlatModelInterface>,
 InferCreationAttributes<FlatModelInterface>> {
-  id: CreationOptional<number>;
+  id ?: CreationOptional<number>;
   flat_number: number,
   area: number,
   notes: string,

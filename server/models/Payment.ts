@@ -6,7 +6,7 @@ import sequelize from '../database/config/connection';
 
 interface PaymentModelInterface extends Model<InferAttributes<PaymentModelInterface>,
 InferCreationAttributes<PaymentModelInterface>> {
-  id: CreationOptional<number>;
+  id ?: CreationOptional<number>;
   title: string,
   description: string,
 }

@@ -14,7 +14,7 @@ type billServices = {
 };
 interface BillModelInterface extends Model<InferAttributes<BillModelInterface>,
 InferCreationAttributes<BillModelInterface>> {
-  id: CreationOptional<number>;
+  id ?: CreationOptional<number>;
   total_price: number,
   is_open: boolean,
   services: Array<billServices>,
