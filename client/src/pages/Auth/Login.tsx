@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import {
   LockOutlined, UserOutlined,
 } from '@ant-design/icons';
+import { Title } from '../../components';
 
 const LoginForm: React.FC = () => {
   const onFinish = (values: any) => {
@@ -73,8 +74,8 @@ const App: React.FC = () => (
       <div style={{ padding: '20px' }}>
         <div style={squareSpan} />
         <br />
-        <h1>تسجيل الدخول</h1>
-        <h3>تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور الخاصة بك</h3>
+        <Title>تسجيل الدخول</Title>
+        <Title level={3}>تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور الخاصة بك</Title>
         <br />
         <div>
           <LoginForm />
