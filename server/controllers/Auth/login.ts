@@ -1,14 +1,18 @@
 import bcrypt from 'bcrypt';
+import {
+  Request, Response, NextFunction,
+} from 'express';
 import { loginValidation } from '../../validation';
 import { UserModel } from '../../models';
-import CustomError from '../../helpers';
+import { CustomError } from '../../helpers';
 import { GenerateToken } from '../../middleware';
 
-const login = async (req, res, next) => {
+const login = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { phoneNumber, password } = req.body;
-    await loginValidation.validate({ phoneNumber, password });
-    const user = await UserModel.findOne({ where: { phone_number: phoneNumber }, raw: true });
+    const { phoneNumber, password } = await loginValidation.validate(req.body, {
+      abortEarly: false,
+    });
+    const user = await UserModel.findOne({ where: { phone_number: phoneNumber } });
 
     if (!user) {
       throw new CustomError(
@@ -29,10 +33,12 @@ const login = async (req, res, next) => {
     }
 
     GenerateToken({
-      phoneNumber, id, role,
+      id, role,
     }, res, next);
   } catch (err) {
-    next(err);
+    if (err.name === 'ValidationError') {
+      return next(new CustomError(400, err.errors));
+    }
   }
 };
 

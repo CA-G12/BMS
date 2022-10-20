@@ -1,3 +1,4 @@
 import CustomError from './customError';
+import { signToken, verifyToken } from './jwt';
 
-export default CustomError;
+export { CustomError, signToken, verifyToken };
