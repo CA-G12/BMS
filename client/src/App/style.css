@@ -1,0 +1,88 @@
+.flatContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ant-card-cover img {
+  border-radius: 10px 10px 0px 0px !important;
+}
+
+.flatCard img {
+    height: 222px;
+}
+.iconsAndArea {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconsAndArea .icons i {
+  padding: 0px 3px;
+  color: #546681;
+}
+
+.iconsAndArea .area {
+  color: #5138ec;
+}
+.oneDetail {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.oneDetail p {
+  padding: 0px 3px;
+}
+.firstP {
+  color: #546681 !important;
+  text-align: right;
+  font-size: 20px !important;
+}
+.secondeP {
+  color: #99a2b3 !important;
+  text-align: right;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details .oneDetail i {
+  color: #5138ec;
+}
+.details .oneDetail p {
+  color: #666666;
+}
+.flatContainer .flatCard {
+  margin-bottom: 50px;
+  border-radius: 10px ;
+
+}
+.flatCard .ant-card-body .btn {
+  background-color: #5138ec;
+  width: 120px;
+  border-radius: 3px;
+  text-align: center;
+  justify-content: flex-start;
+  display: flex;
+  margin-top: 8px;
+}
+
+.flatContainerComponent {
+  background-color: #F6F8FA;
+  text-align: center;
+}
+
+.HeaderOfFLat  {
+  color: #546681;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+.PargraphOfFLat  {
+  color : #99A2B3;
+
+}
+
+.videoSection .video {
+  width: 100% !important;
+  height: 435px !important;
+}
