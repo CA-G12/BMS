@@ -13,7 +13,6 @@ const addContact: RequestHandler = async (req:Request, res:Response, next:NextFu
       req.body,
       { abortEarly: false },
     );
-
     const data = await ContactUsModel.create({
       name, email, phone, subject, description,
     });
