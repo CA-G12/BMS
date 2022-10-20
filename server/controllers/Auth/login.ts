@@ -39,6 +39,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     if (err.name === 'ValidationError') {
       return next(new CustomError(400, err.errors));
     }
+    next(err);
   }
 };
 
