@@ -11,7 +11,7 @@ InferCreationAttributes<UserModelInterface>> {
   last_name: string,
   email: string,
   phone_number: string,
-  role: string,
+  role: 'admin' | 'user',
   hased_password: string,
 }
 const User = sequelize.define<UserModelInterface>(
