@@ -36,9 +36,7 @@ const ContactUs: React.FC = () => {
         <div className="services">
           <Form name="nest-messages" form={form} onFinish={onFinish}>
             <Item name="name" label="الاسم" rules={[{ required: true }]}>
-              <Input
-                placeholder="الاسم"
-              />
+              <Input placeholder="الاسم" />
             </Item>
 
             <Item
@@ -46,9 +44,7 @@ const ContactUs: React.FC = () => {
               label="البريد الإلكتروني"
               rules={[{ required: true, type: 'email', message: 'يرجى إدخال بريد إلكتروني صحيح' }]}
             >
-              <Input
-                placeholder="البريد الإلكتروني"
-              />
+              <Input placeholder="البريد الإلكتروني" />
             </Item>
 
             <Item name="phone" label="رقم الجوال" rules={[{ required: true }]}>
@@ -59,15 +55,11 @@ const ContactUs: React.FC = () => {
             </Item>
 
             <Item name="subject" label="الموضوع" rules={[{ required: true }]}>
-              <Input
-                placeholder="موضوع الرسالة"
-              />
+              <Input placeholder="موضوع الرسالة" />
             </Item>
 
             <Item name="description" label="الرسالة" rules={[{ required: true }]}>
-              <Input.TextArea
-                placeholder="أدخل رسالتك هنا"
-              />
+              <Input.TextArea placeholder="أدخل رسالتك هنا" />
             </Item>
 
             <Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
