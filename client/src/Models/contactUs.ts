@@ -1,4 +1,4 @@
-export interface ContactUsModel {
+export interface IContactUsModel {
   id?: number;
   name: string;
   email: string;

@@ -6,7 +6,7 @@ import {
 import './style.css';
 import { Title } from './index';
 import sendContactUs from '../../services/contactUsApi';
-import { ContactUsModel } from '../../Models/contactUs';
+import { IContactUsModel } from '../../Models/contactUs';
 import { BaseURL } from '../../Utilities/apiConsts';
 
 const { Content } = Layout;
@@ -22,7 +22,7 @@ const ContactUs: React.FC = () => {
     // eslint-disable-next-line no-console
     console.log(values);
   };
-  const [userData, setUserData] = useState<ContactUsModel>({
+  const [userData, setUserData] = useState<IContactUsModel>({
     name: '', email: '', phoneNumber: '', subject: '', description: '',
   });
   const navigation = useNavigate();

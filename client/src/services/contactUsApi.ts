@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { ContactUsModel } from '../Models/contactUs';
+import { IContactUsModel } from '../Models/contactUs';
 import { contactUsURL } from '../Utilities/apiConsts';
 
-const sendContactUs = (contactMessage: ContactUsModel) => axios.post(contactUsURL, {
+const sendContactUs = (contactMessage: IContactUsModel) => axios.post(contactUsURL, {
   name: contactMessage.name,
   email: contactMessage.email,
   phone: contactMessage.phoneNumber,
