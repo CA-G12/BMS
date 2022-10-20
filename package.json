@@ -1,6 +1,7 @@
 {
   "name": "bms",
   "version": "1.0.0",
+  "proxy": "http://localhost:5000/",
   "description": "Building owners and managers face hardships to manage users' services, their payment schedules, and their history manually. That would cause huge problems like wasting some time and effort. Managers encounter these problems to track the users' histories, and all of these operations are done with paperwork that is not durable",
   "main": "index.js",
   "scripts": {
@@ -38,6 +39,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
+    "proxy": "^1.0.2",
     "sequelize": "^6.25.0",
     "ts-jest": "^27.1.4",
     "yup": "^0.32.11"
