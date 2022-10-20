@@ -6,7 +6,7 @@ import sequelize from '../database/config/connection';
 
 interface ComplaintsModelInterface extends Model<InferAttributes<ComplaintsModelInterface>,
 InferCreationAttributes<ComplaintsModelInterface>> {
-  id ?: CreationOptional<number>;
+  id: CreationOptional<number>;
   title: string,
   description: string,
   is_solved: boolean,

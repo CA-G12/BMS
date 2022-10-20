@@ -6,7 +6,7 @@ import sequelize from '../database/config/connection';
 
 interface AdvertisementModelInterface extends Model<InferAttributes<AdvertisementModelInterface>,
 InferCreationAttributes<AdvertisementModelInterface>> {
-  id ?: CreationOptional<number>;
+  id: CreationOptional<number>;
   title: string,
   description: string,
   start_date: string,

@@ -6,7 +6,7 @@ import sequelize from '../database/config/connection';
 
 interface ContactUsModelInterface extends Model<InferAttributes<ContactUsModelInterface>,
 InferCreationAttributes<ContactUsModelInterface>> {
-  id ?: CreationOptional<number>;
+  id: CreationOptional<number>;
   name: string,
   email: string,
   phone: string,

@@ -6,7 +6,7 @@ import sequelize from '../database/config/connection';
 
 interface AnnouncementModelInterface extends Model<InferAttributes<AnnouncementModelInterface>,
 InferCreationAttributes<AnnouncementModelInterface>> {
-  id ?: CreationOptional<number>;
+  id: CreationOptional<number>;
   title: string,
   start_date: string,
   end_date: string,

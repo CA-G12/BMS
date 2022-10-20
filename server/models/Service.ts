@@ -6,7 +6,7 @@ import sequelize from '../database/config/connection';
 
 interface ServiceModelInterface extends Model<InferAttributes<ServiceModelInterface>,
 InferCreationAttributes<ServiceModelInterface>> {
-  id ?: CreationOptional<number>;
+  id: CreationOptional<number>;
   name: string,
   price: number,
   is_fixed: boolean,
