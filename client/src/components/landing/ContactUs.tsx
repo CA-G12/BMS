@@ -4,7 +4,7 @@ import {
 import { Title } from './index';
 import ContactUsApiCall from '../../services/contactUsApi';
 import './style.css';
-import { IContactUsModel } from '../../Models/contactUs';
+import { InferContactUsModel } from '../../Models/contactUs';
 
 const { Content } = Layout;
 const { Item } = Form;
@@ -16,7 +16,7 @@ const layout = {
 
 const ContactUs: React.FC = () => {
   const [form] = Form.useForm();
-  const onFinish = (values: IContactUsModel) => {
+  const onFinish = (values: InferContactUsModel) => {
     ContactUsApiCall(values)
       .then(() => {
         form.resetFields();
