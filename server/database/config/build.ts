@@ -18,7 +18,6 @@ const insertDB = async () => {
     await FlatModel.bulkCreate(flats);
     await BillModel.bulkCreate(bills);
     await PaymentModel.bulkCreate(payments);
-    await ServiceModel.bulkCreate(services);
     await ComplaintsModel.bulkCreate(complaints);
     await ContactUsModel.bulkCreate(contactUs);
 
