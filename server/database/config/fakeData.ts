@@ -1,6 +1,5 @@
 const users = [
   {
-    id: 1,
     first_name: 'أحمد',
     last_name: 'سعيد',
     email: 'jcotte0@people.com.cn',
@@ -9,7 +8,6 @@ const users = [
     hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
   },
   {
-    id: 2,
     first_name: 'خالد',
     last_name: 'عمر',
     email: 'gbelt1@thetimes.co.uk',
@@ -18,7 +16,6 @@ const users = [
     hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
   },
   {
-    id: 3,
     first_name: 'سمير',
     last_name: 'عبد الله',
     email: 'tlobe2@angelfire.com',
@@ -27,7 +24,6 @@ const users = [
     hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
   },
   {
-    id: 4,
     first_name: 'مهند',
     last_name: 'محمد',
     email: 'mgravey3@slideshare.net',
@@ -36,7 +32,6 @@ const users = [
     hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
   },
   {
-    id: 5,
     first_name: 'تميم',
     last_name: 'سليم',
     email: 'cscogin4@nytimes.com',
