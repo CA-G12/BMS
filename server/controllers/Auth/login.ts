@@ -1,7 +1,7 @@
-import bcrypt from 'bcrypt';
 import {
   Request, Response, NextFunction,
 } from 'express';
+import bcrypt from 'bcrypt';
 import { loginValidation } from '../../validation';
 import { UserModel } from '../../models';
 import { CustomError } from '../../helpers';
@@ -20,7 +20,6 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
         'المستخدم غير موجود',
       );
     }
-
     const {
       role, id,
     } = user;
@@ -31,7 +30,6 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
         'كلمة المرور خاطئة',
       );
     }
-
     GenerateToken({
       id, role,
     }, res, next);
