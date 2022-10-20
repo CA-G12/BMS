@@ -4,8 +4,8 @@ import {
 
 import sequelize from '../database/config/connection';
 
-interface ContactUsModelInterface extends Model<InferAttributes<ContactUsModelInterface>,
-InferCreationAttributes<ContactUsModelInterface>> {
+interface InferContactUsModel extends Model<InferAttributes<InferContactUsModel>,
+InferCreationAttributes<InferContactUsModel>> {
   id: CreationOptional<number>;
   name: string,
   email: string,
@@ -13,7 +13,7 @@ InferCreationAttributes<ContactUsModelInterface>> {
   subject: string,
   description: string,
 }
-const ContactUsModel = sequelize.define<ContactUsModelInterface>(
+const ContactUsModel = sequelize.define<InferContactUsModel>(
   'ContactUs',
   {
     id: {
