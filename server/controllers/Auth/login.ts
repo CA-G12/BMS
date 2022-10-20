@@ -17,7 +17,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     if (!user) {
       throw new CustomError(
         400,
-        'المستخدم غير موجود',
+        'User Doesn\'t Exist',
       );
     }
     const {
@@ -27,7 +27,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     if (!comparePasswordResult) {
       throw new CustomError(
         400,
-        'كلمة المرور خاطئة',
+        'Invalid Password',
       );
     }
     GenerateToken({
