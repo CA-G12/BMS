@@ -33,7 +33,7 @@ const Authorize = (req: IRequestPayload, res: Response, next: NextFunction, user
     if (!req.user) {
       throw new CustomError(
         401,
-        'المستخدم غير موثق',
+        'You are not Authorized',
       );
     } else {
       const { role } = req.user;
@@ -41,8 +41,8 @@ const Authorize = (req: IRequestPayload, res: Response, next: NextFunction, user
         next();
       } else {
         throw new CustomError(
-          403,
-          'المستخدم غير مصرح بالدخول لهذه الصفحة',
+          401,
+          'You are not Authorized',
         );
       }
     }

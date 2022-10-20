@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import { IUserPayload } from '../../interfaces/IUserPayload';
 
 dotenv.config();
-
 const { env: { SECRET_KEY } } = process;
 
 export default (token: string): Promise <IUserPayload> => (
