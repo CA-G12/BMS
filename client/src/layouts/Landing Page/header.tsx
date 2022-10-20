@@ -4,6 +4,7 @@ import type { SizeType } from 'antd/es/config-provider/SizeContext';
 import PropTypes from 'prop-types';
 import headerImage from '../../assets/images/header.png';
 import { NavBar } from './navbar';
+import { Title } from '../../components';
 
 interface SliderCartProps {
   title: string;
@@ -17,19 +18,20 @@ const SliderCart: React.FC<SliderCartProps> = ({ title, btnTitle, Link }) => {
     console.log(link);
   };
 
-  const cardStyle : CSSProperties = {
+  const cardStyle: CSSProperties = {
     marginTop: '64px',
   };
 
   return (
     <div style={cardStyle}>
-      <h1 style={{
-        color: 'white',
-      }}
+      <Title
+        style={{
+          color: 'white !important',
+        }}
       >
         {title}
 
-      </h1>
+      </Title>
       <Button
         style={{
           backgroundColor: '#5138ec',

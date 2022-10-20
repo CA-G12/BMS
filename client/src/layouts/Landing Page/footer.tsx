@@ -1,5 +1,6 @@
 import { Col, Row } from 'antd';
 import React from 'react';
+import { Title } from '../../components';
 import './style.css';
 
 const FooterStyle = {
@@ -35,14 +36,16 @@ const App: React.FC = () => (
           flexDirection: 'column',
         }}
         >
-          <h3 style={{
-            color: 'white',
-            fontSize: '1.2rem',
-          }}
+          <Title
+            level={3}
+            style={{
+              color: 'white',
+              fontSize: '1.2rem',
+            }}
           >
             الخدمات
 
-          </h3>
+          </Title>
           <a className="anchorLink" href="/">
             صفحة 1
           </a>
@@ -63,14 +66,16 @@ const App: React.FC = () => (
           flexDirection: 'column',
         }}
         >
-          <h3 style={{
-            color: 'white',
-            fontSize: '1.2rem',
-          }}
+          <Title
+            level={3}
+            style={{
+              color: 'white',
+              fontSize: '1.2rem',
+            }}
           >
             الخدمات
 
-          </h3>
+          </Title>
           <a className="anchorLink" href="/">
             صفحة 1
           </a>
