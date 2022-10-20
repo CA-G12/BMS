@@ -6,9 +6,9 @@ import sequelize from '../database/config/connection';
 
 interface ServiceModelInterface extends Model<InferAttributes<ServiceModelInterface>,
 InferCreationAttributes<ServiceModelInterface>> {
-  id: CreationOptional<number>;
+  id?: CreationOptional<number>;
   name: string,
-  price: DecimalDataType,
+  price: number,
   is_fixed: boolean,
   description: string,
   is_open: boolean
@@ -24,7 +24,7 @@ const Service = sequelize.define<ServiceModelInterface>('Service', {
     allowNull: false,
   },
   price: {
-    type: DataTypes.DECIMAL,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   is_fixed: {

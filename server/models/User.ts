@@ -11,7 +11,7 @@ InferCreationAttributes<UserModelInterface>> {
   last_name: string,
   email: string,
   phone_number: string,
-  role: 'admin' | 'user',
+  role: string,
   hased_password: string,
 }
 const User = sequelize.define<UserModelInterface>(
@@ -48,9 +48,6 @@ const User = sequelize.define<UserModelInterface>(
     },
     hased_password: {
       type: DataTypes.STRING,
-      validate: {
-        is: /^[0-9a-f]{64}$/i,
-      },
       allowNull: false,
     },
   },

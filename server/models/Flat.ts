@@ -8,7 +8,7 @@ interface FlatModelInterface extends Model<InferAttributes<FlatModelInterface>,
 InferCreationAttributes<FlatModelInterface>> {
   id: CreationOptional<number>;
   flat_number: number,
-  area: DecimalDataType,
+  area: number,
   notes: string,
   is_active: boolean,
 }
@@ -23,7 +23,7 @@ const Flat = sequelize.define<FlatModelInterface>('Flat', {
     allowNull: false,
   },
   area: {
-    type: DataTypes.DECIMAL,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   notes: {

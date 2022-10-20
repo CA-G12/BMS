@@ -1,15 +1,23 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import {
-  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes, DecimalDataType,
+  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
 } from 'sequelize';
 
 import sequelize from '../database/config/connection';
 
+type billServices = {
+  name: string,
+  price: number,
+  isFixed: boolean,
+  description: string,
+  isOpen: boolean,
+};
 interface BillModelInterface extends Model<InferAttributes<BillModelInterface>,
 InferCreationAttributes<BillModelInterface>> {
   id: CreationOptional<number>;
-  total_price: DecimalDataType,
+  total_price: number,
   is_open: boolean,
-  services: Array<JSON>,
+  services: Array<billServices>,
 }
 const Bill = sequelize.define<BillModelInterface>('Bill', {
   id: {
@@ -18,7 +26,7 @@ const Bill = sequelize.define<BillModelInterface>('Bill', {
     autoIncrement: true,
   },
   total_price: {
-    type: DataTypes.DECIMAL,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   is_open: {
