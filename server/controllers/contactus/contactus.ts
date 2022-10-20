@@ -1,9 +1,11 @@
-import { RequestHandler } from 'express';
+import {
+  Request, Response, NextFunction, RequestHandler,
+} from 'express';
 import { ContactUsModel } from '../../models';
 import { contactSchema } from '../../validation';
 import { CustomError } from '../../helpers';
 
-const addContact: RequestHandler = async (req, res, next) => {
+const addContact: RequestHandler = async (req:Request, res:Response, next:NextFunction) => {
   try {
     const {
       name, email, phone, subject, description,
@@ -11,7 +13,6 @@ const addContact: RequestHandler = async (req, res, next) => {
       req.body,
       { abortEarly: false },
     );
-
     const data = await ContactUsModel.create({
       name, email, phone, subject, description,
     });
