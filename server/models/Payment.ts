@@ -1,9 +1,16 @@
 import {
-  DataTypes,
+  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
 } from 'sequelize';
+
 import sequelize from '../database/config/connection';
 
-const Payment = sequelize.define(
+interface InferPaymentModel extends Model<InferAttributes<InferPaymentModel>,
+InferCreationAttributes<InferPaymentModel>> {
+  id: CreationOptional<number>;
+  title: string,
+  description: string,
+}
+const Payment = sequelize.define<InferPaymentModel>(
   'Payment',
   {
     id: {
