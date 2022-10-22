@@ -22,7 +22,7 @@ describe('Flat API', () => {
         const response = await request(app)
           .get('/api/v1/flats/')
           .expect(200);
-        expect(response.body.data[1].area).toBe("160");
+        expect(response.body.data[1].area).toBe(160);
       });
       test('Flat -GET api/v1/flats/', async () => {
         const response = await request(app)
