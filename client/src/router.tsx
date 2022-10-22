@@ -10,11 +10,10 @@ import App from './App';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <LandingPage />,
-  },
-  {
-    path: '/app',
     element: <App />,
+    children: [
+      { index: true, element: <LandingPage /> },
+    ],
   },
   {
     path: '/admin',
