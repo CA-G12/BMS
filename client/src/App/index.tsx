@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import { LandingPage } from '../pages';
 import './style.css';
+import { LandingPage } from '../pages';
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import 'remixicon/fonts/remixicon.css';
-
-import 'antd/dist/antd.css';
 
 const App: FC = () => (
   <div className="App">
@@ -12,3 +11,16 @@ const App: FC = () => (
 );
 
 export default App;
+
+// const App: FC = () => (
+//   // <div className="App">
+//   //   <Button type="primary">Button</Button>
+//   //   <LeftSquareOutlined />
+//   // </div>
+//   <Layout Children={[
+//     <div>
+//       Child
+//     </div>,
+//   ]}
+//   />
+// );
