@@ -5,12 +5,11 @@ import {
 import { MenuOutlined } from '@ant-design/icons';
 import './style.css';
 
-const { Header, Content } = Layout;
+const { Header } = Layout;
 const { Title } = Typography;
 
 export interface NavBarProps {
   selectedPage: string;
-//   children: React.ReactNode | undefined;
 }
 
 export const NavBar: React.FC<NavBarProps> = ({ selectedPage }) => {
