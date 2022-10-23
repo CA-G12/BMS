@@ -1,9 +1,9 @@
-import React, { FC, Fragment, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import Footer from './footer';
 import Header from './header';
 
 type LayoutProps = {
-  children: React.ReactNode[]
+  children: ReactNode[]
 };
 
 const Layout: FC<LayoutProps> = ({ children }) => (
