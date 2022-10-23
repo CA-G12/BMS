@@ -86,3 +86,17 @@
   width: 100% !important;
   height: 435px !important;
 }
+
+/* For Tables in Services*/
+.ant-table-content table , .ant-table-cell {
+  text-align: right !important;
+}
+/* For Title Admin */
+.titleAdmin {
+  color: #3380FF !important;
+}
+.headerOfServices {
+  display: flex;
+  justify-content: space-between;
+}
+
