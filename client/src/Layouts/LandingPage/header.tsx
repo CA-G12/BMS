@@ -12,9 +12,11 @@ interface SliderCartProps {
   Link: string;
 }
 
-const SliderCart: React.FC<SliderCartProps> = ({ title, btnTitle, Link }) => {
+const SliderCart: FC<SliderCartProps> = ({ title, btnTitle, Link }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [size, setSize] = useState<SizeType>('large');
   const redirectLink = (link: string): void => {
+    // eslint-disable-next-line no-console
     console.log(link);
   };
 
@@ -56,7 +58,7 @@ const contentStyle: React.CSSProperties = {
   color: '#fff',
   lineHeight: '160px',
   textAlign: 'center',
-  backgroundImage: `url(${headerImage})`,
+  backgroundImage: `url(${headerImage as string})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   display: 'flex',
