@@ -1,6 +1,6 @@
 import { Col, Row } from 'antd';
 import React from 'react';
-import { Title } from '..';
+import { Title } from '../../components';
 import './style.css';
 
 const FooterStyle = {

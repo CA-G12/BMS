@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// import { Link } from 'react-router-dom';
 import { Anchor, Drawer, Button } from 'antd';
 
 import logoImg from '../../assets/images/logo.png';
@@ -22,21 +23,21 @@ const appHeader: React.FC = () => {
     <div className="container-fluid">
       <div className="header">
         <div className="logo">
-          <img src={logoImg} alt="logo" />
+          <img src={logoImg as string} alt="logo" />
         </div>
         <div className="mobileHidden">
-          <Anchor targetOffset="65">
-            <Link key="الرئيسية">الرئيسية</Link>
-            <Link key="تعرف علينا">نعرف علينا</Link>
-            <Link key="الاعلانات">الاعلانات</Link>
-            <Link key="الشقق">الشقق</Link>
-            <Link key="الخدمات">الخدمات</Link>
-            <Link key="تواصل معنا">تواصل معنا</Link>
+          <Anchor targetOffset={65}>
+            <Link key="الرئيسية" href="#main" title="الرئيسية" />
+            <Link key="تعرف علينا" href="#about-us" title="تعرف علينا" />
+            <Link key="الاعلانات" href="#avdertisements" title="الإعلانات" />
+            <Link key="الشقق" href="#flats" title="الشقق" />
+            <Link key="الخدمات" href="#services" title="الخدمات" />
+            <Link key="تواصل معنا" href="#contact-us" title="تواصل معنا" />
             <Link
               key="login"
-            >
-              <Button type="primary">سجل الدخول</Button>
-            </Link>
+              href="/login"
+              title="تسجيل الدخول"
+            />
           </Anchor>
         </div>
 
@@ -50,18 +51,18 @@ const appHeader: React.FC = () => {
             onClose={onClose}
             open={open}
           >
-            <Anchor targetOffset="65">
-              <Link key="الرئيسية">الرئيسية</Link>
-              <Link key="تعرف علينا">نعرف علينا</Link>
-              <Link key="الاعلانات">الاعلانات</Link>
-              <Link key="الشقق">الشقق</Link>
-              <Link key="الخدمات">الخدمات</Link>
-              <Link key="تواصل معنا">تواصل معنا</Link>
+            <Anchor targetOffset={65}>
+              <Link key="الرئيسية" href="#main" title="الرئيسية" />
+              <Link key="تعرف علينا" href="#about-us" title="تعرف علينا" />
+              <Link key="الاعلانات" href="#avdertisements" title="الإعلانات" />
+              <Link key="الشقق" href="#flats" title="الشقق" />
+              <Link key="الخدمات" href="#services" title="الخدمات" />
+              <Link key="تواصل معنا" href="#contact-us" title="تواصل معنا" />
               <Link
                 key="login"
-              >
-                <Button type="primary">سجل الدخول</Button>
-              </Link>
+                href="/login"
+                title="تسجيل الدخول"
+              />
             </Anchor>
           </Drawer>
         </div>

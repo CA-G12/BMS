@@ -7,6 +7,9 @@ import AppHeader from '../components/layout/header';
 import AppHome from '../components/home/Hero';
 // import AppFooter from './components/common/footer';
 // import AppHome from './views/home';
+import {
+  AboutUs, AdsContainer, ContactUs, Services, VideoSection, FlatContainer,
+} from '../components';
 
 const { Header, Content } = Layout;
 
@@ -17,6 +20,12 @@ const LandingPage: React.FC = () => (
     </Header>
     <Content>
       <AppHome />
+      <AboutUs />
+      <AdsContainer />
+      <Services />
+      <FlatContainer />
+      <VideoSection />
+      <ContactUs />
     </Content>
   </Layout>
 );

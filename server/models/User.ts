@@ -12,7 +12,7 @@ InferCreationAttributes<InferUserModel>> {
   email: string,
   phone_number: string,
   role: string,
-  hased_password: string,
+  hashed_password: string,
 }
 const User = sequelize.define<InferUserModel>(
   'User',
@@ -46,7 +46,7 @@ const User = sequelize.define<InferUserModel>(
       type: DataTypes.ENUM('admin', 'user'),
       allowNull: false,
     },
-    hased_password: {
+    hashed_password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
