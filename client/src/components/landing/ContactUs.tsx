@@ -1,8 +1,10 @@
 import {
-  Button, Form, Input, Layout, Image,
+  Button, Form, Input, Layout, Image, message,
 } from 'antd';
-import './style.css';
 import { Title } from './index';
+import ContactUsApiCall from '../../services/contactUsApi';
+import './style.css';
+import { InferContactUsModel } from '../../Models/contactUs';
 
 const { Content } = Layout;
 const { Item } = Form;
@@ -13,9 +15,14 @@ const layout = {
 };
 
 const ContactUs: React.FC = () => {
-  const onFinish = (values: object) => {
-    // eslint-disable-next-line no-console
-    console.log(values);
+  const [form] = Form.useForm();
+  const onFinish = (values: InferContactUsModel) => {
+    ContactUsApiCall(values)
+      .then(() => {
+        form.resetFields();
+        return message.success('تم إرسال الشكوى بنجاح');
+      })
+      .catch(() => message.error('حدث خطأ ما، يرجى المحاولة لاحقًا'));
   };
 
   return (
@@ -27,10 +34,11 @@ const ContactUs: React.FC = () => {
         }}
       >
         <div className="services">
-          <Form {...layout} name="nest-messages" onFinish={onFinish}>
+          <Form name="nest-messages" form={form} onFinish={onFinish}>
             <Item name="name" label="الاسم" rules={[{ required: true }]}>
               <Input placeholder="الاسم" />
             </Item>
+
             <Item
               name="email"
               label="البريد الإلكتروني"
@@ -38,18 +46,22 @@ const ContactUs: React.FC = () => {
             >
               <Input placeholder="البريد الإلكتروني" />
             </Item>
+
             <Item name="phone" label="رقم الجوال" rules={[{ required: true }]}>
               <Input
                 type="tel"
                 placeholder="رقم الجوال"
               />
             </Item>
+
             <Item name="subject" label="الموضوع" rules={[{ required: true }]}>
               <Input placeholder="موضوع الرسالة" />
             </Item>
-            <Item name="message" label="الرسالة" rules={[{ required: true }]}>
+
+            <Item name="description" label="الرسالة" rules={[{ required: true }]}>
               <Input.TextArea placeholder="أدخل رسالتك هنا" />
             </Item>
+
             <Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
               <Button type="primary" htmlType="submit">
                 أرسل طلبك

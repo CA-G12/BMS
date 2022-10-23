@@ -4,7 +4,10 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import { join } from 'path';
 import morgan from 'morgan';
-import { clientError, serverError } from './middleware';
+import {
+  clientError, serverError,
+} from './middleware';
+
 import router from './routes';
 
 dotenv.config();

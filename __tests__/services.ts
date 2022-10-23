@@ -10,19 +10,19 @@ describe('Services API', () => {
         const response = await request(app)
           .get('/api/v1/services/')
           .expect(200);
-        expect(response.body.data[0].price).toBe("100");
+        expect(response.body.data[0].price).toBe(100);
       });
       test('Flat -GET api/v1/services/', async () => {
         const response = await request(app)
           .get('/api/v1/services/')
           .expect(200);
-        expect(response.body.data[1].price).toBe("0");
+        expect(response.body.data[1].price).toBe(0);
       });
       test('Flat -GET api/v1/services/', async () => {
         const response = await request(app)
           .get('/api/v1/services/')
           .expect(200);
-        expect(response.body.data[2].price).toBe("0");
+        expect(response.body.data[2].price).toBe(0);
       });
       test('Flat -GET api/v1/services/', async () => {
         const response = await request(app)
