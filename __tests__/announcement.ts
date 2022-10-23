@@ -30,6 +30,68 @@ describe('announcements API', () => {
           .expect(200);
         expect(response.body.msg).toBe('Announcement Deleted Successfully');
       });
+
+    test('Announcements -GET api/v1/announcements/', async () => {
+        const response = await request(app)
+          .get('/api/v1/announcements/')
+          .expect(200);
+        expect(response.body.data[0].end_date).toBe('21/10/2022');
+      });
+      test('Announcements -GET api/v1/announcements/', async () => {
+        const response = await request(app)
+          .get('/api/v1/announcements/')
+          .expect(200);
+        expect(response.body.data[1].start_date).toBe("20/10/2022");
+      });
+
+      test('Announcements -post api/v1/announcements/', async () => {
+        const response = await request(app)
+          .post('/api/v1/announcements')
+          .send({
+            title:'تبنيه عام',
+            start_date: '20/10/2022',
+            end_date: '21/10/2022',
+          })
+          .expect(200);
+        expect(response.body.data.start_date).toBe('20/10/2022');
+      });
+
+      test('Announcements -post api/v1/announcements/', async () => {
+        const response = await request(app)
+          .post('/api/v1/announcements')
+          .send({
+            title:'تبنيه عام رقم 2',
+            start_date: '20/10/2022',
+            end_date: '21/10/2022',
+          })
+          .expect(200);
+        expect(response.body.data.start_date).toBe('20/10/2022');
+      });
+
+      test('Announcements -GET api/v1/announcements/:id', async () => {
+        const response = await request(app)
+          .get('/api/v1/announcements/3')
+          .expect(200);
+        expect(response.body.data.id).toBe(3);
+      });
+      test('Announcements -GET api/v1/announcements/:id', async () => {
+        const response = await request(app)
+          .get('/api/v1/announcements/2')
+          .expect(200);
+        expect(response.body.data.id).toBe(2);
+      });
+
+      test('Announcements -put api/v1/announcements/', async () => {
+        const response = await request(app)
+          .put('/api/v1/announcements/2')
+          .send({
+              title: "test",
+              start_date: "2022-10-10",
+              end_date : "2050-10-10"
+          })
+          .expect(200);
+        expect(response.body.data[0].start_date).toEqual("2022-10-10");
+      });
   });
 
 
