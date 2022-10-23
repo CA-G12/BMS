@@ -1,0 +1,29 @@
+/* .ant-menu-item-selected {
+  background-color: #1890ff !important;
+  color: white !important;
+  user-select: none !important;
+}
+
+.loginBtn:hover {
+  background-color: transparent !important;
+}
+
+.anchorLink {
+  color: white !important;
+  text-decoration: none;
+}
+
+.header-fixed {
+  background-color: transparent !important;
+}
+
+.ant-menu-root {
+  background-color: transparent !important;
+} */
+
+  /* .cardBGImage {
+    background-image: url(/static/media/header.ac98c36….png);
+  } */
+img {
+  width: 130px;
+}

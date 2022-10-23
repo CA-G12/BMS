@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { FC } from 'react';
 import './style.css';
 import { LandingPage } from '../pages';
@@ -11,16 +12,3 @@ const App: FC = () => (
 );
 
 export default App;
-
-// const App: FC = () => (
-//   // <div className="App">
-//   //   <Button type="primary">Button</Button>
-//   //   <LeftSquareOutlined />
-//   // </div>
-//   <Layout Children={[
-//     <div>
-//       Child
-//     </div>,
-//   ]}
-//   />
-// );
