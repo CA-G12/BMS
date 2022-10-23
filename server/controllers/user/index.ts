@@ -2,5 +2,5 @@
 export { default as getFlats } from './getFlats';
 export { default as getAdvertisements } from './getAdvertisemsnts';
 export {
-  getAnnouncments, postAnnouncments, getAnnouncmentsById, putAnnouncments, deleteAnnouncements,
-} from './announcments';
+  getAnnouncement, postAnnouncement, getAnnouncementById, putAnnouncement, deleteAnnouncement,
+} from './announcement';
