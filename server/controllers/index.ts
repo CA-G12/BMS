@@ -8,4 +8,4 @@ export { getAdvertisements } from './advertisements';
 export { getFlats } from './flats';
 
 export { getServices } from './services';
-export { login } from './auth';
+export { signup, login } from './auth';
