@@ -3,8 +3,9 @@
 export { addContact } from './contactus';
 export {
   getAnnouncement, postAnnouncement, getAnnouncementById, putAnnouncement, deleteAnnouncement,
-} from './announcement';
-export { getAdvertisements } from './Advertisements';
-export { getFlats } from './Flats';
+} from './announcements';
+export { getAdvertisements } from './advertisements';
+export { getFlats } from './flats';
 
-export { getServices } from './admin';
+export { getServices } from './services';
+export { login } from './auth';
