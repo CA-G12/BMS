@@ -1,7 +1,7 @@
 import {
   Request, Response, NextFunction,
 } from 'express';
-import CustomError from '../../helpers';
+import { CustomError } from '../../helpers';
 import { FlatModel, UserModel } from '../../models';
 
 export default async (req:Request, res:Response, next:NextFunction) => {
