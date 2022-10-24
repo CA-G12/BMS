@@ -6,9 +6,9 @@ import sequelize from '../server/database/config/connection';
 beforeAll(insertDB);
 
 describe('Users API', () => {
-    test('Users -post api/v1/auth/signUp/', async () => {
+    test('Users -post api/v1/auth/signup/', async () => {
       const response = await request(app)
-        .post('/api/v1/auth/signUp')
+        .post('/api/v1/auth/signup')
         .send({
             firstName: 'Bayan',
             lastName: ' Abd El Bary',
@@ -16,12 +16,12 @@ describe('Users API', () => {
             email: 'bayan@gmail.com',
             password: 'password'
         })
-        .expect(200);
+        .expect(201);
       expect(response.body.message).toBe("User Created Successfully");
     });
-        test('Users -post api/v1/auth/signUp/', async () => {
+        test('Users -post api/v1/auth/signup/', async () => {
           const response = await request(app)
-            .post('/api/v1/auth/signUp')
+            .post('/api/v1/auth/signup')
             .send({
                 firstName: 'Bayan',
                 lastName: ' Abd El Bary',
@@ -32,9 +32,9 @@ describe('Users API', () => {
             .expect(400);
           expect(response.body.message).toBe("Phone Number Already Exist");
         });
-    test('Users -post api/v1/auth/signUp/', async () => {
+    test('Users -post api/v1/auth/signup/', async () => {
         const response = await request(app)
-          .post('/api/v1/auth/signUp')
+          .post('/api/v1/auth/signup')
           .send({
               firstName: 'Bayan',
               lastName: ' Abd El Bary',
@@ -45,9 +45,9 @@ describe('Users API', () => {
           .expect(400);
         expect(response.body.message).toEqual(["email must be a valid email"]);
       });
-      test('Users -post api/v1/auth/signUp/', async () => {
+      test('Users -post api/v1/auth/signup/', async () => {
         const response = await request(app)
-          .post('/api/v1/auth/signUp')
+          .post('/api/v1/auth/signup')
           .send({
               firstName: 'Bayan',
               lastName: ' Abd El Bary',
@@ -58,9 +58,9 @@ describe('Users API', () => {
           .expect(400);
         expect(response.body.message).toEqual(["phoneNumber must be at least 7 characters"]);
       });
-      test('Users -post api/v1/auth/signUp/', async () => {
+      test('Users -post api/v1/auth/signup/', async () => {
         const response = await request(app)
-          .post('/api/v1/auth/signUp')
+          .post('/api/v1/auth/signup')
           .send({
               firstName: 'Bayan',
               lastName: ' Abd El Bary',
@@ -71,9 +71,9 @@ describe('Users API', () => {
           .expect(400);
         expect(response.body.message).toEqual(["password must be at least 8 characters"]);
       });
-      test('Users -post api/v1/auth/signUp/', async () => {
+      test('Users -post api/v1/auth/signup/', async () => {
         const response = await request(app)
-          .post('/api/v1/auth/signUp/nnnn')
+          .post('/api/v1/auth/signup/nnnn')
           .send({
               firstName: 'Bayan',
               lastName: ' Abd El Bary',

@@ -32,7 +32,7 @@ const signUp = async (req:Request, res:Response, next:NextFunction) => {
         'Phone Number Already Exist',
       );
     }
-    res.json({ message: 'User Created Successfully', status: 201 });
+    res.status(201).json({ message: 'User Created Successfully', status: 201 });
   } catch (err) {
     if (err.name === 'ValidationError') {
       return next(new CustomError(400, err.errors));
