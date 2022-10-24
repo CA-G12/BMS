@@ -2,3 +2,4 @@
 export { addContact } from './contactus';
 export { getFlats, getAdvertisements } from './user';
 export { getServices } from './admin';
+export { signup, login } from './Auth';
