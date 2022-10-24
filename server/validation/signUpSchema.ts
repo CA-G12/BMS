@@ -7,7 +7,7 @@ const SignUpSchema = yup.object({
     .required()
     .min(7)
     .max(14),
-  email: yup.string().email().required(),
+  email: yup.string().email(),
   password: yup.string()
     .required()
     .min(8)

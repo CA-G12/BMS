@@ -3,14 +3,13 @@ import { hash } from 'bcrypt';
 import { signUpSchema } from '../../validation';
 import { UserModel } from '../../models';
 import { CustomError } from '../../helpers';
-import { GenerateToken } from '../../middleware';
 
 const signUp = async (req:Request, res:Response, next:NextFunction) => {
   try {
     const {
       firstName, lastName, phoneNumber, email, password,
     } = 
-    await signUpSchema.validateSync(
+    await signUpSchema.validate(
       req.body,
     { abortEarly: false });
     const hashedPassword = await hash(password, 10);
@@ -27,14 +26,10 @@ const signUp = async (req:Request, res:Response, next:NextFunction) => {
         'Phone Number Already Exist',
       );
       }
-      const role = user.role;
-      const id = user.id 
-      GenerateToken({
-        id, role,
-}, res, next);
+      res.json({ message: 'Logged in Successfully' });
   } catch (err) {
     if (err.name === 'ValidationError') {
-      return next(new CustomError(400, err.errors));
+        return next(new CustomError(400, err.errors));
     }
     next(err);
   }
