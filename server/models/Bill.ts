@@ -1,14 +1,32 @@
-import { DataTypes } from 'sequelize';
+/* eslint-disable @typescript-eslint/naming-convention */
+import {
+  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
+} from 'sequelize';
+
 import sequelize from '../database/config/connection';
 
-const Bill = sequelize.define('Bill', {
+type billServices = {
+  name: string,
+  price: number,
+  isFixed: boolean,
+  description: string,
+  isOpen: boolean,
+};
+interface InferBillModel extends Model<InferAttributes<InferBillModel>,
+InferCreationAttributes<InferBillModel>> {
+  id: CreationOptional<number>;
+  total_price: number,
+  is_open: boolean,
+  services: Array<billServices>,
+}
+const Bill = sequelize.define<InferBillModel>('Bill', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
   total_price: {
-    type: DataTypes.DECIMAL,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   is_open: {

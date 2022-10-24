@@ -1,4 +1,4 @@
 import CustomError from './customError';
+import { signToken, verifyToken } from './jwt';
 
-// eslint-disable-next-line import/prefer-default-export
-export { CustomError };
+export { CustomError, signToken, verifyToken };

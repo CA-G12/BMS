@@ -1,14 +1,11 @@
 import { FC } from 'react';
-import { LandingPage } from '../pages';
+import { Outlet } from 'react-router-dom';
+import 'antd/dist/antd.min.css';
 import './style.css';
 import 'remixicon/fonts/remixicon.css';
 
-import 'antd/dist/antd.css';
-
 const App: FC = () => (
-  <div className="App">
-    <LandingPage />
-  </div>
+  <div><Outlet /></div>
 );
 
 export default App;
