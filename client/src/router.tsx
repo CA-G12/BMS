@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import { LandingPage } from './pages';
 import { AdminDashboard } from './Layouts';
-
+import Login from './pages/Auth/Login';
 import {
   Services, Bills, Flats,
 } from './components/adminDashboard';
@@ -13,6 +13,15 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <LandingPage /> },
+    ],
+  },
+  {
+    path: '/auth',
+    children: [
+      {
+        path: 'login',
+        element: <Login />,
+      },
     ],
   },
   {

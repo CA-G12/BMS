@@ -1,17 +1,35 @@
 import {
   Col, Row,
-  Button, Checkbox, Form, Input,
+  Button, Checkbox, Form, Input, Typography,
 } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   LockOutlined, UserOutlined,
 } from '@ant-design/icons';
-import { Title } from '../../components';
+import { useNavigate } from 'react-router-dom';
+import Login from '../../services/authService';
+import { ILoginModel } from '../../Models/loginModel';
+import { IErrorLoginResult } from '../../Models/ILoginResult';
+
+const { Text, Title } = Typography;
 
 const LoginForm: React.FC = () => {
-  const onFinish = (values: any) => {
-    console.log('Received values of form: ', values);
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState<string>('');
+  const onFinish = (values: ILoginModel) => {
+    setErrorMessage('');
+    Login(values)
+      .then((res) => {
+        const { role } = res.data;
+        const isAdmin: boolean = role === 'admin';
+        if (isAdmin) { navigate('/admin'); } else navigate('/user');
+      })
+      .catch((res: IErrorLoginResult) => {
+        const { status } = res.response;
+        const message: string = status === 400 ? 'يوجد خطأ في المدخلات' : 'حدث خطأ ما';
+        setErrorMessage(message);
+      });
   };
 
   return (
@@ -22,7 +40,7 @@ const LoginForm: React.FC = () => {
       onFinish={onFinish}
     >
       <Form.Item
-        name="username"
+        name="phoneNumber"
         rules={[{ required: true, message: 'حقل رقم الهاتف مطلوب' }]}
       >
         <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="رقم الهاتف" />
@@ -37,6 +55,7 @@ const LoginForm: React.FC = () => {
           placeholder="كلمة المرور"
         />
       </Form.Item>
+      <Text type="danger">{errorMessage}</Text>
       <Form.Item>
         <Form.Item name="remember" valuePropName="checked" noStyle>
           <Checkbox>تذكرني</Checkbox>
@@ -46,7 +65,6 @@ const LoginForm: React.FC = () => {
           نسيت كلمة المرور
         </a>
       </Form.Item>
-
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
           تسجيل الدخول

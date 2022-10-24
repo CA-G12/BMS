@@ -4,6 +4,7 @@ import {
 } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import './style.css';
+import { useNavigate } from 'react-router-dom';
 
 const { Header } = Layout;
 const { Title } = Typography;
@@ -13,11 +14,12 @@ export interface NavBarProps {
 }
 
 export const NavBar: React.FC<NavBarProps> = ({ selectedPage }) => {
+  const navigator = useNavigate();
   const gotoPage = (page: string) => {
-  // GO TO MENU ITEM PAGE
+    navigator('/auth/login');
   };
 
-  const headerStyle : CSSProperties = {
+  const headerStyle: CSSProperties = {
     position: 'absolute',
     width: '100%',
     zIndex: '1',
@@ -40,7 +42,7 @@ export const NavBar: React.FC<NavBarProps> = ({ selectedPage }) => {
                   theme="dark"
                   style={{
                     backgroundColor:
-                  'transparent !important',
+                      'transparent !important',
                   }}
                   mode="horizontal"
                   defaultSelectedKeys={['home']}
