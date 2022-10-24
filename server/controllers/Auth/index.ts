@@ -1,4 +1,4 @@
 import login from './login';
-import signup from './signup';
+import signup from './_signup';
 
 export { login, signup };
