@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import {
-  Button, Form, Input, Layout, Image, message,
+  Button, Form, Input, Layout, message, Row, Col,
 } from 'antd';
 import { Title } from './index';
 import sendContactUs from '../services/contactUsApi';
@@ -27,57 +27,58 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <Layout style={{ backgroundColor: '#fff', margin: '0 115px' }} id="contact-us">
+    <Layout style={{ backgroundColor: '#fff' }} id="contact-us">
       <Title>تواصل معنا</Title>
       <Content
         style={{
-          padding: '16px 100px',
+          padding: '16px 56px',
         }}
       >
-        <div className="services">
-          <Form name="nest-messages" form={form} onFinish={onFinish}>
-            <Item name="name" label="الاسم" rules={[{ required: true }]}>
-              <Input placeholder="الاسم" />
-            </Item>
-
-            <Item
-              name="email"
-              label="البريد الإلكتروني"
-              rules={[{ required: true, type: 'email', message: 'يرجى إدخال بريد إلكتروني صحيح' }]}
-            >
-              <Input placeholder="البريد الإلكتروني" />
-            </Item>
-
-            <Item name="phone" label="رقم الجوال" rules={[{ required: true }]}>
-              <Input
-                type="tel"
-                placeholder="رقم الجوال"
-              />
-            </Item>
-
-            <Item name="subject" label="الموضوع" rules={[{ required: true }]}>
-              <Input placeholder="موضوع الرسالة" />
-            </Item>
-
-            <Item name="description" label="الرسالة" rules={[{ required: true }]}>
-              <Input.TextArea placeholder="أدخل رسالتك هنا" />
-            </Item>
-
-            <Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-              <Button type="primary" htmlType="submit">
-                أرسل طلبك
-              </Button>
-            </Item>
-          </Form>
-
-          <div className="img img-contact">
-            <Image
-              preview={false}
+        <Row id="contact-section">
+          <Col xs={{ span: 24, offset: 0 }} xl={{ span: 12, offset: 2 }}>
+            <img
               src="https://images.pexels.com/photos/38271/ipad-map-tablet-internet-38271.jpeg"
-              alt="contact"
+              alt="building"
+              className="img-about"
             />
-          </div>
-        </div>
+          </Col>
+          <Col xs={{ span: 24, offset: 0 }} xl={{ span: 12, offset: 0 }}>
+            <Form name="nest-messages" form={form} onFinish={onFinish}>
+              <Item name="name" label="الاسم" rules={[{ required: true }]}>
+                <Input placeholder="الاسم" />
+              </Item>
+
+              <Item
+                name="email"
+                label="البريد الإلكتروني"
+                rules={[{ required: true, type: 'email', message: 'يرجى إدخال بريد إلكتروني صحيح' }]}
+              >
+                <Input placeholder="البريد الإلكتروني" />
+              </Item>
+
+              <Item name="phone" label="رقم الجوال" rules={[{ required: true }]}>
+                <Input
+                  type="tel"
+                  placeholder="رقم الجوال"
+                />
+              </Item>
+
+              <Item name="subject" label="الموضوع" rules={[{ required: true }]}>
+                <Input placeholder="موضوع الرسالة" />
+              </Item>
+
+              <Item name="description" label="الرسالة" rules={[{ required: true }]}>
+                <Input.TextArea placeholder="أدخل رسالتك هنا" />
+              </Item>
+
+              <Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+                <Button type="primary" htmlType="submit">
+                  أرسل طلبك
+                </Button>
+              </Item>
+            </Form>
+          </Col>
+        </Row>
       </Content>
 
     </Layout>

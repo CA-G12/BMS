@@ -1,17 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable array-callback-return */
 import { Carousel, Button } from 'antd';
 import React from 'react';
 import staticData from '../../StaticData';
-// import items from '../../StaticData';
 
-// const contentStyle: React.CSSProperties = {
-//   height: '100vh',
-//   color: '#fff',
-//   lineHeight: '160px',
-//   textAlign: 'center',
-//   background: '#364d79',
-// };
 const AppHome: React.FC = () => (
   <div id="hero" className="heroBlock">
     <Carousel>

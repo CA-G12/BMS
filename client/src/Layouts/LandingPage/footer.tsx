@@ -1,51 +1,30 @@
 import { Col, Row } from 'antd';
 import React from 'react';
-import { Title } from '../../components';
-import './style.css';
+import logoImg from '../../assets/images/logo.png';
 
-const FooterStyle = {
-  backgroundColor: '#546681',
-  color: 'white',
-  padding: '30px 20px',
-};
-
-const App: React.FC = () => (
+const AppFooter: React.FC = () => (
   <div>
-    <Row style={FooterStyle}>
-      <Col sm={{ span: 24, offset: 0 }} lg={{ span: 6, offset: 2 }}>
+    <Row>
+      <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
         <div>
-          <img src="logo" alt="logo" />
-          <p>
-            Lörem ipsum od ohet dilogi. Bell trabel,
-            samuligt, ohöbel utom diska.
-            Jinesade bel när feras redorade i belogi.
-            FAR paratyp i muvåning, och pesask vyfisat.
-            Viktiga poddradio har un mad och inde.
+          <div className="logo">
+            <img src={logoImg as string} alt="logo" />
+          </div>
+          <p className="para-footer">
+            سلسلة من المباني تأسست عام 2009 وتوفر سلسلة الحساينة هوم عقارات سكنية متنوعة
           </p>
-          <div>
-            <span><i className="facebook" /></span>
-            <span><i className="twitter" /></span>
-            <span><i className="linkedin" /></span>
-            <span><i className="instagram" /></span>
+          <div className="social-media">
+            <span className="icon"><i className="ri-instagram-line" /></span>
+            <span className="icon"><i className="ri-facebook-circle-line" /></span>
+            <span className="icon"><i className="ri-twitter-line" /></span>
+            <span className="icon"><i className="ri-whatsapp-line" /></span>
           </div>
         </div>
       </Col>
-      <Col sm={{ span: 24, offset: 0 }} lg={{ span: 6, offset: 2 }}>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-        >
-          <Title
-            level={3}
-            style={{
-              color: 'white',
-              fontSize: '1.2rem',
-            }}
-          >
-            الخدمات
 
-          </Title>
+      <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
+        <h1 className="title">المساعدة</h1>
+        <div className="links">
           <a className="anchorLink" href="/">
             صفحة 1
           </a>
@@ -60,22 +39,10 @@ const App: React.FC = () => (
           </a>
         </div>
       </Col>
-      <Col sm={{ span: 24, offset: 0 }} lg={{ span: 6, offset: 2 }}>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-        >
-          <Title
-            level={3}
-            style={{
-              color: 'white',
-              fontSize: '1.2rem',
-            }}
-          >
-            الخدمات
 
-          </Title>
+      <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
+        <h1 className="title">التواصل</h1>
+        <div className="links">
           <a className="anchorLink" href="/">
             صفحة 1
           </a>
@@ -90,8 +57,27 @@ const App: React.FC = () => (
           </a>
         </div>
       </Col>
+
+      <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
+        <h1 className="title">الخدمات</h1>
+        <div className="links">
+          <a className="anchorLink" href="/">
+            صفحة 1
+          </a>
+          <a className="anchorLink" href="/">
+            صفحة 1
+          </a>
+          <a className="anchorLink" href="/">
+            صفحة 1
+          </a>
+          <a className="anchorLink" href="/">
+            صفحة 1
+          </a>
+        </div>
+      </Col>
+
     </Row>
   </div>
 );
 
-export default App;
+export default AppFooter;

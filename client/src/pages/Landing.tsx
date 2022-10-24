@@ -3,15 +3,14 @@ import React from 'react';
 import 'antd/dist/antd.css';
 
 import { Layout } from 'antd';
-import AppHeader from '../components/layout/header';
+import AppHeader from '../layouts/LandingPage/header';
 import AppHome from '../components/home/Hero';
-// import AppFooter from './components/common/footer';
-// import AppHome from './views/home';
+import AppFooter from '../layouts/LandingPage/footer';
 import {
   AboutUs, AdsContainer, ContactUs, Services, VideoSection, FlatContainer,
 } from '../components';
 
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 const LandingPage: React.FC = () => (
   <Layout className="mainLayout">
@@ -22,30 +21,15 @@ const LandingPage: React.FC = () => (
       <AppHome />
       <AboutUs />
       <AdsContainer />
-      <Services />
       <FlatContainer />
+      <Services />
       <VideoSection />
       <ContactUs />
     </Content>
+    <Footer>
+      <AppFooter />
+    </Footer>
   </Layout>
 );
 
 export default LandingPage;
-// import React from 'react';
-// import Layout from '../components/layout/layout';
-// import {
-//   AboutUs, AdsContainer, ContactUs, Services, VideoSection, FlatContainer,
-// } from '../components';
-
-// const LandingPage: React.FC = () => (
-//   <Layout>
-//     <AboutUs />
-//     <AdsContainer />
-//     <Services />
-//     <FlatContainer />
-//     <VideoSection />
-//     <ContactUs />
-//   </Layout>
-// );
-
-// export default LandingPage;
