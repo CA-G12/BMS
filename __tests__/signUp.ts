@@ -16,7 +16,7 @@ describe('Users API', () => {
             email: 'bayan@gmail.com',
             password: 'password'
         })
-        .expect(200);
+        .expect(201);
       expect(response.body.message).toBe("User Created Successfully");
     });
         test('Users -post api/v1/auth/signup/', async () => {
