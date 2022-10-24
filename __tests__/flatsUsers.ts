@@ -22,7 +22,7 @@ describe('Flat API', () => {
         const response = await request(app)
           .get('/api/v1/flatsUsers?pageNum=1')
           .expect(200);
-        expect(response.body.data[1].area).toBe("160");
+        expect(response.body.data[1].area).toBe(160);
       });
       test('FlatsUsers -GET api/v1/flatsUsers', async () => {
         const response = await request(app)
