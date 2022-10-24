@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-import { AnnouncementModel } from '../../../models';
+import { AnnouncementModel } from '../../models';
 
 export default async (req:Request, res:Response, next:NextFunction) => {
   try {
