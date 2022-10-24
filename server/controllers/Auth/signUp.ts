@@ -13,7 +13,8 @@ const signUp = async (req:Request, res:Response, next:NextFunction) => {
       { abortEarly: false },
     );
     const hashedPassword = await hash(password, 10);
-    const [created] = await UserModel.findOrCreate({
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [user, created] = await UserModel.findOrCreate({
       where: { phone_number: phoneNumber },
       defaults: {
         first_name: firstName,
@@ -31,7 +32,7 @@ const signUp = async (req:Request, res:Response, next:NextFunction) => {
         'Phone Number Already Exist',
       );
     }
-    res.json({ message: 'User Created Successfully' });
+    res.json({ message: 'User Created Successfully', status: 201 });
   } catch (err) {
     if (err.name === 'ValidationError') {
       return next(new CustomError(400, err.errors));
