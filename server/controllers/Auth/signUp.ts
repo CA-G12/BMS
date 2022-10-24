@@ -4,7 +4,7 @@ import { signUpSchema } from '../../validation';
 import { UserModel } from '../../models';
 import { CustomError } from '../../helpers';
 
-const signUp = async (req:Request, res:Response, next:NextFunction) => {
+const signup = async (req:Request, res:Response, next:NextFunction) => {
   try {
     const {
       firstName, lastName, phoneNumber, email, password,
@@ -41,4 +41,4 @@ const signUp = async (req:Request, res:Response, next:NextFunction) => {
   }
 };
 
-export default signUp;
+export default signup;
