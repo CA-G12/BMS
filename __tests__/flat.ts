@@ -36,7 +36,6 @@ describe('Flat API', () => {
           .expect(200);
         expect(response.body.data[0].UserId).toBe(1);
       });
-
   });
 
 
