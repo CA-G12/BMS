@@ -6,3 +6,5 @@ export {
 } from './announcement';
 export { getAdvertisements } from './Advertisements';
 export { getFlats } from './Flats';
+
+export { getServices } from './admin';
