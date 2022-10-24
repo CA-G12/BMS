@@ -13,13 +13,16 @@ describe('Services API', () => {
             id:1,
             name: 'خدمات عامة',
             price: 100,
-            is_fixed: true,
+            isFixed: true,
             description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
             "is_open": true
 
         })
         .expect(201);
-      expect(response.body.data.price).toBe(100);
+        expect(response.body.data.is_fixed).toBe(true);
+        expect(response.body.data.is_open).toBe(true);
+        expect(response.body.data.name).toBe("خدمات عامة");
+        expect(response.body.data.price).toBe(100);
     });
     test('Services -post api/v1/services/', async () => {
         const response = await request(app)
@@ -28,7 +31,7 @@ describe('Services API', () => {
               id:1,
               name: 'خدمات عامة',
               price: 900,
-              is_fixed: true,
+              isFixed: true,
               description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
               "is_open": true
 
@@ -41,30 +44,14 @@ describe('Services API', () => {
           .post('/api/v1/services')
           .send({
               id:1,
-              name: 'خدمات',
               price: 100,
-              is_fixed: true,
+              isFixed: true,
               description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
               "is_open": true
 
           })
-          .expect(201);
-        expect(response.body.data.name).toBe("خدمات");
-      });
-      test('Services -post api/v1/services/', async () => {
-        const response = await request(app)
-          .post('/api/v1/services')
-          .send({
-              id:1,
-              name: 'خدمات عامة',
-              price: 120,
-              is_fixed: true,
-              description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
-              "is_open": true
-
-          })
-          .expect(201);
-        expect(response.body.data.price).toBe(120);
+          .expect(400);
+        expect(response.body).toEqual({"message": ["name is a required field"]});
       });
 
     test('Flat -GET api/v1/services/', async () => {
@@ -99,7 +86,7 @@ describe('Services API', () => {
               id:1,
               name: 'خدمات عامة',
               price: 100,
-              is_fixed: true,
+              isFixed: true,
               description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
           })
           .expect(200);
@@ -112,7 +99,7 @@ describe('Services API', () => {
                 id:1,
                 name: 'خدمات عامة',
                 price: 900,
-                is_fixed: true,
+                isFixed: true,
                 description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
             })
             .expect(200);
@@ -125,7 +112,7 @@ describe('Services API', () => {
                 id:1,
                 name: 'خدمات',
                 price: 100,
-                is_fixed: true,
+                isFixed: true,
                 description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
             })
             .expect(200);
@@ -138,7 +125,7 @@ describe('Services API', () => {
                 id:1,
                 name: 'خدمات عامة',
                 price: 120,
-                is_fixed: true,
+                isFixed: true,
                 description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
             })
             .expect(200);

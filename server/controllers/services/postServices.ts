@@ -7,10 +7,10 @@ import { servicesSchema } from '../../validation';
 export default async (req:Request, res:Response, next: NextFunction) => {
   try {
     const {
-      name, price, is_fixed, description, is_open,
+      name, price, isFixed, description, isOpen,
     } = await servicesSchema.validate(req.body, { abortEarly: false });
     const data = await ServiceModel.create({
-      name, price, is_fixed, description, is_open,
+      name, price, is_fixed: isFixed, description, is_open: isOpen,
     });
     res.status(201).json({ data });
   } catch (err) {
