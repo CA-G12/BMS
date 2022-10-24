@@ -19,7 +19,7 @@ describe('Services API', () => {
 
         })
         .expect(200);
-      expect(response.body.data.price).toBe("100");
+      expect(response.body.data.price).toBe(100);
     });
     test('Services -post api/v1/services/', async () => {
         const response = await request(app)
@@ -34,7 +34,7 @@ describe('Services API', () => {
 
           })
           .expect(200);
-        expect(response.body.data.price).toBe("900");
+        expect(response.body.data.price).toBe(900);
       });
       test('Services -post api/v1/services/', async () => {
         const response = await request(app)
@@ -64,7 +64,7 @@ describe('Services API', () => {
 
           })
           .expect(200);
-        expect(response.body.data.price).toBe("120");
+        expect(response.body.data.price).toBe(120);
       });
 
     test('Flat -GET api/v1/services/', async () => {
