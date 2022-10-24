@@ -5,5 +5,5 @@ export {
 export { getAdvertisements } from './advertisements';
 export { getFlats } from './flats';
 
-export { getServices, postServices } from './services';
+export { getServices, postServices, updateServices } from './services';
 export { signup, login } from './auth';
