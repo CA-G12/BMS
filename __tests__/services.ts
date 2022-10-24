@@ -18,7 +18,7 @@ describe('Services API', () => {
             "is_open": true
 
         })
-        .expect(200);
+        .expect(201);
       expect(response.body.data.price).toBe(100);
     });
     test('Services -post api/v1/services/', async () => {
@@ -33,7 +33,7 @@ describe('Services API', () => {
               "is_open": true
 
           })
-          .expect(200);
+          .expect(201);
         expect(response.body.data.price).toBe(900);
       });
       test('Services -post api/v1/services/', async () => {
@@ -48,7 +48,7 @@ describe('Services API', () => {
               "is_open": true
 
           })
-          .expect(200);
+          .expect(201);
         expect(response.body.data.name).toBe("خدمات");
       });
       test('Services -post api/v1/services/', async () => {
@@ -63,7 +63,7 @@ describe('Services API', () => {
               "is_open": true
 
           })
-          .expect(200);
+          .expect(201);
         expect(response.body.data.price).toBe(120);
       });
 
