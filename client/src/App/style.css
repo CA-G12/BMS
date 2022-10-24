@@ -86,3 +86,7 @@
   width: 100% !important;
   height: 435px !important;
 }
+.formItem{
+  font-size: 'large';
+   margin: 30px 0 30px 0; 
+}
