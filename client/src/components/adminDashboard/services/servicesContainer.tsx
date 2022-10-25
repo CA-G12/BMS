@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { PlusCircleOutlined, EditOutlined } from '@ant-design/icons';
 import '../../../App/style.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { InferServicesModel } from '../../../Models/services';
 import { Loading, NoData } from '../../index';
 
@@ -70,11 +71,14 @@ const ServicesContainer: React.FC = () => {
     <>
       <div className="headerOfServices">
         <Title className="titleAdmin">الخدمات</Title>
-        <Button type="primary">
-          {' '}
-          <PlusCircleOutlined />
-          اضافة خدمة
-        </Button>
+        <Link to="/admin/services/addService">
+
+          <Button type="primary">
+            {' '}
+            <PlusCircleOutlined />
+            اضافة خدمة
+          </Button>
+        </Link>
       </div>
       {
         (loading) ? <Loading /> : ((service.length > 0) ? <Table columns={columns} dataSource={service} /> : <NoData />)
