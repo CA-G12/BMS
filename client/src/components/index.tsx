@@ -2,3 +2,7 @@
 export {
   AboutUs, AdsContainer, Title, Loading, NoData, VideoSection, FlatCard, FlatContainer,
 } from './landing';
+
+export {
+  Flats, Bills, ServicesContainer,
+} from './adminDashboard';
