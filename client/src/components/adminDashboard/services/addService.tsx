@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import '../../../App/style.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { InferAddServicesModel } from '../../../Models/addService';
+import { InferAddServicesModel } from '../../../Interfaces/addService';
 
 const { Title } = Typography;
 

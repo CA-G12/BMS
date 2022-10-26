@@ -7,7 +7,7 @@ import { PlusCircleOutlined, EditOutlined } from '@ant-design/icons';
 import '../../../App/style.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { InferServicesModel } from '../../../Models/services';
+import { InferServicesModel } from '../../../Interfaces/services';
 import { Loading, NoData } from '../../index';
 
 const { Title } = Typography;

@@ -5,8 +5,8 @@ import React, { useState, useEffect } from 'react';
 import '../../../App/style.css';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import { InferAddServicesModel } from '../../../Models/addService';
-import { InferServicesModel } from '../../../Models/services';
+import { InferAddServicesModel } from '../../../Interfaces/addService';
+import { InferServicesModel } from '../../../Interfaces/services';
 
 const { Title } = Typography;
 
