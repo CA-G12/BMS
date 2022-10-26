@@ -1,8 +1,5 @@
-import { Carousel, Button, Anchor } from 'antd';
-import React from 'react';
+import { Carousel, Button } from 'antd';
 import staticData from '../../StaticData';
-
-const { Link } = Anchor;
 
 const AppHome: React.FC = () => (
   <div id="home" className="heroBlock">
@@ -18,9 +15,7 @@ const AppHome: React.FC = () => (
                 <a href="#video">
                   <Button size="large" id="video">
                     <i className="ri-slideshow-3-line" />
-                    {' '}
                     شاهدنا
-
                   </Button>
                 </a>
               </div>

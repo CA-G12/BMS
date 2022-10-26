@@ -2,10 +2,10 @@
 import {
   Button, Form, Input, Layout, message, Row, Col,
 } from 'antd';
-import { Title } from './index';
+import { Title } from '../index';
 import sendContactUs from '../../services/contactUsApi';
 import './style.css';
-import { InferContactUsModel } from '../../Models/contactUs';
+import { InferContactUsModel } from '../../Interfaces/contactUs';
 
 const { Content } = Layout;
 const { Item } = Form;

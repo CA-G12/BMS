@@ -1,10 +1,8 @@
-/* eslint-disable import/no-cycle */
 import {
   Timeline, Layout, Col, Row,
 } from 'antd';
-import { any } from 'prop-types';
 import DataStatic from '../../StaticData';
-import { Title } from './index';
+import { Title } from '../index';
 import './style.css';
 
 const { Content } = Layout;

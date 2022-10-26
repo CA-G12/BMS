@@ -2,7 +2,6 @@ import {
   Card, Button, Image, Typography, Row, Col,
 } from 'antd';
 import { PhoneOutlined } from '@ant-design/icons';
-import React from 'react';
 
 const { Title } = Typography;
 

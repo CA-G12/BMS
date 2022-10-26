@@ -1,8 +1,13 @@
-import React from 'react';
+import { FC, ReactNode } from 'react';
 import { Typography } from 'antd';
 
 const { Title } = Typography;
-const TitleComp: React.FC<any> = ({ children }) => (
+
+type Props = {
+  children: string,
+};
+
+const TitleComp: FC<Props> = ({ children }: { children: ReactNode }) => (
   <Title
     style={{
       fontSize: 'x-large',

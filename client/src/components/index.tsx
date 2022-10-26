@@ -1,5 +1,5 @@
 /* eslint-disable import/no-cycle */
-import AboutUs from './AboutUs';
+import AboutUs from './AboutUs/AboutUs';
 import AdsContainer from './AdvertisementsContainer';
 import ContactUs from './ContactUs';
 import Services from './Services';

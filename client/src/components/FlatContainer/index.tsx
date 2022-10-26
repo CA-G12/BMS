@@ -1,9 +1,8 @@
-/* eslint-disable import/no-cycle */
 import { message } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Title, Loading, NoData } from './index';
-import FlatCard from './FlatCard';
+import { Title, Loading, NoData } from '../index';
+import FlatCard from '../FlatCard';
 
 type FreeFlatType = {
   id: number,

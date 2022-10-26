@@ -3,7 +3,7 @@ import {
   Layout, Typography, Col, Row,
 } from 'antd';
 import React from 'react';
-import { Title } from './index';
+import { Title } from '../index';
 import './style.css';
 
 const { Paragraph } = Typography;

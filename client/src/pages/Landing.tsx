@@ -3,12 +3,12 @@ import React from 'react';
 import 'antd/dist/antd.css';
 
 import { Layout } from 'antd';
-import AppHeader from '../layouts/LandingPage/header';
-import AppHome from '../components/landingPage/Hero';
-import AppFooter from '../layouts/LandingPage/footer';
+import AppHeader from '../Layout/LandingPage/header';
+import AppHome from '../components/Hero';
+import AppFooter from '../Layout/LandingPage/footer';
 import {
   AboutUs, AdsContainer, ContactUs, Services, VideoSection, FlatContainer,
-} from '../components/landingPage';
+} from '../components';
 
 const { Header, Content, Footer } = Layout;
 

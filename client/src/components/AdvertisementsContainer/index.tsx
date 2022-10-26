@@ -3,8 +3,8 @@
 import { Row, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import AdvertisementCard from './AdvertisementCard';
-import { Title, Loading, NoData } from './index';
+import AdvertisementCard from '../AdvertisementCard';
+import { Title, Loading, NoData } from '../index';
 
 type AdsType = {
   id: number;
