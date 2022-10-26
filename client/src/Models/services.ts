@@ -1,4 +1,5 @@
 export interface InferServicesModel {
+  id:number,
   name: string,
   price: number,
   is_fixed: boolean,

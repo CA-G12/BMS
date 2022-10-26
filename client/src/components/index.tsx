@@ -4,5 +4,5 @@ export {
 } from './landing';
 
 export {
-  Flats, Bills, ServicesContainer, AddService,
+  Flats, Bills, ServicesContainer, AddService, EditService,
 } from './adminDashboard';

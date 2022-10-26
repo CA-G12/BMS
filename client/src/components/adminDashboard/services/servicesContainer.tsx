@@ -10,10 +10,6 @@ import { Link } from 'react-router-dom';
 import { InferServicesModel } from '../../../Models/services';
 import { Loading, NoData } from '../../index';
 
-// const [changeState, setChangeState] = useState(true);
-// const handleClick = () => {
-//   setChangeState(!changeState);
-// };
 const columns: ColumnsType<InferServicesModel> = [
   {
     title: 'اسم الخدمة',
@@ -39,16 +35,19 @@ const columns: ColumnsType<InferServicesModel> = [
   },
   {
     title: 'تعديل',
-    dataIndex: 'edit',
-    key: 'edit',
-    render: () => <EditOutlined />,
+    dataIndex: 'id',
+    key: 'id',
+    render: (_, record) => (
+      <Link to={`/admin/services/editService/${record.id}`}>
+        <EditOutlined />
+      </Link>
+    ),
   },
   {
     title: 'تفعيل / الغاء التفعيل',
     dataIndex: 'is_open',
     key: 'is_open',
     render: (text) => <Button type="primary">{text ? 'الغاء التفعيل' : 'تفعيل'}</Button>,
-    // onClick={handleClick}
   },
 ];
 const { Title } = Typography;
@@ -58,7 +57,9 @@ const ServicesContainer: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const fetchData = (signal : AbortSignal) => {
     axios.get('/api/v1/services/', { signal })
+
       .then(({ data: { data } }) => {
+        // console.log('data: ', data);
         setService(data as Array<InferServicesModel>);
         setLoading(false);
       }).catch(() => message.error('حدث خطأ , اعد المحاولة'));

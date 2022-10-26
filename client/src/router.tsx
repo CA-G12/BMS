@@ -3,7 +3,7 @@ import { LandingPage } from './pages';
 import { AdminDashboard } from './Layouts';
 
 import {
-  ServicesContainer, AddService, Bills, Flats,
+  ServicesContainer, AddService, EditService, Bills, Flats,
 } from './components/adminDashboard';
 import App from './App';
 
@@ -22,6 +22,7 @@ const router = createBrowserRouter([
       { index: true, element: <h1>statistics</h1> },
       { path: 'services', element: <ServicesContainer /> },
       { path: 'services/addService', element: <AddService /> },
+      { path: 'services/editService/:id', element: <EditService /> },
       { path: 'bills', element: <Bills /> },
       { path: 'flats', element: <Flats /> },
     ],
