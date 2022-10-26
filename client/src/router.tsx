@@ -11,6 +11,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <p>Public Error</p>,
     children: [
       { index: true, element: <LandingPage /> },
     ],
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   {
     path: '/admin',
     element: <AdminDashboard />,
+    // errorElement: <p>Admin Error</p>,
     children: [
       { index: true, element: <h1>statistics</h1> },
       { path: 'services', element: <Services /> },

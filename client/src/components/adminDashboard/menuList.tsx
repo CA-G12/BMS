@@ -47,7 +47,7 @@ const items: MenuItem[] = [
 ];
 
 const App: React.FC = () => (
-  <div style={{ width: 256, backgroundColor: 'white' }}>
+  <div style={{ width: 256, backgroundColor: 'white', height: 'calc(100vh - 110px)' }}>
     <div style={{ display: 'flex', backgroundColor: 'white' }}>
       <AppstoreOutlined style={{
         color: 'black', fontSize: 'x-large', display: 'inline-block', marginTop: 26, marginRight: 19,
