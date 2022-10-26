@@ -6,14 +6,13 @@ import { FlatModel, UserModel } from '../../models';
 
 export default async (req:Request, res:Response, next:NextFunction) => {
   try {
-    const { order } = req.query;
+    const { order, page } = req.query;
     const sortingOrder = (order === 'descend') ? 'DESC' : 'ASC';
 
     const limitNum = 2;
-    const { page } = req.query;
     const total = await FlatModel.count({ include: [{ model: UserModel }] });
-    if ((+page) <= 0) {
-      throw new CustomError(400, 'bad request');
+    if (!(Number(page) > 0)) {
+      throw new CustomError(400, 'Query Parameter Page is required and must be a number greater than 0');
     }
     const offsetNum = (+(page) - 1) * limitNum;
     const queryResult : IQueryResult[] = await FlatModel.findAll({
@@ -53,9 +52,4 @@ interface FlatUsers {
 interface IQueryResult {
   id: number;
   flat_number: number;
-  // 'User.first_name': string;
-  // 'User.last_name': string;
-  // 'User.phone_number': string;
-  // 'User.id': number;
-  // 'User.email': string;
 }
