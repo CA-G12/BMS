@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable no-nested-ternary */
 import { Typography, Button, message } from 'antd';
 import Table, { ColumnsType } from 'antd/lib/table';
@@ -9,6 +10,10 @@ import { Link } from 'react-router-dom';
 import { InferServicesModel } from '../../../Models/services';
 import { Loading, NoData } from '../../index';
 
+// const [changeState, setChangeState] = useState(true);
+// const handleClick = () => {
+//   setChangeState(!changeState);
+// };
 const columns: ColumnsType<InferServicesModel> = [
   {
     title: 'اسم الخدمة',
@@ -42,8 +47,8 @@ const columns: ColumnsType<InferServicesModel> = [
     title: 'تفعيل / الغاء التفعيل',
     dataIndex: 'is_open',
     key: 'is_open',
-    render: (text) => <Button type="primary">{text ? 'تفعيل' : 'الغاء التفعيل'}</Button>,
-
+    render: (text) => <Button type="primary">{text ? 'الغاء التفعيل' : 'تفعيل'}</Button>,
+    // onClick={handleClick}
   },
 ];
 const { Title } = Typography;

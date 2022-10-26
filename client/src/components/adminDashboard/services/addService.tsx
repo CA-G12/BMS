@@ -1,5 +1,5 @@
 import {
-  Typography, Form, Input, Switch, Button,
+  Typography, Form, Input, Switch, Button, message,
 } from 'antd';
 import React, { useState } from 'react';
 import '../../../App/style.css';
@@ -13,10 +13,6 @@ type RequiredMark = boolean | 'optional';
 
 const AddService: React.FC = () => {
   const navigate = useNavigate();
-
-  // const onChange = (checked: boolean) => {
-  //   console.log(`switch to ${checked}`);
-  // };
   const [form] = Form.useForm();
   const [requiredMark, setRequiredMarkType] = useState<RequiredMark>('optional');
 
@@ -25,12 +21,10 @@ const AddService: React.FC = () => {
   };
 
   const onFinish = (values : InferAddServicesModel) => {
-    console.log('values: ', { ...values });
     // eslint-disable-next-line no-void
     axios.post('/api/v1/services', values)
       .then(() => navigate('/admin/services'))
-      // .then(async () => { await message.success('تم إنشاء خدمة جديدة بنجاح'); })
-      .catch(() => console.log('error'));
+      .catch(() => message.error('حدث خطأ , اعد المحاولة'));
   };
 
   return (
@@ -45,18 +39,17 @@ const AddService: React.FC = () => {
         requiredMark={requiredMark}
         onFinish={onFinish}
       >
-        <Form.Item name="name" label="اسم الخدمة" rules={[{ required: true, message: 'الرجاء ادخال اسم الخدمة' }]} required>
+        <Form.Item name="name" label="اسم الخدمة" rules={[{ required: true, message: 'الرجاء ادخال اسم الخدمة' }]}>
           <Input className="inputAddService" />
         </Form.Item>
-        <Form.Item name="price" rules={[{ required: true, message: 'الرجاء ادخال سعر الخدمة' }]} label="سعر الخدمة" required>
+        <Form.Item name="price" rules={[{ required: true, message: 'الرجاء ادخال سعر الخدمة' }]} label="سعر الخدمة">
           <Input type="number" className="inputAddService" />
         </Form.Item>
-        <Form.Item name="description" label="الوصف" rules={[{ required: true, message: 'الرجاء ادخال وصف الخدمة' }]} required>
+        <Form.Item name="description" label="الوصف" rules={[{ required: true, message: 'الرجاء ادخال وصف الخدمة' }]}>
           <Input className="inputAddService" />
         </Form.Item>
         <Form.Item initialValue name="isFixed" label="السعر ثابت/غيرثابت" required>
           <Switch defaultChecked />
-          {/* onChange={onChange} */}
         </Form.Item>
         <Form.Item initialValue name="isOpen" label="تفعيل / الغاء التفعيل" required>
           <Switch defaultChecked />
