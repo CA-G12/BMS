@@ -1,9 +1,12 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable max-len */
-import { Row, message } from 'antd';
+import { message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import AdvertisementCard from './AdvertisementCard';
-import { Title, Loading, NoData } from './index';
+import AdvertisementCard from '../AdvertisementCard';
+import { Title, Loading, NoData } from '../index';
+
+import './style.css';
 
 type AdsType = {
   id: number;
@@ -32,21 +35,14 @@ const AdsContainer: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#F6F8FA', paddingBottom: 30 }}>
+    <div className="flatContainerComponent" style={{ backgroundColor: '#F6F8FA', paddingBottom: 30 }} id="ads">
       <Title>الإعلانات </Title>
-
-      <div
-        className="site-card-wrapper"
-        style={{ padding: '16px 200px', textAlign: 'center' }}
-      >
-        <Row gutter={16}>
-          {
-          // eslint-disable-next-line no-nested-ternary
-          (loading) ? <Loading /> : (advertisements.length > 0 ? advertisements.map((advertisement) => (
-            <AdvertisementCard key={advertisement.id} info={advertisement} />
-          )) : <NoData />)
-}
-        </Row>
+      <div className="flatContainer">
+        {
+    // eslint-disable-next-line no-nested-ternary
+    (loading) ? <Loading /> : (advertisements.length !== 0) ? (advertisements.map((advertisement) => (
+      <AdvertisementCard key={advertisement.id} info={advertisement} />))) : (<NoData />)
+  }
       </div>
     </div>
   );
