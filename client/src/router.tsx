@@ -1,9 +1,9 @@
-import { createBrowserRouter, RouteObject } from 'react-router-dom';
-import { LandingPage } from './pages';
+import { createBrowserRouter } from 'react-router-dom';
+import { LandingPage, Flats } from './pages';
 import { AdminDashboard } from './Layouts';
 
 import {
-  Services, Bills, Flats,
+  Services, Bills,
 } from './components/adminDashboard';
 import App from './App';
 
