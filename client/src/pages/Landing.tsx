@@ -1,6 +1,5 @@
 import React from 'react';
 // import './App.css';
-import 'antd/dist/antd.css';
 
 import { Layout } from 'antd';
 import AppHeader from '../Layout/LandingPage/header';

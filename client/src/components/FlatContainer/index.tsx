@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Title, Loading, NoData } from '../index';
 import FlatCard from '../FlatCard';
 
+import './style.css';
+
 type FreeFlatType = {
   id: number,
   area:number,
