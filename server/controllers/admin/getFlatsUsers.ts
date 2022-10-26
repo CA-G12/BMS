@@ -6,6 +6,9 @@ import { FlatModel, UserModel } from '../../models';
 
 export default async (req:Request, res:Response, next:NextFunction) => {
   try {
+    const { order } = req.query;
+    const sortingOrder = (order === 'descend') ? 'DESC' : 'ASC';
+
     const limitNum = 2;
     const { page } = req.query;
     const total = await FlatModel.count({ include: [{ model: UserModel }] });
@@ -14,6 +17,10 @@ export default async (req:Request, res:Response, next:NextFunction) => {
     }
     const offsetNum = (+(page) - 1) * limitNum;
     const queryResult : IQueryResult[] = await FlatModel.findAll({
+
+      order: [
+        ['id', `${sortingOrder}`],
+      ],
       raw: true,
       attributes: ['id', 'flat_number'],
       include: [{
@@ -23,7 +30,6 @@ export default async (req:Request, res:Response, next:NextFunction) => {
       offset: offsetNum,
       limit: limitNum,
     });
-
     const result: FlatUsers[] = queryResult.map((x) => ({
 
       id: x.id,
