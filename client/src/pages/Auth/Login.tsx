@@ -11,7 +11,16 @@ import { useNavigate } from 'react-router-dom';
 import Login from '../../services/authService';
 import { ILoginModel } from '../../Models/loginModel';
 import { IErrorLoginResult } from '../../Models/ILoginResult';
+import LogoImage from '../../assets/images/logo.png';
+import LoginImage from '../../assets/images/login.jpg';
 
+const loginLogo = LoginImage as string;
+const siteLogo = LogoImage as string;
+const InputStyle = {
+  padding: '10px',
+  fontSize: '1.2rem',
+
+};
 const { Text, Title } = Typography;
 
 const LoginForm: React.FC = () => {
@@ -43,13 +52,14 @@ const LoginForm: React.FC = () => {
         name="phoneNumber"
         rules={[{ required: true, message: 'حقل رقم الهاتف مطلوب' }]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="رقم الهاتف" />
+        <Input style={InputStyle} prefix={<UserOutlined className="site-form-item-icon" />} placeholder="رقم الهاتف" />
       </Form.Item>
       <Form.Item
         name="password"
         rules={[{ required: true, message: 'حقل كلمة المرور مطلوب' }]}
       >
         <Input
+          style={InputStyle}
           prefix={<LockOutlined className="site-form-item-icon" />}
           type="password"
           placeholder="كلمة المرور"
@@ -66,7 +76,18 @@ const LoginForm: React.FC = () => {
         </a>
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+        <Button
+          style={{
+            padding: '7px',
+            fontSize: '1rem',
+            borderRadius: '5px',
+            width: '150px',
+            height: '40px',
+          }}
+          type="primary"
+          htmlType="submit"
+          className="login-form-button"
+        >
           تسجيل الدخول
         </Button>
       </Form.Item>
@@ -80,17 +101,17 @@ const colStyle = {
   justifyContent: 'start',
   alignItems: 'center',
 };
-const squareSpan = {
-  width: '70px',
-  height: '70px',
-  backgroundColor: '#5138ec',
-  borderRadius: '20px',
+
+const bgImageStyle = {
+  backgroundImage: `url(${loginLogo})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
 };
 const App: React.FC = () => (
   <Row justify="space-between">
     <Col style={colStyle} xs={24} lg={12}>
       <div style={{ padding: '20px' }}>
-        <div style={squareSpan} />
+        <img style={{ marginBottom: '20%' }} src={siteLogo} alt="Logo" />
         <br />
         <Title>تسجيل الدخول</Title>
         <Title level={3}>تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور الخاصة بك</Title>
@@ -100,7 +121,7 @@ const App: React.FC = () => (
         </div>
       </div>
     </Col>
-    <Col style={{ ...colStyle, backgroundColor: '#40a9ff' }} xs={24} lg={12} />
+    <Col style={{ ...colStyle, ...bgImageStyle }} xs={24} lg={12} />
   </Row>
 );
 
