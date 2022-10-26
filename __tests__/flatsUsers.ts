@@ -8,45 +8,27 @@ beforeAll(insertDB);
 describe('Flat API', () => {
     test('FlatsUsers -GET api/v1/flatsUsers', async () => {
       const response = await request(app)
-        .get('/api/v1/flatsUsers?pageNum=2')
+        .get('/api/v1/flatsUsers?results=2&page=2&pagination%5Bcurrent%5D=2&pagination%5BpageSize%5D=2&pagination%5Btotal%5D=4')
         .expect(200);
-      expect(response.body.data.length).toBe(2);
+      expect(response.body.result.length).toBe(2);
     });
     test('FlatsUsers -GET api/v1/flatsUsers', async () => {
         const response = await request(app)
-          .get('/api/v1/flatsUsers?pageNum=1')
+          .get('/api/v1/flatsUsers?results=2&page=1&pagination%5Bcurrent%5D=1&pagination%5BpageSize%5D=2&pagination%5Btotal%5D=4')
           .expect(200);
-        expect(response.body.data[0].flat_number).toBe(101);
+        expect(response.body.result[0].flat_number).toBe(101);
+      });     
+      test('FlatsUsers -GET api/v1/flatsUsers', async () => {
+        const response = await request(app)
+          .get('/api/v1/flatsUsers?results=2&page=1&pagination%5Bcurrent%5D=1&pagination%5BpageSize%5D=2&pagination%5Btotal%5D=4')
+          .expect(200);
+        expect(response.body.result[0].full_name).toEqual("أحمد أحمد");
       });
       test('FlatsUsers -GET api/v1/flatsUsers', async () => {
         const response = await request(app)
-          .get('/api/v1/flatsUsers?pageNum=1')
+          .get('/api/v1/flatsUsers?results=2&page=1&pagination%5Bcurrent%5D=1&pagination%5BpageSize%5D=2&pagination%5Btotal%5D=4')
           .expect(200);
-        expect(response.body.data[1].area).toBe(160);
-      });
-      test('FlatsUsers -GET api/v1/flatsUsers', async () => {
-        const response = await request(app)
-          .get('/api/v1/flatsUsers?pageNum=1')
-          .expect(200);
-        expect(response.body.data[1].UserId).toBe(2);
-      });
-      test('FlatsUsers -GET api/v1/flatsUsers', async () => {
-        const response = await request(app)
-          .get('/api/v1/flatsUsers?pageNum=1')
-          .expect(200);
-        expect(response.body.data[0].UserId).toBe(1);
-      });
-      test('FlatsUsers -GET api/v1/flatsUsers', async () => {
-        const response = await request(app)
-          .get('/api/v1/flatsUsers?pageNum=1')
-          .expect(200);
-        expect(response.body.data[0].User.id).toBe(1);
-      });
-      test('FlatsUsers -GET api/v1/flatsUsers', async () => {
-        const response = await request(app)
-          .get('/api/v1/flatsUsers?pageNum=1')
-          .expect(200);
-        expect(response.body.data[0].User.email).toBe("jcotte0@people.com.cn");
+        expect(response.body.result[0].phone_number).toBe("0591000100");
       });
       test('FlatsUsers -GET api/v1/flatsUsers', async () => {
         const response = await request(app)
