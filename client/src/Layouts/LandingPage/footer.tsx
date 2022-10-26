@@ -23,59 +23,51 @@ const AppFooter: React.FC = () => (
       </Col>
 
       <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
+        <h1 className="title">روابط سريعة</h1>
+        <div className="links">
+          <a className="anchorLink" href="/">
+            وكالة
+          </a>
+          <a className="anchorLink" href="/">
+            بناء
+          </a>
+          <a className="anchorLink" href="/">
+            تأجير
+          </a>
+
+        </div>
+      </Col>
+
+      <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
+        <h1 className="title">مواقعنا</h1>
+        <div className="links">
+          <a className="anchorLink" href="/">
+            غزة - تل الهوا
+          </a>
+          <a className="anchorLink" href="/">
+            غزة - النصر
+          </a>
+          <a className="anchorLink" href="/">
+            غزة - خانيونس
+          </a>
+        </div>
+      </Col>
+
+      <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
         <h1 className="title">المساعدة</h1>
         <div className="links">
           <a className="anchorLink" href="/">
-            صفحة 1
+            +(790)000 000 000
           </a>
           <a className="anchorLink" href="/">
-            صفحة 1
+            +(790)000 000 000
+
           </a>
           <a className="anchorLink" href="/">
-            صفحة 1
-          </a>
-          <a className="anchorLink" href="/">
-            صفحة 1
+            bms@gmail.com
           </a>
         </div>
       </Col>
-
-      <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
-        <h1 className="title">التواصل</h1>
-        <div className="links">
-          <a className="anchorLink" href="/">
-            صفحة 1
-          </a>
-          <a className="anchorLink" href="/">
-            صفحة 1
-          </a>
-          <a className="anchorLink" href="/">
-            صفحة 1
-          </a>
-          <a className="anchorLink" href="/">
-            صفحة 1
-          </a>
-        </div>
-      </Col>
-
-      <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
-        <h1 className="title">الخدمات</h1>
-        <div className="links">
-          <a className="anchorLink" href="/">
-            صفحة 1
-          </a>
-          <a className="anchorLink" href="/">
-            صفحة 1
-          </a>
-          <a className="anchorLink" href="/">
-            صفحة 1
-          </a>
-          <a className="anchorLink" href="/">
-            صفحة 1
-          </a>
-        </div>
-      </Col>
-
     </Row>
   </div>
 );

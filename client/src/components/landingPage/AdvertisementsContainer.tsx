@@ -33,7 +33,7 @@ const AdsContainer: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#F6F8FA', paddingBottom: 30 }} id="avdertisements">
+    <div style={{ backgroundColor: '#F6F8FA', paddingBottom: 30 }} id="ads">
       <Title>الإعلانات </Title>
 
       <div

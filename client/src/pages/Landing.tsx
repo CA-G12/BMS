@@ -4,11 +4,11 @@ import 'antd/dist/antd.css';
 
 import { Layout } from 'antd';
 import AppHeader from '../layouts/LandingPage/header';
-import AppHome from '../components/home/Hero';
+import AppHome from '../components/landingPage/Hero';
 import AppFooter from '../layouts/LandingPage/footer';
 import {
   AboutUs, AdsContainer, ContactUs, Services, VideoSection, FlatContainer,
-} from '../components';
+} from '../components/landingPage';
 
 const { Header, Content, Footer } = Layout;
 

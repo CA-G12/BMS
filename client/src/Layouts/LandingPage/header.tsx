@@ -24,9 +24,9 @@ const appHeader: React.FC = () => {
         </div>
         <div className="mobileHidden">
           <Anchor targetOffset={65}>
-            <Link key="الرئيسية" href="#main" title="الرئيسية" />
+            <Link key="الرئيسية" href="#home" title="الرئيسية" />
             <Link key="تعرف علينا" href="#about-us" title="تعرف علينا" />
-            <Link key="الاعلانات" href="#avdertisements" title="الإعلانات" />
+            <Link key="الاعلانات" href="#ads" title="الإعلانات" />
             <Link key="الشقق" href="#flats" title="الشقق" />
             <Link key="الخدمات" href="#services" title="الخدمات" />
             <Link key="تواصل معنا" href="#contact-us" title="تواصل معنا" />
@@ -50,9 +50,9 @@ const appHeader: React.FC = () => {
             open={open}
           >
             <Anchor targetOffset={65}>
-              <Link key="الرئيسية" href="#main" title="الرئيسية" />
+              <Link key="الرئيسية" href="#home" title="الرئيسية" />
               <Link key="تعرف علينا" href="#about-us" title="تعرف علينا" />
-              <Link key="الاعلانات" href="#avdertisements" title="الإعلانات" />
+              <Link key="الاعلانات" href="#ads" title="الإعلانات" />
               <Link key="الشقق" href="#flats" title="الشقق" />
               <Link key="الخدمات" href="#services" title="الخدمات" />
               <Link key="تواصل معنا" href="#contact-us" title="تواصل معنا" />

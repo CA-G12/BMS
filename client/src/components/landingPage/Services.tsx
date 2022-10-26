@@ -2,14 +2,15 @@
 import {
   Timeline, Layout, Col, Row,
 } from 'antd';
-import DataStatic from '../StaticData';
+import { any } from 'prop-types';
+import DataStatic from '../../StaticData';
 import { Title } from './index';
 import './style.css';
 
 const { Content } = Layout;
 
 const Services: React.FC = () => (
-  <Layout style={{ backgroundColor: '#fff' }} id="services">
+  <Layout style={{ backgroundColor: '#F6F8FA' }} id="services">
     <Title>خدماتنا</Title>
     <Content style={{
       padding: '16px 56px',
