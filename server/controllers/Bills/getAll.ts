@@ -4,15 +4,6 @@ import { BillModel, FlatModel, UserModel } from '../../models';
 
 export default async (req:Request, res:Response, next:NextFunction) => {
   try {
-    // const requestPayload = {
-    //   results: '10',
-    //   page: '1',
-    //   pagination: { current: '1', pageSize: '10', total: '200' },
-    //   filters: { status: ['true'] },
-    //   order: 'ascend',
-    //   field: 'generalServices',
-    // };
-
     const payload:ReqPayload | undefined | any = req.query;
     const { current, pageSize } = payload.pagination;
     let filterStatus;
