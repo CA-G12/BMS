@@ -1,4 +1,4 @@
-export { addContact } from './contactus';
+export { addContact, getContact } from './contactus';
 
 export { getFlatsUsers } from './flatsUsers';
 export {
