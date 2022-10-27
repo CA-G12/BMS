@@ -8,7 +8,7 @@ import Title from 'antd/lib/typography/Title';
 import qs from 'qs';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IFlatsUsersResult } from '../Models/IFlatsUsersResult';
+import { IFlatsUsersResult } from '../Interfaces/IFlatsUsersResult';
 import getFlatsUsers from '../services/flatsUsers';
 
 interface TableParams {
