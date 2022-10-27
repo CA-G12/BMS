@@ -9,7 +9,6 @@ import {
   Typography,
 } from 'antd';
 
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IErrorSignupResult } from '../../Models/ISignupResult';
 import { ISignupModel } from '../../Models/signup';
@@ -51,10 +50,6 @@ const App: React.FC = () => {
         form={form}
         name="register"
         onFinish={onFinish}
-        initialValues={{
-          residence: ['zhejiang', 'hangzhou', 'xihu'],
-          prefix: '86',
-        }}
         scrollToFirstError
       >
         <Row>
@@ -135,7 +130,6 @@ const App: React.FC = () => {
                   message: 'كلمة المرور  يجب أن تكون أقل من 14 ',
                 },
               ]}
-              // hasFeedback
             >
               <Input.Password />
             </Form.Item>
