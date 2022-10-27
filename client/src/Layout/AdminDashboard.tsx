@@ -5,27 +5,25 @@ import { Outlet } from 'react-router-dom';
 import MenuList from '../components/adminDashboard/menuList';
 import Navbar from '../components/adminDashboard/navbar';
 
-const { Content, Sider } = Layout;
+const { Content } = Layout;
 
 const AdminDashboard: React.FC = () => (
-  <Layout style={{ background: '#F0F8FF' }}>
+  <div>
     <Navbar />
     <Layout>
-      <Sider style={{ background: '#fff' }} width={256} className="site-layout-background">
+      <Layout>
         <MenuList />
-      </Sider>
-      <Content
-        className="site-layout-background"
-        style={{
-          padding: 24,
-          margin: 0,
-          minHeight: 280,
-        }}
-      >
-        <Outlet />
-      </Content>
+        <Content
+          style={{
+            padding: 24,
+            margin: 0,
+          }}
+        >
+          <Outlet />
+        </Content>
+      </Layout>
     </Layout>
-  </Layout>
+  </div>
 );
 
 export default AdminDashboard;

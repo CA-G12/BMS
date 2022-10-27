@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { Layout, Menu } from 'antd';
+import { Link } from 'react-router-dom';
 import {
   GroupOutlined,
   ContainerOutlined,
@@ -10,9 +13,6 @@ import {
   CommentOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Layout, Menu } from 'antd';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const { Sider } = Layout;
 
@@ -53,16 +53,13 @@ const MenuList: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <Layout style={{ minHeight: '100vh', background: '#fff' }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <Menu
-          mode="inline"
-          theme="dark"
-          items={items2}
-          defaultSelectedKeys={['1']}
-        />
-      </Sider>
-    </Layout>
+    <Sider collapsible theme="light" collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} reverseArrow>
+      <Menu
+        mode="inline"
+        items={items2}
+        defaultSelectedKeys={['1']}
+      />
+    </Sider>
   );
 };
 
