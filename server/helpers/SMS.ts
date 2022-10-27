@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import Vonage from '@vonage/server-sdk';
+import Vonage, { MessageError, MessageRequestResponse } from '@vonage/server-sdk';
 import { SMSMessage } from '../interfaces/SMSMessage';
 import CustomError from './customError';
 
@@ -21,12 +21,10 @@ const SendSMS = ({ recipient, message }: SMSMessage) : boolean => {
     sender,
     PHONE_NUMBER_CODE + recipient,
     message,
-    (
-      err:MessageError,
-      responseData:MessageRequestResponse,
-    ) => {
+    {},
+    (err: MessageError, responseData: MessageRequestResponse) => {
       if (err) {
-        throw new Error(err);
+        throw new Error(err.status);
       } else if (responseData.messages[0].status === '0') {
         return true;
       } else {
