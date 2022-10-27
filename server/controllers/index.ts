@@ -1,4 +1,6 @@
 export { addContact } from './contactus';
+
+export { getFlatsUsers } from './flatsUsers';
 export {
   getAnnouncement, postAnnouncement, getAnnouncementById, putAnnouncement, deleteAnnouncement,
 } from './announcements';

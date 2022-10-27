@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 import 'antd/dist/antd.min.css';
