@@ -108,7 +108,13 @@ const ServicesContainer: React.FC = () => {
         </Link>
       </div>
       {
-        (loading) ? <Loading /> : ((service.length > 0) ? <Table columns={columns} dataSource={service} /> : <NoData />)
+        (loading) ? <Loading /> : ((service.length > 0) ? (
+          <Table
+            pagination={{ defaultPageSize: 6 }}
+            columns={columns}
+            dataSource={service}
+          />
+        ) : <NoData />)
       }
     </>
   );
