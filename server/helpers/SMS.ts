@@ -31,7 +31,6 @@ const SendSMS = ({ recipient, message }: SMSMessage) : boolean => {
         throw new CustomError(400, `Message failed with error: ${responseData.messages[0]['error-text']}`);
       }
     },
-    {},
   );
   return false;
 };
