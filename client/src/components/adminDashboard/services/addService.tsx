@@ -2,7 +2,7 @@ import {
   Typography, Form, Input, Switch, Button, message,
 } from 'antd';
 import React, { useState } from 'react';
-import '../../../App/style.css';
+import './style.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { InferAddServicesModel } from '../../../Interfaces/addService';
