@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { LandingPage, Flats } from './pages';
-import { AdminDashboard } from './Layouts';
+
+import { LandingPage } from './pages';
+import { AdminDashboard } from './Layout';
 
 import {
   Services, Bills,
