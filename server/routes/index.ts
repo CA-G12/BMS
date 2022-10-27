@@ -9,7 +9,7 @@ import contactRouter from './contactRouter';
 const router = Router();
 
 router.use('/auth', AuthRouter);
-router.use('/contact', contactRouter);
+router.use('/contacts', contactRouter);
 router.use('/advertisements', adsRouter);
 router.use('/flats', flatRouter);
 router.use('/announcements', announcementsRouter);

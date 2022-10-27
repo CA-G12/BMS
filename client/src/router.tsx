@@ -3,7 +3,7 @@ import { LandingPage } from './pages';
 import { AdminDashboard } from './Layout';
 
 import {
-  Services, Bills, Flats,
+  Services, Bills, Flats, Contacts,
 } from './components/adminDashboard';
 import App from './App';
 
@@ -23,6 +23,7 @@ const router = createBrowserRouter([
       { path: 'services', element: <Services /> },
       { path: 'bills', element: <Bills /> },
       { path: 'flats', element: <Flats /> },
+      { path: 'contacts', element: <Contacts /> },
     ],
   },
   { path: '*', element: <h1>page not found</h1> }]);

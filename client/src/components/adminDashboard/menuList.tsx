@@ -41,7 +41,7 @@ const items: MenuItem[] = [
   getItem(<Link to="/admin/bills" style={listStyle}>الفواتير</Link>, '3', <DollarCircleOutlined style={listStyle} />),
   getItem(<Link to="/admin/flats" style={listStyle}>الشكاوي</Link>, '4', <CommentOutlined style={listStyle} />),
   getItem(<Link to="/admin/flats" style={listStyle}>الإعلانات</Link>, '5', <ContainerOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>التواصل</Link>, '6', <MailOutlined style={listStyle} />),
+  getItem(<Link to="/admin/contacts" style={listStyle}>التواصل</Link>, '6', <MailOutlined style={listStyle} />),
   getItem(<Link to="/admin/flats" style={listStyle}>التقيم</Link>, '7', <StarOutlined style={listStyle} />),
   getItem(<Link to="/admin/flats" style={listStyle}>تسجيل الخروج</Link>, '8', <LogoutOutlined style={listStyle} />),
 ];
