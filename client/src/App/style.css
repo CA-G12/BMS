@@ -326,38 +326,3 @@ responsive
     margin-left: 0;
   }
 }
-
-
-/*(Down) We can delete this lines after we marged becuase its the same in onther tabels */
-/* For Tables in Services*/
-.ant-table-content table , .ant-table-cell {
-  text-align: right !important;
-}
-/* For Title Admin */
-.titleAdmin {
-  color: #3380FF !important;
-}
-.headerOfServices {
-  display: flex;
-  justify-content: space-between;
-}
-.ant-form-item-control-input-content input {
-  width: 500px;
-}
-.ant-form-item-required-mark-optional {
-  font-weight: bold; 
-  font-size: 17px; 
-}
-.ant-layout {
-  background-color: #F0F8FF !important;
-}
-.addService {
-  color : #3380FF !important;
-  font-size: 24px;
-  margin-bottom: 57px;
-}
-.inputAddService {
-  background: none !important;
-  border-radius: 5px !important;
-}
-  /*(Up) We can delete this lines after we marged becuase its the same in onther tabels */

@@ -3,10 +3,10 @@
 import { Typography, message } from 'antd';
 import Table, { ColumnsType } from 'antd/lib/table';
 import React, { useEffect, useState } from 'react';
-import '../../App/style.css';
+import './style.css';
 import axios from 'axios';
-import { InferContactUsModel } from '../../Interfaces/contactUs';
-import { Loading, NoData } from '../index';
+import { InferContactUsModel } from '../../../Interfaces/contactUs';
+import { Loading, NoData } from '../../index';
 
 const { Title } = Typography;
 
@@ -16,7 +16,7 @@ const Contacts: React.FC = () => {
 
   const columns: ColumnsType<InferContactUsModel> = [
     {
-      title: 'اسم الخدمة',
+      title: 'اسم المستخدم',
       dataIndex: 'name',
       key: 'name',
       render: (text) => <h3 style={{ color: 'rgb(21 111 193)' }}>{text}</h3>,
