@@ -11,7 +11,8 @@ describe('Bills API', () => {
       const response = await request(app)
         .get(`/api/v1/bills?${querysString}`)
         .expect(200);
-      expect(response.body.data.length).toBe(4);
+        const dataLength = JSON.parse(response.text).result.length;
+      expect(dataLength).toBe(4);
     });
   });
 
