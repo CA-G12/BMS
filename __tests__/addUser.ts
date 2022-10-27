@@ -71,6 +71,19 @@ describe('Users API', () => {
           .expect(400);
         expect(response.body.message).toEqual(["password must be at least 8 characters"]);
       });
+      test('Users -post api/v1/user/adduser/', async () => {
+        const response = await request(app)
+          .post('/api/v1/user/adduser/hhh')
+          .send({
+              firstName: 'Bayan',
+              lastName: ' Abd El Bary',
+              phoneNumber: '05912123123',
+              email: 'bayan@gmail.com',
+              password: 'password'
+          })
+          .expect(404);
+        expect(response.body.message).toBe("Not Found");
+      });
   });
 
 
