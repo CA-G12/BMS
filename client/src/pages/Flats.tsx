@@ -110,7 +110,7 @@ const Flats: React.FC = () => {
             }}
           >
             <PlusCircleOutlined style={{ fontSize: 'large' }} />
-            <Link to="/admin/auth/signup" style={{ color: 'white', marginRight: '10px' }}>إضافة مستخدم</Link>
+            <Link to="/admin/adduser" style={{ color: 'white', marginRight: '10px' }}>إضافة مستخدم</Link>
 
           </Button>
         </Col>
