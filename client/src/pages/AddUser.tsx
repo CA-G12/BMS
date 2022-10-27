@@ -10,9 +10,9 @@ import {
 } from 'antd';
 
 import { useNavigate } from 'react-router-dom';
-import { IErrorSignupResult } from '../../Models/ISignupResult';
-import { ISignupModel } from '../../Models/signup';
-import Signup from '../../services/authSignup';
+import { IErrorSignupResult } from '../Interfaces/ISignupResult';
+import { ISignupModel } from '../Interfaces/signup';
+import createUser from '../services/createUser';
 
 const { Title } = Typography;
 
@@ -22,7 +22,7 @@ const App: React.FC = () => {
   const navigate = useNavigate();
 
   const onFinish = (values: ISignupModel) => {
-    Signup(values)
+    createUser(values)
       .then((res) => {
         navigate('/admin/flats');
         return (message.success('تم إنشاء مستخدم جديد بنجاح'));
