@@ -5,6 +5,7 @@ import flatRouter from './flatRouter';
 import announcementsRouter from './announcementsRouter';
 import serviceRouter from './serviceRouter';
 import { addContact } from '../controllers';
+import userRouter from './userRoute';
 
 const router = Router();
 
@@ -13,6 +14,7 @@ router.route('/contact').post(addContact);
 router.use('/advertisements', adsRouter);
 router.use('/flats', flatRouter);
 router.use('/announcements', announcementsRouter);
+router.use('/user', userRouter);
 router.use('/services', serviceRouter);
 
 export default router;

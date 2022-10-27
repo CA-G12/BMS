@@ -8,7 +8,7 @@ import Navbar from '../components/adminDashboard/navbar';
 const { Content } = Layout;
 
 const AdminDashboard: React.FC = () => (
-  <div>
+  <>
     <Navbar />
     <Layout>
       <Layout>
@@ -23,7 +23,7 @@ const AdminDashboard: React.FC = () => (
         </Content>
       </Layout>
     </Layout>
-  </div>
+  </>
 );
 
 export default AdminDashboard;
