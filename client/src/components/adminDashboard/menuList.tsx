@@ -37,17 +37,16 @@ function getItem(
 const listStyle = {
   color: 'black',
 };
-const items: MenuItem[] = [
+const items2: MenuItem[] = [
   getItem(<Link to="/admin" style={listStyle}>لوحة التحكم</Link>, '1', <GroupOutlined style={listStyle} />),
-  getItem(<Link to="/admin/services" style={listStyle}>الخدمات</Link>, '1', <DesktopOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>الشقق</Link>, '2', <HomeOutlined style={listStyle} />),
-  getItem(<Link to="/admin/bills" style={listStyle}>الفواتير</Link>, '3', <DollarCircleOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>الشكاوي</Link>, '4', <CommentOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>الإعلانات</Link>, '5', <ContainerOutlined style={listStyle} />),
+  getItem(<Link to="/admin/services" style={listStyle}>الخدمات</Link>, '2', <DesktopOutlined style={listStyle} />),
+  getItem(<Link to="/admin/flats" style={listStyle}>الشقق</Link>, '3', <HomeOutlined style={listStyle} />),
+  getItem(<Link to="/admin/bills" style={listStyle}>الفواتير</Link>, '4', <DollarCircleOutlined style={listStyle} />),
+  getItem(<Link to="/admin/flats" style={listStyle}>الشكاوي</Link>, '5', <CommentOutlined style={listStyle} />),
+  getItem(<Link to="/admin/flats" style={listStyle}>الإعلانات</Link>, '6', <ContainerOutlined style={listStyle} />),
   getItem(<Link to="/admin/contacts" style={listStyle}>التواصل</Link>, '6', <MailOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>التقيم</Link>, '7', <StarOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>تسجيل الخروج</Link>, '8', <LogoutOutlined style={listStyle} />),
-
+  getItem(<Link to="/admin/flats" style={listStyle}>التقيم</Link>, '8', <StarOutlined style={listStyle} />),
+  getItem(<Link to="/admin/flats" style={listStyle}>تسجيل الخروج</Link>, '9', <LogoutOutlined style={listStyle} />),
 ];
 
 const MenuList: React.FC = () => {
