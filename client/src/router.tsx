@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { LandingPage, Flats } from './pages';
+import { LandingPage, Flats, Flat } from './pages';
 import { AdminDashboard } from './Layout';
 
 import {
@@ -25,6 +25,7 @@ const router = createBrowserRouter([
       { path: 'services', element: <Services /> },
       { path: 'bills', element: <Bills /> },
       { path: 'flats', element: <Flats /> },
+      { path: 'flats/:id', element: <Flat /> },
       { path: 'adduser', element: <AddUser /> },
     ],
   },

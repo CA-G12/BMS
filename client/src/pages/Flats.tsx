@@ -7,7 +7,7 @@ import type { FilterValue, SorterResult } from 'antd/es/table/interface';
 import Title from 'antd/lib/typography/Title';
 import qs from 'qs';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { IFlatsUsersResult } from '../Interfaces/IFlatsUsersResult';
 import getFlatsUsers from '../services/flatsUsers';
 
@@ -24,6 +24,7 @@ const columns: ColumnsType<IFlatsUsersResult> = [
     dataIndex: 'flat_number',
     sorter: true,
     width: '20%',
+
   },
   {
     title: 'اسم المستخدم',
@@ -122,6 +123,7 @@ const Flats: React.FC = () => {
         pagination={tableParams.pagination}
         loading={loading}
         onChange={handleTableChange}
+        // onRow={(record) => Navigate(/admin/flats/record.id)}
       />
     </>
   );
