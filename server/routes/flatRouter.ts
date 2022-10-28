@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import { getFlats, getFlatsUsers } from '../controllers/index';
+import { availableFlats, getFlats, getFlatsUsers } from '../controllers/index';
 
 const router = Router();
 
 router.get('/', getFlats);
+router.get('/available', availableFlats);
 router.get('/users', getFlatsUsers);
 
 export default router;

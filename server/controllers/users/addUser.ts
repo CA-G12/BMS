@@ -1,11 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import { hash } from 'bcrypt';
 import { signUpSchema } from '../../validation';
-import { UserModel } from '../../models';
+import { FlatModel, UserModel } from '../../models';
 import { CustomError } from '../../helpers';
 
 const signup = async (req:Request, res:Response, next:NextFunction) => {
   try {
+    const { flatNumber } = req.body;
     const {
       firstName, lastName, phoneNumber, email, password,
     } = await signUpSchema.validate(
@@ -25,7 +26,13 @@ const signup = async (req:Request, res:Response, next:NextFunction) => {
         role: 'user',
       },
     });
+    const { id } = user;
+    const flat = await FlatModel.update({ is_active: true, UserId: id }, {
 
+      where: {
+        flat_number: flatNumber,
+      },
+    });
     if (!created) {
       throw new CustomError(
         400,

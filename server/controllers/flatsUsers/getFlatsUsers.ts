@@ -10,13 +10,13 @@ export default async (req:Request, res:Response, next:NextFunction) => {
     const sortingOrder = (order === 'descend') ? 'DESC' : 'ASC';
 
     const limitNum = 2;
-    const total = await FlatModel.count({ include: [{ model: UserModel }] });
+    const total = await FlatModel.count({ where: { is_active: true }, include: [{ model: UserModel }] });
     if (!(Number(page) > 0)) {
       throw new CustomError(400, 'Query Parameter Page is required and must be a number greater than 0');
     }
     const offsetNum = (+(page) - 1) * limitNum;
     const queryResult : IQueryResult[] = await FlatModel.findAll({
-
+      where: { is_active: true },
       order: [
         ['id', `${sortingOrder}`],
       ],
@@ -33,7 +33,7 @@ export default async (req:Request, res:Response, next:NextFunction) => {
 
       id: x.id,
       flat_number: x.flat_number,
-      full_name: `${x['User.first_name']} ${x['User.first_name']}`,
+      full_name: `${x['User.first_name']} ${x['User.last_name']}`,
       phone_number: x['User.phone_number'],
 
     }));

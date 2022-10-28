@@ -390,10 +390,91 @@ const flats = [
   },
   {
     flat_number: 104,
-    area: 180,
-    notes: 'شقة شمالية',
+    area: 140,
+    notes: 'شقة جنوبية',
     is_active: true,
     UserId: 4,
+  },
+  {
+    flat_number: 105,
+    area: 250,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 106,
+    area: 180,
+    notes: 'شقة غربية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 107,
+    area: 200,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 108,
+    area: 190,
+    notes: 'شقة جنوبية',
+    is_active: false,
+  },
+  {
+    flat_number: 109,
+    area: 180,
+    notes: 'شقة شرقية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 110,
+    area: 150,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 111,
+    area: 190,
+    notes: 'شقة جنوبية',
+    is_active: false,
+  },
+  {
+    flat_number: 112,
+    area: 180,
+    notes: 'شقة شرقية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 113,
+    area: 150,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 114,
+    area: 190,
+    notes: 'شقة جنوبية',
+    is_active: false,
+  },
+  {
+    flat_number: 115,
+    area: 180,
+    notes: 'شقة شرقية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 116,
+    area: 150,
+    notes: 'شقة شمالية',
+    is_active: false,
+
   },
 ];
 
