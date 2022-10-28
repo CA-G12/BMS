@@ -8,4 +8,5 @@ export { getAdvertisements } from './advertisements';
 export { getFlats } from './flats';
 
 export { getServices, postServices, updateServices } from './services';
-export { signup, login } from './auth';
+export { login } from './auth';
+export { addUser } from './users';

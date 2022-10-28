@@ -5,6 +5,7 @@ import { AdminDashboard } from './Layout';
 import {
   Services, Bills, Flats, Contacts,
 } from './components/adminDashboard';
+import AddUser from './pages/AddUser';
 import App from './App';
 
 const router = createBrowserRouter([
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: 'bills', element: <Bills /> },
       { path: 'flats', element: <Flats /> },
       { path: 'contacts', element: <Contacts /> },
+      { path: 'adduser', element: <AddUser /> },
     ],
   },
   { path: '*', element: <h1>page not found</h1> }]);
