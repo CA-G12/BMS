@@ -4,7 +4,9 @@ import { AdminDashboard } from './Layout';
 
 import {
   ServicesContainer, AddService, EditService, Bills, Flats,
+  Complaints, SingleComplaints,
 } from './components/adminDashboard';
+
 import AddUser from './pages/AddUser';
 import App from './App';
 
@@ -20,11 +22,13 @@ const router = createBrowserRouter([
     path: '/admin',
     element: <AdminDashboard />,
     children: [
-      { index: true, element: <h1>statistics</h1> },
+      { index: true, element: <h1>لوحة التحكم</h1> },
       { path: 'services', element: <ServicesContainer /> },
       { path: 'services/addService', element: <AddService /> },
       { path: 'services/editService/:id', element: <EditService /> },
       { path: 'bills', element: <Bills /> },
+      { path: 'complaints', element: <Complaints /> },
+      { path: 'complaints/show/:id', element: <SingleComplaints /> },
       { path: 'flats', element: <Flats /> },
       { path: 'adduser', element: <AddUser /> },
     ],
