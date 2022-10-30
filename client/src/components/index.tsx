@@ -11,5 +11,9 @@ import NoData from './NoData';
 import { Contacts } from './adminDashboard';
 
 export {
-  AboutUs, AdsContainer, ContactUs, Services, VideoSection, FlatContainer, Title, Loading, NoData, Contacts,
+  Contacts, ContactUs, Services, AboutUs, AdsContainer, Title, Loading, NoData, VideoSection, FlatContainer,
 };
+
+export {
+  Flats, Bills, ServicesContainer, AddService, EditService,
+} from './adminDashboard';
