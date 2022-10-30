@@ -5,6 +5,7 @@ import flatRouter from './flatRouter';
 import announcementsRouter from './announcementsRouter';
 import serviceRouter from './serviceRouter';
 import { addContact } from '../controllers';
+import compliantRoute from './compliantRoute';
 
 const router = Router();
 
@@ -14,5 +15,7 @@ router.use('/advertisements', adsRouter);
 router.use('/flats', flatRouter);
 router.use('/announcements', announcementsRouter);
 router.use('/services', serviceRouter);
+
+router.use('/complaints', compliantRoute);
 
 export default router;

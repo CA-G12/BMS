@@ -9,3 +9,7 @@ export { getFlats } from './flats';
 
 export { getServices, postServices, updateServices } from './services';
 export { signup, login } from './auth';
+
+export {
+  addComplaints, deleteSingleComplaint, getAllComplaints, getSingleComplaint,
+} from './complaints';
