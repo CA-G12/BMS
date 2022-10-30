@@ -27,7 +27,7 @@ const signup = async (req:Request, res:Response, next:NextFunction) => {
       },
     });
     const { id } = user;
-    const flat = await FlatModel.update({ is_active: true, UserId: id }, {
+    await FlatModel.update({ is_active: true, UserId: id }, {
 
       where: {
         flat_number: flatNumber,

@@ -10,7 +10,7 @@ describe('Flat API', () => {
       const response = await request(app)
         .get('/api/v1/flats/available')
         .expect(200);
-      expect(response.body.data.length).toBe(11);
+      expect(response.body.data.length).toBe(12);
     });
     test('FlatsUsers -GET api/v1/flats/available', async () => {
         const response = await request(app)
