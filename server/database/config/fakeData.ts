@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const users = [
   {
     first_name: 'أحمد',
@@ -136,24 +137,38 @@ const complaints = [
 const contactUs = [
   {
     name: 'محمد أمين',
-    email: 'examplegmail.com',
+    email: 'mohammed@gmail.com',
     phone: '059200000',
-    subject: 'حارس عمارة',
-    description: 'تفاصيل الرسالة',
+    subject: 'شقق متوفرة',
+    description: 'هل يوجد شقق غربية متوفرة بمساحة 190متر ؟',
   },
   {
-    name: 'محمد أمين',
-    email: 'example@gmail.com',
-    phone: '059200000',
-    subject: 'حارس عمارة',
-    description: 'تفاصيل الرسالة',
+    name: 'طارق أبو عقلين',
+    email: 'tareq1304@gmail.com',
+    phone: '0592611255',
+    subject: 'الموقع الجغرافي',
+    description: 'اين توجد هذه العمارة بالتحديد ؟',
   },
   {
-    name: 'محمد أمين',
-    email: 'example@gmail.com',
-    phone: '059200000',
+    name: 'محمد جبر',
+    email: 'mohammed_jaber@gmail.com',
+    phone: '059299800',
     subject: 'حارس عمارة',
-    description: 'تفاصيل الرسالة',
+    description: 'هل تحتاجون حارس عمارة ؟',
+  },
+  {
+    name: 'بيان عبد الباري',
+    email: 'bayan_abd@gmail.com',
+    phone: '0592997561',
+    subject: 'تملك اكثر من شقة',
+    description: 'هل يمكن لشخص واحد تملك اكثر من شقة وجمعهم مع بعض سوياً ؟',
+  },
+  {
+    name: 'مي الهجين',
+    email: 'mai@gmail.com',
+    phone: '0592007561',
+    subject: 'مصمم',
+    description: 'هل تحتاجون لمصمم ديكور ؟',
   },
 ];
 const services = [
@@ -190,7 +205,7 @@ const services = [
     price: 25,
     is_fixed: true,
     description: 'مصف سيارات لسكان البرج',
-    is_open: true,
+    is_open: false,
   },
 ];
 

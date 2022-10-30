@@ -5,8 +5,8 @@ import sequelize from '../server/database/config/connection';
 
 beforeAll(insertDB);
 
-describe('Auth API', () => {
-    test('Auth -put api/v1/flats/:id', async () => {
+describe('Flats API', () => {
+    test('Flats -put api/v1/flats/:id', async () => {
       const response = await request(app)
         .put('/api/v1/flats/1')
         .send({
@@ -15,7 +15,7 @@ describe('Auth API', () => {
         .expect(200);
       expect(response.body.msg).toBe("Updated Successfully");
     });
-    test('Auth -put api/v1/flats/:id', async () => {
+    test('Flats -put api/v1/flats/:id', async () => {
       const response = await request(app)
         .put('/api/v1/flats/1')
         .send({
@@ -24,7 +24,7 @@ describe('Auth API', () => {
         .expect(200);
       expect(response.body.msg).toBe("Updated Successfully");
     });
-    test('Auth -put api/v1/flats/:id', async () => {
+    test('Flats -put api/v1/flats/:id', async () => {
       const response = await request(app)
         .put('/api/v1/flatsnotFound/1')
         .send({
@@ -33,14 +33,14 @@ describe('Auth API', () => {
         .expect(404);
       expect(response.body.message).toBe("Not Found");
     });
-    test('Auth -put api/v1/flats/:id', async () => {
+    test('Flats -put api/v1/flats/:id', async () => {
         const response = await request(app)
-          .put('/api/v1/flatsnotFound/1')
+          .put('/api/v1/flats/1')
           .send({
               user_id: 1,
           })
-          .expect(404);
-        expect(response.body.data.id).toBe(1);
+          .expect(200);
+        expect(response.body.data[0].id).toBe(1);
       });
   });
 

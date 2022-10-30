@@ -1,4 +1,4 @@
-export { addContact } from './contactus';
+export { addContact, getContact } from './contactus';
 
 export { getFlatsUsers } from './flatsUsers';
 export {
@@ -7,6 +7,8 @@ export {
 export { getAdvertisements } from './advertisements';
 export { getFlats, flatById, updateFlat } from './flats';
 
-export { getServices, postServices, updateServices } from './services';
+export {
+  getServices, postServices, updateServices, getServiceById,
+} from './services';
 export { login } from './auth';
 export { addUser, getUsers } from './users';
