@@ -326,3 +326,7 @@ responsive
     margin-left: 0;
   }
 }
+.formItem{
+  font-size: 'large';
+   margin: 30px 0 30px 0; 
+}
