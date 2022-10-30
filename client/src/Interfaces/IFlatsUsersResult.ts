@@ -1,6 +1,6 @@
 export interface IFlatsUsersResult {
   id: number;
-  full_name: number;
+  full_name: string;
   flat_number: number;
   phone_number: string;
 }

@@ -1,4 +1,4 @@
-import { PlusCircleOutlined } from '@ant-design/icons';
+import { EditOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import {
   Button, Col, message, Row, Table,
 } from 'antd';
@@ -7,9 +7,9 @@ import type { FilterValue, SorterResult } from 'antd/es/table/interface';
 import Title from 'antd/lib/typography/Title';
 import qs from 'qs';
 import React, { useEffect, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import { IFlatsUsersResult } from '../Interfaces/IFlatsUsersResult';
-import getFlatsUsers from '../services/flatsUsers';
+import { Link } from 'react-router-dom';
+import { IFlatsUsersResult } from '../../Interfaces/IFlatsUsersResult';
+import getFlatsUsers from '../../services/flatsUsers';
 
 interface TableParams {
   pagination?: TablePaginationConfig;
@@ -28,11 +28,23 @@ const columns: ColumnsType<IFlatsUsersResult> = [
   },
   {
     title: 'اسم المستخدم',
-    dataIndex: 'full_name',
+    render: (_, record) => (
+      <p>{record.full_name !== 'null null' ? record.full_name : 'شقة فارغة'}</p>
+    ),
   },
   {
     title: 'رقم الجوال',
     dataIndex: 'phone_number',
+  },
+  {
+    title: 'تعديل',
+    dataIndex: 'id',
+    key: 'id',
+    render: (_, record) => (
+      <Link to={`/admin/flats/${record.id}`}>
+        <EditOutlined />
+      </Link>
+    ),
   },
 ];
 
@@ -107,10 +119,10 @@ const Flats: React.FC = () => {
             type="primary"
             htmlType="submit"
             style={{
-              backgroundColor: '#3380FF', fontSize: 'large', height: '40px', marginTop: '15px', marginRight: '60px',
+              backgroundColor: '#3380FF', fontSize: '16px', height: '40px', marginTop: '15px', marginRight: '60px',
             }}
           >
-            <PlusCircleOutlined style={{ fontSize: 'large' }} />
+            <PlusCircleOutlined style={{ fontSize: '16px' }} />
             <Link to="/admin/adduser" style={{ color: 'white', marginRight: '10px' }}>إضافة مستخدم</Link>
 
           </Button>
@@ -123,7 +135,6 @@ const Flats: React.FC = () => {
         pagination={tableParams.pagination}
         loading={loading}
         onChange={handleTableChange}
-        // onRow={(record) => Navigate(/admin/flats/record.id)}
       />
     </>
   );
