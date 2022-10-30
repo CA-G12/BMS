@@ -10,7 +10,7 @@ describe('Contact API', () => {
       const response = await request(app)
         .get('/api/v1/contacts/')
         .expect(200);
-      expect(response.body.data.length).toBe(3);
+      expect(response.body.data.length).toBe(5);
     });
     test('Contact -GET api/v1/contacts/', async () => {
       const response = await request(app)
@@ -20,9 +20,8 @@ describe('Contact API', () => {
     });
     test('Contact -GET api/v1/contacts/', async () => {
         const response = await request(app)
-          .get('/api/v1/contacts/')
-          .expect(200);
-        expect(response.body.data[1].phone).toBe('059200000');
+          .get('/api/v1/contactsss/')
+          .expect(404);
       });
   });
 
