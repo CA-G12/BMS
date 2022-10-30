@@ -1,13 +1,14 @@
 import {
-  Button, notification, Switch, Table,
+  Button, notification, Switch, Table, Typography,
 } from 'antd';
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
 import type { FilterValue, SorterResult } from 'antd/es/table/interface';
 import qs from 'qs';
 import React, { useEffect, useState } from 'react';
-import { IBill } from '../../Models/Bills';
+import { IBill } from '../../Interfaces/Bills';
 import { getBills, sendBillSMS } from '../../services/billsService';
-import { Title } from '../landing';
+
+const { Title } = Typography;
 
 type NotificationType = 'success' | 'error';
 
@@ -145,7 +146,7 @@ const App: React.FC = () => {
       <Title style={{
         fontSize: 'large',
         padding: '16px',
-        textAlign: 'start !important',
+        // textAlign: 'start !important',
         color: '#1890ff',
       }}
       >

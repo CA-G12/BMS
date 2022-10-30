@@ -49,34 +49,6 @@ const items2: MenuItem[] = [
   getItem(<Link to="/admin/flats" style={listStyle}>تسجيل الخروج</Link>, '9', <LogoutOutlined style={listStyle} />),
 ];
 
-const App: React.FC = () => (
-  <div style={{ width: 256, backgroundColor: 'white', height: 'calc(100vh - 110px)' }}>
-    <div style={{ display: 'flex', backgroundColor: 'white' }}>
-      <AppstoreOutlined style={{
-        color: 'black', fontSize: 'x-large', display: 'inline-block', marginTop: 26, marginRight: 19,
-      }}
-      />
-      <Link
-        className="title"
-        style={{
-          color: 'black', padding: 10, margin: 10, fontWeight: 'bold', fontSize: 'x-large',
-        }}
-        to="/admin"
-      >
-        لوحة التحكم
-      </Link>
-    </div>
-    .
-    <Menu
-          // defaultSelectedKeys={['1']}
-          // defaultOpenKeys={['sub1']}
-      style={{ height: '100%', borderRight: 0, backgroundColor: 'white' }}
-      mode="inline"
-      theme="dark"
-      items={items}
-    />
-  </div>
-);
 const MenuList: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 

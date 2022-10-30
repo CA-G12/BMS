@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { IBillsResponse } from '../Models/Bills';
-import { getBillsURL, sendBillSMSURL } from '../Utilities/apiConsts';
+import { IBillsResponse } from '../Interfaces/Bills';
+import { getBillsURL, sendBillSMSURL } from '../Utilities/apiConsent';
 
 const getBills = (payload:string): Promise<IBillsResponse> => axios.get(getBillsURL + payload);
 
