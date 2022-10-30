@@ -4,15 +4,14 @@ import adsRouter from './adsRouter';
 import flatRouter from './flatRouter';
 import announcementsRouter from './announcementsRouter';
 import serviceRouter from './serviceRouter';
-import { addContact } from '../controllers';
+import ddContact from '../controllers';
 import compliantRoute from './compliantRoute';
-
 import userRouter from './userRoute';
 
 const router = Router();
 
 router.use('/auth', AuthRouter);
-router.route('/contact').post(addContact);
+router.use('/contacts', addContact);
 router.use('/advertisements', adsRouter);
 router.use('/flats', flatRouter);
 router.use('/announcements', announcementsRouter);

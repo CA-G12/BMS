@@ -4,7 +4,7 @@ import { AdminDashboard } from './Layout';
 
 import {
   ServicesContainer, AddService, EditService, Bills, Flats,
-  Complaints, SingleComplaints,
+  Complaints, SingleComplaints, Contacts,
 } from './components/adminDashboard';
 
 import AddUser from './pages/AddUser';
@@ -30,6 +30,7 @@ const router = createBrowserRouter([
       { path: 'complaints', element: <Complaints /> },
       { path: 'complaints/show/:id', element: <SingleComplaints /> },
       { path: 'flats', element: <Flats /> },
+      { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
     ],
   },
