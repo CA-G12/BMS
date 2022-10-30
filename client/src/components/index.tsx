@@ -8,9 +8,10 @@ import FlatContainer from './FlatContainer';
 import Title from './Title';
 import Loading from './Loading';
 import NoData from './NoData';
+import { Contacts } from './adminDashboard';
 
 export {
-  ContactUs, Services, AboutUs, AdsContainer, Title, Loading, NoData, VideoSection, FlatContainer,
+  Contacts, ContactUs, Services, AboutUs, AdsContainer, Title, Loading, NoData, VideoSection, FlatContainer,
 };
 
 export {
