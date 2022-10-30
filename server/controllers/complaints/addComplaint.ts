@@ -11,10 +11,10 @@ const addComplaints: RequestHandler = async (req:Request, res:Response, next:Nex
   try {
     const { title, description } = await complaintsSchema.validate(req.body, { abortEarly: false });
     const data = await ComplaintsModel.create({
-      title, description,
+      title, description, UserId: 1, // UserId should be from token when Authorization is done
     });
     return res.status(201).json({
-      message: 'Add Complaints Successfully', data,
+      message: 'Complaints Added Successfully', data,
     });
   } catch (error) {
     if (error.name === 'ValidationError') {
