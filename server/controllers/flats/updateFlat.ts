@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { FlatModel } from '../../models';
+import { FlatModel, UserModel } from '../../models';
 
 export default async (req:Request, res:Response, next: NextFunction) => {
   try {
@@ -9,20 +9,23 @@ export default async (req:Request, res:Response, next: NextFunction) => {
     }
     const {
       userId,
-
     } = req.body;
-    interface FlatUserModel {
-      userId: number;
-    }
-    const data : FlatUserModel | any = await FlatModel.update({
+    await FlatModel.update({
       UserId: userId,
     }, {
       where: { id },
       returning: true,
     });
-    res.json({ data, msg: 'succec' });
+    const data = await FlatModel.findAll({
+      where: { id },
+      attributes: ['id', 'flat_number', 'area', 'notes', 'is_active'],
+      include: [{
+        model: UserModel,
+        attributes: ['first_name', 'last_name', 'phone_number', 'id', 'email'],
+      }],
+    });
+    res.json({ data, msg: 'Updated Successfully' });
   } catch (err) {
-    console.log('err: ', err);
     return next(err);
   }
 };

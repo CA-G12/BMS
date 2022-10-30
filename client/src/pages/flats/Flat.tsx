@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
-import { LeftCircleOutlined, LeftOutlined } from '@ant-design/icons';
+import { LeftCircleOutlined } from '@ant-design/icons';
 import {
   Button, Col, Divider, message, Modal, Row,
 } from 'antd';
@@ -10,7 +10,6 @@ import { number } from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Loading, NoData } from '../../components';
-// eslint-disable-next-line import/no-cycle
 import Users from './Users';
 
 interface IUserFlatDetails {
@@ -43,7 +42,7 @@ const UserDetails : React.FC<IUserFlatDetails> = ({
       </>
     );
   }
-    <div>No User</div>;
+  return <div>No User</div>;
 };
 
 const App: React.FC = () => {
@@ -61,7 +60,8 @@ const App: React.FC = () => {
   };
 
   const handleOk = () => {
-    axios.put(`/api/v1/flats/${id}`, { userId: value }).then(() => {
+    axios.put(`/api/v1/flats/${id}`, { userId: value }).then(({ data: { data } }) => {
+      setFlatData(data as Array<IFlatUserResult>);
       message.success('تم تغير المالك بنجاح');
     }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
 
