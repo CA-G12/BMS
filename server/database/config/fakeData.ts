@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const users = [
   {
     first_name: 'أحمد',
@@ -190,7 +191,7 @@ const services = [
     price: 25,
     is_fixed: true,
     description: 'مصف سيارات لسكان البرج',
-    is_open: true,
+    is_open: false,
   },
 ];
 
