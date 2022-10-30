@@ -25,7 +25,7 @@ const Contacts: React.FC = () => {
       title: 'البريد الالكتروني',
       dataIndex: 'email',
       key: 'email',
-      render: (text) => <p>{text ? 'ثابت' : 'متغير'}</p>,
+      render: (text) => <p>{text}</p>,
     },
     {
       title: 'رقم الجوال',
