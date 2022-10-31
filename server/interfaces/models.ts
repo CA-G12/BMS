@@ -39,6 +39,7 @@ InferCreationAttributes<InferFlatModel>> {
   area: number,
   notes: string,
   is_active: boolean,
+  UserId: number | null,
 }
 
 interface InferPaymentModel extends Model<InferAttributes<InferPaymentModel>,

@@ -1,20 +1,50 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC, useEffect, useState } from 'react';
 import {
-  message, Button,
+  message, Button, Modal,
 } from 'antd';
 import Table, { ColumnsType } from 'antd/lib/table';
 
-import { LeftOutlined } from '@ant-design/icons';
+import { LeftOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { InferComplaintsModel } from '../../../Interfaces/complaints';
 import { Loading, NoData } from '../../index';
 
+const { confirm } = Modal;
+
 const DataTable:FC = () => {
   const [complaint, setComplaint] = useState<Array<InferComplaintsModel>>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [deleted, setDeleted] = useState<boolean>(false);
+
+  const handleDelete = (record: InferComplaintsModel) => {
+    const confirmDelete = () => {
+      axios({
+        method: 'DELETE',
+        url: `/api/v1/complaints/${record.id}`,
+      })
+        .then(() => {
+          setDeleted(!deleted);
+          if (complaint.length) {
+            setComplaint((prev) => prev.map((ele) => {
+              if (ele.id === record.id) return { ...record };
+              return ele;
+            }));
+          }
+        }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
+    };
+    confirm({
+      title: 'هل أنت واثق من حذف هذه الشكوى ؟',
+      icon: <ExclamationCircleOutlined />,
+      content: 'انتبه، مراجعة هذه الشكوى يعني حذفها بشكلٍ نهائي',
+      okText: 'نعم',
+      okType: 'danger',
+      cancelText: 'لا',
+      onOk() {
+        confirmDelete();
+      },
+    });
+  };
 
   const columns: ColumnsType<InferComplaintsModel> = [
     {
@@ -62,21 +92,7 @@ const DataTable:FC = () => {
       render: (_, record) => (
         <Button
           type="primary"
-          onClick={() => {
-            axios({
-              method: 'DELETE',
-              url: `/api/v1/complaints/${record.id}`,
-            })
-              .then(() => {
-                setDeleted(!deleted);
-                if (complaint.length) {
-                  setComplaint((prev) => prev.map((ele) => {
-                    if (ele.id === record.id) return { ...record };
-                    return ele;
-                  }));
-                }
-              }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
-          }}
+          onClick={() => handleDelete(record)}
         >
           {' '}
           تم المراجعة
