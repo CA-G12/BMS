@@ -1,3 +1,4 @@
-export { default as Flats } from './flats';
 export { default as Bills } from './bills';
-export { default as Services } from './services';
+export { ServicesContainer, AddService, EditService } from './services';
+// eslint-disable-next-line import/no-cycle
+export { default as Contacts } from './contacts/contacts';

@@ -1,12 +1,16 @@
-export { addContact } from './contactus';
+export { addContact, getContact } from './contactus';
 
 export { getFlatsUsers } from './flatsUsers';
 export {
   getAnnouncement, postAnnouncement, getAnnouncementById, putAnnouncement, deleteAnnouncement,
 } from './announcements';
 export { getAdvertisements } from './advertisements';
-export { getFlats, availableFlats } from './flats';
+export {
+  getFlats, flatById, updateFlat, availableFlats,
+} from './flats';
 
-export { getServices, postServices, updateServices } from './services';
+export {
+  getServices, postServices, updateServices, getServiceById,
+} from './services';
 export { login } from './auth';
-export { addUser } from './users';
+export { addUser, getUsers } from './users';

@@ -1,9 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { LandingPage } from './pages';
+
+import { LandingPage, Flats, Flat } from './pages';
 import { AdminDashboard } from './Layout';
 
 import {
-  Services, Bills, Flats,
+  Contacts, ServicesContainer, AddService, EditService, Bills,
 } from './components/adminDashboard';
 import AddUser from './pages/AddUser';
 import App from './App';
@@ -21,9 +22,13 @@ const router = createBrowserRouter([
     element: <AdminDashboard />,
     children: [
       { index: true, element: <h1>statistics</h1> },
-      { path: 'services', element: <Services /> },
+      { path: 'services', element: <ServicesContainer /> },
+      { path: 'services/addService', element: <AddService /> },
+      { path: 'services/editService/:id', element: <EditService /> },
       { path: 'bills', element: <Bills /> },
       { path: 'flats', element: <Flats /> },
+      { path: 'flats/:id', element: <Flat /> },
+      { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
     ],
   },
