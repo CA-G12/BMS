@@ -23,8 +23,9 @@ export const AuthProvider: FC<ChildrenProps> = ({ children }) => {
   const [result, setResult] = useState<Data | null>(null);
 
   const fetchData = (signal: AbortSignal) => {
-    axios.get<AuthResponse>('/', { signal })
+    axios.get<AuthResponse>('/api/v1/user', { signal })
       .then(({ data: { data } }) => {
+        console.log('data: ', data);
         setResult(data);
       }).catch(() => message.error('حدث خطأ ما'));
   };
