@@ -10,7 +10,7 @@ describe('Flat API', () => {
       const response = await request(app)
         .get('/api/v1/flats/users?results=2&page=2&pagination%5Bcurrent%5D=2&pagination%5BpageSize%5D=2&pagination%5Btotal%5D=4')
         .expect(200);
-      expect(response.body.result.length).toBe(2);
+      expect(response.body.result.length).toBe(5);
     });
     test('FlatsUsers -GET api/v1/flats/users', async () => {
         const response = await request(app)

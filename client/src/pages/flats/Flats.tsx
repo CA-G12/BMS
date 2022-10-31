@@ -60,7 +60,7 @@ const Flats: React.FC = () => {
   const [tableParams, setTableParams] = useState<TableParams>({
     pagination: {
       current: 1,
-      pageSize: 2, // here to change the table size (total/limit)
+      pageSize: 5, // here to change the table size (total/limit)
     },
   });
 

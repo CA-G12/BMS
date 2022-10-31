@@ -9,14 +9,14 @@ export default async (req:Request, res:Response, next:NextFunction) => {
     const { order, page } = req.query;
     const sortingOrder = (order === 'descend') ? 'DESC' : 'ASC';
 
-    const limitNum = 2;
-    const total = await FlatModel.count({ where: { is_active: true }, include: [{ model: UserModel }] });
+    const limitNum = 5;
+    const total = await FlatModel.count({ include: [{ model: UserModel }] });
     if (!(Number(page) > 0)) {
       throw new CustomError(400, 'Query Parameter Page is required and must be a number greater than 0');
     }
     const offsetNum = (+(page) - 1) * limitNum;
     const queryResult : IQueryResult[] = await FlatModel.findAll({
-      where: { is_active: true },
+
       order: [
         ['id', `${sortingOrder}`],
       ],
