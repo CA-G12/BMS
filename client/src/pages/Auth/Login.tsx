@@ -52,7 +52,7 @@ const LoginForm: React.FC = () => {
         name="phoneNumber"
         rules={[{ required: true, message: 'حقل رقم الهاتف مطلوب' }]}
       >
-        <Input style={InputStyle} prefix={<UserOutlined className="site-form-item-icon" />} placeholder="رقم الهاتف" />
+        <Input style={InputStyle} type="tel" prefix={<UserOutlined className="site-form-item-icon" />} placeholder="رقم الهاتف" />
       </Form.Item>
       <Form.Item
         name="password"
