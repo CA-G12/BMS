@@ -1,10 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { LandingPage } from './pages';
-import { AdminDashboard } from './Layout';
+import { AdminDashboard, UserDashboard } from './Layout';
 
 import {
   Contacts, ServicesContainer, AddService, EditService, Bills, Flats,
 } from './components/adminDashboard';
+import { UserAnnouncements, UserBills, UserComplaints } from './components/userDashboard';
+
 import AddUser from './pages/AddUser';
 import App from './App';
 
@@ -28,6 +30,16 @@ const router = createBrowserRouter([
       { path: 'flats', element: <Flats /> },
       { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
+    ],
+  },
+  {
+    path: '/user',
+    element: <UserDashboard />,
+    children: [
+      { index: true, element: <h1>User Page</h1> },
+      { path: 'announcements', element: <UserAnnouncements /> },
+      { path: 'bills', element: <UserBills /> },
+      { path: 'complaints', element: <UserComplaints /> },
     ],
   },
   { path: '*', element: <h1>page not found</h1> }]);
