@@ -18,6 +18,7 @@ InferCreationAttributes<InferBillModel>> {
   total_price: number,
   is_open: boolean,
   services: Array<billServices>,
+  FlatId:number
 }
 const Bill = sequelize.define<InferBillModel>('Bill', {
   id: {
@@ -35,6 +36,10 @@ const Bill = sequelize.define<InferBillModel>('Bill', {
   },
   services: {
     type: DataTypes.ARRAY(DataTypes.JSON),
+    allowNull: false,
+  },
+  FlatId: {
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 });
