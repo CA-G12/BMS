@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { LandingPage, Flats, Flat } from './pages';
 import { AdminDashboard } from './Layout';
+import Login from './pages/Auth/Login';
 
 import {
   Contacts, ServicesContainer, AddService, EditService, Bills,
@@ -15,6 +16,15 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <LandingPage /> },
+    ],
+  },
+  {
+    path: '/auth',
+    children: [
+      {
+        path: 'login',
+        element: <Login />,
+      },
     ],
   },
   {
