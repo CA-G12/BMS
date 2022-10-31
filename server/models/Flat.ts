@@ -11,6 +11,7 @@ InferCreationAttributes<InferFlatModel>> {
   area: number,
   notes: string,
   is_active: boolean,
+  UserId: number | null,
 }
 const Flat = sequelize.define<InferFlatModel>('Flat', {
   id: {
@@ -33,6 +34,10 @@ const Flat = sequelize.define<InferFlatModel>('Flat', {
   is_active: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
+  },
+  UserId: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
   },
 });
 

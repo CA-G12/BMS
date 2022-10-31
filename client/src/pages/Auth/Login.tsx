@@ -9,8 +9,8 @@ import {
 } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import Login from '../../services/authService';
-import { ILoginModel } from '../../Models/loginModel';
-import { IErrorLoginResult } from '../../Models/ILoginResult';
+import { ILoginModel } from '../../Interfaces/loginModel';
+import { IErrorLoginResult } from '../../Interfaces/ILoginResult';
 import LogoImage from '../../assets/images/logo.png';
 import LoginImage from '../../assets/images/login.jpg';
 
