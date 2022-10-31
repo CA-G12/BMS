@@ -15,7 +15,7 @@ export {
 };
 
 export {
-  Flats, Bills, ServicesContainer, AddService, EditService,
+  Bills, ServicesContainer, AddService, EditService,
 } from './adminDashboard';
 
 export { UserAnnouncements, UserBills, UserComplaints } from './userDashboard';
