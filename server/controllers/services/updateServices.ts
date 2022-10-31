@@ -6,11 +6,16 @@ import { servicesSchema } from '../../validation';
 
 export default async (req:Request, res:Response, next: NextFunction) => {
   try {
+    const { id } = req.params;
+    if (!(Number(id) > 0)) {
+      return res.json({ message: 'Service Id must be a number and greater then 0' });
+    }
     const {
-      id, name, price, is_fixed, description, is_open,
+      name, price, isFixed, description, isOpen,
     } = await servicesSchema.validate(req.body, { abortEarly: false });
+
     const data = await ServiceModel.update({
-      name, price, is_fixed, description, is_open,
+      name, price, is_fixed: isFixed, description, is_open: isOpen,
     }, {
       where: { id },
       returning: true,
