@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { PlusCircleOutlined } from '@ant-design/icons';
+import { LeftCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import {
   Button,
   Col,
@@ -13,7 +13,7 @@ import {
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Loading, NoData } from '../components';
 import { IErrorSignupResult } from '../Interfaces/ISignupResult';
 import { ISignupModel } from '../Interfaces/signup';
@@ -59,16 +59,37 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Title style={{
-        fontSize: 'x-large',
-        padding: '16px',
-        color: '#3380FF',
-        fontWeight: 'bolder',
-      }}
-      >
-        إضافة مستخدم
+      <Row>
+        <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 12, offset: 1 }}>
+          <Title style={{
+            fontSize: 'x-large',
+            padding: '16px',
+            color: '#3380FF',
+            fontWeight: 'bolder',
+          }}
+          >
+            إضافةمستخدم
+          </Title>
 
-      </Title>
+        </Col>
+
+        <Button
+          type="link"
+          style={{
+            fontSize: 'xx-large',
+            padding: '16px',
+            color: '#3380FF',
+            fontWeight: 'bolder',
+            paddingRight: '250px',
+          }}
+        >
+          <Link to="/admin/flats">
+            {' '}
+            <LeftCircleOutlined />
+          </Link>
+
+        </Button>
+      </Row>
 
       <Form
         form={form}
