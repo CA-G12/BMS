@@ -1,9 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { LandingPage } from './pages';
+
+import { LandingPage, Flats, Flat } from './pages';
 import { AdminDashboard } from './Layout';
+import Login from './pages/Auth/Login';
 
 import {
-  ServicesContainer, AddService, EditService, Bills, Flats,
+  ServicesContainer, AddService, EditService, Bills,
   Complaints, SingleComplaints, Contacts,
 } from './components/adminDashboard';
 
@@ -17,6 +19,15 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <LandingPage /> },
+    ],
+  },
+  {
+    path: '/auth',
+    children: [
+      {
+        path: 'login',
+        element: <Login />,
+      },
     ],
   },
   {
@@ -43,6 +54,7 @@ const router = createBrowserRouter([
         ],
       },
       { path: 'flats', element: <Flats /> },
+      { path: 'flats/:id', element: <Flat /> },
       { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
     ],

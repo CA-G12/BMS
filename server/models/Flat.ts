@@ -25,6 +25,10 @@ const Flat = sequelize.define<InferFlatModel>('Flat', {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
+  UserId: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
 });
 
 export default Flat;

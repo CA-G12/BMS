@@ -15,5 +15,5 @@ export {
 };
 
 export {
-  Flats, Bills, ServicesContainer, AddService, EditService, Complaints, SingleComplaints,
+  Bills, ServicesContainer, AddService, EditService, Complaints, SingleComplaints,
 } from './adminDashboard';
