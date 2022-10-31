@@ -1,7 +1,5 @@
 export interface InferComplaintsModel {
   id:number,
-  name: string,
-  subject:string,
+  title:string,
   description:string,
-  is_solved: boolean
 }

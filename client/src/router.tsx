@@ -8,6 +8,7 @@ import {
 } from './components/adminDashboard';
 
 import AddUser from './pages/AddUser';
+import DataTable from './components/adminDashboard/complaints/DataTable';
 import App from './App';
 
 const router = createBrowserRouter([
@@ -27,8 +28,20 @@ const router = createBrowserRouter([
       { path: 'services/addService', element: <AddService /> },
       { path: 'services/editService/:id', element: <EditService /> },
       { path: 'bills', element: <Bills /> },
-      { path: 'complaints', element: <Complaints /> },
-      { path: 'complaints/show/:id', element: <SingleComplaints /> },
+      {
+        path: 'complaints',
+        element: <Complaints />,
+        children: [
+          {
+            index: true,
+            element: <DataTable />,
+          },
+          {
+            path: 'show/:id',
+            element: <SingleComplaints />,
+          },
+        ],
+      },
       { path: 'flats', element: <Flats /> },
       { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
