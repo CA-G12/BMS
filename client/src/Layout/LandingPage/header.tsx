@@ -32,7 +32,7 @@ const appHeader: React.FC = () => {
             <Link key="تواصل معنا" href="#contact-us" title="تواصل معنا" />
             <Link
               key="login"
-              href="/login"
+              href="/auth/login"
               title="تسجيل الدخول"
               className="loginBtn"
             />
@@ -58,7 +58,7 @@ const appHeader: React.FC = () => {
               <Link key="تواصل معنا" href="#contact-us" title="تواصل معنا" />
               <Link
                 key="login"
-                href="/login"
+                href="/auth/login"
                 title="تسجيل الدخول"
               />
             </Anchor>
