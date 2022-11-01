@@ -15,7 +15,7 @@ const ProtectedRoute : React.FC<ProtectedRoutesProps> = ({ children, isAuthAdmin
   const { user } = useContext(authContext) as UserContext;
 
   if (!user) {
-    return <Navigate to="/login" replace state={{ currentLocation: pathname }} />;
+    return <Navigate to="/auth/login" replace state={{ currentLocation: pathname }} />;
   }
 
   if (isAuthAdmin) {

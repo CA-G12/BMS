@@ -7,8 +7,7 @@ import 'remixicon/fonts/remixicon.css';
 import { AuthProvider } from '../context/AuthContext';
 
 const App: FC = () => (
-  <AuthProvider><div><Outlet /></div></AuthProvider>
-
+  <AuthProvider><Outlet /></AuthProvider>
 );
 
 export default App;

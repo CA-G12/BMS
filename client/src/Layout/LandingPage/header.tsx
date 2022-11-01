@@ -37,16 +37,14 @@ const appHeader: React.FC = () => {
               <ReactLink
                 key="login"
                 to="/auth/login"
-                title=" "
                 className="loginBtn"
               >
                 تسجيل الدخول
               </ReactLink>
             ) : (
               <ReactLink
-                key="login"
-                to={user.role}
-                title=" "
+                key="dashboard"
+                to="/dashboard"
                 className="loginBtn"
               >
                 لوحة التحكم
@@ -77,16 +75,14 @@ const appHeader: React.FC = () => {
                 <ReactLink
                   key="login"
                   to="/auth/login"
-                  title=" "
                   className="loginBtn"
                 >
                   تسجيل الدخول
                 </ReactLink>
               ) : (
                 <ReactLink
-                  key="login"
-                  to={user.role}
-                  title=" "
+                  key="dashboard"
+                  to="/dashboard"
                   className="loginBtn"
                 >
                   لوحة التحكم

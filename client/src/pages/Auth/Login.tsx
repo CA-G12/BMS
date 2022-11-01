@@ -118,7 +118,7 @@ const App: React.FC = () => {
           <img style={{ marginBottom: '20%' }} src={siteLogo} alt="Logo" />
           <br />
           <Title>تسجيل الدخول</Title>
-          <Title level={3}>تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور الخاصة بك</Title>
+          <Title level={3}>تسجيل الدخول باستخدام رقم الهاتف وكلمة المرور الخاصة بك</Title>
           <br />
           <div>
             <LoginForm />
