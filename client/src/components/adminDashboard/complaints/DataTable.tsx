@@ -76,7 +76,7 @@ const DataTable:FC = () => {
       dataIndex: 'id',
       key: 'id',
       render: (_, record) => (
-        <Link to={`show/${record.id}`}>
+        <Link to={`${record.id}`}>
           <p>
             عرض الشكوى
             {' '}

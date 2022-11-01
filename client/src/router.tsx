@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             element: <DataTable />,
           },
           {
-            path: 'show/:id',
+            path: ':id',
             element: <SingleComplaints />,
           },
         ],
