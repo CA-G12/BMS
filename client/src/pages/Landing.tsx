@@ -1,5 +1,4 @@
 import React from 'react';
-// import './App.css';
 
 import { Layout } from 'antd';
 import AppHeader from '../Layout/LandingPage/header';
@@ -30,5 +29,4 @@ const LandingPage: React.FC = () => (
     </Footer>
   </Layout>
 );
-
 export default LandingPage;

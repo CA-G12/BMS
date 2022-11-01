@@ -4,15 +4,11 @@ import adsRouter from './adsRouter';
 import flatRouter from './flatRouter';
 import announcementsRouter from './announcementsRouter';
 import serviceRouter from './serviceRouter';
-
-import getUserData from '../middleware/getUserData';
-import { Authenticate } from '../middleware';
 import contactRouter from './contactRouter';
 import userRouter from './userRoute';
 
 const router = Router();
 router.use('/auth', AuthRouter);
-// router.use('/user', Authenticate, getUserData);
 router.use('/contacts', contactRouter);
 router.use('/advertisements', adsRouter);
 router.use('/flats', flatRouter);

@@ -1,4 +1,4 @@
-import { message } from 'antd';
+import { Spin } from 'antd';
 import axios from 'axios';
 import {
   ReactNode, createContext, FC, useState, useEffect, useMemo,
@@ -9,36 +9,58 @@ interface ChildrenProps {
 }
 
 interface AuthResponse {
-  data: Data;
+  user: User;
 }
 
-interface Data {
+interface User {
   id: number;
   role: string;
 }
 
-export const authContext = createContext({});
+export interface UserContext {
+  user: User | null;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+}
+
+export const authContext = createContext<UserContext | null>(null);
 
 export const AuthProvider: FC<ChildrenProps> = ({ children }) => {
-  const [result, setResult] = useState<Data | null>(null);
-
-  const fetchData = (signal: AbortSignal) => {
-    axios.get<AuthResponse>('/api/v1/user', { signal })
-      .then(({ data: { data } }) => {
-        console.log('data: ', data);
-        setResult(data);
-      }).catch(() => message.error('حدث خطأ ما'));
-  };
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const controller = new AbortController();
-    const { signal } = controller;
-    fetchData(signal);
-    return () => controller.abort();
+    const getUser = async () => {
+      try {
+        const data = await axios.get<AuthResponse>('/api/v1/auth/userdata');
+        const userInfo = data.data.user;
+        setUser(userInfo);
+        setLoading(false);
+      } catch (err) {
+        setUser(null);
+        setLoading(false);
+      }
+    };
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    getUser();
   }, []);
 
-  const passedValue = useMemo(() => ({ result, setResult }), [result]);
+  const passedValue = useMemo(() => ({
+    user, setUser,
+  }), [user]);
+  if (loading) {
+    return (
+      <Spin
+        size="large"
+        style={{
+          display: 'flex',
+          height: '100vh',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      />
 
+    );
+  }
   return (
     <authContext.Provider value={passedValue}>{children}</authContext.Provider>
   );

@@ -4,9 +4,11 @@ import { Outlet } from 'react-router-dom';
 import 'antd/dist/antd.min.css';
 import './style.css';
 import 'remixicon/fonts/remixicon.css';
+import { AuthProvider } from '../context/AuthContext';
 
 const App: FC = () => (
-  <div><Outlet /></div>
+  <AuthProvider><div><Outlet /></div></AuthProvider>
+
 );
 
 export default App;

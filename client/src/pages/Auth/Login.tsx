@@ -124,5 +124,4 @@ const App: React.FC = () => (
     <Col style={{ ...colStyle, ...bgImageStyle }} xs={24} lg={12} />
   </Row>
 );
-
 export default App;

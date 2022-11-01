@@ -1,8 +1,9 @@
-import { Request } from 'express';
+import { Response } from 'express';
+import { InferRequestPayload } from '../interfaces/InferUserPayload';
 
-const getUserData = async (req: Request) => {
-  const { user } = req.body;
-  return { data: user };
+const getUserData = (req: InferRequestPayload, res: Response) => {
+  const { user } = req;
+  res.json({ user });
 };
 
 export default getUserData;
