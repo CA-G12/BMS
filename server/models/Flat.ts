@@ -1,18 +1,8 @@
-import {
-  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
-} from 'sequelize';
+import { DataTypes } from 'sequelize';
+import { InferFlatModel } from '../interfaces/models';
 
 import sequelize from '../database/config/connection';
 
-interface InferFlatModel extends Model<InferAttributes<InferFlatModel>,
-InferCreationAttributes<InferFlatModel>> {
-  id: CreationOptional<number>;
-  flat_number: number,
-  area: number,
-  notes: string,
-  is_active: boolean,
-  UserId: number | null,
-}
 const Flat = sequelize.define<InferFlatModel>('Flat', {
   id: {
     type: DataTypes.INTEGER,
