@@ -6,11 +6,11 @@ import Navbar from '../components/adminDashboard/navbar';
 
 const { Content } = Layout;
 
-interface AdminDashboardProps {
+interface DashboardLayoutProps {
   role: string;
 }
 
-const AdminDashboard: React.FC<AdminDashboardProps> = ({ role }) => (
+const DashboardLayout: React.FC<DashboardLayoutProps> = ({ role }) => (
   <>
     <Navbar />
     <Layout>
@@ -29,4 +29,4 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ role }) => (
   </>
 );
 
-export default AdminDashboard;
+export default DashboardLayout;

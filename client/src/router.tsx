@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/aria-role */
 import { createBrowserRouter } from 'react-router-dom';
-import { AdminDashboard } from './Layout';
+import { DashboardLayout } from './Layout';
 
 import { LandingPage, Flats, Flat } from './pages';
 import Login from './pages/Auth/Login';
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/admin',
-    element: <AdminDashboard role="admin" />,
+    element: <DashboardLayout role="admin" />,
     children: [
       { index: true, element: <h1>statistics</h1> },
       { path: 'services', element: <ServicesContainer /> },
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/user',
-    element: <AdminDashboard role="user" />,
+    element: <DashboardLayout role="user" />,
     children: [
       { index: true, element: <h1>User Page</h1> },
       { path: 'announcements', element: <UserAnnouncements /> },
