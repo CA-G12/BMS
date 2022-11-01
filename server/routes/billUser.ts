@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import { getNotPaidBill, getPaidBill } from '../controllers';
+import { getAllBills } from '../controllers';
 
 const router = Router();
-router.get('/notPaid/:FlatId', getNotPaidBill);
-router.get('/paid/:FlatId', getPaidBill);
+
+router.get('/', getAllBills);
+
 export default router;

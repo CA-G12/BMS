@@ -12,4 +12,4 @@ export {
 } from './services';
 export { login } from './auth';
 export { addUser, getUsers } from './users';
-export { getNotPaidBill, getPaidBill } from './billUser';
+export { getAllBills } from './billUser';

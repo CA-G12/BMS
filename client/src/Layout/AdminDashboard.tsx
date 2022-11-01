@@ -1,4 +1,3 @@
-// import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
@@ -7,12 +6,16 @@ import Navbar from '../components/adminDashboard/navbar';
 
 const { Content } = Layout;
 
-const AdminDashboard: React.FC = () => (
+interface AdminDashboardProps {
+  role: string;
+}
+
+const AdminDashboard: React.FC<AdminDashboardProps> = ({ role }) => (
   <>
     <Navbar />
     <Layout>
       <Layout>
-        <MenuList />
+        <MenuList role={role} />
         <Content
           style={{
             padding: 24,
