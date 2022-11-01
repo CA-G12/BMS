@@ -7,9 +7,12 @@ import { AdminDashboard } from './Layout';
 import Login from './pages/Auth/Login';
 
 import {
-  Contacts, AddService, EditService, Bills, ServicesContainer,
+  ServicesContainer, AddService, EditService, Bills,
+  Complaints, SingleComplaints, Contacts,
 } from './components/adminDashboard';
+
 import AddUser from './pages/AddUser';
+import DataTable from './components/adminDashboard/complaints/DataTable';
 import App from './App';
 import { ProtectedRoute, LoginProtectedRoute } from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
@@ -48,11 +51,25 @@ const router = createBrowserRouter([
   </AuthProvider>,
 
     children: [
-      { index: true, element: <Button type="primary">Primary Button</Button> },
+      { index: true, element: <h1>لوحة التحكم</h1> },
       { path: 'services', element: <ServicesContainer /> },
       { path: 'services/addService', element: <AddService /> },
       { path: 'services/editService/:id', element: <EditService /> },
       { path: 'bills', element: <Bills /> },
+      {
+        path: 'complaints',
+        element: <Complaints />,
+        children: [
+          {
+            index: true,
+            element: <DataTable />,
+          },
+          {
+            path: ':id',
+            element: <SingleComplaints />,
+          },
+        ],
+      },
       { path: 'flats', element: <Flats /> },
       { path: 'flats/:id', element: <Flat /> },
       { path: 'contacts', element: <Contacts /> },

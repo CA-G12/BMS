@@ -117,19 +117,16 @@ const complaints = [
   {
     title: 'شكوى رقم 1',
     description: 'تفاصيل الشكوى',
-    is_solved: true,
     UserId: 1,
   },
   {
     title: 'شكوى رقم 2',
     description: 'تفاصيل الشكوى',
-    is_solved: true,
     UserId: 2,
   },
   {
     title: 'شكوى رقم 3',
     description: 'تفاصيل الشكوى',
-    is_solved: true,
     UserId: 3,
   },
 ];

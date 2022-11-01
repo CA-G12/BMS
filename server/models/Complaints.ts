@@ -1,16 +1,7 @@
-import {
-  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
-} from 'sequelize';
+import { DataTypes } from 'sequelize';
+import { InferComplaintsModel } from '../interfaces/models';
 
 import sequelize from '../database/config/connection';
-
-interface InferComplaintsModel extends Model<InferAttributes<InferComplaintsModel>,
-InferCreationAttributes<InferComplaintsModel>> {
-  id: CreationOptional<number>;
-  title: string,
-  description: string,
-  is_solved: boolean,
-}
 
 const ComplaintsModel = sequelize.define<InferComplaintsModel>('Complaint', {
   id: {
@@ -28,10 +19,6 @@ const ComplaintsModel = sequelize.define<InferComplaintsModel>('Complaint', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  is_solved: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
-});
+}, { paranoid: true });
 
 export default ComplaintsModel;
