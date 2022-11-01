@@ -45,7 +45,7 @@ const appHeader: React.FC = () => {
             ) : (
               <ReactLink
                 key="login"
-                to="/admin"
+                to={user.role}
                 title=" "
                 className="loginBtn"
               >
@@ -85,7 +85,7 @@ const appHeader: React.FC = () => {
               ) : (
                 <ReactLink
                   key="login"
-                  to="/admin"
+                  to={user.role}
                   title=" "
                   className="loginBtn"
                 >
