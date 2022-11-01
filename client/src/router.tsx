@@ -5,10 +5,11 @@ import { AdminDashboard } from './Layout';
 import Login from './pages/Auth/Login';
 
 import {
-  Contacts, ServicesContainer, AddService, EditService, Bills,
+  Contacts, ServicesContainer, AddService, EditService, Bills, Announcements,
 } from './components/adminDashboard';
 import AddUser from './pages/AddUser';
 import App from './App';
+import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnouncements';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,8 @@ const router = createBrowserRouter([
       { path: 'services/editService/:id', element: <EditService /> },
       { path: 'bills', element: <Bills /> },
       { path: 'flats', element: <Flats /> },
+      { path: 'announcements', element: <Announcements /> },
+      { path: 'announcements/new/:type', element: <NewAnnouncements /> },
       { path: 'flats/:id', element: <Flat /> },
       { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
