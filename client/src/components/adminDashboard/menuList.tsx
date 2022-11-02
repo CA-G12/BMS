@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import {
@@ -14,6 +14,8 @@ import {
   CommentOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
+import authContext from '../../context';
+import { UserContext } from '../../context/AuthContext';
 
 const { Sider } = Layout;
 
@@ -57,17 +59,16 @@ const userList: MenuItem[] = [
   getItem(<Link to="/user/announcements" style={listStyle}>الإعلانات</Link>, '6', <ContainerOutlined style={listStyle} />),
   getItem(<Link to="/user/logout" style={listStyle}>تسجيل الخروج</Link>, '9', <LogoutOutlined style={listStyle} />),
 ];
-interface MenuListProps {
-  role: string;
-}
-const MenuList: React.FC<MenuListProps> = ({ role }) => {
+
+const MenuList: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const { user } = useContext(authContext) as UserContext;
 
   return (
     <Sider collapsible theme="light" collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} reverseArrow>
       <Menu
         mode="inline"
-        items={role === 'admin' ? adminList : userList}
+        items={user?.role === 'admin' ? adminList : userList}
         defaultSelectedKeys={['1']}
       />
     </Sider>

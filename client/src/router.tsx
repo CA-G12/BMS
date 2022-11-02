@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     element:
   <AuthProvider>
     <ProtectedRoute isAuthAdmin>
-      <DashboardLayout role="admin" />
+      <DashboardLayout />
     </ProtectedRoute>
   </AuthProvider>,
 
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
     element:
   <AuthProvider>
     <ProtectedRoute isAuthAdmin={false}>
-      <DashboardLayout role="user" />
+      <DashboardLayout />
     </ProtectedRoute>
   </AuthProvider>,
 

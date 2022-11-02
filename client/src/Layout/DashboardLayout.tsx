@@ -6,16 +6,12 @@ import Navbar from '../components/adminDashboard/navbar';
 
 const { Content } = Layout;
 
-interface DashboardLayoutProps {
-  role: string;
-}
-
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({ role }) => (
+const DashboardLayout: React.FC = () => (
   <>
     <Navbar />
     <Layout>
       <Layout>
-        <MenuList role={role} />
+        <MenuList />
         <Content
           style={{
             padding: 24,
