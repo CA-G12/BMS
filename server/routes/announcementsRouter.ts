@@ -7,7 +7,7 @@ import {
 const router = Router();
 
 router.get('/', getAnnouncement);
-router.post('/:type', postAnnouncement);
+router.post('/', postAnnouncement);
 router.delete('/:id', deleteAnnouncement);
 router.get('/:id', getAnnouncementById);
 router.put('/:id', putAnnouncement);
