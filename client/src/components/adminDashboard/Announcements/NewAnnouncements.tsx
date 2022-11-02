@@ -1,15 +1,13 @@
 import {
-  Form, Input, Button, message, Card, Typography,
+  Form, Input, Button, message, Card,
 } from 'antd';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
 type RequiredMark = boolean | 'optional';
-const { Title } = Typography;
 interface IAddAnnouncements {
   title: string;
-  description: string;
   startDate: string;
   endDate: string;
 }
@@ -30,7 +28,7 @@ const AnnouncementsForm: React.FC = () => {
     } else if (new Date(values.startDate) > new Date(values.endDate)) {
       setErrorMessage('خطأ في تاريخ الانتهاء');
     } else {
-      axios.post(`/api/v1/announcements/${type as string}`, values)
+      axios.post('/api/v1/announcements', values)
         .then(() => {
           navigate('/admin/announcements');
         })
@@ -51,9 +49,6 @@ const AnnouncementsForm: React.FC = () => {
         <Form.Item name="title" label="الاعلان" rules={[{ whitespace: false, required: true, message: 'الرجاء ادخال اسم الاعلان' }]}>
           <Input />
         </Form.Item>
-        <Form.Item name="description" label="الوصف" rules={[{ whitespace: false, required: true, message: 'الرجاء ادخال الوصف ' }]}>
-          <Input.TextArea showCount maxLength={200} style={{ width: '34%' }} rows={7} />
-        </Form.Item>
         <Form.Item name="startDate" label="تاريخ البدء" rules={[{ whitespace: false, required: true, message: 'الرجاء ادخال تاريخ البدء ' }]}>
           <Input type="date" />
         </Form.Item>
@@ -62,7 +57,7 @@ const AnnouncementsForm: React.FC = () => {
         </Form.Item>
         <p style={{ color: 'red' }}>{errorMessage}</p>
         <Form.Item>
-          <Button htmlType="submit" type="primary">اضافة خدمة</Button>
+          <Button htmlType="submit" type="primary">اضافة اعلان</Button>
           {' '}
           <Button htmlType="button" type="dashed" onClick={() => navigate('/admin/announcements')}>رجوع للرئيسية</Button>
         </Form.Item>
