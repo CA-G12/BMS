@@ -407,6 +407,13 @@ const flats = [
     is_active: true,
     UserId: 4,
   },
+  {
+    flat_number: 105,
+    area: 180,
+    notes: 'شقة شمالية',
+    is_active: true,
+    UserId: 1,
+  },
 ];
 
 export {

@@ -12,6 +12,7 @@ import {
 import AddUser from './pages/AddUser';
 import DataTable from './components/adminDashboard/complaints/DataTable';
 import App from './App';
+import UserProfile from './pages/UserProfile';
 
 const router = createBrowserRouter([
   {
@@ -57,8 +58,10 @@ const router = createBrowserRouter([
       { path: 'flats/:id', element: <Flat /> },
       { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
+      { path: 'profile', element: <UserProfile /> },
     ],
   },
+
   { path: '*', element: <h1>page not found</h1> }]);
 
 export default router;

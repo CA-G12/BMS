@@ -13,4 +13,4 @@ export { login } from './auth';
 export {
   addComplaints, deleteSingleComplaint, getAllComplaints, getSingleComplaint,
 } from './complaints';
-export { addUser, getUsers } from './users';
+export { addUser, getUsers, profile } from './users';
