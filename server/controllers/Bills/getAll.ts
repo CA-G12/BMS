@@ -5,7 +5,12 @@ import { BillModel, FlatModel, UserModel } from '../../models';
 export default async (req:Request, res:Response, next:NextFunction) => {
   try {
     const payload:ReqPayload | undefined | any = req.query;
-    const { current, pageSize } = payload.pagination;
+    let { current, pageSize } = { current: 0, pageSize: 0 };
+    if (payload.pagination) {
+      current = payload.pagination.current;
+      pageSize = payload.pagination.pageSize;
+    }
+    console.log('Testing');
     let filterStatus;
     if (payload.filters?.is_open) {
       filterStatus = payload.filters.is_open.map((x) => (x === 'true'));
@@ -63,9 +68,12 @@ export default async (req:Request, res:Response, next:NextFunction) => {
       result = result.sort((a, b) => a[field] - b[field]);
     }
 
-    const start = ((current - 1) * pageSize);
-    const end = start + pageSize;
-    result = result.slice(start, end);
+    if (payload.pagination) {
+      const start = ((current - 1) * pageSize);
+      const end = start + pageSize;
+      result = result.slice(start, end);
+    }
+
     res.json({ result, total });
   } catch (err) {
     next(err);
