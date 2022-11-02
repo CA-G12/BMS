@@ -10,6 +10,7 @@ import {
 import AddUser from './pages/AddUser';
 import App from './App';
 import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnouncements';
+import EditAnnouncements from './components/adminDashboard/Announcements/EditAnnouncements';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,8 @@ const router = createBrowserRouter([
       { path: 'bills', element: <Bills /> },
       { path: 'flats', element: <Flats /> },
       { path: 'announcements', element: <Announcements /> },
-      { path: 'announcements/new/:type', element: <NewAnnouncements /> },
+      { path: 'announcements/new', element: <NewAnnouncements /> },
+      { path: 'announcements/edit/:id', element: <EditAnnouncements /> },
       { path: 'flats/:id', element: <Flat /> },
       { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
