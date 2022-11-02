@@ -1,9 +1,8 @@
-import { DeleteOutlined, DownOutlined, EditOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import {
   Button,
-  Dropdown,
-  Menu,
-  Select, Space, Table, Typography,
+  notification,
+  Table, Typography,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import axios from 'axios';
@@ -15,55 +14,23 @@ const { Title } = Typography;
 interface UserAnns {
   id: number;
   title: string;
-  isPublic: boolean;
-  startDate: string;
-  endDate: string;
+  start_date: string;
+  end_date: string;
 }
 
-interface CreateAnns {
-  title: string;
-  discription: string;
-  isPublic: boolean;
-  startDate: string;
-  endDate: string;
-}
-
-const GetAnns = () => new Promise<AnnResponse>((resolve, reject) => {
-  axios.get('/api/v1/announcements')
-    .then(resolve)
-    .catch(reject);
-});
-const AddAnnd = (values: CreateAnns) => new Promise((resolve, reject) => {
-  axios.post('/api/v1/announcements', values)
+const GetAnns = (signal: AbortSignal) => new Promise<AnnResponse>((resolve, reject) => {
+  axios.get('/api/v1/announcements', { signal })
     .then(resolve)
     .catch(reject);
 });
 
-const menu = (
-  <Menu
-    items={[
-      {
-        label: (
-          <Link to="new/internal">
-            إعلان خاص
-          </Link>
-        ),
-        key: '0',
-      },
-      {
-        label: (
-          <Link to="new/external">
-            إعلان عام
-          </Link>
-        ),
-        key: '1',
-      },
-      {
-        type: 'divider',
-      },
-    ]}
-  />
-);
+type NotificationType = 'success' | 'error';
+const openNotificationWithIcon = (type: NotificationType, message: string, description: string) => {
+  notification[type]({
+    message,
+    description,
+  });
+};
 
 const columns: ColumnsType<UserAnns> = [
   {
@@ -80,37 +47,35 @@ const columns: ColumnsType<UserAnns> = [
     ),
   },
   {
-    title: 'الحالة',
-    dataIndex: 'isPublic',
-    key: 'id',
-    render: (_, { isPublic }) => {
-      if (isPublic) return 'عام';
-      return 'خاص';
-    },
-  },
-  {
     title: 'تاريخ البدء',
-    dataIndex: 'startDate',
+    dataIndex: 'start_date',
     key: 'id',
   },
   {
     title: 'تاريخ الانتهاء',
-    dataIndex: 'endDate',
+    dataIndex: 'end_date',
     key: 'id',
   },
   {
     title: 'تعديل',
     key: 'edit',
     render: (_, { id }) => (
-      <EditOutlined style={{ cursor: 'pointer' }} />
+      <Link to={`edit/${id}`}>
+        <EditOutlined style={{ cursor: 'pointer' }} />
+      </Link>
     ),
   },
   {
     title: 'حذف',
     key: 'delete',
-    render: (_, { id }) => (
-      <DeleteOutlined style={{ color: 'red', cursor: 'pointer' }} />
-    ),
+    render: (_, { id }) => {
+      const handleDelete = () => {
+        axios.delete(`/api/v1/announcements/${id}`)
+          .then(() => openNotificationWithIcon('success', 'تم', 'تم حذف الاعلان'))
+          .catch(() => openNotificationWithIcon('error', 'خطأ', 'حدث خطأ ما'));
+      };
+      return <DeleteOutlined onClick={handleDelete} style={{ color: 'red', cursor: 'pointer' }} />;
+    },
   },
 ];
 
@@ -118,12 +83,14 @@ const App: React.FC = () => {
   const [advs, setAnns] = useState<UserAnns[]>([]);
 
   useEffect(() => {
-    GetAnns()
+    const controller = new AbortController();
+    const { signal } = controller;
+    GetAnns(signal)
       .then(({ data }) => {
         setAnns(data.data);
       })
       .catch(console.log);
-  }, []);
+  });
 
   return (
     <>
@@ -141,14 +108,9 @@ const App: React.FC = () => {
         >
           الإعلانات
         </Title>
-        <Dropdown overlay={menu}>
-          <a href="/" onClick={(e) => e.preventDefault()}>
-            <Button>
-              إعلان جديد
-              <DownOutlined />
-            </Button>
-          </a>
-        </Dropdown>
+        <Button>
+          <Link to="new" type="button">اعلان جديد</Link>
+        </Button>
       </div>
       {' '}
       <Table columns={columns} dataSource={advs} />
