@@ -33,10 +33,10 @@ const users = [
     hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
   },
   {
-    first_name: 'تميم',
-    last_name: 'سليم',
-    email: 'cscogin4@nytimes.com',
-    phone_number: '910-220-7086',
+    first_name: 'محمد',
+    last_name: 'عبد الهادي',
+    email: 'mu7ammadabed@gmail.com',
+    phone_number: '0597784083',
     role: 'user',
     hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
   },
@@ -117,19 +117,16 @@ const complaints = [
   {
     title: 'شكوى رقم 1',
     description: 'تفاصيل الشكوى',
-    is_solved: true,
     UserId: 1,
   },
   {
     title: 'شكوى رقم 2',
     description: 'تفاصيل الشكوى',
-    is_solved: true,
     UserId: 2,
   },
   {
     title: 'شكوى رقم 3',
     description: 'تفاصيل الشكوى',
-    is_solved: true,
     UserId: 3,
   },
 ];

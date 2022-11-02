@@ -8,7 +8,7 @@ dotenv.config();
 const GenerateToken = async (payload: InferUserPayload, res: Response, next: NextFunction) => {
   try {
     const token = await signToken(payload);
-    res.cookie('token', token).json({ message: 'Logged in Successfully' });
+    res.cookie('token', token).json({ message: 'Logged in Successfully', role: payload.role });
   } catch (err) {
     next(err);
   }
@@ -17,6 +17,13 @@ const GenerateToken = async (payload: InferUserPayload, res: Response, next: Nex
 const Authenticate = async (req: InferRequestPayload, res: Response, next: NextFunction) => {
   try {
     const { token } = req.cookies;
+
+    if (!token) {
+      throw new CustomError(
+        400,
+        'Your are not authorize',
+      );
+    }
     const user: InferUserPayload = await verifyToken(token);
     req.user = {
       role: user.role,
