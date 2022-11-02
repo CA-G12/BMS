@@ -1,18 +1,8 @@
-import {
-  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
-} from 'sequelize';
+import { DataTypes } from 'sequelize';
+import { InferServiceModel } from '../interfaces/models';
 
 import sequelize from '../database/config/connection';
 
-interface InferServiceModel extends Model<InferAttributes<InferServiceModel>,
-InferCreationAttributes<InferServiceModel>> {
-  id: CreationOptional<number>;
-  name: string,
-  price: number,
-  is_fixed: boolean,
-  description: string,
-  is_open: boolean
-}
 const Service = sequelize.define<InferServiceModel>('Service', {
   id: {
     type: DataTypes.INTEGER,
