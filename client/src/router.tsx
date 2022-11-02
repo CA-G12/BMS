@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
 import { createBrowserRouter } from 'react-router-dom';
 
+import { Button } from 'antd';
 import { LandingPage, Flats, Flat } from './pages';
 import { AdminDashboard } from './Layout';
 import Login from './pages/Auth/Login';
@@ -12,6 +14,8 @@ import {
 import AddUser from './pages/AddUser';
 import DataTable from './components/adminDashboard/complaints/DataTable';
 import App from './App';
+import { ProtectedRoute, LoginProtectedRoute } from './components/ProtectedRoute';
+import { AuthProvider } from './context/AuthContext';
 
 const router = createBrowserRouter([
   {
@@ -26,13 +30,26 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'login',
-        element: <Login />,
+        element:
+  <AuthProvider>
+    <LoginProtectedRoute>
+
+      <Login />
+    </LoginProtectedRoute>
+
+  </AuthProvider>,
       },
     ],
   },
   {
     path: '/admin',
-    element: <AdminDashboard />,
+    element:
+  <AuthProvider>
+    <ProtectedRoute isAuthAdmin>
+      <AdminDashboard />
+    </ProtectedRoute>
+  </AuthProvider>,
+
     children: [
       { index: true, element: <h1>لوحة التحكم</h1> },
       { path: 'services', element: <ServicesContainer /> },
@@ -57,6 +74,19 @@ const router = createBrowserRouter([
       { path: 'flats/:id', element: <Flat /> },
       { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
+    ],
+  },
+  {
+    path: '/user',
+    element:
+  <AuthProvider>
+    <ProtectedRoute isAuthAdmin={false}>
+      <Button type="primary">userDashboard</Button>
+    </ProtectedRoute>
+  </AuthProvider>,
+
+    children: [
+      { index: true, element: <Button type="primary">Primary Button</Button> },
     ],
   },
   { path: '*', element: <h1>page not found</h1> }]);

@@ -9,7 +9,6 @@ import complaintRoute from './complaintRoute';
 import userRouter from './userRoute';
 
 const router = Router();
-
 router.use('/auth', AuthRouter);
 router.use('/contacts', contactRouter);
 router.use('/advertisements', adsRouter);
