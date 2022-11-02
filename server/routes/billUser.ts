@@ -3,6 +3,6 @@ import { getAllBills } from '../controllers';
 
 const router = Router();
 
-router.get('/', getAllBills);
+router.get('/:UserId', getAllBills);
 
 export default router;
