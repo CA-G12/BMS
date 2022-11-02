@@ -1,4 +1,3 @@
-// import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
 import React from 'react';
 import { Outlet } from 'react-router-dom';

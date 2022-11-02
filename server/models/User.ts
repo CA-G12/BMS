@@ -1,19 +1,8 @@
-import {
-  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
-} from 'sequelize';
+import { DataTypes } from 'sequelize';
+import { InferUserModel } from '../interfaces/models';
 
 import sequelize from '../database/config/connection';
 
-interface InferUserModel extends Model<InferAttributes<InferUserModel>,
-InferCreationAttributes<InferUserModel>> {
-  id: CreationOptional<number>;
-  first_name: string,
-  last_name: string,
-  email: string,
-  phone_number: string,
-  role: string,
-  hashed_password: string,
-}
 const User = sequelize.define<InferUserModel>(
   'User',
   {
