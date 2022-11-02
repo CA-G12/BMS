@@ -9,7 +9,7 @@ export { getFlats, flatById, updateFlat } from './flats';
 export {
   getServices, postServices, updateServices, getServiceById,
 } from './services';
-export { login } from './auth';
+export { login, logout } from './auth';
 export {
   addComplaints, deleteSingleComplaint, getAllComplaints, getSingleComplaint,
 } from './complaints';
