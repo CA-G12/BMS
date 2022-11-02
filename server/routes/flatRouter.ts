@@ -1,7 +1,12 @@
 import { Router } from 'express';
-import { getFlats, getFlatsUsers, flatById, updateFlat } from '../controllers/index';
+import {
+  getFlats, getFlatsUsers, flatById, updateFlat,
+} from '../controllers/index';
+import { InferRequestPayload } from '../interfaces/InferUserPayload';
+import { Authorize } from '../middleware';
 
 const router = Router();
+router.use((req, _, next) => Authorize(req as InferRequestPayload, _, next, 'admin'));
 
 router.get('/', getFlats);
 router.get('/users', getFlatsUsers);

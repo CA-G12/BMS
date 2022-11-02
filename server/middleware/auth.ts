@@ -28,7 +28,7 @@ const Authenticate = async (req: InferRequestPayload, res: Response, next: NextF
   }
 };
 
-const Authorize = (req: InferRequestPayload, res: Response, next: NextFunction, user_role: string) => {
+const Authorize = (req: InferRequestPayload, _, next: NextFunction, user_role: string) => {
   try {
     if (!req.user) {
       throw new CustomError(
