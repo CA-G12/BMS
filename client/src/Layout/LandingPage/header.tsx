@@ -44,7 +44,7 @@ const appHeader: React.FC = () => {
             ) : (
               <ReactLink
                 key="dashboard"
-                to="/dashboard"
+                to={user.role}
                 className="loginBtn"
               >
                 لوحة التحكم
@@ -82,7 +82,7 @@ const appHeader: React.FC = () => {
               ) : (
                 <ReactLink
                   key="dashboard"
-                  to="/dashboard"
+                  to={user.role}
                   className="loginBtn"
                 >
                   لوحة التحكم
