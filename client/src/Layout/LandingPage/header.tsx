@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { Anchor, Drawer, Button } from 'antd';
-
+import { Link as ReactLink } from 'react-router-dom';
 import logoImg from '../../assets/images/logo.png';
+import authContext from '../../context';
+import { UserContext } from '../../context/AuthContext';
 
 const { Link } = Anchor;
 
 const appHeader: React.FC = () => {
+  const { user } = useContext(authContext) as UserContext;
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -30,12 +33,24 @@ const appHeader: React.FC = () => {
             <Link key="الشقق" href="#flats" title="الشقق" />
             <Link key="الخدمات" href="#services" title="الخدمات" />
             <Link key="تواصل معنا" href="#contact-us" title="تواصل معنا" />
-            <Link
-              key="login"
-              href="/auth/login"
-              title="تسجيل الدخول"
-              className="loginBtn"
-            />
+            { (!user) ? (
+              <ReactLink
+                key="login"
+                to="/auth/login"
+                className="loginBtn"
+              >
+                تسجيل الدخول
+              </ReactLink>
+            ) : (
+              <ReactLink
+                key="dashboard"
+                to={user.role}
+                className="loginBtn"
+              >
+                لوحة التحكم
+              </ReactLink>
+            )}
+
           </Anchor>
         </div>
 
@@ -56,11 +71,23 @@ const appHeader: React.FC = () => {
               <Link key="الشقق" href="#flats" title="الشقق" />
               <Link key="الخدمات" href="#services" title="الخدمات" />
               <Link key="تواصل معنا" href="#contact-us" title="تواصل معنا" />
-              <Link
-                key="login"
-                href="/auth/login"
-                title="تسجيل الدخول"
-              />
+              { (!user) ? (
+                <ReactLink
+                  key="login"
+                  to="/auth/login"
+                  className="loginBtn"
+                >
+                  تسجيل الدخول
+                </ReactLink>
+              ) : (
+                <ReactLink
+                  key="dashboard"
+                  to={user.role}
+                  className="loginBtn"
+                >
+                  لوحة التحكم
+                </ReactLink>
+              )}
             </Anchor>
           </Drawer>
         </div>

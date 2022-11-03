@@ -17,6 +17,13 @@ const GenerateToken = async (payload: InferUserPayload, res: Response, next: Nex
 const Authenticate = async (req: InferRequestPayload, res: Response, next: NextFunction) => {
   try {
     const { token } = req.cookies;
+
+    if (!token) {
+      throw new CustomError(
+        400,
+        'Your are not authorize',
+      );
+    }
     const user: InferUserPayload = await verifyToken(token);
     req.user = {
       role: user.role,

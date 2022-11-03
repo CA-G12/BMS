@@ -5,7 +5,9 @@ export {
   getAnnouncement, postAnnouncement, getAnnouncementById, putAnnouncement, deleteAnnouncement,
 } from './announcements';
 export { getAdvertisements } from './advertisements';
+export { getAllBills, sendBillMessage } from './Bills';
 export { getFlats, flatById, updateFlat } from './flats';
+
 export {
   getServices, postServices, updateServices, getServiceById,
 } from './services';
@@ -14,3 +16,4 @@ export {
   addComplaints, deleteSingleComplaint, getAllComplaints, getSingleComplaint,
 } from './complaints';
 export { addUser, getUsers } from './users';
+export { getAllBills } from './billUser';
