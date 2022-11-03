@@ -55,7 +55,7 @@ const adminList: MenuItem[] = [
 const userList: MenuItem[] = [
   getItem(<Link to="/user" style={listStyle}>لوحة التحكم</Link>, '1', <GroupOutlined style={listStyle} />),
   getItem(<Link to="/user/bills" style={listStyle}>الفواتير</Link>, '4', <DollarCircleOutlined style={listStyle} />),
-  getItem(<Link to="/user/complaints" style={listStyle}>الشكاوي</Link>, '5', <CommentOutlined style={listStyle} />),
+  getItem(<Link to="/user/addComplaint" style={listStyle}>إضافة شكوى</Link>, '5', <CommentOutlined style={listStyle} />),
   getItem(<Link to="/user/announcements" style={listStyle}>الإعلانات</Link>, '6', <ContainerOutlined style={listStyle} />),
   getItem(<Link to="/user/logout" style={listStyle}>تسجيل الخروج</Link>, '9', <LogoutOutlined style={listStyle} />),
 ];

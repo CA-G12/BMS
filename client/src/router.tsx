@@ -11,7 +11,9 @@ import {
   ServicesContainer, AddService, EditService, Bills,
   Complaints, SingleComplaints, Contacts,
 } from './components/adminDashboard';
-import { UserAnnouncements, UserBills, UserComplaints } from './components/userDashboard';
+import {
+  UserAnnouncements, UserBills, AddComplaint,
+} from './components/userDashboard';
 
 import AddUser from './pages/AddUser';
 import DataTable from './components/adminDashboard/complaints/DataTable';
@@ -24,9 +26,13 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
-      { index: true, element: <LandingPage /> },
+      {
+        index: true,
+        element: <LandingPage />,
+      },
     ],
   },
+
   {
     path: '/auth',
     children: [
@@ -43,6 +49,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+
   {
     path: '/admin',
     element:
@@ -54,9 +61,21 @@ const router = createBrowserRouter([
 
     children: [
       { index: true, element: <h1>لوحة التحكم</h1> },
-      { path: 'services', element: <ServicesContainer /> },
-      { path: 'services/addService', element: <AddService /> },
-      { path: 'services/editService/:id', element: <EditService /> },
+      {
+        path: 'services',
+        element: <ServicesContainer />,
+        children: [
+          {
+            path: 'addService',
+            element: <AddService />,
+          },
+          {
+            path: 'editService/:id',
+            element: <EditService />,
+          },
+        ],
+      },
+
       { path: 'bills', element: <Bills /> },
       {
         path: 'complaints',
@@ -72,8 +91,17 @@ const router = createBrowserRouter([
           },
         ],
       },
-      { path: 'flats', element: <Flats /> },
-      { path: 'flats/:id', element: <Flat /> },
+      {
+        path: 'flats',
+        element: <Flats />,
+        children: [
+          {
+            path: ':id',
+            element: <Flat />,
+          },
+        ],
+      },
+
       { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
     ],
@@ -91,7 +119,7 @@ const router = createBrowserRouter([
       { index: true, element: <Button type="primary">Primary Button</Button> },
       { path: 'announcements', element: <UserAnnouncements /> },
       { path: 'bills', element: <UserBills /> },
-      { path: 'complaints', element: <UserComplaints /> },
+      { path: 'addComplaint', element: <AddComplaint /> },
     ],
   },
   { path: '*', element: <h1>page not found</h1> }]);
