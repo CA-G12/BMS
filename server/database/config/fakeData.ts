@@ -40,6 +40,14 @@ const users = [
     role: 'user',
     hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
   },
+  {
+    first_name: 'محمد',
+    last_name: 'عبد الهادي',
+    email: 'mu7ammadabed@gmail.com',
+    phone_number: '0569805073',
+    role: 'admin',
+    hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
+  },
 ];
 
 const payments = [
@@ -250,6 +258,48 @@ const bills = [
     ],
   },
   {
+    total_price: 335,
+    FlatId: 1,
+    is_open: false,
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        isFixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        isOpen: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 70,
+        isFixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        isOpen: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 20,
+        isFixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        isOpen: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 120,
+        isFixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        isOpen: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        isFixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        isOpen: true,
+      },
+    ],
+  },
+  {
     total_price: 370,
     FlatId: 2,
     is_open: true,
@@ -334,8 +384,91 @@ const bills = [
     ],
   },
   {
+    total_price: 205,
+    FlatId: 3,
+    is_open: true,
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        isFixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        isOpen: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 40,
+        isFixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        isOpen: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 10,
+        isFixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        isOpen: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 30,
+        isFixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        isOpen: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        isFixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        isOpen: true,
+      },
+    ],
+  },
+  {
     total_price: 355,
     FlatId: 4,
+    is_open: true,
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        isFixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        isOpen: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 50,
+        isFixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        isOpen: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 40,
+        isFixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        isOpen: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 140,
+        isFixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        isOpen: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        isFixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        isOpen: true,
+      },
+    ],
+  }, {
+    total_price: 355,
+    FlatId: 5,
     is_open: true,
     services: [
       {
@@ -406,6 +539,13 @@ const flats = [
     notes: 'شقة شمالية',
     is_active: true,
     UserId: 4,
+  },
+  {
+    flat_number: 105,
+    area: 200,
+    notes: 'شقة شمالية',
+    is_active: true,
+    UserId: 3,
   },
 ];
 

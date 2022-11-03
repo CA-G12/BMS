@@ -1,15 +1,17 @@
+/* eslint-disable jsx-a11y/aria-role */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { createBrowserRouter } from 'react-router-dom';
-
 import { Button } from 'antd';
+import { DashboardLayout } from './Layout';
+
 import { LandingPage, Flats, Flat } from './pages';
-import { AdminDashboard } from './Layout';
 import Login from './pages/Auth/Login';
 
 import {
   ServicesContainer, AddService, EditService, Bills,
   Complaints, SingleComplaints, Contacts,
 } from './components/adminDashboard';
+import { UserAnnouncements, UserBills, UserComplaints } from './components/userDashboard';
 
 import AddUser from './pages/AddUser';
 import DataTable from './components/adminDashboard/complaints/DataTable';
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
     element:
   <AuthProvider>
     <ProtectedRoute isAuthAdmin>
-      <AdminDashboard />
+      <DashboardLayout />
     </ProtectedRoute>
   </AuthProvider>,
 
@@ -81,12 +83,15 @@ const router = createBrowserRouter([
     element:
   <AuthProvider>
     <ProtectedRoute isAuthAdmin={false}>
-      <Button type="primary">userDashboard</Button>
+      <DashboardLayout />
     </ProtectedRoute>
   </AuthProvider>,
 
     children: [
       { index: true, element: <Button type="primary">Primary Button</Button> },
+      { path: 'announcements', element: <UserAnnouncements /> },
+      { path: 'bills', element: <UserBills /> },
+      { path: 'complaints', element: <UserComplaints /> },
     ],
   },
   { path: '*', element: <h1>page not found</h1> }]);
