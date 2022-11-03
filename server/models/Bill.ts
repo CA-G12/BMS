@@ -21,6 +21,10 @@ const Bill = sequelize.define<InferBillModel>('Bill', {
     type: DataTypes.ARRAY(DataTypes.JSON),
     allowNull: false,
   },
+  FlatId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
 
 export default Bill;
