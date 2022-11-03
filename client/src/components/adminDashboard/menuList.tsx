@@ -64,7 +64,7 @@ const MenuList: React.FC = () => {
     getItem(<Link to="/admin/flats" style={listStyle}>الشقق</Link>, '3', <HomeOutlined style={listStyle} />),
     getItem(<Link to="/admin/bills" style={listStyle}>الفواتير</Link>, '4', <DollarCircleOutlined style={listStyle} />),
     getItem(<Link to="/admin/complaints" style={listStyle}>الشكاوي</Link>, '5', <CommentOutlined style={listStyle} />),
-    getItem(<Link to="/admin/flats" style={listStyle}>التعميمات</Link>, '6', <ContainerOutlined style={listStyle} />),
+    getItem(<Link to="/admin/flats" style={listStyle}>الشقق</Link>, '6', <ContainerOutlined style={listStyle} />),
     getItem(<Link to="/admin/contacts" style={listStyle}>التواصل</Link>, '6', <MailOutlined style={listStyle} />),
     getItem(<Link to="/admin/flats" style={listStyle}>التقيم</Link>, '8', <StarOutlined style={listStyle} />),
     getItem(<Button onClick={Logout} style={{ border: 'none' }}>تسجيل الخروج </Button>, '9', <LogoutOutlined style={listStyle} />),
