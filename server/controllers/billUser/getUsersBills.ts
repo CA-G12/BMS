@@ -15,15 +15,15 @@ export default async (req:Request, res:Response, next:NextFunction) => {
     if (is_open) {
       billOpenOrClosed.is_open = is_open;
     }
-    const flastExistsOrNOt :WhereOptions<any> = {};
+    const flatExistsOrNOt :WhereOptions<any> = {};
     if (flat_number) {
-      flastExistsOrNOt.flat_number = flat_number;
+      flatExistsOrNOt.flat_number = flat_number;
     }
     const data = await UserModel.findAll({
       include: [{
         model: FlatModel,
         attributes: ['flat_number'],
-        where: flastExistsOrNOt,
+        where: flatExistsOrNOt,
         include: [{
           model: BillModel,
           attributes: ['is_open', 'total_price', 'services'],

@@ -8,6 +8,7 @@ const createUser = (signupModel: ISignupModel): Promise<ISignupResult> => axios.
   phoneNumber: signupModel.phoneNumber,
   email: signupModel.email,
   password: signupModel.password,
+  flatNumber: signupModel.flatNumber,
 });
 
 export default createUser;

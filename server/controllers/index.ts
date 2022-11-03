@@ -1,12 +1,15 @@
-export { addContact, getContact } from './contactus';
+export { addContact, getContact } from './contactUs';
 
 export { getFlatsUsers } from './flatsUsers';
 export {
   getAnnouncement, postAnnouncement, getAnnouncementById, putAnnouncement, deleteAnnouncement,
 } from './announcements';
 export { getAdvertisements } from './advertisements';
+
 export { getAllBills, sendBillMessage } from './Bills';
-export { getFlats, flatById, updateFlat } from './flats';
+export {
+  getFlats, flatById, updateFlat, availableFlats,
+} from './flats';
 
 export {
   getServices, postServices, updateServices, getServiceById,
@@ -16,4 +19,4 @@ export {
   addComplaints, deleteSingleComplaint, getAllComplaints, getSingleComplaint,
 } from './complaints';
 export { addUser, getUsers } from './users';
-export { getAllBills } from './billUser';
+export { getUsersBills } from './billUser';

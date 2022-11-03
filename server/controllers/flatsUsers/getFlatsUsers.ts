@@ -9,7 +9,7 @@ export default async (req:Request, res:Response, next:NextFunction) => {
     const { order, page } = req.query;
     const sortingOrder = (order === 'descend') ? 'DESC' : 'ASC';
 
-    const limitNum = 2;
+    const limitNum = 5;
     const total = await FlatModel.count({ include: [{ model: UserModel }] });
     if (!(Number(page) > 0)) {
       throw new CustomError(400, 'Query Parameter Page is required and must be a number greater than 0');
@@ -33,7 +33,7 @@ export default async (req:Request, res:Response, next:NextFunction) => {
 
       id: x.id,
       flat_number: x.flat_number,
-      full_name: `${x['User.first_name']} ${x['User.first_name']}`,
+      full_name: `${x['User.first_name']} ${x['User.last_name']}`,
       phone_number: x['User.phone_number'],
 
     }));

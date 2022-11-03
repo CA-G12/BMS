@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { getAllBills } from '../controllers';
+import { getUsersBills } from '../controllers';
 
 const router = Router();
 
-router.get('/:UserId', getAllBills);
+router.get('/:UserId', getUsersBills);
 
 export default router;
