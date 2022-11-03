@@ -14,3 +14,4 @@ export {
   addComplaints, deleteSingleComplaint, getAllComplaints, getSingleComplaint,
 } from './complaints';
 export { addUser, getUsers } from './users';
+export { default as adminStatistics } from './Statistics';

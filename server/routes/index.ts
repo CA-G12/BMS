@@ -7,9 +7,11 @@ import serviceRouter from './serviceRouter';
 import contactRouter from './contactRouter';
 import complaintRoute from './complaintRoute';
 import userRouter from './userRoute';
+import statisticsRouter from './statisticsRouter';
 
 const router = Router();
 router.use('/auth', AuthRouter);
+router.use('/statistics', statisticsRouter);
 router.use('/contacts', contactRouter);
 router.use('/advertisements', adsRouter);
 router.use('/flats', flatRouter);
