@@ -1,4 +1,4 @@
-export { addContact, getContact } from './contactus';
+export { addContact, getContact } from './contactUs';
 
 export { getFlatsUsers } from './flatsUsers';
 export {
@@ -19,4 +19,4 @@ export {
   addComplaints, deleteSingleComplaint, getAllComplaints, getSingleComplaint,
 } from './complaints';
 export { addUser, getUsers } from './users';
-export { getAllBills } from './billUser';
+export { getUsersBills } from './billUser';
