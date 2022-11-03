@@ -1,4 +1,5 @@
-import { PlusCircleOutlined } from '@ant-design/icons';
+/* eslint-disable no-nested-ternary */
+import { LeftCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import {
   Button,
   Col,
@@ -6,17 +7,40 @@ import {
   Input,
   message,
   Row,
+  Select,
   Typography,
 } from 'antd';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Loading, NoData } from '../components';
 import { IErrorSignupResult } from '../Interfaces/ISignupResult';
 import { ISignupModel } from '../Interfaces/signup';
 import createUser from '../services/createUser';
 
 const { Title } = Typography;
+const { Option } = Select;
 
 const App: React.FC = () => {
+  const [flatsNum, setFlatsNum] = useState<Numbers[] | null>(null);
+
+  const [loading, setLoading] = useState<boolean>(true);
+  const fetchData = (signal: AbortSignal) => {
+    axios.get('/api/v1/flats/available', { signal })
+      .then(({ data: { data } }) => {
+        setFlatsNum(data as Array<Numbers>);
+        setLoading(false);
+      }).catch(() => message.error('حدث خطأ ما'));
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    const controller = new AbortController();
+    const { signal } = controller;
+    fetchData(signal);
+    return () => controller.abort();
+  }, []);
   const [form] = Form.useForm();
 
   const navigate = useNavigate();
@@ -35,16 +59,37 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Title style={{
-        fontSize: 'x-large',
-        padding: '16px',
-        color: '#3380FF',
-        fontWeight: 'bolder',
-      }}
-      >
-        إضافة مستخدم
+      <Row>
+        <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 12, offset: 1 }}>
+          <Title style={{
+            fontSize: 'x-large',
+            padding: '16px',
+            color: '#3380FF',
+            fontWeight: 'bolder',
+          }}
+          >
+            إضافةمستخدم
+          </Title>
 
-      </Title>
+        </Col>
+
+        <Button
+          type="link"
+          style={{
+            fontSize: 'xx-large',
+            padding: '16px',
+            color: '#3380FF',
+            fontWeight: 'bolder',
+            paddingRight: '250px',
+          }}
+        >
+          <Link to="/admin/flats">
+            {' '}
+            <LeftCircleOutlined />
+          </Link>
+
+        </Button>
+      </Row>
 
       <Form
         form={form}
@@ -158,23 +203,45 @@ const App: React.FC = () => {
               <Input.Password />
             </Form.Item>
           </Col>
+          <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 11, offset: 11 }}>
+            <Form.Item
+              name="flatNumber"
+              label="رقم الشقة"
+              rules={[{ required: true, message: 'اختر رقم الشقة' }]}
+              className="formItem"
+            >
+              <Select style={{ width: 120 }}>
+                {(loading) ? <Loading /> : ((!flatsNum) ? <NoData /> : flatsNum.map((num) => (
+                  <Option key={num.id} value={num.flat_number}>{num.flat_number}</Option>
+                )))}
+              </Select>
+            </Form.Item>
+
+          </Col>
+          <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 11, offset: 11 }}>
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{
+                  backgroundColor: '#3380FF', marginTop: '26px', height: '40px', marginRight: '-10px', fontSize: '1.1rem',
+                }}
+              >
+                <PlusCircleOutlined />
+                إضافة مستخدم
+              </Button>
+            </Form.Item>
+          </Col>
         </Row>
 
-        <Form.Item>
-          <Button
-            type="primary"
-            htmlType="submit"
-            style={{
-              backgroundColor: '#3380FF', marginTop: '26px', fontSize: 'large', height: '40px',
-            }}
-          >
-            <PlusCircleOutlined style={{ fontSize: 'large' }} />
-            إضافة مستخدم
-          </Button>
-        </Form.Item>
       </Form>
     </>
   );
 };
 
 export default App;
+
+interface Numbers {
+  flat_number: number;
+  id: number;
+}
