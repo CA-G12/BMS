@@ -1,5 +1,7 @@
 import { Router } from 'express';
-import { getFlats, getFlatsUsers, flatById, updateFlat } from '../controllers/index';
+import {
+  getFlats, getFlatsUsers, flatById, updateFlat,
+} from '../controllers/index';
 
 const router = Router();
 

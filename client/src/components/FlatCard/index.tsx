@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Card, Button, Image, Typography, Row, Col,
 } from 'antd';
