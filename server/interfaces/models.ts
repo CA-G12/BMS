@@ -4,6 +4,7 @@ import {
 
 interface InferUserModel extends Model<InferAttributes<InferUserModel>,
 InferCreationAttributes<InferUserModel>> {
+  [x: string]: any;
   id: CreationOptional<number>;
   first_name: string,
   last_name: string,
@@ -62,6 +63,7 @@ InferCreationAttributes<InferBillModel>> {
   total_price: number,
   is_open: boolean,
   services: Array<BillServices>,
+  FlatId: ForeignKey<InferFlatModel['id']>
 }
 
 interface InferAnnouncementModel extends Model<InferAttributes<InferAnnouncementModel>,
