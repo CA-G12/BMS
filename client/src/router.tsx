@@ -1,18 +1,24 @@
+/* eslint-disable jsx-a11y/aria-role */
+/* eslint-disable @typescript-eslint/no-floating-promises */
 import { createBrowserRouter } from 'react-router-dom';
+import { Button } from 'antd';
+import { DashboardLayout } from './Layout';
 
 import { LandingPage, Flats, Flat } from './pages';
-import { AdminDashboard } from './Layout';
 import Login from './pages/Auth/Login';
 
 import {
   ServicesContainer, AddService, EditService, Bills,
   Complaints, SingleComplaints, Contacts,
 } from './components/adminDashboard';
+import { UserAnnouncements, UserBills, UserComplaints } from './components/userDashboard';
 
 import AddUser from './pages/AddUser';
 import DataTable from './components/adminDashboard/complaints/DataTable';
 import App from './App';
 import UserProfile from './pages/UserProfile';
+import { ProtectedRoute, LoginProtectedRoute } from './components/ProtectedRoute';
+import { AuthProvider } from './context/AuthContext';
 
 const router = createBrowserRouter([
   {
@@ -27,13 +33,26 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'login',
-        element: <Login />,
+        element:
+  <AuthProvider>
+    <LoginProtectedRoute>
+
+      <Login />
+    </LoginProtectedRoute>
+
+  </AuthProvider>,
       },
     ],
   },
   {
     path: '/admin',
-    element: <AdminDashboard />,
+    element:
+  <AuthProvider>
+    <ProtectedRoute isAuthAdmin>
+      <DashboardLayout />
+    </ProtectedRoute>
+  </AuthProvider>,
+
     children: [
       { index: true, element: <h1>لوحة التحكم</h1> },
       { path: 'services', element: <ServicesContainer /> },
@@ -58,7 +77,23 @@ const router = createBrowserRouter([
       { path: 'flats/:id', element: <Flat /> },
       { path: 'contacts', element: <Contacts /> },
       { path: 'adduser', element: <AddUser /> },
-      { path: 'profile', element: <UserProfile /> },
+    ],
+  },
+
+  {
+    path: '/user',
+    element:
+  <AuthProvider>
+    <ProtectedRoute isAuthAdmin={false}>
+      <DashboardLayout />
+    </ProtectedRoute>
+  </AuthProvider>,
+
+    children: [
+      { index: true, element: <UserProfile /> },
+      { path: 'announcements', element: <UserAnnouncements /> },
+      { path: 'bills', element: <UserBills /> },
+      { path: 'complaints', element: <UserComplaints /> },
     ],
   },
 

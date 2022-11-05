@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { LeftCircleOutlined } from '@ant-design/icons';
 import {
@@ -137,10 +138,10 @@ const App: React.FC = () => {
       {// eslint-disable-next-line no-nested-ternary
 (loading)
   ? (
-    <div style={{ width: '100vw', height: '100vh' }}>
-      <Loading />
+// <div style={{ width: '100vw', height: '100vh' }}>
+    <Loading />
 
-    </div>
+// </div>
 
   )
   : (flatData[0]) ? (

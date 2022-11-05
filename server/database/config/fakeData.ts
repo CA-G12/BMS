@@ -40,6 +40,14 @@ const users = [
     role: 'user',
     hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
   },
+  {
+    first_name: 'محمد',
+    last_name: 'عبد الهادي',
+    email: 'mu7ammadabed@gmail.com',
+    phone_number: '0569805073',
+    role: 'admin',
+    hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
+  },
 ];
 
 const payments = [
@@ -238,6 +246,48 @@ const bills = [
         price: 120,
         isFixed: false,
         description: 'يتم قراءة عداد الكهرباء كل شهر',
+        isOpen: false,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        isFixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        isOpen: false,
+      },
+    ],
+  },
+  {
+    total_price: 335,
+    FlatId: 1,
+    is_open: false,
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        isFixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        isOpen: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 70,
+        isFixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        isOpen: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 20,
+        isFixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        isOpen: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 120,
+        isFixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
         isOpen: true,
       },
       {
@@ -334,8 +384,91 @@ const bills = [
     ],
   },
   {
+    total_price: 205,
+    FlatId: 3,
+    is_open: true,
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        isFixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        isOpen: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 40,
+        isFixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        isOpen: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 10,
+        isFixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        isOpen: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 30,
+        isFixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        isOpen: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        isFixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        isOpen: true,
+      },
+    ],
+  },
+  {
     total_price: 355,
     FlatId: 4,
+    is_open: true,
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        isFixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        isOpen: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 50,
+        isFixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        isOpen: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 40,
+        isFixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        isOpen: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 140,
+        isFixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        isOpen: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        isFixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        isOpen: true,
+      },
+    ],
+  }, {
+    total_price: 355,
+    FlatId: 5,
     is_open: true,
     services: [
       {
@@ -402,17 +535,91 @@ const flats = [
   },
   {
     flat_number: 104,
-    area: 180,
-    notes: 'شقة شمالية',
+    area: 140,
+    notes: 'شقة جنوبية',
     is_active: true,
     UserId: 4,
   },
   {
     flat_number: 105,
-    area: 180,
+    area: 250,
     notes: 'شقة شمالية',
-    is_active: true,
-    UserId: 1,
+    is_active: false,
+
+  },
+  {
+    flat_number: 106,
+    area: 180,
+    notes: 'شقة غربية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 107,
+    area: 200,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 108,
+    area: 190,
+    notes: 'شقة جنوبية',
+    is_active: false,
+  },
+  {
+    flat_number: 109,
+    area: 180,
+    notes: 'شقة شرقية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 110,
+    area: 150,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 111,
+    area: 190,
+    notes: 'شقة جنوبية',
+    is_active: false,
+  },
+  {
+    flat_number: 112,
+    area: 180,
+    notes: 'شقة شرقية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 113,
+    area: 150,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 114,
+    area: 190,
+    notes: 'شقة جنوبية',
+    is_active: false,
+  },
+  {
+    flat_number: 115,
+    area: 180,
+    notes: 'شقة شرقية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 116,
+    area: 150,
+    notes: 'شقة شمالية',
+    is_active: false,
+
   },
 ];
 

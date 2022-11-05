@@ -2,7 +2,7 @@ import {
   Col, Row,
   Button, Checkbox, Form, Input, Typography,
 } from 'antd';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import {
   LockOutlined, UserOutlined,
@@ -13,6 +13,7 @@ import { ILoginModel } from '../../Interfaces/loginModel';
 import { IErrorLoginResult } from '../../Interfaces/ILoginResult';
 import LogoImage from '../../assets/images/logo.png';
 import LoginImage from '../../assets/images/login.jpg';
+import authContext from '../../context';
 
 const loginLogo = LoginImage as string;
 const siteLogo = LogoImage as string;
@@ -107,22 +108,25 @@ const bgImageStyle = {
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 };
-const App: React.FC = () => (
-  <Row justify="space-between">
-    <Col style={colStyle} xs={24} lg={12}>
-      <div style={{ padding: '20px' }}>
-        <img style={{ marginBottom: '20%' }} src={siteLogo} alt="Logo" />
-        <br />
-        <Title>تسجيل الدخول</Title>
-        <Title level={3}>تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور الخاصة بك</Title>
-        <br />
-        <div>
-          <LoginForm />
+const App: React.FC = () => {
+  const user = useContext(authContext);
+  console.log(user, 'user context');
+  return (
+    <Row justify="space-between">
+      <Col style={colStyle} xs={24} lg={12}>
+        <div style={{ padding: '20px' }}>
+          <img style={{ marginBottom: '20%' }} src={siteLogo} alt="Logo" />
+          <br />
+          <Title>تسجيل الدخول</Title>
+          <Title level={3}>تسجيل الدخول باستخدام رقم الهاتف وكلمة المرور الخاصة بك</Title>
+          <br />
+          <div>
+            <LoginForm />
+          </div>
         </div>
-      </div>
-    </Col>
-    <Col style={{ ...colStyle, ...bgImageStyle }} xs={24} lg={12} />
-  </Row>
-);
-
+      </Col>
+      <Col style={{ ...colStyle, ...bgImageStyle }} xs={24} lg={12} />
+    </Row>
+  );
+};
 export default App;
