@@ -16,8 +16,8 @@ const UserBills: React.FC = () => {
   const [userBill, setUserBill] = useState<Array<InferBillUserModel>>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const fetchData = (signal : AbortSignal) => {
-    axios.get('/api/v1/billUser/3', { signal })
+  const fetchData = (signal: AbortSignal) => {
+    axios.get('/api/v1/billUser/', { signal })
       .then(({ data: { data } }) => {
         console.log('data: ', data);
         setUserBill(data as Array<InferBillUserModel>);
@@ -36,20 +36,25 @@ const UserBills: React.FC = () => {
   const columns: ColumnsType<InferBillUserModel> = [
     {
       title: 'رقم الشقة',
-      dataIndex: 'flat_number',
-      key: 'flat_number',
+      dataIndex: 'Flats.flat_number',
+      key: 'Flats.flat_number',
       render: (text) => <h3 style={{ color: 'rgb(21 111 193)' }}>{text}</h3>,
     },
     {
       title: 'السعر',
-      dataIndex: 'userBill[0].FlatId',
-      key: ' userBill[0].total_price',
+      dataIndex: 'Flats.Bills.total_price',
+      key: 'Flats.Bills.total_price',
       render: (text) => <p>{text}</p>,
     },
     {
       title: 'وصف الخدمة',
-      dataIndex: 'description',
-      key: 'description',
+      dataIndex: 'Flats.Bills.is_open',
+      key: 'Flats.Bills.is_open',
+      render: (value) => (
+        <div>
+          {!value ? 'مدفوع' : 'غير مدفوع'}
+        </div>
+      ),
     },
     {
       title: 'السعر',
