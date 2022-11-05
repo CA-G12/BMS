@@ -3,21 +3,23 @@ import {
 } from 'antd';
 import Title from 'antd/lib/typography/Title';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Loading } from '../components';
+import authContext from '../context';
+import { UserContext } from '../context/AuthContext';
 
 const UserProfile: React.FC = () => {
+  const { user } = useContext(authContext) as UserContext;
   const [form] = Form.useForm();
   const [editable, setEditable] = useState<boolean>(false);
+  const id = (user ? user.id : 0);
 
-  const [profileData, setProfileData] = useState<IUser>({
-    id: 0, first_name: '', last_name: '', email: '', phone_number: '', 'Flats.flat_number': 0,
-  });
+  const [profileData, setProfileData] = useState<IUser[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const fetchData = (signal: AbortSignal) => {
-    axios.get('/api/v1/user/profile/1', { signal })
+    axios.get(`/api/v1/user/profile/${id}`, { signal })
       .then(({ data: { data } }) => {
-        setProfileData(data as IUser);
+        setProfileData(data as Array<IUser>);
         setLoading(false);
       }).catch(() => message.error('حدث خطأ ما'));
   };
@@ -33,7 +35,7 @@ const UserProfile: React.FC = () => {
   const onFinish = (values : IUpdateUser) => {
     if (!editable) return;
     setLoading(true);
-    axios.put('/api/v1/user/profile/1', values)
+    axios.put(`/api/v1/user/profile/${id}`, values)
       .then(() => {
         setEditable(false);
         setLoading(false);
@@ -108,7 +110,7 @@ const UserProfile: React.FC = () => {
                 <Form.Item
                   name="firstName"
                   label="الاسم الأول"
-                  initialValue={profileData.first_name}
+                  initialValue={profileData[0].first_name}
                   rules={[{ required: true, message: 'الرجاء ادخال اسمك الأول' }]}
                   className="formItem"
                 >
@@ -119,7 +121,7 @@ const UserProfile: React.FC = () => {
                   className="formItem"
                   name="phoneNumber"
                   label="رقم الهاتف"
-                  initialValue={profileData.phone_number}
+                  initialValue={profileData[0].phone_number}
                   rules={[
                     {
                       required: true,
@@ -129,26 +131,43 @@ const UserProfile: React.FC = () => {
                   <Input readOnly bordered={false} style={{ color: '#0d7ddb' }} />
                 </Form.Item>
 
-                <Form.Item
-                  className="formItem"
-                  name="flatNumber"
-                  label="رقم الشقة "
-                  initialValue={profileData['Flats.flat_number']}
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Input readOnly bordered={false} style={{ color: '#0d7ddb' }} />
-                </Form.Item>
+                {profileData.length === 1 ? (
+                  <Form.Item
+                    className="formItem"
+                    name="flatNumber"
+                    label="رقم الشقة "
+                    initialValue={profileData[0]['Flats.flat_number']}
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Input readOnly bordered={false} style={{ color: '#0d7ddb' }} />
+                  </Form.Item>
+                ) : (
+                  <Form.Item
+                    className="formItem"
+                    name="flatNumber"
+                    label="رقم الشقق "
+                    initialValue={profileData.map((x) => x['Flats.flat_number'])}
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Input readOnly bordered={false} style={{ color: '#0d7ddb' }} />
+                  </Form.Item>
+                )}
+
               </Col>
               <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 10, offset: 1 }}>
                 <Form.Item
                   className="formItem"
                   name="lastName"
                   label="اسم العائلة"
-                  initialValue={profileData.last_name}
+                  initialValue={profileData[0].last_name}
                   rules={[
                     {
                       required: true,
@@ -162,7 +181,7 @@ const UserProfile: React.FC = () => {
                   className="formItem"
                   name="email"
                   label="البريد الإلكتروني"
-                  initialValue={profileData.email}
+                  initialValue={profileData[0].email}
                   rules={[
                     {
                       type: 'email',
