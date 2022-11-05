@@ -1,10 +1,15 @@
+/* eslint-disable no-tabs */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable no-nested-ternary */
-import { Typography, message } from 'antd';
+
+import { Typography, message, List } from 'antd';
 import Table, { ColumnsType } from 'antd/lib/table';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -44,10 +49,10 @@ const UserBills: React.FC = () => {
       title: 'السعر',
       dataIndex: 'Flats.Bills.total_price',
       key: 'Flats.Bills.total_price',
-      render: (text) => <p>{text}</p>,
+      render: (text) => <p>{`${text} شيكل`}</p>,
     },
     {
-      title: 'وصف الخدمة',
+      title: 'حالة الفاتورة ',
       dataIndex: 'Flats.Bills.is_open',
       key: 'Flats.Bills.is_open',
       render: (value) => (
@@ -67,9 +72,21 @@ const UserBills: React.FC = () => {
       ),
     },
     {
-      title: 'الخدمات',
-      dataIndex: 'services',
-      key: 'services',
+      title: 'الخدمات بأسعارها',
+      dataIndex: 'Flats.Bills.services',
+      key: 'Flats.Bills.services',
+      render: (value) => (
+        <List.Item>
+          {(value).map((ele: { price: number; name: string; }) => (
+            <List>
+              <p style={{ display: 'inline-block', height: '5px' }}>
+                {`✦	${ele.name}:`}
+              </p>
+              {` ${ele.price}`}
+            </List>
+          ))}
+        </List.Item>
+      ),
     },
   ];
 
