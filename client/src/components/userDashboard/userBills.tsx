@@ -21,8 +21,14 @@ const UserBills: React.FC = () => {
   const [userBill, setUserBill] = useState<Array<InferBillUserModel>>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const handleChange = (value: string) => {
-    if (value === 'جميع الشقق') {
-      axios.get('/api/v1/billUser/?flat_number')
+    if (value === 'جميع الشقق' || value === 'all') {
+      axios.get('/api/v1/billUser/')
+        .then(({ data: { data } }) => {
+          setUserBill(data as Array<InferBillUserModel>);
+          setLoading(false);
+        }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
+    } else if (value === 'true' || value === 'false') {
+      axios.get(`/api/v1/billUser/?is_open=${value}`)
         .then(({ data: { data } }) => {
           setUserBill(data as Array<InferBillUserModel>);
           setLoading(false);
@@ -35,6 +41,7 @@ const UserBills: React.FC = () => {
         }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
     }
   };
+
   const fetchData = (signal: AbortSignal) => {
     axios.get('/api/v1/billUser/', { signal })
       .then(({ data: { data } }) => {
@@ -117,17 +124,39 @@ const UserBills: React.FC = () => {
     <>
       <div className="headerOfServices">
         <Title className="titleAdmin">الفواتير</Title>
-        <Select
-          defaultValue="جميع الشقق"
-          style={{ width: 120 }}
-          onChange={handleChange}
-          options={
+        <div>
+
+          <Select
+            defaultValue="جميع الشقق"
+            style={{ width: 120 }}
+            onChange={handleChange}
+            options={
             getIds().map((ele :any) => ({
               lable: ele,
               value: ele,
             }))
           }
-        />
+          />
+          <Select
+            defaultValue="مدفوع / غير مدفوع"
+            style={{ width: 120 }}
+            onChange={handleChange}
+            options={[
+              {
+                value: 'all',
+                label: 'مدفوع / غير مدفوع',
+              },
+              {
+                value: 'false',
+                label: 'مدفوع',
+              },
+              {
+                value: 'true',
+                label: 'غير مدفوع',
+              },
+            ]}
+          />
+        </div>
       </div>
       {
         (loading) ? <Loading /> : ((userBill.length > 0) ? (
@@ -142,11 +171,3 @@ const UserBills: React.FC = () => {
   );
 };
 export default UserBills;
-// Some Steps to Filter Data by flat_number
-// const option:any = () => (userBill).map((ele) => ele.Flats.flat_number);
-// OR const option = () => (userBill:InferBillUserModel).map((ele) => ele.Flats.flat_number);
-// options={option}
-// we should return the data from option like this : value: 'is_open_false' label: 'مدفوع',
-//  as a value and label , not as [{flat_number : 103}] ,
-//  should be =[{value:'flat_number' , label : '103'}]
-//  On click on of them should be filter as query string as the value or label in options , and the all data (not ?flat_number = 103) should be return as normal axios in fetch data
