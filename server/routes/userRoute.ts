@@ -11,5 +11,4 @@ router.get('/:page', getUsers);
 router.get('/profile/:id', profile);
 router.put('/profile/:id', updateUser);
 
-
 export default router;

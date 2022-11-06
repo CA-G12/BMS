@@ -20,3 +20,4 @@ export {
 } from './complaints';
 export { addUser, getUsers, profile } from './users';
 export { getUsersBills } from './billUser';
+export { allUserPayments } from './payments';
