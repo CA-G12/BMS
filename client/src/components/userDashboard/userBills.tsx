@@ -1,27 +1,42 @@
-/* eslint-disable no-tabs */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-use-before-define */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable no-tabs */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable no-nested-ternary */
-
-import { Typography, message, List } from 'antd';
+import {
+  Typography, message, List, Select,
+} from 'antd';
 import Table, { ColumnsType } from 'antd/lib/table';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { InferBillUserModel } from '../../Interfaces/billUser';
 import { Loading, NoData } from '../index';
+import './style.css';
 
 const { Title } = Typography;
 
 const UserBills: React.FC = () => {
   const [userBill, setUserBill] = useState<Array<InferBillUserModel>>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
+  const handleChange = (value: string) => {
+    if (value === 'all') {
+      console.log(`selected All ${value}`);
+    } else if (value === 'is_open_false') {
+      console.log(`selected False ${value}`);
+      axios.get('/api/v1/billUser/?flat_number=103')
+        .then(({ data: { data } }) => {
+          setUserBill(data as Array<InferBillUserModel>);
+          setLoading(false);
+        }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
+    } else if (value === 'is_open_true') {
+      console.log(`selected True ${value}`);
+      axios.get('/api/v1/billUser/?flat_number=105')
+        .then(({ data: { data } }) => {
+          setUserBill(data as Array<InferBillUserModel>);
+          setLoading(false);
+        }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
+    }
+  };
   const fetchData = (signal: AbortSignal) => {
     axios.get('/api/v1/billUser/', { signal })
       .then(({ data: { data } }) => {
@@ -43,19 +58,19 @@ const UserBills: React.FC = () => {
       title: 'رقم الشقة',
       dataIndex: 'Flats.flat_number',
       key: 'Flats.flat_number',
-      render: (text) => <h3 style={{ color: 'rgb(21 111 193)' }}>{text}</h3>,
+      render: (text: number) => <h3 style={{ color: 'rgb(21 111 193)' }}>{text}</h3>,
     },
     {
       title: 'السعر',
       dataIndex: 'Flats.Bills.total_price',
       key: 'Flats.Bills.total_price',
-      render: (text) => <p>{`${text} شيكل`}</p>,
+      render: (text: number) => <div>{`${text} شيكل`}</div>,
     },
     {
       title: 'حالة الفاتورة ',
       dataIndex: 'Flats.Bills.is_open',
       key: 'Flats.Bills.is_open',
-      render: (value) => (
+      render: (value: string) => (
         <div>
           {!value ? 'مدفوع' : 'غير مدفوع'}
         </div>
@@ -65,7 +80,7 @@ const UserBills: React.FC = () => {
       title: 'تاريخ الفتورة',
       dataIndex: 'Flats.Bills.createdAt',
       key: 'Flats.Bills.createdAt',
-      render: (value) => (
+      render: (value: string) => (
         <div>
           {new Date(value).toLocaleDateString()}
         </div>
@@ -94,6 +109,25 @@ const UserBills: React.FC = () => {
     <>
       <div className="headerOfServices">
         <Title className="titleAdmin">الفواتير</Title>
+        <Select
+          defaultValue="all"
+          style={{ width: 120 }}
+          onChange={handleChange}
+          options={[
+            {
+              value: 'all',
+              label: 'مدفوع / غير مدفوع',
+            },
+            {
+              value: 'is_open_false',
+              label: 'مدفوع',
+            },
+            {
+              value: 'is_open_true',
+              label: 'غير مدفوع',
+            },
+          ]}
+        />
       </div>
       {
         (loading) ? <Loading /> : ((userBill.length > 0) ? (
@@ -108,3 +142,11 @@ const UserBills: React.FC = () => {
   );
 };
 export default UserBills;
+// Some Steps to Filter Data by flat_number
+// const option:any = () => (userBill).map((ele) => ele.Flats.flat_number);
+// OR const option = () => (userBill:InferBillUserModel).map((ele) => ele.Flats.flat_number);
+// options={option}
+// we should return the data from option like this : value: 'is_open_false' label: 'مدفوع',
+//  as a value and label , not as [{flat_number : 103}] ,
+//  should be =[{value:'flat_number' , label : '103'}]
+//  On click on of them should be filter as query string as the value or label in options , and the all data (not ?flat_number = 103) should be return as normal axios in fetch data

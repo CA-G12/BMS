@@ -1,0 +1,7 @@
+.ant-select , .ant-select-rtl , .ant-select-single , .ant-select-show-arrow {
+    width: 153px !important;
+}
+
+.ant-select-arrow {
+    margin-top: -20px !important;
+}
