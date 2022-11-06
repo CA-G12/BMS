@@ -1,4 +1,3 @@
-import { log } from 'console';
 import request from 'supertest';
 import app from '../server/app';
 import insertDB from '../server/database/config/build';
@@ -14,14 +13,14 @@ describe('Users API', () => {
       .expect(200);
       console.log(response.body);
       
-      expect(response.body.msg).toBe('Logged Out');
+      expect(response.body.message).toBe('Logged Out Successfully');
     });
     test('User -GET api/v1/auth/logout', async () => {
         const response = await request(app)
         .get('/api/v1/auth/logout')
         .set({ Cookie: [`token= `] })
         .expect(200);
-        expect(response.body.msg).toBe('Logged Out');
+        expect(response.body.message).toBe('Logged Out Successfully');
       });
       test('User -GET api/v1/auth/logout', async () => {
         const response = await request(app)
