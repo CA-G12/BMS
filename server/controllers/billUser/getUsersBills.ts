@@ -21,6 +21,9 @@ export default async (req:InferRequestPayload, res:Response, next:NextFunction) 
     }
     const data = await UserModel.findAll({
       raw: true,
+      order: [
+        ['Flats', 'Bills', 'id', 'DESC'],
+      ],
       include: [{
         model: FlatModel,
         attributes: ['flat_number'],
