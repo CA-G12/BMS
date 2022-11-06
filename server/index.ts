@@ -1,12 +1,14 @@
 // eslint-disable-next-line import/no-named-as-default
 import app from './app';
 import sequelize from './database/config/connection';
+import InseertBillsTask from './CronJobs';
 
 const port = app.get('port') as number;
 
 sequelize.sync()
   .then(() => {
     app.listen(port, () => {
+      InseertBillsTask();
       // eslint-disable-next-line no-console
       console.log(`The Server is running on http://localhost:${port}`);
     });
