@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable no-tabs */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
@@ -19,18 +21,14 @@ const UserBills: React.FC = () => {
   const [userBill, setUserBill] = useState<Array<InferBillUserModel>>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const handleChange = (value: string) => {
-    if (value === 'all') {
-      console.log(`selected All ${value}`);
-    } else if (value === 'is_open_false') {
-      console.log(`selected False ${value}`);
-      axios.get('/api/v1/billUser/?flat_number=103')
+    if (value === 'جميع الشقق') {
+      axios.get('/api/v1/billUser/?flat_number')
         .then(({ data: { data } }) => {
           setUserBill(data as Array<InferBillUserModel>);
           setLoading(false);
         }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
-    } else if (value === 'is_open_true') {
-      console.log(`selected True ${value}`);
-      axios.get('/api/v1/billUser/?flat_number=105')
+    } else {
+      axios.get(`/api/v1/billUser/?flat_number=${value}`)
         .then(({ data: { data } }) => {
           setUserBill(data as Array<InferBillUserModel>);
           setLoading(false);
@@ -105,28 +103,30 @@ const UserBills: React.FC = () => {
     },
   ];
 
+  const getIds = () : string[] => {
+    const ids: string[] = ['جميع الشقق'];
+    userBill.forEach((element) => {
+      if (!ids.includes(element['Flats.flat_number'])) {
+        ids.push(element['Flats.flat_number']);
+      }
+    });
+    return ids;
+  };
+
   return (
     <>
       <div className="headerOfServices">
         <Title className="titleAdmin">الفواتير</Title>
         <Select
-          defaultValue="all"
+          defaultValue="جميع الشقق"
           style={{ width: 120 }}
           onChange={handleChange}
-          options={[
-            {
-              value: 'all',
-              label: 'مدفوع / غير مدفوع',
-            },
-            {
-              value: 'is_open_false',
-              label: 'مدفوع',
-            },
-            {
-              value: 'is_open_true',
-              label: 'غير مدفوع',
-            },
-          ]}
+          options={
+            getIds().map((ele :any) => ({
+              lable: ele,
+              value: ele,
+            }))
+          }
         />
       </div>
       {
