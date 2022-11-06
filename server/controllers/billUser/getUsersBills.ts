@@ -19,7 +19,7 @@ export default async (req:InferRequestPayload, res:Response, next:NextFunction) 
     if (flat_number) {
       flastExistsOrNOt.flat_number = flat_number;
     }
-    const data = await UserModel.findAll({
+    let data = await UserModel.findAll({
       raw: true,
       order: [
         ['Flats', 'Bills', 'id', 'DESC'],
@@ -31,7 +31,6 @@ export default async (req:InferRequestPayload, res:Response, next:NextFunction) 
         include: [{
           model: BillModel,
           attributes: ['is_open', 'total_price', 'services', 'createdAt'],
-          where: billOpenOrClosed,
           required: false,
         }],
       }],
@@ -39,6 +38,9 @@ export default async (req:InferRequestPayload, res:Response, next:NextFunction) 
       attributes: [],
 
     });
+    if (is_open) {
+      data = data.filter((x) => x['Flats.Bills.is_open'].toString() === is_open);
+    }
     console.log('data: ', data);
     if (data) {
       res.json({ data });
