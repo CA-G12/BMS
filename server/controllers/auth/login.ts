@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import {
   Request, Response, NextFunction,
 } from 'express';
@@ -21,7 +22,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
       );
     }
     const {
-      role, id,
+      role, id, first_name, last_name,
     } = user;
     const comparePasswordResult = await bcrypt.compare(password, user.hashed_password);
     if (!comparePasswordResult) {
@@ -31,7 +32,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
       );
     }
     GenerateToken({
-      id, role,
+      id, role, first_name, last_name,
     }, res, next);
   } catch (err) {
     if (err.name === 'ValidationError') {
