@@ -120,9 +120,10 @@ const DataTable:FC = () => {
   if (!complaint.length) return <NoData />;
   return (
     <Table
-      pagination={{ defaultPageSize: 6 }}
+      pagination={{ defaultPageSize: 5 }}
       columns={columns}
       dataSource={complaint}
+
     />
   );
 };

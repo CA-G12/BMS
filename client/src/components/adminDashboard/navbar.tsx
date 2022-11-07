@@ -1,11 +1,14 @@
 import { Image } from 'antd';
+import { Link } from 'react-router-dom';
 import logoImg from '../../assets/images/logo.png';
 import userImg from '../../assets/images/user-photo.jpg';
 import './style.css';
 
 const NavBar: React.FC = () => (
   <div className="header" style={{ background: '#fff' }}>
-    <Image preview={false} src={logoImg as string} alt="logo" className="logo" />
+    <Link to="/">
+      <Image preview={false} src={logoImg as string} alt="logo" className="logo" />
+    </Link>
     <div className="top">
       <div className="notifications">
         <i className="ri-notification-3-line" />
