@@ -6,8 +6,9 @@ import { LandingPage, Flats, Flat } from './pages';
 import Login from './pages/Auth/Login';
 
 import {
+  Contacts, Announcements,
   ServicesContainer, AddService, EditService, Bills,
-  Complaints, SingleComplaints, Contacts,
+  Complaints, SingleComplaints,
 } from './components/adminDashboard';
 import {
   UserAnnouncements, UserBills, AddComplaint,
@@ -16,6 +17,8 @@ import {
 import AddUser from './pages/AddUser';
 import DataTable from './components/adminDashboard/complaints/DataTable';
 import App from './App';
+import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnouncements';
+import EditAnnouncements from './components/adminDashboard/Announcements/EditAnnouncements';
 import { ProtectedRoute, LoginProtectedRoute } from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 
@@ -79,6 +82,9 @@ const router = createBrowserRouter([
           },
         ],
       },
+      { path: 'announcements', element: <Announcements /> },
+      { path: 'announcements/new', element: <NewAnnouncements /> },
+      { path: 'announcements/edit/:id', element: <EditAnnouncements /> },
       {
         path: 'flats',
         element: <Flats />,
