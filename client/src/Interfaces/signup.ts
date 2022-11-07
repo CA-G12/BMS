@@ -4,4 +4,5 @@ export interface ISignupModel {
   phoneNumber: string;
   email: string;
   password: string;
+  flatNumber :number;
 }
