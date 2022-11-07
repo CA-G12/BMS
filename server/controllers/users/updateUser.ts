@@ -1,11 +1,12 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import { updateUserSchema } from '../../validation';
 import { UserModel } from '../../models';
 import { CustomError } from '../../helpers';
+import { InferRequestPayload } from '../../interfaces/InferUserPayload';
 
-const updateUser = async (req:Request, res:Response, next:NextFunction) => {
+const updateUser = async (req:InferRequestPayload, res:Response, next:NextFunction) => {
   try {
-    const { id } = req.params;
+    const { id } = req.user;
     if (!(Number(id) > 0)) {
       return res.json({ message: 'User Id must be a number and greater then 0' });
     }

@@ -35,7 +35,7 @@ const UserProfile: React.FC = () => {
   const onFinish = (values : IUpdateUser) => {
     if (!editable) return;
     setLoading(true);
-    axios.put(`/api/v1/user/profile/${id}`, values)
+    axios.put('/api/v1/user/profile', values)
       .then(() => {
         setEditable(false);
         setLoading(false);

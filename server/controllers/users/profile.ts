@@ -1,11 +1,10 @@
-import {
-  Request, Response, NextFunction,
-} from 'express';
+import { Response, NextFunction } from 'express';
+import { InferRequestPayload } from '../../interfaces/InferUserPayload';
 import { FlatModel, UserModel } from '../../models';
 
-export default async (req:Request, res:Response, next:NextFunction) => {
+export default async (req:InferRequestPayload, res:Response, next:NextFunction) => {
   try {
-    const { id } = req.params;
+    const { id } = req.user;
     const data = await UserModel.findAll({
       raw: true,
       attributes: ['first_name', 'last_name', 'phone_number', 'id', 'email'],
