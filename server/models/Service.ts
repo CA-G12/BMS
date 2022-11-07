@@ -17,7 +17,7 @@ const Service = sequelize.define<InferServiceModel>('Service', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  is_fixed: {
+  isFixed: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
@@ -25,7 +25,7 @@ const Service = sequelize.define<InferServiceModel>('Service', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  is_open: {
+  isOpen: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },

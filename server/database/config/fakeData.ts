@@ -180,37 +180,37 @@ const services = [
   {
     name: 'خدمات عامة',
     price: 100,
-    is_fixed: true,
+    isFixed: true,
     description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
-    is_open: true,
+    isOpen: true,
   },
   {
     name: 'مياه صحية',
     price: 0,
-    is_fixed: false,
+    isFixed: false,
     description: 'مياه صحية على مدار 24 ساعة',
-    is_open: true,
+    isOpen: true,
   },
   {
     name: 'مياه حلوة',
     price: 0,
-    is_fixed: false,
+    isFixed: false,
     description: 'مياه حلوة صالحة للشرب',
-    is_open: true,
+    isOpen: true,
   },
   {
     name: 'كهرباء ',
     price: 0,
-    is_fixed: false,
+    isFixed: false,
     description: 'يتم قراءة عداد الكهرباء كل شهر',
-    is_open: true,
+    isOpen: true,
   },
   {
     name: 'مصف سيارات',
     price: 25,
-    is_fixed: true,
+    isFixed: true,
     description: 'مصف سيارات لسكان البرج',
-    is_open: false,
+    isOpen: false,
   },
 ];
 
@@ -544,7 +544,8 @@ const flats = [
     flat_number: 105,
     area: 250,
     notes: 'شقة شمالية',
-    is_active: false,
+    is_active: true,
+    UserId: 1,
 
   },
   {
