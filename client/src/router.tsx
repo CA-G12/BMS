@@ -85,18 +85,12 @@ const router = createBrowserRouter([
       { path: 'announcements', element: <Announcements /> },
       { path: 'announcements/new', element: <NewAnnouncements /> },
       { path: 'announcements/edit/:id', element: <EditAnnouncements /> },
-      {
-        path: 'flats',
-        element: <Flats />,
-        children: [
-          {
-            path: ':id',
-            element: <Flat />,
-          },
-        ],
-      },
+
+      { path: 'flats', element: <Flats /> },
+      { path: 'flats/:id', element: <Flat /> },
 
       { path: 'contacts', element: <Contacts /> },
+
       { path: 'adduser', element: <AddUser /> },
     ],
   },
