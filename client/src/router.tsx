@@ -23,6 +23,7 @@ import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnou
 import EditAnnouncements from './components/adminDashboard/Announcements/EditAnnouncements';
 import { ProtectedRoute, LoginProtectedRoute } from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
+import Statistics from './components/adminDashboard/Statistics';
 
 const router = createBrowserRouter([
   {
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
   </AuthProvider>,
 
     children: [
-      { index: true, element: <h1>لوحة التحكم</h1> },
+      { index: true, element: <Statistics /> },
       { path: 'services', element: <ServicesContainer /> },
       { path: 'services/addService', element: <AddService /> },
       { path: 'services/editService/:id', element: <EditService /> },
