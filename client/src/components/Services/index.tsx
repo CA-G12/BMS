@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import {
   Timeline, Layout, Col, Row,
 } from 'antd';
