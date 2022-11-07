@@ -1,10 +1,10 @@
 import React from 'react';
-// import './App.css';
 
 import { Layout } from 'antd';
 import AppHeader from '../Layout/LandingPage/header';
 import AppHome from '../components/Hero';
 import AppFooter from '../Layout/LandingPage/footer';
+
 import {
   AboutUs, AdsContainer, ContactUs, Services, VideoSection, FlatContainer,
 } from '../components';
@@ -30,5 +30,4 @@ const LandingPage: React.FC = () => (
     </Footer>
   </Layout>
 );
-
 export default LandingPage;

@@ -1,18 +1,8 @@
-import {
-  Model, DataTypes, CreationOptional, InferAttributes, InferCreationAttributes,
-} from 'sequelize';
+import { DataTypes } from 'sequelize';
+import { InferAdvertisementModel } from '../interfaces/models';
 
 import sequelize from '../database/config/connection';
 
-interface InferAdvertisementModel extends Model<InferAttributes<InferAdvertisementModel>,
-InferCreationAttributes<InferAdvertisementModel>> {
-  id: CreationOptional<number>;
-  title: string,
-  description: string,
-  start_date: string,
-  end_date: string,
-  image: string,
-}
 const Advertisement = sequelize.define<InferAdvertisementModel>('Advertisement', {
   id: {
     primaryKey: true,
