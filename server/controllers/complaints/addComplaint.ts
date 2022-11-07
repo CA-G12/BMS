@@ -17,6 +17,8 @@ const addComplaints: RequestHandler = async (req:Request, res:Response, next:Nex
       message: 'Complaints Added Successfully', data,
     });
   } catch (error) {
+    console.log(error);
+
     if (error.name === 'ValidationError') {
       return next(new CustomError(400, error.errors));
     }
