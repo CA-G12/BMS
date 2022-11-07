@@ -300,6 +300,48 @@ const bills = [
     ],
   },
   {
+    total_price: 315,
+    FlatId: 1,
+    is_open: true,
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        isFixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        isOpen: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 50,
+        isFixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        isOpen: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 20,
+        isFixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        isOpen: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 120,
+        isFixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        isOpen: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        isFixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        isOpen: true,
+      },
+    ],
+  },
+  {
     total_price: 370,
     FlatId: 2,
     is_open: true,

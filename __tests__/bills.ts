@@ -12,7 +12,7 @@ describe('Bills API', () => {
         .get(`/api/v1/bills?${querysString}`)
         .expect(200);
         const dataLength = JSON.parse(response.text).result.length;
-      expect(dataLength).toBe(7);
+      expect(dataLength).toBe(8);
     });
   });
 
