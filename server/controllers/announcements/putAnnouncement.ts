@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable max-len */
 import { Request, Response, NextFunction } from 'express';
 import { CustomError } from '../../helpers';
 import { AnnouncementModel } from '../../models';

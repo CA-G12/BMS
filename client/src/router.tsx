@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/aria-role */
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import { createBrowserRouter } from 'react-router-dom';
 import { Button } from 'antd';
 import { DashboardLayout } from './Layout';

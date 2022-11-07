@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import {
   Button, Form, Input, Layout, message, Row, Col,
 } from 'antd';

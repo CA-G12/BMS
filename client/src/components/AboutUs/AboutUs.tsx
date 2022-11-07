@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import {
   Layout, Typography, Col, Row,
 } from 'antd';

@@ -21,7 +21,6 @@ const AddService: React.FC = () => {
   };
 
   const onFinish = (values : InferAddServicesModel) => {
-    // eslint-disable-next-line no-void
     axios.post('/api/v1/services', values)
       .then(() => navigate('/admin/services'))
       .catch(() => message.error('حدث خطأ , اعد المحاولة'));

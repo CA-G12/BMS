@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import sequelize from './connection';
 import {
   announcements, advertisements, bills, flats, services, users, payments, complaints, contactUs,
@@ -21,10 +22,8 @@ const insertDB = async () => {
     await ComplaintsModel.bulkCreate(complaints);
     await ContactUsModel.bulkCreate(contactUs);
 
-    // eslint-disable-next-line no-console
     console.log('Build Database Successfully');
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.log('Build Database Failed', err);
   }
 };

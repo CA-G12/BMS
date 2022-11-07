@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import { LeftCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import {
   Button,

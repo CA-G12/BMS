@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import { message } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -35,7 +34,6 @@ const FlatContainer: React.FC = () => {
       <Title>الشقق المتاحة</Title>
       <div className="flatContainer">
         {
-          // eslint-disable-next-line no-nested-ternary
           (loading) ? <Loading /> : (flats.length !== 0) ? (flats.map((flatCard) => (<FlatCard key={flatCard.id} info={flatCard} />))) : (<NoData />)
         }
       </div>

@@ -1,9 +1,8 @@
 import {
-  Request, Response, NextFunction,
+  Request, Response,
 } from 'express';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const serverError: any = (err:any, req:Request, res:Response, next:NextFunction) => {
+const serverError: any = (err:any, req:Request, res:Response) => {
   if (!err.status) {
     res.status(500).json({ message: 'Internal Server Error!' });
   } else {

@@ -1,5 +1,3 @@
-/* eslint-disable import/no-cycle */
-/* eslint-disable max-len */
 import { message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -38,11 +36,8 @@ const AdsContainer: React.FC = () => {
     <div className="flatContainerComponent" style={{ backgroundColor: '#F6F8FA', paddingBottom: 30 }} id="ads">
       <Title>الإعلانات </Title>
       <div className="flatContainer">
-        {
-    // eslint-disable-next-line no-nested-ternary
-    (loading) ? <Loading /> : (advertisements.length !== 0) ? (advertisements.map((advertisement) => (
-      <AdvertisementCard key={advertisement.id} info={advertisement} />))) : (<NoData />)
-  }
+        { (loading) ? <Loading /> : (advertisements.length !== 0) ? (advertisements.map((advertisement) => (
+          <AdvertisementCard key={advertisement.id} info={advertisement} />))) : (<NoData />)}
       </div>
     </div>
   );
