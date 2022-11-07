@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import { useContext, useState } from 'react';
@@ -46,25 +45,6 @@ function getItem(
 const listStyle = {
   color: 'black',
 };
-const adminList: MenuItem[] = [
-  getItem(<Link to="/admin" style={listStyle}>لوحة التحكم</Link>, '1', <GroupOutlined style={listStyle} />),
-  getItem(<Link to="/admin/services" style={listStyle}>الخدمات</Link>, '2', <DesktopOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>الشقق</Link>, '3', <HomeOutlined style={listStyle} />),
-  getItem(<Link to="/admin/bills" style={listStyle}>الفواتير</Link>, '4', <DollarCircleOutlined style={listStyle} />),
-  getItem(<Link to="/admin/complaints" style={listStyle}>الشكاوي</Link>, '5', <CommentOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>الإعلانات</Link>, '6', <ContainerOutlined style={listStyle} />),
-  getItem(<Link to="/admin/contacts" style={listStyle}>التواصل</Link>, '6', <MailOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>التقيم</Link>, '8', <StarOutlined style={listStyle} />),
-  getItem(<Link to="/admin/flats" style={listStyle}>تسجيل الخروج</Link>, '9', <LogoutOutlined style={listStyle} />),
-];
-
-const userList: MenuItem[] = [
-  getItem(<Link to="/user" style={listStyle}>لوحة التحكم</Link>, '1', <GroupOutlined style={listStyle} />),
-  getItem(<Link to="/user/bills" style={listStyle}>الفواتير</Link>, '4', <DollarCircleOutlined style={listStyle} />),
-  getItem(<Link to="/user/addComplaint" style={listStyle}>إضافة شكوى</Link>, '5', <CommentOutlined style={listStyle} />),
-  getItem(<Link to="/user/announcements" style={listStyle}>الإعلانات</Link>, '6', <ContainerOutlined style={listStyle} />),
-  getItem(<Link to="/user/logout" style={listStyle}>تسجيل الخروج</Link>, '9', <LogoutOutlined style={listStyle} />),
-];
 
 const MenuList: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -95,7 +75,7 @@ const MenuList: React.FC = () => {
   const userList: MenuItem[] = [
     getItem(<Link to="/user" style={listStyle}>لوحة التحكم</Link>, '1', <GroupOutlined style={listStyle} />),
     getItem(<Link to="/user/bills" style={listStyle}>الفواتير</Link>, '4', <DollarCircleOutlined style={listStyle} />),
-    getItem(<Link to="/user/complaints" style={listStyle}>الشكاوي</Link>, '5', <CommentOutlined style={listStyle} />),
+    getItem(<Link to="/user/addComplaint" style={listStyle}>اضافة شكوى</Link>, '5', <CommentOutlined style={listStyle} />),
     getItem(<Link to="/user/announcements" style={listStyle}>الإعلانات</Link>, '6', <ContainerOutlined style={listStyle} />),
     getItem(<Button onClick={Logout} style={{ border: 'none' }}>تسجيل الخروج </Button>, '9', <LogoutOutlined style={listStyle} />),
   ];

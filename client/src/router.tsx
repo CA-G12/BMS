@@ -61,20 +61,9 @@ const router = createBrowserRouter([
 
     children: [
       { index: true, element: <h1>لوحة التحكم</h1> },
-      {
-        path: 'services',
-        element: <ServicesContainer />,
-        children: [
-          {
-            path: 'addService',
-            element: <AddService />,
-          },
-          {
-            path: 'editService/:id',
-            element: <EditService />,
-          },
-        ],
-      },
+      { path: 'services', element: <ServicesContainer /> },
+      { path: 'services/addService', element: <AddService /> },
+      { path: 'services/editService/:id', element: <EditService /> },
 
       { path: 'bills', element: <Bills /> },
       {
