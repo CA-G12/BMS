@@ -23,6 +23,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <p>Public Error</p>,
     children: [
       { index: true, element: <LandingPage /> },
     ],
