@@ -17,4 +17,6 @@ export {
   Bills, ServicesContainer, AddService, EditService, Complaints, SingleComplaints,
 } from './adminDashboard';
 
-export { UserAnnouncements, UserBills, UserComplaints } from './userDashboard';
+export {
+  UserAnnouncements, UserBills, AddComplaint,
+} from './userDashboard';
