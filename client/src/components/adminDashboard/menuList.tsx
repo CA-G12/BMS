@@ -95,7 +95,7 @@ const MenuList: React.FC = () => {
   const userList: MenuItem[] = [
     getItem(<Link to="/user" style={listStyle}>لوحة التحكم</Link>, '1', <GroupOutlined style={listStyle} />),
     getItem(<Link to="/user/bills" style={listStyle}>الفواتير</Link>, '4', <DollarCircleOutlined style={listStyle} />),
-    getItem(<Link to="/user/complaints" style={listStyle}>الشكاوي</Link>, '5', <CommentOutlined style={listStyle} />),
+    getItem(<Link to="/user/addComplaint" style={listStyle}>اضافة شكوى</Link>, '5', <CommentOutlined style={listStyle} />),
     getItem(<Link to="/user/announcements" style={listStyle}>الإعلانات</Link>, '6', <ContainerOutlined style={listStyle} />),
     getItem(<Button onClick={Logout} style={{ border: 'none' }}>تسجيل الخروج </Button>, '9', <LogoutOutlined style={listStyle} />),
   ];
