@@ -19,9 +19,7 @@ describe('Users API', () => {
       .get('/api/v1/auth/userdata')
       .set({ Cookie: [`token=${userToken}`] })
       .expect(200);
-      console.log('response.body: ', response.body);
       expect(response.body).toEqual({id: 2, role:'user',"fullName": "خالد عمر"});
-      
     });
     test('User -GET api/v1/auth/userdata', async () => {
       const response = await request(app)

@@ -3,25 +3,25 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import MenuList from '../components/adminDashboard/menuList';
 import Navbar from '../components/adminDashboard/navbar';
+import FooterSection from '../components/adminDashboard/footer';
 
 const { Content } = Layout;
 
 const DashboardLayout: React.FC = () => (
   <>
     <Navbar />
-    <Layout>
-      <Layout>
-        <MenuList />
-        <Content
-          style={{
-            padding: 24,
-            margin: 0,
-          }}
-        >
-          <Outlet />
-        </Content>
-      </Layout>
+    <Layout
+      style={{
+        position: 'relative',
+        top: '70px',
+      }}
+    >
+      <MenuList />
+      <Content>
+        <Outlet />
+      </Content>
     </Layout>
+    <FooterSection />
   </>
 );
 

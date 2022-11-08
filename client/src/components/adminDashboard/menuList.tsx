@@ -4,7 +4,6 @@ import { useContext, useState } from 'react';
 import {
   Button, Layout, Menu, message,
 } from 'antd';
-/* eslint-disable react/prop-types */
 import { Link, useNavigate } from 'react-router-dom';
 import {
   GroupOutlined,
@@ -12,7 +11,6 @@ import {
   DesktopOutlined,
   MailOutlined,
   LogoutOutlined,
-  StarOutlined,
   HomeOutlined,
   DollarCircleOutlined,
   CommentOutlined,
@@ -79,7 +77,13 @@ const MenuList: React.FC = () => {
   ];
 
   return (
-    <Sider collapsible theme="light" collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} reverseArrow>
+    <Sider
+      collapsible
+      theme="light"
+      collapsed={collapsed}
+      onCollapse={(value) => setCollapsed(value)}
+      reverseArrow
+    >
       <Menu
         mode="inline"
         items={user?.role === 'admin' ? adminList : userList}

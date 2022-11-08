@@ -18,7 +18,7 @@ describe('Flat API', () => {
         .get('/api/v1/flats/available')
         .set('Cookie', [token])
         .expect(200);
-      expect(response.body.data.length).toBe(12);
+      expect(response.body.data.length).toBe(11);
     });
     test('FlatsUsers -GET api/v1/flats/available', async () => {
       const login = await request(app)
@@ -46,7 +46,7 @@ describe('Flat API', () => {
           .get('/api/v1/flats/available')
           .set('Cookie', [token])
           .expect(200);
-        expect(response.body.data[0].flat_number).toBe(105);
+        expect(response.body.data[0].flat_number).toBe(106);
       });     
       test('FlatsUsers -GET api/v1/flats/available', async () => {
         const login = await request(app)
@@ -60,7 +60,7 @@ describe('Flat API', () => {
           .get('/api/v1/flats/available')
           .set('Cookie', [token])
           .expect(200);
-        expect(response.body.data[0].id).toBe(5);
+        expect(response.body.data[0].id).toBe(6);
       });
       test('FlatsUsers -GET api/v1/flats/available', async () => {
         const login = await request(app)
@@ -74,7 +74,7 @@ describe('Flat API', () => {
           .get('/api/v1/flats/available')
           .set('Cookie', [token])
           .expect(200);
-        expect(response.body.data[1].id).toBe(6);
+        expect(response.body.data[1].id).toBe(7);
       });
       test('FlatsUsers -GET api/v1/flats/available', async () => {
         const login = await request(app)
