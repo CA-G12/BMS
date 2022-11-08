@@ -89,17 +89,17 @@ const App: React.FC = () => {
       .then(({ data }) => {
         setAnns(data.data);
       })
-      .catch(console.log);
-  });
+      .catch(() => openNotificationWithIcon('error', 'خطأ', 'حدث خطأ ما'));
+  }, []);
 
   return (
     <>
       <div className="headerOfServices">
-        <Title className="titleAdmin">الاعلانات</Title>
+        <Title className="titleAdmin">التعميمات</Title>
         <Link to="new">
           <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
             <PlusCircleOutlined />
-            اضافة اعلان
+            اضافة تعميم
           </Button>
         </Link>
       </div>

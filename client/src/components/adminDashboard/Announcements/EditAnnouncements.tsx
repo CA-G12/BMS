@@ -74,7 +74,7 @@ const AnnouncementsForm: React.FC = () => {
         requiredMark={requiredMark}
         onFinish={onFinish}
       >
-        <Form.Item name="title" label="الاعلان" rules={[{ whitespace: false, required: true, message: 'الرجاء ادخال اسم الاعلان' }]}>
+        <Form.Item name="title" label="التعميم" rules={[{ whitespace: false, required: true, message: 'الرجاء ادخال اسم الاعلان' }]}>
           <Input />
         </Form.Item>
         <Form.Item name="start_date" label="تاريخ البدء" rules={[{ whitespace: false, required: true, message: 'الرجاء ادخال تاريخ البدء ' }]}>
@@ -85,7 +85,7 @@ const AnnouncementsForm: React.FC = () => {
         </Form.Item>
         <p style={{ color: 'red' }}>{errorMessage}</p>
         <Form.Item>
-          <Button htmlType="submit" type="primary">تعديل الاعلان</Button>
+          <Button htmlType="submit" type="primary">تعديل التعميم</Button>
           {' '}
           <Button htmlType="button" type="dashed" onClick={() => navigate('/admin/announcements')}>رجوع للرئيسية</Button>
         </Form.Item>
@@ -95,7 +95,7 @@ const AnnouncementsForm: React.FC = () => {
 };
 
 const App = () => (
-  <Card title="إضافة إعلان" bordered={false}>
+  <Card title="إضافة تعميم" bordered={false}>
     <AnnouncementsForm />
   </Card>
 );
