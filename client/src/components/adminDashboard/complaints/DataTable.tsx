@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import {
   message, Button, Modal,
 } from 'antd';
@@ -57,7 +57,11 @@ const DataTable:FC = () => {
       title: 'التاريخ',
       dataIndex: 'createdAt',
       key: 'createdAt',
-      render: (text) => <p>{text}</p>,
+      render: (text: string) => (
+        <p>
+          {new Date(text).toLocaleDateString()}
+        </p>
+      ),
     },
     {
       title: 'عنوان الشكوى',
