@@ -28,9 +28,9 @@ InferCreationAttributes<InferServiceModel>> {
   id: CreationOptional<number>;
   name: string,
   price: number,
-  is_fixed: boolean,
+  isFixed: boolean,
   description: string,
-  is_open: boolean
+  isOpen: boolean
 }
 
 interface InferFlatModel extends Model<InferAttributes<InferFlatModel>,

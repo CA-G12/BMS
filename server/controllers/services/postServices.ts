@@ -10,7 +10,7 @@ export default async (req:Request, res:Response, next: NextFunction) => {
       name, price, isFixed, description, isOpen,
     } = await servicesSchema.validate(req.body, { abortEarly: false });
     const data = await ServiceModel.create({
-      name, price, is_fixed: isFixed, description, is_open: isOpen,
+      name, price, isFixed, description, isOpen,
     });
     res.status(201).json({ data });
   } catch (err) {
