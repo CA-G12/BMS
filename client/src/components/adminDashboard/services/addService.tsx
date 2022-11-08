@@ -1,10 +1,11 @@
 import {
-  Typography, Form, Input, Switch, Button, message,
+  Typography, Form, Input, Switch, Button, message, Col, Row,
 } from 'antd';
 import React, { useState } from 'react';
 import './style.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { LeftCircleOutlined } from '@ant-design/icons';
 import { InferAddServicesModel } from '../../../Interfaces/addService';
 
 const { Title } = Typography;
@@ -28,9 +29,39 @@ const AddService: React.FC = () => {
 
   return (
     <div>
-      <Title className="addService">إضافة خدمة</Title>
+      <Row>
+        <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 12, offset: 1 }}>
+          <Title style={{
+            fontSize: 'x-large',
+            padding: '16px',
+            color: '#3380FF',
+            fontWeight: 'bolder',
+          }}
+          >
+            إضافة خدمة
+          </Title>
 
+        </Col>
+
+        <Button
+          type="link"
+          style={{
+            fontSize: 'xx-large',
+            padding: '16px',
+            color: '#3380FF',
+            fontWeight: 'bolder',
+            paddingRight: '250px',
+          }}
+        >
+          <Link to="/admin/services">
+            {' '}
+            <LeftCircleOutlined />
+          </Link>
+
+        </Button>
+      </Row>
       <Form
+        style={{ marginRight: '58px' }}
         form={form}
         layout="vertical"
         initialValues={{ requiredMarkValue: requiredMark }}

@@ -67,7 +67,7 @@ const App: React.FC = () => {
             fontWeight: 'bolder',
           }}
           >
-            إضافةمستخدم
+            إضافة مستخدم
           </Title>
 
         </Col>

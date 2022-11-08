@@ -23,7 +23,7 @@ const EditService: React.FC = () => {
   const { id } = useParams();
 
   const [service, setService] = useState<InferServicesModel>({
-    id: 0, name: '', price: 0, description: '', is_fixed: true, is_open: true,
+    id: 0, name: '', price: 0, description: '', isFixed: true, isOpen: true,
   });
   const fetchData = (signal : AbortSignal) => {
     axios.get(`/api/v1/services/${Number(id)}`, { signal })
@@ -70,14 +70,14 @@ const EditService: React.FC = () => {
         </Form.Item>
         <Form.Item initialValue name="isFixed" label="السعر ثابت/غيرثابت" required>
           <Switch
-            checked={service.is_fixed}
+            checked={service.isFixed}
             onClick={() => {
-              setService({ ...service, is_fixed: !service.is_fixed });
+              setService({ ...service, isFixed: !service.isFixed });
             }}
           />
         </Form.Item>
         <Form.Item initialValue name="isOpen" label="تفعيل / الغاء التفعيل" required>
-          <Switch checked={service.is_open} onClick={() => setService({ ...service, is_open: !service.is_open })} />
+          <Switch checked={service.isOpen} onClick={() => setService({ ...service, isOpen: !service.isOpen })} />
         </Form.Item>
         <Form.Item>
           <Button htmlType="submit" type="primary">تعديل الخدمة</Button>

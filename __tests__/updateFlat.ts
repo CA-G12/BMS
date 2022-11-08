@@ -7,8 +7,16 @@ beforeAll(insertDB);
 
 describe('Flats API', () => {
     test('Flats -put api/v1/flats/:id', async () => {
+      const login = await request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        phoneNumber: '0591000100',
+        password : 'password'
+      });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
       const response = await request(app)
         .put('/api/v1/flats/1')
+        .set('Cookie', [token])
         .send({
             user_id: 2,
         })
@@ -16,8 +24,33 @@ describe('Flats API', () => {
       expect(response.body.msg).toBe("Updated Successfully");
     });
     test('Flats -put api/v1/flats/:id', async () => {
+      const login = await request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        phoneNumber: '0591000200',
+        password : 'password'
+      });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
       const response = await request(app)
         .put('/api/v1/flats/1')
+        .set('Cookie', [token])
+        .send({
+            user_id: 2,
+        })
+        .expect(401);
+      expect(response.body.message).toBe("You are not Authorized");
+    });
+    test('Flats -put api/v1/flats/:id', async () => {
+      const login = await request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        phoneNumber: '0591000100',
+        password : 'password'
+      });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+      const response = await request(app)
+        .put('/api/v1/flats/1')
+        .set('Cookie', [token])
         .send({
             user_id: 1,
         })
@@ -25,8 +58,16 @@ describe('Flats API', () => {
       expect(response.body.msg).toBe("Updated Successfully");
     });
     test('Flats -put api/v1/flats/:id', async () => {
+      const login = await request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        phoneNumber: '0591000100',
+        password : 'password'
+      });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
       const response = await request(app)
         .put('/api/v1/flatsnotFound/1')
+        .set('Cookie', [token])
         .send({
             user_id: 1,
         })
@@ -34,8 +75,16 @@ describe('Flats API', () => {
       expect(response.body.message).toBe("Not Found");
     });
     test('Flats -put api/v1/flats/:id', async () => {
+      const login = await request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        phoneNumber: '0591000100',
+        password : 'password'
+      });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
         const response = await request(app)
           .put('/api/v1/flats/1')
+          .set('Cookie', [token])
           .send({
               user_id: 1,
           })

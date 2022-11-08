@@ -23,8 +23,8 @@ const ServicesContainer: React.FC = () => {
     },
     {
       title: 'السعر ثابت/متغير',
-      dataIndex: 'is_fixed',
-      key: 'is_fixed',
+      dataIndex: 'isFixed',
+      key: 'isFixed',
       render: (text) => <p>{text ? 'ثابت' : 'متغير'}</p>,
     },
     {
@@ -49,18 +49,18 @@ const ServicesContainer: React.FC = () => {
     },
     {
       title: 'تفعيل / الغاء التفعيل',
-      dataIndex: 'is_open',
-      key: 'is_open',
+      dataIndex: 'isOpen',
+      key: 'isOpen',
       render: (text, record) => (
         <Button
           onClick={() => {
             // console.log('record: ', record);
             axios.put(`/api/v1/services/${record.id}`, {
-              id: record.id, name: record.name, isOpen: !record.is_open, isFixed: record.is_fixed, description: record.description, price: record.price,
+              id: record.id, name: record.name, isOpen: !record.isOpen, isFixed: record.isFixed, description: record.description, price: record.price,
             }).then(() => {
               if (service.length) {
                 setService((prev) => prev.map((ele) => {
-                  if (ele.id === record.id) return { ...record, is_open: !record.is_open };
+                  if (ele.id === record.id) return { ...record, isOpen: !record.isOpen };
                   return ele;
                 }));
               }
@@ -97,9 +97,7 @@ const ServicesContainer: React.FC = () => {
       <div className="headerOfServices">
         <Title className="titleAdmin">الخدمات</Title>
         <Link to="/admin/services/addService">
-
-          <Button type="primary">
-            {' '}
+          <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
             <PlusCircleOutlined />
             اضافة خدمة
           </Button>
@@ -108,7 +106,7 @@ const ServicesContainer: React.FC = () => {
       {
         (loading) ? <Loading /> : ((service.length > 0) ? (
           <Table
-            pagination={{ defaultPageSize: 6 }}
+            pagination={{ defaultPageSize: 5 }}
             columns={columns}
             dataSource={service}
           />

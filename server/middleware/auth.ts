@@ -25,7 +25,6 @@ const Authenticate = async (req: InferRequestPayload, res: Response, next: NextF
           id: user.id,
           first_name: user.first_name,
           last_name: user.last_name,
-
         };
       }
     }
@@ -59,22 +58,29 @@ type UserRole = string | null;
 
 const Authorize = (
   req: InferRequestPayload,
-  res: Response,
+  _,
   next: NextFunction,
   user_role: UserRole = null,
 ) => {
   try {
     if (req.user) {
       const { role } = req.user;
-      if (!user_role || role === user_role) {
+      if (!user_role) next();
+      else {
+        if (!role || role !== user_role) {
+          throw new CustomError(
+            401,
+            'You are not Authorized',
+          );
+        }
         next();
-        return;
       }
+    } else {
+      throw new CustomError(
+        401,
+        'You are not Authorized',
+      );
     }
-    throw new CustomError(
-      400,
-      'You are not Authorized',
-    );
   } catch (err) {
     next(err);
   }

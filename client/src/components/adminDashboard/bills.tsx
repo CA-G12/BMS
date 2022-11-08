@@ -84,7 +84,7 @@ const columns: ColumnsType<IBill> = [
   {
     title: 'ارسال',
     render: (_, record) => (
-      <Button onClick={(() => sendIBill(record.id))}>
+      <Button type="primary" onClick={(() => sendIBill(record.id))}>
         إرسال الفاتورة
       </Button>
     ),
@@ -143,15 +143,9 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Title style={{
-        fontSize: 'large',
-        padding: '16px',
-        // textAlign: 'start !important',
-        color: '#1890ff',
-      }}
-      >
-        الفواتير
-      </Title>
+      <div className="headerOfServices">
+        <Title className="titleAdmin">الفواتير</Title>
+      </div>
       <Table
         columns={columns}
         rowKey={(record) => record.id}

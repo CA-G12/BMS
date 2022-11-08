@@ -11,7 +11,7 @@ interface ChildrenProps {
 interface User {
   id: number;
   role: string;
-  full_name: string;
+  fullName: string;
 }
 
 export interface UserContext {

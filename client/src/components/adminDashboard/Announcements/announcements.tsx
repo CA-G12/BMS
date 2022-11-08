@@ -1,4 +1,4 @@
-import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import {
   Button,
   notification,
@@ -94,26 +94,17 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      }}
-      >
-        <Title style={{
-          fontSize: 'large',
-          padding: '16px',
-          color: '#1890ff',
-        }}
-        >
-          الإعلانات
-        </Title>
-        <Button>
-          <Link to="new" type="button">اعلان جديد</Link>
-        </Button>
+      <div className="headerOfServices">
+        <Title className="titleAdmin">الاعلانات</Title>
+        <Link to="new">
+          <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
+            <PlusCircleOutlined />
+            اضافة اعلان
+          </Button>
+        </Link>
       </div>
       {' '}
-      <Table columns={columns} dataSource={advs} />
+      <Table columns={columns} dataSource={advs} pagination={{ defaultPageSize: 3 }} />
     </>
   );
 };

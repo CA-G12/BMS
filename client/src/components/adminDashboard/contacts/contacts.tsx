@@ -69,7 +69,7 @@ const Contacts: React.FC = () => {
       {
         (loading) ? <Loading /> : ((contacts.length > 0) ? (
           <Table
-            pagination={{ defaultPageSize: 6 }}
+            pagination={{ defaultPageSize: 5 }}
             columns={columns}
             dataSource={contacts}
           />

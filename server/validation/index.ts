@@ -4,7 +4,9 @@ import announcementSchema from './announcementSchema';
 import signUpSchema from './signUpSchema';
 import servicesSchema from './servicesSchema';
 import complaintsSchema from './complaintsSchema';
+import updateUserSchema from './updateUserSchema';
 
 export {
-  loginValidation, contactSchema, announcementSchema, signUpSchema, servicesSchema, complaintsSchema,
+  loginValidation, contactSchema, announcementSchema,
+  signUpSchema, servicesSchema, complaintsSchema, updateUserSchema,
 };

@@ -12,6 +12,7 @@ export default async (req:Request, res:Response, next: NextFunction) => {
     } = req.body;
     await FlatModel.update({
       UserId: userId,
+      is_active: true,
     }, {
       where: { id },
       returning: true,
