@@ -66,13 +66,15 @@ const Authorize = (
     if (req.user) {
       const { role } = req.user;
       if (!user_role) next();
-      if (!role || role !== user_role) {
-        throw new CustomError(
-          401,
-          'You are not Authorized',
-        );
+      else {
+        if (!role || role !== user_role) {
+          throw new CustomError(
+            401,
+            'You are not Authorized',
+          );
+        }
+        next();
       }
-      next();
     } else {
       throw new CustomError(
         401,
