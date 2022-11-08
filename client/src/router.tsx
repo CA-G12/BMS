@@ -22,6 +22,9 @@ import App from './App';
 import UserProfile from './pages/UserProfile';
 import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnouncements';
 import EditAnnouncements from './components/adminDashboard/Announcements/EditAnnouncements';
+import Adv from './components/adminDashboard/Advs/advs';
+import NewAdv from './components/adminDashboard/Advs/NewAdv';
+import EditAdv from './components/adminDashboard/Advs/EditAdv';
 import { ProtectedRoute, LoginProtectedRoute } from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import Statistics from './components/adminDashboard/Statistics';
@@ -89,6 +92,9 @@ const router = createBrowserRouter([
       { path: 'announcements', element: <Announcements /> },
       { path: 'announcements/new', element: <NewAnnouncements /> },
       { path: 'announcements/edit/:id', element: <EditAnnouncements /> },
+      { path: 'advs', element: <Adv /> },
+      { path: 'advs/new', element: <NewAdv /> },
+      { path: 'advs/edit/:id', element: <EditAdv /> },
       {
         path: 'flats',
         element: <Flats />,
