@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Response } from 'express';
 import { WhereOptions } from 'sequelize';
+import { InferRequestPayload } from '../../interfaces/InferUserPayload';
 import { BillModel, FlatModel, UserModel } from '../../models';
 
-export default async (req:Request, res:Response, next:NextFunction) => {
+export default async (req:InferRequestPayload, res:Response, next:NextFunction) => {
   try {
-    const { UserId } = req.params;
+    const { id } = req.user;
+    console.log(`User Id: ${id}`);
+
     const { flat_number, is_open } = req.query;
-    if (!(Number(UserId) > 0)) {
-      return res.json({ message: 'Flat Id of Bill must be a number and greater then 0' });
-    }
     const billOpenOrClosed :WhereOptions<any> = {};
     if (is_open) {
       billOpenOrClosed.is_open = is_open;
@@ -19,28 +19,37 @@ export default async (req:Request, res:Response, next:NextFunction) => {
     if (flat_number) {
       flastExistsOrNOt.flat_number = flat_number;
     }
-    const data = await UserModel.findAll({
+    let data = await UserModel.findAll({
+      raw: true,
+      order: [
+        ['Flats', 'Bills', 'id', 'DESC'],
+      ],
       include: [{
         model: FlatModel,
         attributes: ['flat_number'],
         where: flastExistsOrNOt,
         include: [{
           model: BillModel,
-          attributes: ['is_open', 'total_price', 'services'],
-          where: billOpenOrClosed,
+          attributes: ['is_open', 'total_price', 'services', 'createdAt'],
           required: false,
         }],
       }],
-      where: { id: UserId },
-      attributes: ['id'],
+      where: { id },
+      attributes: [],
 
     });
+    if (is_open) {
+      data = data.filter((x) => x['Flats.Bills.is_open'].toString() === is_open);
+    }
+    console.log('data: ', data);
     if (data) {
-      res.json({ data: data[0].Flats });
+      res.json({ data });
     } else {
       res.json({ message: 'There is no bill that have this flat id' });
     }
   } catch (err) {
+    console.log(err);
+
     next(err);
   }
 };

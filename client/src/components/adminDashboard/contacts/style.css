@@ -4,10 +4,13 @@
   /* For Title Admin */
   .titleAdmin {
     color: #3380FF !important;
+    font-size: 25px !important;
   }
   .headerOfServices {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
+
   }
   .ant-form-item-control-input-content input {
     width: 500px;

@@ -300,6 +300,48 @@ const bills = [
     ],
   },
   {
+    total_price: 315,
+    FlatId: 1,
+    is_open: true,
+    services: [
+      {
+        name: 'خدمات عامة',
+        price: 100,
+        isFixed: true,
+        description: 'الخدمات العامة تشمل النظافة والمصعد والعناية بالحديقة والامان',
+        isOpen: true,
+      },
+      {
+        name: 'مياه صحية',
+        price: 50,
+        isFixed: false,
+        description: 'مياه صحية على مدار 24 ساعة',
+        isOpen: true,
+      },
+      {
+        name: 'مياه حلوة',
+        price: 20,
+        isFixed: false,
+        description: 'مياه حلوة صالحة للشرب',
+        isOpen: true,
+      },
+      {
+        name: 'كهرباء ',
+        price: 120,
+        isFixed: false,
+        description: 'يتم قراءة عداد الكهرباء كل شهر',
+        isOpen: true,
+      },
+      {
+        name: 'مصف سيارات',
+        price: 25,
+        isFixed: true,
+        description: 'مصف سيارات لسكان البرج',
+        isOpen: true,
+      },
+    ],
+  },
+  {
     total_price: 370,
     FlatId: 2,
     is_open: true,
@@ -535,17 +577,91 @@ const flats = [
   },
   {
     flat_number: 104,
-    area: 180,
-    notes: 'شقة شمالية',
+    area: 140,
+    notes: 'شقة جنوبية',
     is_active: true,
     UserId: 4,
   },
   {
     flat_number: 105,
+    area: 250,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 106,
+    area: 180,
+    notes: 'شقة غربية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 107,
     area: 200,
     notes: 'شقة شمالية',
-    is_active: true,
-    UserId: 3,
+    is_active: false,
+
+  },
+  {
+    flat_number: 108,
+    area: 190,
+    notes: 'شقة جنوبية',
+    is_active: false,
+  },
+  {
+    flat_number: 109,
+    area: 180,
+    notes: 'شقة شرقية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 110,
+    area: 150,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 111,
+    area: 190,
+    notes: 'شقة جنوبية',
+    is_active: false,
+  },
+  {
+    flat_number: 112,
+    area: 180,
+    notes: 'شقة شرقية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 113,
+    area: 150,
+    notes: 'شقة شمالية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 114,
+    area: 190,
+    notes: 'شقة جنوبية',
+    is_active: false,
+  },
+  {
+    flat_number: 115,
+    area: 180,
+    notes: 'شقة شرقية',
+    is_active: false,
+
+  },
+  {
+    flat_number: 116,
+    area: 150,
+    notes: 'شقة شمالية',
+    is_active: false,
+
   },
 ];
 

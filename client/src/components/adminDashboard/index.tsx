@@ -3,3 +3,4 @@ export { ServicesContainer, AddService, EditService } from './services';
 export { Complaints, SingleComplaints } from './complaints';
 // eslint-disable-next-line import/no-cycle
 export { default as Contacts } from './contacts/contacts';
+export { default as Announcements } from './Announcements/announcements';

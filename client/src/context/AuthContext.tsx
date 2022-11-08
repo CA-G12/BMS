@@ -8,13 +8,10 @@ interface ChildrenProps {
   children: ReactNode;
 }
 
-interface AuthResponse {
-  user: User;
-}
-
 interface User {
   id: number;
   role: string;
+  full_name: string;
 }
 
 export interface UserContext {
@@ -31,8 +28,8 @@ export const AuthProvider: FC<ChildrenProps> = ({ children }) => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const data = await axios.get<AuthResponse>('/api/v1/auth/userdata');
-        const userInfo = data.data.user;
+        const data = await axios.get<User>('/api/v1/auth/userdata');
+        const userInfo = data.data;
         setUser(userInfo);
         setLoading(false);
       } catch (err) {

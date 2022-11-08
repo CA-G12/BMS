@@ -1,6 +1,6 @@
 import { EditOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import {
-  Button, Col, message, Row, Table,
+  Button, message, Table,
 } from 'antd';
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
 import type { FilterValue, SorterResult } from 'antd/es/table/interface';
@@ -60,7 +60,7 @@ const Flats: React.FC = () => {
   const [tableParams, setTableParams] = useState<TableParams>({
     pagination: {
       current: 1,
-      pageSize: 2, // here to change the table size (total/limit)
+      pageSize: 5, // here to change the table size (total/limit)
     },
   });
 
@@ -101,33 +101,15 @@ const Flats: React.FC = () => {
 
   return (
     <>
-      <Row>
-        <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 12, offset: 1 }}>
-          <Title style={{
-            fontSize: 'x-large',
-            padding: '16px',
-            color: '#3380FF',
-            fontWeight: 'bolder',
-          }}
-          >
-            الشقق
-
-          </Title>
-        </Col>
-        <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 10, offset: 1 }}>
-          <Button
-            type="primary"
-            htmlType="submit"
-            style={{
-              backgroundColor: '#3380FF', fontSize: '16px', height: '40px', marginTop: '15px', marginRight: '60px',
-            }}
-          >
-            <PlusCircleOutlined style={{ fontSize: '16px' }} />
-            <Link to="/admin/adduser" style={{ color: 'white', marginRight: '10px' }}>إضافة مستخدم</Link>
-
+      <div className="headerOfServices">
+        <Title className="titleAdmin">الشقق</Title>
+        <Link to="/admin/adduser">
+          <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
+            <PlusCircleOutlined />
+            اضافة مستخدم
           </Button>
-        </Col>
-      </Row>
+        </Link>
+      </div>
       <Table
         columns={columns}
         rowKey={(record) => record.id}
