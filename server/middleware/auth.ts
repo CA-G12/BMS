@@ -66,7 +66,7 @@ const Authorize = (
   try {
     if (req.user) {
       const { role } = req.user;
-
+      if (!user_role) next();
       if (!role || role !== user_role) {
         throw new CustomError(
           401,
