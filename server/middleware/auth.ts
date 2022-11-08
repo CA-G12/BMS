@@ -25,7 +25,6 @@ const Authenticate = async (req: InferRequestPayload, res: Response, next: NextF
           id: user.id,
           first_name: user.first_name,
           last_name: user.last_name,
-
         };
       }
     }
@@ -66,7 +65,6 @@ const Authorize = (
   try {
     if (req.user) {
       const { role } = req.user;
-
       if (!role || role !== user_role) {
         throw new CustomError(
           401,
