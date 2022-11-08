@@ -5,7 +5,7 @@ import { Authorize } from '../middleware';
 
 const router = Router();
 
-router.use((req, _, next) => Authorize(req as InferRequestPayload, _, next, 'admin'));
+router.use((req, _, next) => Authorize(req as InferRequestPayload, _, next, 'user'));
 
 router.get('/', getUsersBills);
 
