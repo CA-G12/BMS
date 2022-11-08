@@ -17,7 +17,7 @@ const UserProfile: React.FC = () => {
   const [profileData, setProfileData] = useState<IUser[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const fetchData = (signal: AbortSignal) => {
-    axios.get(`/api/v1/user/profile/${id}`, { signal })
+    axios.get('/api/v1/user/profile', { signal })
       .then(({ data: { data } }) => {
         setProfileData(data as Array<IUser>);
         setLoading(false);

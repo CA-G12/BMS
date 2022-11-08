@@ -7,8 +7,8 @@ import { updateUser } from '../controllers/users';
 const router = Router();
 
 router.post('/adduser', addUser);
+router.get('/profile', profile);
 router.get('/:page', getUsers);
-router.get('/profile/:id', profile);
 router.put('/profile', updateUser);
 
 export default router;
