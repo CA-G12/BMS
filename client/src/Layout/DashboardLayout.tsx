@@ -13,7 +13,7 @@ const DashboardLayout: React.FC = () => (
     <Layout
       style={{
         position: 'relative',
-        top: '78px',
+        top: '70px',
       }}
     >
       <MenuList />

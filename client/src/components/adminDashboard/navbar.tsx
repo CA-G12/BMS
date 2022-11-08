@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { Image } from 'antd';
+import { Image, Avatar } from 'antd';
 import React, { useContext } from 'react';
 import logoImg from '../../assets/images/logo.png';
 import authContext from '../../context';
@@ -21,13 +21,15 @@ const NavBar: React.FC = () => {
         </div>
         <div className="info">
           <div className="profile-photo">
-            <Image
-              src={`https://dummyimage.com/320x320/2f80ed/fff/2076d8&text=${userInfo?.user?.fullName.charAt(0)}`}
-              alt="user"
+            <Avatar
               style={{
-                margin: '8px 0',
+                background: '#2f80ed',
+                color: '#fff',
+                fontSize: '22px',
               }}
-            />
+            >
+              {userInfo?.user?.fullName.charAt(0)}
+            </Avatar>
           </div>
           <p>
             مرحبًا
