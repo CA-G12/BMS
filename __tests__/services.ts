@@ -19,8 +19,8 @@ describe('Services API', () => {
 
         })
         .expect(201);
-        expect(response.body.data.is_fixed).toBe(true);
-        expect(response.body.data.is_open).toBe(true);
+        expect(response.body.data.isFixed).toBe(true);
+        expect(response.body.data.isOpen).toBe(true);
         expect(response.body.data.name).toBe("خدمات عامة");
         expect(response.body.data.price).toBe(100);
     });
@@ -76,7 +76,7 @@ describe('Services API', () => {
         const response = await request(app)
           .get('/api/v1/services/')
           .expect(200);
-        expect(response.body.data[0].is_fixed).toBe(true);
+        expect(response.body.data[0].isFixed).toBe(true);
       });
 
       test('Services -put api/v1/services/:id', async () => {
@@ -90,7 +90,7 @@ describe('Services API', () => {
               isOpen: true,
           })
           .expect(200);
-        expect(response.body.data[0].is_fixed).toBe(true);
+        expect(response.body.data[0].isFixed).toBe(true);
       });
       test('Services -put api/v1/services/:id', async () => {
         const response = await request(app)
