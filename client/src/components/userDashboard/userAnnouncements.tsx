@@ -1,8 +1,11 @@
-import { List, message } from 'antd';
+/* eslint-disable no-nested-ternary */
+import { List, message, Typography } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { InferAnnouncementsModel } from '../../Interfaces/announcements';
 import { Loading, NoData } from '../index';
+
+const { Title } = Typography;
 
 const UserAnnouncements: React.FC = () => {
   const [announcements, setAnnouncements] = useState<Array<InferAnnouncementsModel>>([]);
@@ -27,18 +30,14 @@ const UserAnnouncements: React.FC = () => {
 
   return (
     <>
-      <div style={{
-        color: '#3380FF', fontSize: '38px', fontWeight: '600', margin: '10px 15px',
-      }}
-      >
+      <Title className="titleAdmin">
         الإعلانات الداخلية
-      </div>
+      </Title>
       {
         (loading) ? <Loading /> : ((announcements.length > 0) ? (
           <List
             size="large"
             dataSource={announcements}
-            pagination={{ defaultPageSize: 4 }}
             renderItem={(item) => (
               <List.Item>
                 <List.Item.Meta
