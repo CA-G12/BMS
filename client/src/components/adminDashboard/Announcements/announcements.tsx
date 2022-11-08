@@ -95,11 +95,11 @@ const App: React.FC = () => {
   return (
     <>
       <div className="headerOfServices">
-        <Title className="titleAdmin">الاعلانات</Title>
+        <Title className="titleAdmin">التعميمات</Title>
         <Link to="new">
           <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
             <PlusCircleOutlined />
-            اضافة اعلان
+            اضافة تعميم
           </Button>
         </Link>
       </div>
