@@ -6,9 +6,19 @@ import sequelize from '../server/database/config/connection';
 beforeAll(insertDB);
 
 describe('Services API', () => {
+
     test('Services -post api/v1/services/', async () => {
-      const response = await request(app)
-        .post('/api/v1/services')
+      const login = await request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        phoneNumber: '0591000100',
+        password : 'password'
+      });
+    const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+    
+    const response = await request(app)
+    .post('/api/v1/services')
+    .set('Cookie', [token])
         .send({
             id:1,
             name: 'خدمات عامة',
@@ -24,9 +34,19 @@ describe('Services API', () => {
         expect(response.body.data.name).toBe("خدمات عامة");
         expect(response.body.data.price).toBe(100);
     });
+
     test('Services -post api/v1/services/', async () => {
-        const response = await request(app)
-          .post('/api/v1/services')
+      const login = await request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        phoneNumber: '0591000100',
+        password : 'password'
+      });
+    const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+    
+    const response = await request(app)
+    .post('/api/v1/services')
+    .set('Cookie', [token])
           .send({
               id:1,
               name: 'خدمات عامة',
@@ -39,9 +59,19 @@ describe('Services API', () => {
           .expect(201);
         expect(response.body.data.price).toBe(900);
       });
+
       test('Services -post api/v1/services/', async () => {
-        const response = await request(app)
-          .post('/api/v1/services')
+        const login = await request(app)
+        .post('/api/v1/auth/login')
+        .send({
+          phoneNumber: '0591000100',
+          password : 'password'
+        });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+      
+      const response = await request(app)
+      .post('/api/v1/services')
+      .set('Cookie', [token])
           .send({
               id:1,
               price: 100,
@@ -55,33 +85,81 @@ describe('Services API', () => {
       });
 
     test('Flat -GET api/v1/services/', async () => {
-        const response = await request(app)
-          .get('/api/v1/services/')
+      const login = await request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        phoneNumber: '0591000100',
+        password : 'password'
+      });
+    const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+    
+    const response = await request(app)
+    .get('/api/v1/services/')
+    .set('Cookie', [token])
           .expect(200);
         expect(response.body.data[0].price).toBe(100);
       });
+
       test('Flat -GET api/v1/services/', async () => {
-        const response = await request(app)
-          .get('/api/v1/services/')
+        const login = await request(app)
+        .post('/api/v1/auth/login')
+        .send({
+          phoneNumber: '0591000100',
+          password : 'password'
+        });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+      
+      const response = await request(app)
+      .get('/api/v1/services/')
+      .set('Cookie', [token])
           .expect(200);
         expect(response.body.data[1].price).toBe(0);
       });
+
       test('Flat -GET api/v1/services/', async () => {
-        const response = await request(app)
-          .get('/api/v1/services/')
+        const login = await request(app)
+        .post('/api/v1/auth/login')
+        .send({
+          phoneNumber: '0591000100',
+          password : 'password'
+        });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+      
+      const response = await request(app)
+      .get('/api/v1/services/')
+      .set('Cookie', [token])
           .expect(200);
         expect(response.body.data[2].price).toBe(0);
       });
+
       test('Flat -GET api/v1/services/', async () => {
-        const response = await request(app)
-          .get('/api/v1/services/')
+        const login = await request(app)
+        .post('/api/v1/auth/login')
+        .send({
+          phoneNumber: '0591000100',
+          password : 'password'
+        });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+      
+      const response = await request(app)
+      .get('/api/v1/services/')
+      .set('Cookie', [token])
           .expect(200);
         expect(response.body.data[0].is_fixed).toBe(true);
       });
 
       test('Services -put api/v1/services/:id', async () => {
-        const response = await request(app)
-          .put('/api/v1/services/3')
+        const login = await request(app)
+        .post('/api/v1/auth/login')
+        .send({
+          phoneNumber: '0591000100',
+          password : 'password'
+        });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+      
+      const response = await request(app)
+      .put('/api/v1/services/3')
+      .set('Cookie', [token])
           .send({
               name: 'خدمات عامة',
               price: 0,
@@ -92,9 +170,19 @@ describe('Services API', () => {
           .expect(200);
         expect(response.body.data[0].is_fixed).toBe(true);
       });
+
       test('Services -put api/v1/services/:id', async () => {
-        const response = await request(app)
-          .put('/api/v1/services/text')
+        const login = await request(app)
+        .post('/api/v1/auth/login')
+        .send({
+          phoneNumber: '0591000100',
+          password : 'password'
+        });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+      
+      const response = await request(app)
+      .put('/api/v1/services/text')
+      .set('Cookie', [token])
           .send({
               name: 'خدمات عامة',
               price: 0,
@@ -105,9 +193,19 @@ describe('Services API', () => {
           .expect(200);
         expect(response.body.message).toEqual('Service Id must be a number and greater then 0');
       });
+
       test('Services -put api/v1/services/:id', async () => {
-        const response = await request(app)
-          .put('/api/v1/services/-1')
+        const login = await request(app)
+        .post('/api/v1/auth/login')
+        .send({
+          phoneNumber: '0591000100',
+          password : 'password'
+        });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+      
+      const response = await request(app)
+      .put('/api/v1/services/-1')
+      .set('Cookie', [token])
           .send({
               name: 'خدمات عامة',
               price: 0,
@@ -118,9 +216,19 @@ describe('Services API', () => {
           .expect(200);
         expect(response.body.message).toEqual('Service Id must be a number and greater then 0');
       });
+
       test('Services -put api/v1/services/:id', async () => {
-        const response = await request(app)
-          .put('/api/v1/services/1')
+        const login = await request(app)
+        .post('/api/v1/auth/login')
+        .send({
+          phoneNumber: '0591000100',
+          password : 'password'
+        });
+      const token = login.headers['set-cookie'].filter(X => X.includes('token'))[0];
+      
+      const response = await request(app)
+      .put('/api/v1/services/1')
+      .set('Cookie', [token])
           .send({
               name: 'خدمات عامة',
               price: 0,
@@ -131,6 +239,7 @@ describe('Services API', () => {
           .expect(200);
         expect(response.body.data[0].price).toBe(0);
       });
+      
   });
 
 
