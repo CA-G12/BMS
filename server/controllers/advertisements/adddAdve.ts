@@ -1,15 +1,16 @@
 import { Request, Response, NextFunction } from 'express';
 import { CustomError } from '../../helpers';
-import { AnnouncementModel } from '../../models';
-import { announcementSchema } from '../../validation';
+import { AdvertisementModel } from '../../models';
+import advsSchema from '../../validation/advsSchems';
 
 export default async (req:Request, res:Response, next:NextFunction) => {
   try {
     const {
-      title, startDate, endDate,
-    } = await announcementSchema.validate(req.body, { abortEarly: false });
-    const data = await AnnouncementModel.create({
-      title, start_date: startDate, end_date: endDate,
+      title, startDate, endDate, image, description,
+    } = await advsSchema.validate(req.body, { abortEarly: false });
+
+    const data = await AdvertisementModel.create({
+      title, start_date: startDate, end_date: endDate, image, description,
     });
 
     res.json({ data });
