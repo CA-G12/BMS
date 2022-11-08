@@ -89,8 +89,8 @@ const App: React.FC = () => {
       .then(({ data }) => {
         setAnns(data.data);
       })
-      .catch(console.log);
-  });
+      .catch(() => openNotificationWithIcon('error', 'خطأ', 'حدث خطأ ما'));
+  }, []);
 
   return (
     <>
