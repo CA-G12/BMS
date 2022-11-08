@@ -40,7 +40,7 @@ const AddComplaint: React.FC = () => {
 
   return (
     <div>
-      <Title>أضف شكوتك</Title>
+      <Title className="titleAdmin">أضف شكوتك</Title>
       { (loading)
         ? <Loading />
         : (

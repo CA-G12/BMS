@@ -5,3 +5,7 @@
 .ant-select{
     margin: 0px 5px !important;
 }
+.ant-form-item-required {
+    color: #545757 !important;
+
+}
