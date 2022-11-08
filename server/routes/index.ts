@@ -10,6 +10,7 @@ import complaintRoute from './complaintRoute';
 import userRouter from './userRoute';
 import statisticsRouter from './statisticsRouter';
 import billUser from './billUser';
+import paymentsRouter from './payments';
 
 const router = Router();
 router.use('/auth', AuthRouter);
@@ -23,5 +24,6 @@ router.use('/user', userRouter);
 router.use('/services', serviceRouter);
 router.use('/billUser', billUser);
 router.use('/complaints', complaintRoute);
+router.use('/payments', paymentsRouter);
 
 export default router;

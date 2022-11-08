@@ -19,6 +19,7 @@ import {
 import AddUser from './pages/AddUser';
 import DataTable from './components/adminDashboard/complaints/DataTable';
 import App from './App';
+import UserProfile from './pages/UserProfile';
 import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnouncements';
 import EditAnnouncements from './components/adminDashboard/Announcements/EditAnnouncements';
 import { ProtectedRoute, LoginProtectedRoute } from './components/ProtectedRoute';
@@ -103,6 +104,7 @@ const router = createBrowserRouter([
       { path: 'adduser', element: <AddUser /> },
     ],
   },
+
   {
     path: '/user',
     element:
@@ -113,12 +115,13 @@ const router = createBrowserRouter([
   </AuthProvider>,
 
     children: [
-      { index: true, element: <Button type="primary">Primary Button</Button> },
+      { index: true, element: <UserProfile /> },
       { path: 'announcements', element: <UserAnnouncements /> },
       { path: 'bills', element: <UserBills /> },
       { path: 'addComplaint', element: <AddComplaint /> },
     ],
   },
+
   { path: '*', element: <h1>page not found</h1> }]);
 
 export default router;
