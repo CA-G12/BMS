@@ -99,9 +99,7 @@ const ServicesContainer: React.FC = () => {
       <div className="headerOfServices">
         <Title className="titleAdmin">الخدمات</Title>
         <Link to="/admin/services/addService">
-
-          <Button type="primary">
-            {' '}
+          <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
             <PlusCircleOutlined />
             اضافة خدمة
           </Button>
@@ -110,7 +108,7 @@ const ServicesContainer: React.FC = () => {
       {
         (loading) ? <Loading /> : ((service.length > 0) ? (
           <Table
-            pagination={{ defaultPageSize: 6 }}
+            pagination={{ defaultPageSize: 5 }}
             columns={columns}
             dataSource={service}
           />

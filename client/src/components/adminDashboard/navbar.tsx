@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { Image, Avatar } from 'antd';
 import React, { useContext } from 'react';
 import logoImg from '../../assets/images/logo.png';
