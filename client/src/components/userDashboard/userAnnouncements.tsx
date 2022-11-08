@@ -38,7 +38,6 @@ const UserAnnouncements: React.FC = () => {
           <List
             size="large"
             dataSource={announcements}
-            pagination={{ defaultPageSize: 4 }}
             renderItem={(item) => (
               <List.Item>
                 <List.Item.Meta
