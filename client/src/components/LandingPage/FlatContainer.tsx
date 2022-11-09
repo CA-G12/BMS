@@ -1,9 +1,10 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable import/no-cycle */
-import { message } from 'antd';
+import { message, Layout, Row } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Title, Loading, NoData } from '../index';
-import FlatCard from '../FlatCard';
+import FlatCard from './FlatCard';
 
 import './style.css';
 
@@ -30,16 +31,18 @@ const FlatContainer: React.FC = () => {
     return () => controller.abort();
   }, []);
   return (
-
-    <div className="flatContainerComponent" id="flats">
+    <Layout id="flats">
       <Title>الشقق المتاحة</Title>
-      <div className="flatContainer">
+      {
+    (loading) ? <Loading /> : (flats.length !== 0) ? (
+      <Row>
         {
-          // eslint-disable-next-line no-nested-ternary
-          (loading) ? <Loading /> : (flats.length !== 0) ? (flats.map((flatCard) => (<FlatCard key={flatCard.id} info={flatCard} />))) : (<NoData />)
+          (flats.map((flatCard) => (<FlatCard key={flatCard.id} info={flatCard} />)))
         }
-      </div>
-    </div>
+      </Row>
+    ) : (<NoData />)
+  }
+    </Layout>
   );
 };
 

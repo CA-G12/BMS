@@ -1,23 +1,20 @@
 import React from 'react';
-
 import { Layout } from 'antd';
-import AppHeader from '../Layout/LandingPage/header';
-import AppHome from '../components/Hero';
-import AppFooter from '../Layout/LandingPage/footer';
-
 import {
-  AboutUs, AdsContainer, ContactUs, Services, VideoSection, FlatContainer,
+  HeaderSection,
+  Footer as FooterLandingPage,
+} from '../Layout/LandingPage';
+import {
+  HomeSection, AboutUs, AdsContainer, FlatContainer, Services, VideoSection, ContactUs,
 } from '../components';
 
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 
 const LandingPage: React.FC = () => (
   <Layout className="mainLayout">
-    <Header>
-      <AppHeader />
-    </Header>
+    <HeaderSection />
     <Content>
-      <AppHome />
+      <HomeSection />
       <AboutUs />
       <AdsContainer />
       <FlatContainer />
@@ -25,8 +22,9 @@ const LandingPage: React.FC = () => (
       <VideoSection />
       <ContactUs />
     </Content>
+
     <Footer>
-      <AppFooter />
+      <FooterLandingPage />
     </Footer>
   </Layout>
 );

@@ -1,8 +1,9 @@
 import { Col, Row } from 'antd';
 import React from 'react';
 import logoImg from '../../assets/images/logo.png';
+import './style.css';
 
-const AppFooter: React.FC = () => (
+const Footer: React.FC = () => (
   <div>
     <Row>
       <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
@@ -72,4 +73,4 @@ const AppFooter: React.FC = () => (
   </div>
 );
 
-export default AppFooter;
+export default Footer;

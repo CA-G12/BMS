@@ -1,9 +1,9 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable import/no-cycle */
-/* eslint-disable max-len */
-import { message } from 'antd';
+import { message, Layout, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import AdvertisementCard from '../AdvertisementCard';
+import AdsCard from './AdsCard';
 import { Title, Loading, NoData } from '../index';
 
 import './style.css';
@@ -35,16 +35,18 @@ const AdsContainer: React.FC = () => {
   }, []);
 
   return (
-    <div className="flatContainerComponent" style={{ backgroundColor: '#F6F8FA', paddingBottom: 30 }} id="ads">
+    <Layout id="ads">
       <Title>الإعلانات </Title>
-      <div className="flatContainer">
-        {
-    // eslint-disable-next-line no-nested-ternary
-    (loading) ? <Loading /> : (advertisements.length !== 0) ? (advertisements.map((advertisement) => (
-      <AdvertisementCard key={advertisement.id} info={advertisement} />))) : (<NoData />)
+      {
+    (loading) ? <Loading /> : (advertisements.length !== 0) ? (
+      <Row>
+        {(advertisements.map((advertisement) => (
+          <AdsCard key={advertisement.id} info={advertisement} />)))}
+      </Row>
+    ) : (<NoData />)
   }
-      </div>
-    </div>
+    </Layout>
+
   );
 };
 
