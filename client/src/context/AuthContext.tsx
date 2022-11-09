@@ -3,6 +3,7 @@ import axios from 'axios';
 import {
   ReactNode, createContext, FC, useState, useEffect, useMemo,
 } from 'react';
+import { useCookies } from 'react-cookie';
 
 interface ChildrenProps {
   children: ReactNode;
@@ -24,13 +25,15 @@ export const authContext = createContext<UserContext | null>(null);
 export const AuthProvider: FC<ChildrenProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [cookies, setCookie, removeCookie] = useCookies();
+  const fName = cookies.fullName as string;
 
   useEffect(() => {
     const getUser = async () => {
       try {
         const data = await axios.get<User>('/api/v1/auth/userdata');
         const userInfo = data.data;
-        setUser(userInfo);
+        setUser({ ...userInfo, fullName: fName });
         setLoading(false);
       } catch (err) {
         setUser(null);

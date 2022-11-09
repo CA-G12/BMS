@@ -8,7 +8,7 @@ dotenv.config();
 const GenerateToken = async (payload: InferUserPayload, res: Response, next: NextFunction) => {
   try {
     const token = await signToken(payload);
-    res.cookie('token', token).json({ message: 'Logged in Successfully', role: payload.role });
+    res.cookie('token', token).cookie('fullName', `${payload.first_name} ${payload.last_name}`).json({ message: 'Logged in Successfully', role: payload.role });
   } catch (err) {
     next(err);
   }
