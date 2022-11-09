@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { useContext, useState } from 'react';
 import {
   Button, Layout, Menu, message,
@@ -52,6 +51,7 @@ const MenuList: React.FC = () => {
       await axios.get('/api/v1/auth/logout');
       setUser(null);
       navigate('/');
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return await message.success('تم تسجيل الخروج بنجاح');
     } catch {
       return message.error('حدث خطأ ما');

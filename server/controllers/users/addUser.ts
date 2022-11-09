@@ -14,7 +14,6 @@ const signup = async (req:Request, res:Response, next:NextFunction) => {
       { abortEarly: false },
     );
     const hashedPassword = await hash(password, 10);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [user, created] = await UserModel.findOrCreate({
       where: { phone_number: phoneNumber },
       defaults: {

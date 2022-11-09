@@ -40,7 +40,11 @@ module.exports = {
     "rules": {
         "linebreak-style": 0,
         "max-len": "off",
-        "react/function-component-definition": [2, {"namedComponents": "arrow-function",  "unnamedComponents": "arrow-function"}]
-
+        "react/function-component-definition": [2, {"namedComponents": "arrow-function",  "unnamedComponents": "arrow-function"}],
+        "import/no-cycle":'off',
+        "no-nested-ternary": 'off',
+        "import/prefer-default-export": "off",
+        "react/forbid-prop-types": 0,
+        "@typescript-eslint/no-unsafe-return": 'off',
     }
 }

@@ -10,6 +10,7 @@ const { Link } = Anchor;
 
 const appHeader: React.FC = () => {
   const { user } = useContext(authContext) as UserContext;
+  console.log('user: ', user);
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {

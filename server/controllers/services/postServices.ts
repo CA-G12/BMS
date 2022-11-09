@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { Request, Response, NextFunction } from 'express';
 import { CustomError } from '../../helpers';
 import { ServiceModel } from '../../models';

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 const users = [
   {
     first_name: 'أحمد',

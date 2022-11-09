@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
 export { default as getAdvertisements } from './getAdvertisemsnts';
 export { default as adddAdve } from './adddAdve';
 export { default as updateAdv } from './updateAdv';

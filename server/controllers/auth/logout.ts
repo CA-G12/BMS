@@ -5,7 +5,7 @@ import {
 
 const logout = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    res.clearCookie('token').json({ message: 'Logged Out Successfully' });
+    res.clearCookie('token').clearCookie('fullName').json({ message: 'Logged Out Successfully' });
   } catch (err) {
     next(err);
   }

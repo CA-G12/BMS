@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/aria-role */
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import { createBrowserRouter } from 'react-router-dom';
 import { Button } from 'antd';
 import { DashboardLayout } from './Layout';
@@ -92,21 +90,16 @@ const router = createBrowserRouter([
       { path: 'announcements', element: <Announcements /> },
       { path: 'announcements/new', element: <NewAnnouncements /> },
       { path: 'announcements/edit/:id', element: <EditAnnouncements /> },
+
+      { path: 'flats', element: <Flats /> },
+      { path: 'flats/:id', element: <Flat /> },
+
       { path: 'advs', element: <Adv /> },
       { path: 'advs/new', element: <NewAdv /> },
       { path: 'advs/edit/:id', element: <EditAdv /> },
-      {
-        path: 'flats',
-        element: <Flats />,
-        children: [
-          {
-            path: ':id',
-            element: <Flat />,
-          },
-        ],
-      },
 
       { path: 'contacts', element: <Contacts /> },
+
       { path: 'adduser', element: <AddUser /> },
     ],
   },

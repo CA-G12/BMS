@@ -9,7 +9,7 @@ import authContext from '../context';
 import { UserContext } from '../context/AuthContext';
 
 const UserProfile: React.FC = () => {
-  const { user } = useContext(authContext) as UserContext;
+  const { user, setUser } = useContext(authContext) as UserContext;
   const [form] = Form.useForm();
   const [editable, setEditable] = useState<boolean>(false);
   const id = (user ? user.id : 0);
@@ -39,14 +39,18 @@ const UserProfile: React.FC = () => {
       .then(() => {
         setEditable(false);
         setLoading(false);
+        console.log(values);
+
+        setUser({ id: profileData[0].id, role: 'user', fullName: `${values.firstName ?? ''} ${values.lastName ?? ''} ` });
         return message.success(' تم التعديل بنجاح ');
       })
       .catch(() => message.error('حدث خطأ ما'));
   };
+
   // if (!loading) {
   //   form.setFieldsValue({
-  //     firstName: profileData.first_name,
-  //     lastName: profileData.last_name,
+  //     firstName: profileData.firstName,
+  //     lastName: profileData.lastName,
   //     email: profileData.email,
   //   });
   // }
@@ -224,7 +228,7 @@ export interface IUser {
   'Flats.flat_number': number;
 }
 export interface IUpdateUser {
-  first_name?: string;
-  last_name?: string;
+  firstName?: string;
+  lastName?: string;
   email?:string;
 }

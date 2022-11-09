@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-/* eslint-disable no-nested-ternary */
 import { Typography, message } from 'antd';
 import Table, { ColumnsType } from 'antd/lib/table';
 import React, { useEffect, useState } from 'react';
@@ -46,12 +44,10 @@ const Contacts: React.FC = () => {
       render: (text) => <p>{text}</p>,
     },
   ];
-  // const [isTrue, setIsTrue] = useState<boolean>(true);
   const fetchData = (signal : AbortSignal) => {
     axios.get('/api/v1/contacts/', { signal })
 
       .then(({ data: { data } }) => {
-        // console.log('data: ', data);
         setContacts(data as Array<InferContactUsModel>);
         setLoading(false);
       }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
