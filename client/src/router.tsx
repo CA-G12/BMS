@@ -26,6 +26,7 @@ import EditAdv from './components/adminDashboard/Advs/EditAdv';
 import { ProtectedRoute, LoginProtectedRoute } from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import Statistics from './components/adminDashboard/Statistics';
+import Error from './pages/Errors';
 
 const router = createBrowserRouter([
   {
@@ -120,7 +121,9 @@ const router = createBrowserRouter([
       { path: 'addComplaint', element: <AddComplaint /> },
     ],
   },
-
-  { path: '*', element: <h1>page not found</h1> }]);
+  { path: '/error', element: <Error status={500} /> },
+  { path: '*', element: <Error status={404} /> },
+  // { path: '*', element: <h1>page not found</h1> },
+]);
 
 export default router;
