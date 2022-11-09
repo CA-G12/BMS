@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { useContext, useState } from 'react';
 import {
   Button, Layout, Menu, message,
@@ -52,6 +51,7 @@ const MenuList: React.FC = () => {
       await axios.get('/api/v1/auth/logout');
       setUser(null);
       navigate('/');
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return await message.success('تم تسجيل الخروج بنجاح');
     } catch {
       return message.error('حدث خطأ ما');
@@ -63,8 +63,9 @@ const MenuList: React.FC = () => {
     getItem(<Link to="/admin/flats" style={listStyle}>الشقق</Link>, '3', <HomeOutlined style={listStyle} />),
     getItem(<Link to="/admin/bills" style={listStyle}>الفواتير</Link>, '4', <DollarCircleOutlined style={listStyle} />),
     getItem(<Link to="/admin/complaints" style={listStyle}>الشكاوي</Link>, '5', <CommentOutlined style={listStyle} />),
-    getItem(<Link to="/admin/announcements" style={listStyle}>التعميمات</Link>, '6', <ContainerOutlined style={listStyle} />),
-    getItem(<Link to="/admin/contacts" style={listStyle}>التواصل</Link>, '7', <MailOutlined style={listStyle} />),
+    getItem(<Link to="/admin/advs" style={listStyle}>الاعلانات</Link>, '6', <ContainerOutlined style={listStyle} />),
+    getItem(<Link to="/admin/announcements" style={listStyle}>التعميمات</Link>, '7', <ContainerOutlined style={listStyle} />),
+    getItem(<Link to="/admin/contacts" style={listStyle}>التواصل</Link>, '8', <MailOutlined style={listStyle} />),
     getItem(<Button onClick={Logout} style={{ border: 'none' }}>تسجيل الخروج </Button>, '9', <LogoutOutlined style={listStyle} />),
   ];
 

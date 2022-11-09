@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import ReactDOM from 'react-dom/client';
 import { ConfigProvider } from 'antd';
 import { RouterProvider } from 'react-router-dom';

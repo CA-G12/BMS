@@ -11,7 +11,6 @@ export default async (req:Request, res:Response, next:NextFunction) => {
     const data = await AnnouncementModel.create({
       title, start_date: startDate, end_date: endDate,
     });
-    console.log(data);
 
     res.json({ data });
   } catch (err) {

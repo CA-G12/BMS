@@ -20,7 +20,6 @@ describe('Users API', () => {
       .get('/api/v1/auth/logout')
       .set('Cookie', [token])
       .expect(200);
-      console.log(response.body);
       
       expect(response.body.message).toBe('Logged Out Successfully');
     });

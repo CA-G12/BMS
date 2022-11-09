@@ -26,7 +26,7 @@ const updateUser = async (req:InferRequestPayload, res:Response, next:NextFuncti
       returning: true,
     });
     console.log('data: ', data);
-    res.json({ message: 'User Updated Successfully' });
+    res.cookie('fullName', `${firstName} ${lastName}`).json({ message: 'User Updated Successfully' });
   } catch (err) {
     if (err.name === 'ValidationError') {
       return next(new CustomError(400, err.errors));

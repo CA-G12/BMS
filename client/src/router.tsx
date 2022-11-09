@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/aria-role */
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import { createBrowserRouter } from 'react-router-dom';
 import { Button } from 'antd';
 import { DashboardLayout } from './Layout';
@@ -22,9 +20,13 @@ import App from './App';
 import UserProfile from './pages/UserProfile';
 import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnouncements';
 import EditAnnouncements from './components/adminDashboard/Announcements/EditAnnouncements';
+import Adv from './components/adminDashboard/Advs/advs';
+import NewAdv from './components/adminDashboard/Advs/NewAdv';
+import EditAdv from './components/adminDashboard/Advs/EditAdv';
 import { ProtectedRoute, LoginProtectedRoute } from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import Statistics from './components/adminDashboard/Statistics';
+import Error from './pages/Errors';
 
 const router = createBrowserRouter([
   {
@@ -89,18 +91,16 @@ const router = createBrowserRouter([
       { path: 'announcements', element: <Announcements /> },
       { path: 'announcements/new', element: <NewAnnouncements /> },
       { path: 'announcements/edit/:id', element: <EditAnnouncements /> },
-      {
-        path: 'flats',
-        element: <Flats />,
-        children: [
-          {
-            path: ':id',
-            element: <Flat />,
-          },
-        ],
-      },
+
+      { path: 'flats', element: <Flats /> },
+      { path: 'flats/:id', element: <Flat /> },
+
+      { path: 'advs', element: <Adv /> },
+      { path: 'advs/new', element: <NewAdv /> },
+      { path: 'advs/edit/:id', element: <EditAdv /> },
 
       { path: 'contacts', element: <Contacts /> },
+
       { path: 'adduser', element: <AddUser /> },
     ],
   },
@@ -121,7 +121,9 @@ const router = createBrowserRouter([
       { path: 'addComplaint', element: <AddComplaint /> },
     ],
   },
-
-  { path: '*', element: <h1>page not found</h1> }]);
+  { path: '/error', element: <Error status={500} /> },
+  { path: '*', element: <Error status={404} /> },
+  // { path: '*', element: <h1>page not found</h1> },
+]);
 
 export default router;

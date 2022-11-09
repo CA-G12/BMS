@@ -158,7 +158,9 @@ main#container .ant-card-body:after,
 }
 
 /* add services */
-
+form.ant-form.ant-form-vertical.ant-form-rtl {
+    margin-bottom: 100px;
+}
 /* footer */
 .ant-layout-footer {
   background: #fff !important;

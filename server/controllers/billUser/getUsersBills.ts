@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/naming-convention */
 import { NextFunction, Response } from 'express';
 import { WhereOptions } from 'sequelize';
 import { InferRequestPayload } from '../../interfaces/InferUserPayload';

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export { default as getAnnouncement } from './getAnnouncement';
 export { default as postAnnouncement } from './postAnnouncement';
 export { default as getAnnouncementById } from './getAnnouncementById';

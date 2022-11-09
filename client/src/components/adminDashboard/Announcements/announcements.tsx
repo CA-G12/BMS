@@ -1,8 +1,17 @@
-import { DeleteOutlined, EditOutlined, PlusCircleOutlined } from '@ant-design/icons';
+/* eslint-disable @typescript-eslint/no-shadow */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import {
+  DeleteOutlined, EditOutlined, PlusCircleOutlined, ExclamationCircleOutlined,
+} from '@ant-design/icons';
 import {
   Button,
   notification,
   Table, Typography,
+  Modal,
+  message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import axios from 'axios';
@@ -10,6 +19,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const { Title } = Typography;
+const { confirm } = Modal;
 
 interface UserAnns {
   id: number;
@@ -24,7 +34,7 @@ const GetAnns = (signal: AbortSignal) => new Promise<AnnResponse>((resolve, reje
     .catch(reject);
 });
 
-type NotificationType = 'success' | 'error';
+  type NotificationType = 'success' | 'error';
 const openNotificationWithIcon = (type: NotificationType, message: string, description: string) => {
   notification[type]({
     message,
@@ -32,66 +42,100 @@ const openNotificationWithIcon = (type: NotificationType, message: string, descr
   });
 };
 
-const columns: ColumnsType<UserAnns> = [
-  {
-    title: 'الإعلان',
-    dataIndex: 'title',
-    key: 'id',
-    render: (value) => (
-      <p style={{
-        width: '200px',
-      }}
-      >
-        {value}
-      </p>
-    ),
-  },
-  {
-    title: 'تاريخ البدء',
-    dataIndex: 'start_date',
-    key: 'id',
-  },
-  {
-    title: 'تاريخ الانتهاء',
-    dataIndex: 'end_date',
-    key: 'id',
-  },
-  {
-    title: 'تعديل',
-    key: 'edit',
-    render: (_, { id }) => (
-      <Link to={`edit/${id}`}>
-        <EditOutlined style={{ cursor: 'pointer' }} />
-      </Link>
-    ),
-  },
-  {
-    title: 'حذف',
-    key: 'delete',
-    render: (_, { id }) => {
-      const handleDelete = () => {
-        axios.delete(`/api/v1/announcements/${id}`)
-          .then(() => openNotificationWithIcon('success', 'تم', 'تم حذف الاعلان'))
-          .catch(() => openNotificationWithIcon('error', 'خطأ', 'حدث خطأ ما'));
-      };
-      return <DeleteOutlined onClick={handleDelete} style={{ color: 'red', cursor: 'pointer' }} />;
-    },
-  },
-];
-
 const App: React.FC = () => {
-  const [advs, setAnns] = useState<UserAnns[]>([]);
+  const [advs, setAdvs] = useState<UserAnns[]>([]);
+  const [deleted, setDeleted] = useState<boolean>(false);
+
+  const handleDelete = (record: any) => {
+    const confirmDelete = () => {
+      axios({
+        method: 'DELETE',
+        url: `/api/v1/announcements/${record.id}`,
+      })
+        .then(() => {
+          const newAdvs = advs.filter((e) => e.id !== record.id);
+          setAdvs(newAdvs);
+          openNotificationWithIcon('success', 'تم', 'تم حذف الاعلان');
+          setDeleted(!deleted);
+          if (advs.length) {
+            setAdvs((prev) => prev.map((ele) => {
+              if (ele.id === record.id) return { ...record };
+              return ele;
+            }));
+          }
+        }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
+    };
+    confirm({
+      title: 'هل أنت واثق من حذف هذا الاعلان ؟',
+      icon: <ExclamationCircleOutlined />,
+      content: 'انتبه، حذف هذا الاعلان يعني حذفها بشكلٍ نهائي',
+      okText: 'نعم',
+      okType: 'danger',
+      cancelText: 'لا',
+      onOk() {
+        confirmDelete();
+      },
+    });
+  };
+
+  const columns: ColumnsType<UserAnns> = [
+    {
+      title: 'الإعلان',
+      dataIndex: 'title',
+      key: 'id',
+      render: (value) => (
+        <p style={{
+          width: '200px',
+        }}
+        >
+          {value}
+        </p>
+      ),
+    },
+    {
+      title: 'تاريخ البدء',
+      dataIndex: 'start_date',
+      key: 'id',
+    },
+    {
+      title: 'تاريخ الانتهاء',
+      dataIndex: 'end_date',
+      key: 'id',
+    },
+    {
+      title: 'تعديل',
+      key: 'edit',
+      render: (_, { id }) => (
+        <Link to={`edit/${id}`}>
+          <EditOutlined style={{ cursor: 'pointer' }} />
+        </Link>
+      ),
+    },
+    {
+      title: 'حذف',
+      key: 'delete',
+      render: (_, record) => (
+        <DeleteOutlined
+          type="primary"
+          style={{ color: 'red' }}
+          onClick={() => handleDelete(record)}
+        >
+          حذف الإعلان
+        </DeleteOutlined>
+      ),
+    },
+  ];
 
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
     GetAnns(signal)
       .then(({ data }) => {
-        setAnns(data.data);
+        setAdvs(data.data);
       })
       .catch(() => openNotificationWithIcon('error', 'خطأ', 'حدث خطأ ما'));
   }, []);
-
+  console.log('advs: ', advs);
   return (
     <>
       <div className="topContainer">

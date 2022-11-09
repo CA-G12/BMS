@@ -24,7 +24,14 @@ module.exports = {
   rules: {
     'linebreak-style': 0,
     'consistent-return': 'off',
-    "max-len": [1, { "code": 110 }]
+    "max-len": "off",
+    "import/no-cycle":'off',
+    "no-nested-ternary": 'off',
+    "import/prefer-default-export": "off",
+    "no-unused-vars": 'off',
+    '@typescript-eslint/naming-convention': 'off',
+    "@typescript-eslint/no-explicit-any": "off"
+
   },
   ignorePatterns: ['__tests__/*', 'dist/*']
 }

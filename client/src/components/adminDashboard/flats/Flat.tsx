@@ -1,12 +1,9 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import { LeftCircleOutlined } from '@ant-design/icons';
 import {
   Button, Col, Divider, message, Modal, Row,
 } from 'antd';
 import Title from 'antd/lib/typography/Title';
 import axios from 'axios';
-import { number } from 'prop-types';
 
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -61,9 +58,9 @@ const App: React.FC = () => {
   };
 
   const handleOk = () => {
-    axios.put(`/api/v1/flats/${id}`, { userId: value }).then(({ data: { data } }) => {
+    axios.put(`/api/v1/flats/${Number(id)}`, { userId: value }).then(({ data: { data } }) => {
       setFlatData(data as Array<IFlatUserResult>);
-      message.success('تم تغير المالك بنجاح');
+      return message.success('تم تغير المالك بنجاح');
     }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
 
     setConfirmLoading(true);
@@ -135,14 +132,10 @@ const App: React.FC = () => {
 
         </Button>
       </Row>
-      {// eslint-disable-next-line no-nested-ternary
+      {
 (loading)
   ? (
-// <div style={{ width: '100vw', height: '100vh' }}>
     <Loading />
-
-// </div>
-
   )
   : (flatData[0]) ? (
     <div style={{ backgroundColor: 'white', margin: '0px 50px' }}>

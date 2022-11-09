@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import { Typography, Button, message } from 'antd';
 import Table, { ColumnsType } from 'antd/lib/table';
 import React, { useEffect, useState } from 'react';

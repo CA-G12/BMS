@@ -1,10 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable no-tabs */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable no-nested-ternary */
 import {
   Typography, message, List, Select,
 } from 'antd';
@@ -45,7 +43,6 @@ const UserBills: React.FC = () => {
   const fetchData = (signal: AbortSignal) => {
     axios.get('/api/v1/billUser/', { signal })
       .then(({ data: { data } }) => {
-        console.log('data: ', data);
         setUserBill(data as Array<InferBillUserModel>);
         setLoading(false);
       }).catch(() => message.error('حدث خطأ , اعد المحاولة'));
