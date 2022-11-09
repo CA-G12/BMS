@@ -46,7 +46,7 @@ export interface UserBillsProps {
   usersBills: any[];
 }
 
-const App: FC<UserBillsProps> = ({ usersBills }) => {
+const UsersCharts: FC<UserBillsProps> = ({ usersBills }) => {
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-member-access
   const labels = usersBills.map((x) => `${x['Flat.User.first_name']} ${x['Flat.User.last_name']}`);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -65,4 +65,4 @@ const App: FC<UserBillsProps> = ({ usersBills }) => {
   return <Line options={options} data={data} />;
 };
 
-export default App;
+export default UsersCharts;

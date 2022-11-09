@@ -17,7 +17,7 @@ import {
 } from './components/userDashboard';
 
 import AddUser from './pages/AddUser';
-import DataTable from './components/adminDashboard/complaints/DataTable';
+import DataTable from './components/adminDashboard/Complaints/DataTable';
 import App from './App';
 import UserProfile from './pages/UserProfile';
 import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnouncements';

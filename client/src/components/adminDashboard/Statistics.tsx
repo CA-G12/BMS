@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Card, Col, Row } from 'antd';
+import {
+  Card, Typography,
+} from 'antd';
 import axios from 'axios';
-import BasicCards from './basicCards';
-import Userscharts, { UserBillsProps } from './Userscharts';
-import ComplaintsCharts from './ComplaintsCharts';
-import AddsChart from './addsChart';
+import BasicCards from './StatisticsCards';
+import UsersCharts from './UsersCharts';
 
-const App = () => {
+const { Title } = Typography;
+
+const Statistics = () => {
   const [usersCount, setUsersCount] = useState<number>(0);
   const [messagesCount, setMessagesCount] = useState<number>(0);
   const [advertisementsCount, setAdvertisementsCount] = useState<number>(0);
@@ -38,6 +40,8 @@ const App = () => {
   }, []);
   return (
     <>
+      <Title>لوحة التحكم</Title>
+
       <BasicCards
         advertisements={advertisementsCount}
         messages={messagesCount}
@@ -45,26 +49,11 @@ const App = () => {
         complaints={complaintsCount}
         users={usersCount}
       />
-      <Row gutter={16}>
-        <Col span={4} />
-        <Col span={16}>
-          <Card>
-            <Userscharts usersBills={userBillsState} />
-          </Card>
-        </Col>
-        <Col span={4} />
-        {/* <Col span={8}>
-          <Card>
-            <ComplaintsCharts />
-          </Card>
-        </Col>
-        <Col span={8}>
-          <Card>
-            <AddsChart />
-          </Card>
-        </Col> */}
-      </Row>
+      <Card id="chartCard">
+        <UsersCharts usersBills={userBillsState} />
+      </Card>
+
     </>
   );
 };
-export default App;
+export default Statistics;

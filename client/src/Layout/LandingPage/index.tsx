@@ -1,4 +1,4 @@
 import HeaderSection from './header';
-import Footer from './footer';
+import FooterSection from './footer';
 
-export { HeaderSection, Footer };
+export { HeaderSection, FooterSection };

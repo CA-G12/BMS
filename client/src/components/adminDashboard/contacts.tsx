@@ -5,8 +5,8 @@ import Table, { ColumnsType } from 'antd/lib/table';
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import axios from 'axios';
-import { InferContactUsModel } from '../../../Interfaces/contactUs';
-import { Loading, NoData } from '../../index';
+import { InferContactUsModel } from '../../Interfaces/contactUs';
+import { Loading, NoData } from '../index';
 
 const { Title } = Typography;
 
@@ -67,7 +67,7 @@ const Contacts: React.FC = () => {
 
   return (
     <>
-      <div className="headerOfServices">
+      <div className="topContainer">
         <Title className="titleAdmin">التواصل</Title>
       </div>
       {

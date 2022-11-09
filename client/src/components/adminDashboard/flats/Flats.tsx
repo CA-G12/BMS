@@ -1,15 +1,16 @@
 import { EditOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import {
-  Button, message, Table,
+  Button, message, Table, Typography,
 } from 'antd';
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
 import type { FilterValue, SorterResult } from 'antd/es/table/interface';
-import Title from 'antd/lib/typography/Title';
 import qs from 'qs';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IFlatsUsersResult } from '../../Interfaces/IFlatsUsersResult';
-import getFlatsUsers from '../../services/flatsUsers';
+import { IFlatsUsersResult } from '../../../Interfaces/IFlatsUsersResult';
+import getFlatsUsers from '../../../services/flatsUsers';
+
+const { Title } = Typography;
 
 interface TableParams {
   pagination?: TablePaginationConfig;
@@ -48,7 +49,7 @@ const columns: ColumnsType<IFlatsUsersResult> = [
   },
 ];
 
-const getRandomuserParams = (params: TableParams) => ({
+const getRandomUserParams = (params: TableParams) => ({
   results: params.pagination?.pageSize,
   page: params.pagination?.current,
   ...params,
@@ -66,7 +67,7 @@ const Flats: React.FC = () => {
 
   const fetchData = (signal: AbortSignal) => {
     setLoading(true);
-    getFlatsUsers(qs.stringify(getRandomuserParams(tableParams)), signal)
+    getFlatsUsers(qs.stringify(getRandomUserParams(tableParams)), signal)
       .then((res) => {
         const { total } = res.data;
         setData(res.data.result);
@@ -101,8 +102,8 @@ const Flats: React.FC = () => {
 
   return (
     <>
-      <div className="headerOfServices">
-        <Title className="titleAdmin">الشقق</Title>
+      <div className="topContainer">
+        <Title>الشقق</Title>
         <Link to="/admin/adduser">
           <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
             <PlusCircleOutlined />

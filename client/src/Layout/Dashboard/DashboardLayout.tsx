@@ -1,9 +1,8 @@
+/* eslint-disable import/prefer-default-export */
 import { Layout } from 'antd';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import MenuList from '../components/adminDashboard/menuList';
-import Navbar from '../components/adminDashboard/navbar';
-import FooterSection from '../components/adminDashboard/footer';
+import { Navbar, MenuList, Footer } from '../../components';
 
 const { Content } = Layout;
 
@@ -17,11 +16,11 @@ const DashboardLayout: React.FC = () => (
       }}
     >
       <MenuList />
-      <Content>
+      <Content id="container">
         <Outlet />
       </Content>
     </Layout>
-    <FooterSection />
+    <Footer />
   </>
 );
 

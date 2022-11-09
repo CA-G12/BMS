@@ -26,7 +26,9 @@ const HeaderSection: React.FC = () => {
   };
   return (
     <Header className="header">
-      <Image src={logoImg as string} alt="logo" />
+      <a href="#home">
+        <img src={logoImg as string} alt="logo" />
+      </a>
 
       <div className="mobileHidden">
         <Anchor targetOffset={65}>

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable no-nested-ternary */
 import { Typography, Button, message } from 'antd';
 import Table, { ColumnsType } from 'antd/lib/table';
@@ -96,8 +95,8 @@ const ServicesContainer: React.FC = () => {
 
   return (
     <>
-      <div className="headerOfServices">
-        <Title className="titleAdmin">الخدمات</Title>
+      <div className="topContainer">
+        <Title>الخدمات</Title>
         <Link to="/admin/services/addService">
           <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
             <PlusCircleOutlined />

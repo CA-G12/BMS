@@ -2,8 +2,8 @@ import React from 'react';
 import { Layout } from 'antd';
 import {
   HeaderSection,
-  Footer as FooterLandingPage,
-} from '../Layout/LandingPage';
+  FooterSection,
+} from '../Layout';
 import {
   HomeSection, AboutUs, AdsContainer, FlatContainer, Services, VideoSection, ContactUs,
 } from '../components';
@@ -23,9 +23,7 @@ const LandingPage: React.FC = () => (
       <ContactUs />
     </Content>
 
-    <Footer>
-      <FooterLandingPage />
-    </Footer>
+    <FooterSection />
   </Layout>
 );
 export default LandingPage;

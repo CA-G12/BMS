@@ -150,7 +150,7 @@ const App: React.FC = () => {
         columns={columns}
         rowKey={(record) => record.id}
         dataSource={data}
-        pagination={tableParams.pagination}
+        pagination={{ defaultPageSize: 5 }}
         loading={loading}
         onChange={handleTableChange}
       />

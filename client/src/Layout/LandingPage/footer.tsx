@@ -4,7 +4,7 @@ import logoImg from '../../assets/images/logo.png';
 import './style.css';
 
 const Footer: React.FC = () => (
-  <div>
+  <div id="footer">
     <Row>
       <Col xs={{ span: 24, offset: 0 }} md={{ span: 6, offset: 1 }} lg={{ span: 4, offset: 2 }}>
         <div>

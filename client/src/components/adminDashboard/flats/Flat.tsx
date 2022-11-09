@@ -10,7 +10,7 @@ import { number } from 'prop-types';
 
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Loading, NoData } from '../../components';
+import { Loading, NoData } from '../..';
 import Users from './Users';
 
 interface IUserFlatDetails {

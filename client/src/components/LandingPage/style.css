@@ -162,9 +162,8 @@
 
 /* Video Section */
 #video {
-  max-width: 100% !important;
+  width: 100% !important;
   overflow: hidden;
-  
 }
 
 /* contact us */
@@ -194,5 +193,5 @@ textarea#nest-messages_description {
 }
 
 .ant-form-rtl .ant-form-item-label {
-    text-align: right !important;
+  text-align: right !important;
 }

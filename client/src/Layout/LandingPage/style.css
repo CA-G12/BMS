@@ -76,13 +76,13 @@
 }
 
 /* footer */
-.ant-layout-footer {
+#footer {
   background: #417FD5 !important;
   color: #fff !important;
   padding: 60px 24px;
   text-align: right;
 }
-p.para-footer {
+#footer p.para-footer {
   margin-top: 16px;
 }
 .links {
