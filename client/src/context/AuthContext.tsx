@@ -33,7 +33,11 @@ export const AuthProvider: FC<ChildrenProps> = ({ children }) => {
       try {
         const data = await axios.get<User>('/api/v1/auth/userdata');
         const userInfo = data.data;
-        setUser({ ...userInfo, fullName: fName });
+        if (fName) {
+          setUser({ ...userInfo, fullName: fName });
+        } else {
+          setUser(userInfo);
+        }
         setLoading(false);
       } catch (err) {
         setUser(null);
