@@ -66,6 +66,7 @@
 /* main || container */
 #root {
   overflow: hidden;
+  min-height: 100%;
 }
 
 /* lists */
@@ -74,86 +75,85 @@
   color: #2f80ed !important;
 }
 section.ant-layout.ant-layout-has-sider.ant-layout-rtl {
-    height: 100%;
-    background: #F0F8FF !important;
+  height: 100%;
+  background: #f0f8ff !important;
 }
 /* container */
-main#container{
-    padding: 40px;
+main#container {
+  padding: 68px 40px;
+  min-height: 100%;
 }
 h1.ant-typography.ant-typography-rtl {
-    font-size: 24px;
-    color: #2f80ed;
+  font-size: 24px;
+  color: #2f80ed;
 }
 
-main#container .ant-col.ant-col-xs-32.ant-col-xs-offset-0.ant-col-rtl.ant-col-md-16.ant-col-md-offset-0.ant-col-lg-8.ant-col-lg-offset-0 {
-    margin-bottom: 24px;
-    border: 2px dashed #2F80ED;
-    border-radius: 8px;
+main#container
+  .ant-col.ant-col-xs-32.ant-col-xs-offset-0.ant-col-rtl.ant-col-md-16.ant-col-md-offset-0.ant-col-lg-8.ant-col-lg-offset-0 {
+  margin-bottom: 24px;
+  border: 2px dashed #2f80ed;
+  border-radius: 8px;
 }
 main#container .ant-card-body {
-    padding: 16px 24px;
+  padding: 16px 24px;
 }
 main#container .ant-card.ant-card-bordered.ant-card-rtl {
-    border-radius: 8px;
-    margin: 8px;
+  border-radius: 8px;
+  margin: 8px;
 }
 main#container .ant-card-body {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-main#container .ant-card-body:after, .ant-card-body:before {
-    display: none !important;
+main#container .ant-card-body:after,
+.ant-card-body:before {
+  display: none !important;
 }
 
-#site-card-wrapper span.anticon{
-    font-size: 32px;
+#site-card-wrapper span.anticon {
+  font-size: 32px;
 }
-#site-card-wrapper .anticon-pie-chart, .ant-statistic-title {
-  color: #2F80ED !important;
+#site-card-wrapper .anticon-pie-chart,
+.ant-statistic-title {
+  color: #2f80ed !important;
 }
 #site-card-wrapper .anticon-radar-chart {
-  color: #F0A0A0 !important;
-
+  color: #f0a0a0 !important;
 }
 #site-card-wrapper .anticon-dot-chart {
   color: #219653 !important;
-
 }
 #site-card-wrapper .anticon-line-chart {
-  color: #FFB849 !important;
-
+  color: #ffb849 !important;
 }
 #site-card-wrapper .anticon-bar-chart {
-  color: #9181DB !important;
-
+  color: #9181db !important;
 }
 #site-card-wrapper .anticon-area-chart {
-  color: #E4D75C !important;
-
+  color: #e4d75c !important;
 }
 #chartCard {
   margin-bottom: 100px !important;
 }
 /* Services */
 .topContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 /* tables */
 .ant-spin-nested-loading {
-    position: relative;
-    top: 0;
-    margin-bottom: 115px;
+  position: relative;
+  top: 0;
+  margin-bottom: 115px;
 }
 .ant-table table {
-    text-align: right !important;
+  text-align: right !important;
 }
-.ant-table-thead>tr>th {
+.ant-table-thead > tr > th {
   text-align: right !important;
 }
 

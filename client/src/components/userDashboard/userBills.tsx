@@ -122,8 +122,8 @@ const UserBills: React.FC = () => {
 
   return (
     <>
-      <div className="headerOfServices">
-        <Title className="titleAdmin">الفواتير</Title>
+      <div className="topContainer">
+        <Title>الفواتير</Title>
         <div>
 
           <Select
@@ -161,7 +161,7 @@ const UserBills: React.FC = () => {
       {
         (loading) ? <Loading /> : ((userBill.length > 0) ? (
           <Table
-            pagination={{ defaultPageSize: 6 }}
+            pagination={{ defaultPageSize: 5 }}
             columns={columns}
             dataSource={userBill}
           />
