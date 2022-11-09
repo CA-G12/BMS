@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-shadow */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import {
   DeleteOutlined, EditOutlined, PlusCircleOutlined, ExclamationCircleOutlined,
@@ -10,6 +10,7 @@ import {
   Button,
   notification,
   Table, Typography,
+  Image,
   Modal,
   message,
 } from 'antd';
@@ -19,22 +20,22 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const { Title } = Typography;
-const { confirm } = Modal;
 
-interface UserAnns {
+interface UserAdvs {
   id: number;
   title: string;
   start_date: string;
   end_date: string;
+  image: string;
 }
 
 const GetAnns = (signal: AbortSignal) => new Promise<AnnResponse>((resolve, reject) => {
-  axios.get('/api/v1/announcements', { signal })
+  axios.get('/api/v1/advertisements', { signal })
     .then(resolve)
     .catch(reject);
 });
 
-  type NotificationType = 'success' | 'error';
+type NotificationType = 'success' | 'error';
 const openNotificationWithIcon = (type: NotificationType, message: string, description: string) => {
   notification[type]({
     message,
@@ -43,14 +44,15 @@ const openNotificationWithIcon = (type: NotificationType, message: string, descr
 };
 
 const App: React.FC = () => {
-  const [advs, setAdvs] = useState<UserAnns[]>([]);
+  const [advs, setAdvs] = useState<UserAdvs[]>([]);
   const [deleted, setDeleted] = useState<boolean>(false);
+  const { confirm } = Modal;
 
   const handleDelete = (record: any) => {
     const confirmDelete = () => {
       axios({
         method: 'DELETE',
-        url: `/api/v1/announcements/${record.id}`,
+        url: `/api/v1/advertisements/${record.id}`,
       })
         .then(() => {
           const newAdvs = advs.filter((e) => e.id !== record.id);
@@ -78,7 +80,7 @@ const App: React.FC = () => {
     });
   };
 
-  const columns: ColumnsType<UserAnns> = [
+  const columns: ColumnsType<UserAdvs> = [
     {
       title: 'الإعلان',
       dataIndex: 'title',
@@ -90,6 +92,20 @@ const App: React.FC = () => {
         >
           {value}
         </p>
+      ),
+    },
+    {
+      title: 'الصورة',
+      dataIndex: 'image',
+      key: 'id',
+      render: (_, { image }) => (
+        <Image
+          width={100}
+          src={image}
+          preview={{
+            src: image,
+          }}
+        />
       ),
     },
     {
@@ -135,15 +151,15 @@ const App: React.FC = () => {
       })
       .catch(() => openNotificationWithIcon('error', 'خطأ', 'حدث خطأ ما'));
   }, []);
-  console.log('advs: ', advs);
+
   return (
     <>
       <div className="headerOfServices">
-        <Title className="titleAdmin">التعميمات</Title>
+        <Title className="titleAdmin">الإعلانات</Title>
         <Link to="new">
           <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
             <PlusCircleOutlined />
-            اضافة تعميم
+            اضافة إعلان
           </Button>
         </Link>
       </div>
@@ -159,5 +175,5 @@ interface AnnResponse {
   data: AnnResult;
 }
 interface AnnResult {
-  data: UserAnns[];
+  data: UserAdvs[];
 }

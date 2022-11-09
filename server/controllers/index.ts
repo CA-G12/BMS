@@ -4,7 +4,6 @@ export { getFlatsUsers } from './flatsUsers';
 export {
   getAnnouncement, postAnnouncement, getAnnouncementById, putAnnouncement, deleteAnnouncement,
 } from './announcements';
-export { getAdvertisements } from './advertisements';
 
 export { getAllBills, sendBillMessage } from './Bills';
 export {
@@ -22,3 +21,6 @@ export { addUser, getUsers, profile } from './users';
 export { default as adminStatistics } from './Statistics';
 export { getUsersBills } from './billUser';
 export { allUserPayments } from './payments';
+export {
+  getAdvertisements, adddAdve, updateAdv, deleteAdv, getAdvById,
+} from './advertisements';
