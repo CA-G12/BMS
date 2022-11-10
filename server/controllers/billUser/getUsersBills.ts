@@ -36,11 +36,11 @@ export default async (req:InferRequestPayload, res:Response, next:NextFunction) 
       attributes: [],
 
     });
-    if (is_open) {
-      data = data.filter((x) => x['Flats.Bills.is_open'].toString() === is_open);
-    }
     if (data[0]['Flats.Bills.id'] === null) {
       data = [];
+    }
+    if (is_open) {
+      data = data.filter((x) => x['Flats.Bills.is_open'].toString() === is_open);
     }
     console.log('data: ', data);
     if (data) {
