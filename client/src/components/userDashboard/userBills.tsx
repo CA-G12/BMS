@@ -166,7 +166,41 @@ const UserBills: React.FC = () => {
 
     ) : (
       <>
-        <Title>الفواتير</Title>
+        <div className="topContainer">
+          <Title>الفواتير</Title>
+          <div>
+            <Select
+              defaultValue="جميع الشقق"
+              style={{ width: 120 }}
+              onChange={handleChange}
+              options={
+              getIds().map((ele :any) => ({
+                lable: ele,
+                value: ele,
+              }))
+            }
+            />
+            <Select
+              defaultValue="مدفوع / غير مدفوع"
+              style={{ width: 120 }}
+              onChange={handleChange}
+              options={[
+                {
+                  value: 'all',
+                  label: 'مدفوع / غير مدفوع',
+                },
+                {
+                  value: 'false',
+                  label: 'مدفوع',
+                },
+                {
+                  value: 'true',
+                  label: 'غير مدفوع',
+                },
+              ]}
+            />
+          </div>
+        </div>
         <NoData />
       </>
     )
@@ -174,13 +208,3 @@ const UserBills: React.FC = () => {
   );
 };
 export default UserBills;
-
-// {
-//   (loading) ? <Loading /> : ((userBill.length > 0) ? (
-//     <Table
-//       pagination={{ defaultPageSize: 5 }}
-//       columns={columns}
-//       dataSource={userBill}
-//     />
-//   ) : <NoData />)
-// }
