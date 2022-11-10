@@ -21,7 +21,7 @@ const ContactUs: React.FC = () => {
     sendContactUs(values)
       .then(() => {
         form.resetFields();
-        return message.success('تم إرسال الشكوى بنجاح');
+        return message.success('تم إرسال رسالتك بنجاح');
       })
       .catch(() => message.error('حدث خطأ ما، يرجى المحاولة لاحقًا'));
   };
