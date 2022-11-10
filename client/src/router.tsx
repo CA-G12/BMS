@@ -15,7 +15,7 @@ import {
 } from './components/userDashboard';
 
 import AddUser from './pages/AddUser';
-import DataTable from './components/adminDashboard/Complaints/DataTable';
+import DataTable from './components/adminDashboard/complaints/DataTable';
 import App from './App';
 import UserProfile from './pages/UserProfile';
 import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnouncements';
@@ -123,7 +123,7 @@ const router = createBrowserRouter([
   },
   { path: '/error', element: <Error status={500} /> },
   { path: '*', element: <Error status={404} /> },
-  // { path: '*', element: <h1>page not found</h1> },
+
 ]);
 
 export default router;
