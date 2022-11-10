@@ -1,6 +1,6 @@
-import Navbar from './NavBar';
-import MenuList from './MenuList';
-import Footer from './Footer';
+import Navbar from './navBar';
+import MenuList from './menuList';
+import Footer from './footer';
 import Contacts from './contacts';
 
 import Statistics from './Statistics';
@@ -12,5 +12,5 @@ export {
 export { ServicesContainer, AddService, EditService } from './services';
 
 export { default as Bills } from './bills';
-export { Complaints, SingleComplaints } from './Complaints';
+export { Complaints, SingleComplaints } from './complaints';
 export { default as Announcements } from './Announcements/announcements';

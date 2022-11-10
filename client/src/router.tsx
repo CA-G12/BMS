@@ -1,5 +1,4 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Button } from 'antd';
 import { DashboardLayout } from './Layout';
 
 import { LandingPage, Flats, Flat } from './pages';
@@ -15,7 +14,7 @@ import {
 } from './components/userDashboard';
 
 import AddUser from './pages/AddUser';
-import DataTable from './components/adminDashboard/Complaints/DataTable';
+import DataTable from './components/adminDashboard/complaints/DataTable';
 import App from './App';
 import UserProfile from './pages/UserProfile';
 import NewAnnouncements from './components/adminDashboard/Announcements/NewAnnouncements';
