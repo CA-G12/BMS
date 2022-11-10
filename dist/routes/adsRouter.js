@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const controllers_1 = require("../controllers");
+const middleware_1 = require("../middleware");
+const router = (0, express_1.Router)();
+router.get('/', controllers_1.getAdvertisements);
+router.use((req, _, next) => (0, middleware_1.Authorize)(req, _, next, 'admin'));
+router.get('/:id', controllers_1.getAdvById);
+router.post('/', controllers_1.adddAdve);
+router.put('/:id', controllers_1.updateAdv);
+router.delete('/:id', controllers_1.deleteAdv);
+exports.default = router;
