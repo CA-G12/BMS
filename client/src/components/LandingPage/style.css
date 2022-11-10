@@ -4,7 +4,7 @@
 #root {
   background: #f0f8ff !important;
 }
-.ant-row.ant-row-space-between.ant-row-rtl{
+.ant-row.ant-row-space-between.ant-row-rtl {
   background: #fff;
 }
 /* home section */
@@ -100,7 +100,7 @@
 }
 
 #about-us .ant-typography.ant-typography-rtl {
-  line-height: 2;
+  line-height: 4;
   word-spacing: 5px;
 }
 
