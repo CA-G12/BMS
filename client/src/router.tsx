@@ -122,7 +122,7 @@ const router = createBrowserRouter([
   },
   { path: '/error', element: <Error status={500} /> },
   { path: '*', element: <Error status={404} /> },
-  // { path: '*', element: <h1>page not found</h1> },
+
 ]);
 
 export default router;
