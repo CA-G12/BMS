@@ -1,1 +1,6 @@
-export { default as DashboardLayout } from './DashboardLayout';
+import { HeaderSection, FooterSection } from './LandingPage';
+import { DashboardLayout } from './Dashboard';
+
+export {
+  HeaderSection, FooterSection, DashboardLayout,
+};

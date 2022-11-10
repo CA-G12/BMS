@@ -3,11 +3,11 @@ import {
   Button, Checkbox, Form, Input, Typography,
 } from 'antd';
 import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import {
   LockOutlined, UserOutlined,
 } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
 import Login from '../../services/authService';
 import { ILoginModel } from '../../Interfaces/loginModel';
 import { IErrorLoginResult } from '../../Interfaces/ILoginResult';
@@ -110,12 +110,13 @@ const bgImageStyle = {
 };
 const App: React.FC = () => {
   const user = useContext(authContext);
-  console.log(user, 'user context');
   return (
     <Row justify="space-between">
       <Col style={colStyle} xs={24} lg={12}>
         <div style={{ padding: '20px' }}>
-          <img style={{ marginBottom: '20%' }} src={siteLogo} alt="Logo" />
+          <Link to="/">
+            <img style={{ marginBottom: '20%' }} src={siteLogo} alt="Logo" />
+          </Link>
           <br />
           <Title>تسجيل الدخول</Title>
           <Title level={3}>تسجيل الدخول باستخدام رقم الهاتف وكلمة المرور الخاصة بك</Title>

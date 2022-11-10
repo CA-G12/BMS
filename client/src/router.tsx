@@ -1,5 +1,4 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Button } from 'antd';
 import { DashboardLayout } from './Layout';
 
 import { LandingPage, Flats, Flat } from './pages';
@@ -123,7 +122,7 @@ const router = createBrowserRouter([
   },
   { path: '/error', element: <Error status={500} /> },
   { path: '*', element: <Error status={404} /> },
-  // { path: '*', element: <h1>page not found</h1> },
+
 ]);
 
 export default router;

@@ -8,7 +8,7 @@ const { Title } = Typography;
 
 const Complaints: React.FC = () => (
   <>
-    <div className="headerOfServices">
+    <div className="topContainer">
       <Title className="titleAdmin">الشكاوي</Title>
     </div>
 

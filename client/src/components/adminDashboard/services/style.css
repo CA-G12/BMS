@@ -1,9 +1,8 @@
-
-/* For Tables in Services*/
+/* 
 .ant-table-content table , .ant-table-cell {
     text-align: right !important;
   }
-  /* For Title Admin */
+
   .titleAdmin {
     color: #3380FF !important;
     font-size: 25px !important;
@@ -31,4 +30,4 @@
   .inputAddService {
     background: none !important;
     border-radius: 5px !important;
-  }
+  } */

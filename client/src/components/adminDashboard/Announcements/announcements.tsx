@@ -138,7 +138,7 @@ const App: React.FC = () => {
   console.log('advs: ', advs);
   return (
     <>
-      <div className="headerOfServices">
+      <div className="topContainer">
         <Title className="titleAdmin">التعميمات</Title>
         <Link to="new">
           <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
@@ -148,7 +148,7 @@ const App: React.FC = () => {
         </Link>
       </div>
       {' '}
-      <Table columns={columns} dataSource={advs} pagination={{ defaultPageSize: 3 }} />
+      <Table columns={columns} dataSource={advs} pagination={{ defaultPageSize: 5 }} />
     </>
   );
 };

@@ -46,25 +46,11 @@ const UserProfile: React.FC = () => {
       })
       .catch(() => message.error('حدث خطأ ما'));
   };
-
-  // if (!loading) {
-  //   form.setFieldsValue({
-  //     firstName: profileData.firstName,
-  //     lastName: profileData.lastName,
-  //     email: profileData.email,
-  //   });
-  // }
   return (
     <>
       <Row>
         <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 12, offset: 1 }}>
-          <Title style={{
-            fontSize: 'x-large',
-            padding: '16px',
-            color: '#3380FF',
-            fontWeight: 'bolder',
-          }}
-          >
+          <Title style={{ color: '#2f80ed', fontSize: '32px' }}>
             بياناتي
           </Title>
 
@@ -95,9 +81,10 @@ const UserProfile: React.FC = () => {
       </Row>
       {loading ? <Loading /> : (
         <div style={{
-          backgroundColor: 'white',
-          borderRadius: '15px',
-          margin: 'auto 50px',
+          backgroundColor: '#fff',
+          borderRadius: '8px',
+          margin: '40px 0',
+          padding: '32px',
         }}
         >
           <Form

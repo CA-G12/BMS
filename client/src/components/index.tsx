@@ -1,18 +1,24 @@
-import AboutUs from './AboutUs/AboutUs';
-import AdsContainer from './AdvertisementsContainer';
-import ContactUs from './ContactUs';
-import Services from './Services';
-import VideoSection from './VideoSection';
-import FlatContainer from './FlatContainer';
+/* eslint-disable import/no-cycle */
+import {
+  HomeSection, AboutUs, AdsContainer, FlatContainer, Services, VideoSection, ContactUs,
+} from './LandingPage';
+
+import {
+  Navbar, MenuList, Footer, Statistics,
+  Contacts,
+} from './adminDashboard';
+
 import Title from './Title';
 import Loading from './Loading';
 import NoData from './NoData';
-import { Contacts } from './adminDashboard';
 
 export {
-  Contacts, ContactUs, Services, AboutUs, AdsContainer, Title, Loading, NoData, VideoSection, FlatContainer,
+  HomeSection, Contacts, ContactUs, Services, AboutUs, AdsContainer, Title, Loading, NoData, VideoSection, FlatContainer,
 };
 
+export {
+  Navbar, MenuList, Footer, Statistics,
+};
 export {
   Bills, ServicesContainer, AddService, EditService, Complaints, SingleComplaints,
 } from './adminDashboard';

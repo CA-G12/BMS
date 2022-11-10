@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -93,7 +94,7 @@ const UserBills: React.FC = () => {
       dataIndex: 'Flats.Bills.services',
       key: 'Flats.Bills.services',
       render: (value) => (
-        <List.Item>
+        <List.Item className="one" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
           {(value).map((ele: { price: number; name: string; }) => (
             <List>
               <p style={{ display: 'inline-block', height: '5px' }}>
@@ -118,53 +119,68 @@ const UserBills: React.FC = () => {
   };
 
   return (
-    <>
-      <div className="headerOfServices">
-        <Title className="titleAdmin">الفواتير</Title>
-        <div>
 
-          <Select
-            defaultValue="جميع الشقق"
-            style={{ width: 120 }}
-            onChange={handleChange}
-            options={
-            getIds().map((ele :any) => ({
-              lable: ele,
-              value: ele,
-            }))
-          }
-          />
-          <Select
-            defaultValue="مدفوع / غير مدفوع"
-            style={{ width: 120 }}
-            onChange={handleChange}
-            options={[
-              {
-                value: 'all',
-                label: 'مدفوع / غير مدفوع',
-              },
-              {
-                value: 'false',
-                label: 'مدفوع',
-              },
-              {
-                value: 'true',
-                label: 'غير مدفوع',
-              },
-            ]}
-          />
+    (loading) ? <Loading /> : ((userBill.length > 0) ? (
+      <div>
+        <div className="topContainer">
+          <Title>الفواتير</Title>
+          <div>
+            <Select
+              defaultValue="جميع الشقق"
+              style={{ width: 120 }}
+              onChange={handleChange}
+              options={
+              getIds().map((ele :any) => ({
+                lable: ele,
+                value: ele,
+              }))
+            }
+            />
+            <Select
+              defaultValue="مدفوع / غير مدفوع"
+              style={{ width: 120 }}
+              onChange={handleChange}
+              options={[
+                {
+                  value: 'all',
+                  label: 'مدفوع / غير مدفوع',
+                },
+                {
+                  value: 'false',
+                  label: 'مدفوع',
+                },
+                {
+                  value: 'true',
+                  label: 'غير مدفوع',
+                },
+              ]}
+            />
+          </div>
         </div>
+        <Table
+          pagination={{ defaultPageSize: 5 }}
+          columns={columns}
+          dataSource={userBill}
+        />
       </div>
-      {
-        (loading) ? <Loading /> : ((userBill.length > 0) ? (
-          <Table
-            pagination={{ defaultPageSize: 6 }}
-            columns={columns}
-            dataSource={userBill}
-          />
-        ) : <NoData />)
-      }
-    </>
+
+    ) : (
+      <>
+        <Title>الفواتير</Title>
+        <NoData />
+      </>
+    )
+    )
   );
 };
 export default UserBills;
+
+// {
+//   (loading) ? <Loading /> : ((userBill.length > 0) ? (
+//     <Table
+//       pagination={{ defaultPageSize: 5 }}
+//       columns={columns}
+//       dataSource={userBill}
+//     />
+//   ) : <NoData />)
+// }

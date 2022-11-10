@@ -154,8 +154,8 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div className="headerOfServices">
-        <Title className="titleAdmin">الإعلانات</Title>
+      <div className="topContainer">
+        <Title>الإعلانات</Title>
         <Link to="new">
           <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
             <PlusCircleOutlined />

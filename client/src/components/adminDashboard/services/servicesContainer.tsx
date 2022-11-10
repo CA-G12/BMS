@@ -94,8 +94,8 @@ const ServicesContainer: React.FC = () => {
 
   return (
     <>
-      <div className="headerOfServices">
-        <Title className="titleAdmin">الخدمات</Title>
+      <div className="topContainer">
+        <Title>الخدمات</Title>
         <Link to="/admin/services/addService">
           <Button type="primary" style={{ fontSize: '18px', height: '40px' }}>
             <PlusCircleOutlined />
