@@ -1,5 +1,4 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Button } from 'antd';
 import { DashboardLayout } from './Layout';
 
 import { LandingPage, Flats, Flat } from './pages';
