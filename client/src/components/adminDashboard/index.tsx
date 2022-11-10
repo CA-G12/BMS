@@ -1,4 +1,4 @@
-import Navbar from './navBar';
+import Navbar from './navbar';
 import MenuList from './menuList';
 import Footer from './footer';
 import Contacts from './contacts';

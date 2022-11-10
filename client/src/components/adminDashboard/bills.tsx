@@ -103,7 +103,7 @@ const App: React.FC = () => {
   const [tableParams, setTableParams] = useState<TableParams>({
     pagination: {
       current: 1,
-      pageSize: 10,
+      pageSize: 5,
     },
   });
 
@@ -150,7 +150,7 @@ const App: React.FC = () => {
         columns={columns}
         rowKey={(record) => record.id}
         dataSource={data}
-        pagination={{ defaultPageSize: 5 }}
+        pagination={tableParams.pagination}
         loading={loading}
         onChange={handleTableChange}
       />

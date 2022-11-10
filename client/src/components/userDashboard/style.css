@@ -12,8 +12,12 @@
 
 /* ads in user */
 li.ant-list-item {
-    background: #fff;
-    margin-bottom: 16px;
+  background: #fff;
+  margin-bottom: 16px;
 }
-
-
+.one {
+  background: none;
+}
+.one .ant-list .ant-spin-nested-loading {
+  margin: 2px;
+}
