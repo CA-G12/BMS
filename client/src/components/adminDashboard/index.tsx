@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import Navbar from './navBar';
-=======
-import Navbar from './navbar';
->>>>>>> 59c278d3a9ac29e91ecec43d794566b5b1004dee
 import MenuList from './menuList';
 import Footer from './footer';
 import Contacts from './contacts';
