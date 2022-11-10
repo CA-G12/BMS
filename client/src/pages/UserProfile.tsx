@@ -50,7 +50,7 @@ const UserProfile: React.FC = () => {
     <>
       <Row>
         <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 12, offset: 1 }}>
-          <Title>
+          <Title style={{ color: '#2f80ed', fontSize: '32px' }}>
             بياناتي
           </Title>
 
