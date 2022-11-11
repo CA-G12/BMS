@@ -36,7 +36,7 @@ const Statistics = () => {
         setUserBills(usersBills as any[]);
         console.log(usersBills);
       })
-      .catch(console.log);
+      .catch(console.error);
   }, []);
   return (
     <>
