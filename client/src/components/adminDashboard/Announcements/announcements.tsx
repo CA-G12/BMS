@@ -45,6 +45,7 @@ const openNotificationWithIcon = (type: NotificationType, message: string, descr
 const App: React.FC = () => {
   const [advs, setAdvs] = useState<UserAnns[]>([]);
   const [deleted, setDeleted] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
 
   const handleDelete = (record: any) => {
     const confirmDelete = () => {
@@ -132,10 +133,10 @@ const App: React.FC = () => {
     GetAnns(signal)
       .then(({ data }) => {
         setAdvs(data.data);
+        setLoading(false);
       })
       .catch(() => openNotificationWithIcon('error', 'خطأ', 'حدث خطأ ما'));
   }, []);
-  console.log('advs: ', advs);
   return (
     <>
       <div className="topContainer">
@@ -148,7 +149,7 @@ const App: React.FC = () => {
         </Link>
       </div>
       {' '}
-      <Table columns={columns} dataSource={advs} pagination={{ defaultPageSize: 5 }} />
+      <Table columns={columns} dataSource={advs} pagination={{ defaultPageSize: 5 }} loading={loading} />
     </>
   );
 };
