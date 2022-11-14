@@ -1,4 +1,12 @@
-# BMS: Building Management System 
+# BMS![](https://i.imgur.com/mhUt79q.png): Building Management System
+<br />
+<div align="center">
+        <img src ="https://i.imgur.com/kqQdyg3.png" style ="height: 80px; width: 300px;">
+</div>
+
+## **Live Website** <img src="https://i.imgur.com/QsX6030.png" style="height: 50px; width: 50px; margin-bottom: 20px;">
+ <span id="live"></span>
+You can check the website here [**BMSBroker**](https://bms-3b9r.onrender.com/).
 
 ## **The Problem** :no_entry_sign: :-
 
