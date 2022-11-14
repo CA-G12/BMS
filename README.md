@@ -5,7 +5,6 @@
 </div>
 
 ## **Live Website** <img src="https://i.imgur.com/QsX6030.png" style="height: 50px; width: 50px; margin-bottom: 20px;">
- <span id="live"></span>
 You can check the website here [**BMSBroker**](https://bms-3b9r.onrender.com/).
 
 ## **The Problem** :no_entry_sign: :-
@@ -56,11 +55,7 @@ You can check the website here [**BMSBroker**](https://bms-3b9r.onrender.com/).
 - As a public user or an apartment owner, I can see the main page with a login button he can log in, Also there is some basic info about the building, advertisement, the building services, and available apartments, also I can see a video about the building, also there is a section to contact, the user can send messages to the admin owner. Then I can see a footer with a location map.
 - As an apartment owner, I can see the main page with a login button, I can log in, then I can see the dashboard with many options, and personal info with the user transactions. if I click on bills a table of bills ordered by date will be shown with the ability to filter them. If I click on complaint I can see a form with two inputs and a button to submit the complaint. If I click on an advertisement I can see the available advertisement. If I click on contact I can see a form with three inputs and a button to submit the contact. Finally, log out by clicking on the logout button.
 
-
-
 ### **User who is an apartment owner** :house:
-
-
 
 - As an apartment owner, I can log into my account, and I can see the dashboard with many options and some statistics of the site and tables. If I click on the services tab, it shows the services that the tower provides, and a button to move him to the “Add new services” page. If I click on the announcements tab, it shows the announcements of the site with buttons to edit or delete them, and a button to move him to the “Add new announcement” page. When the admin clicks on apartments he will go to the apartments page that shows a table with the username and apartments id and the phone of the user, when he clicks on add a new user I will go to a new page that has a form to add a new user with all details, when I click on bills tab, I can see a table that has apartments id and username and all services and the total price, when I click on complaints I will show the username of the user and the date and title of the complaints, when I click on advertisement tab, I can see the advertisement and the bio, the start date, end date, and two icons for delete and edit when I click on the contact tab, I will show a table that has a username of the users and his email and the messages and the phone number.
 
@@ -69,7 +64,6 @@ You can check the website here [**BMSBroker**](https://bms-3b9r.onrender.com/).
 [View Prototype](https://www.figma.com/file/ttfzEpAPWIZCNEJKUzad1I/Building-Management-System-wireframe?node-id=0%3A1)
 
 ------------------------
-
 
 ## :pushpin: **How to Launch App Locally** :- 
 
@@ -118,16 +112,15 @@ To start the App Locally you can start the server First then start client-side o
 
     `cd client` => `npm start` then you will be able to run [localhost](http://localhost:3000/) 
 
-Now you can view the app live in the Browser!
+Now you can view the app live in the Browser!:fire: 
 
-You can use this email and password for Admin testing only
-
-:email: Phone:`0591000100` 
+You can use this phone number and password for Admin testing only :arrow_down: 
+:iphone: Phone:`0591000100` 
 :lock: Password:`password`
 
-You can use this email and password for User testing only
+You can use this phone number and password for User testing only
 
-:email: Phone:`0591000200` 
+:iphone: Phone:`0591000200` 
 :lock: Password:`password`
 
 ## **Technologies** :computer: :-
@@ -136,6 +129,7 @@ You can use this email and password for User testing only
 - Database: **PostgreSQL**
 - Styling: **CSS3**
 - Libraries: **AntDesign**
+- Others: **TypeScript**
 
 ## **Lead Mentor** :sunglasses::-
 
@@ -150,7 +144,8 @@ You can use this email and password for User testing only
  
 ## **Resources** :-
 
-- [Node Js](https://nodejs.org/en/)
-- [Express](http://expressjs.com/)
-- [React Js](https://reactjs.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Express.js](http://expressjs.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [React.js](https://reactjs.org/)
 - [Ant Design](https://ant.design/)
