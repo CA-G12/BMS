@@ -142,7 +142,8 @@ You can use this email and password for User testing only
  
 ## **Resources** :-
 
-- [Node Js](https://nodejs.org/en/)
-- [Express](http://expressjs.com/)
-- [React Js](https://reactjs.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Express.js](http://expressjs.com/)
+- [PostgreSQL] (https://www.postgresql.org/)
+- [React.js](https://reactjs.org/)
 - [Ant Design](https://ant.design/)
