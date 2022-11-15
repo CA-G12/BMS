@@ -4,7 +4,7 @@
         <img src ="https://i.imgur.com/kqQdyg3.png" style ="height: 80px; width: 300px;">
 </div>
 
-## **Live Website** <img src="https://i.imgur.com/QsX6030.png" style="height: 50px; width: 50px; margin-bottom: 20px;">
+## **Live Website**  <img src="https://i.imgur.com/QsX6030.png" style="height: 50px; width: 50px; margin-bottom: 20px;">
 You can check the website here [**BMSBroker**](https://bms-3b9r.onrender.com/).
 
 ## **The Problem** :no_entry_sign: :-
@@ -19,13 +19,13 @@ You can check the website here [**BMSBroker**](https://bms-3b9r.onrender.com/).
 
 - A building management system helps property owners do just that. The software solution we’ll introduce you to today not only streamlines previously tedious administrative tasks, but the software also better engages residents and helps create a stronger sense of community. 
 
-## **Database**  ::
+## **Database** :bookmark_tabs: 
 
-[Database Link](https://drawsql.app/teams/mohjaps/diagrams/flats)
+[Database Link](https://i.imgur.com/buRwZxl.png)
 
 
 ![BMS](https://user-images.githubusercontent.com/88391328/195069054-fab15dbb-20eb-43d4-863d-861bf8f5885a.png)
-## **User Stories**  :: 
+## **User Stories** :books: 
 
 ### **User who is an apartment owner** :house:
 - As an apartment owner, I can view all services, With the ability to subscribe and unsubscribe to the service.
