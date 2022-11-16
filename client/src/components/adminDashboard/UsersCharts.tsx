@@ -37,7 +37,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Line Chart',
+      text: 'المستخدمون و عدد الشقق',
     },
   },
 };
@@ -55,7 +55,7 @@ const UsersCharts: FC<UserBillsProps> = ({ usersBills }) => {
     labels,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: 'المستخدمون',
         data: values,
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
