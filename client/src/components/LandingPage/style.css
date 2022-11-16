@@ -129,7 +129,7 @@
   }
 }
 .ant-row.ant-row-rtl {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #ads .ant-image-img {
   width: 100%;
