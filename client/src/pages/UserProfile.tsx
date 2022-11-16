@@ -1,12 +1,13 @@
 import {
-  Form, message, Row, Col, Input, Button, Switch,
+  Form, message, Row, Col, Input, Button, Switch, Typography,
 } from 'antd';
-import Title from 'antd/lib/typography/Title';
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { Loading } from '../components';
 import authContext from '../context';
 import { UserContext } from '../context/AuthContext';
+
+const { Title } = Typography;
 
 const UserProfile: React.FC = () => {
   const { user, setUser } = useContext(authContext) as UserContext;
@@ -48,14 +49,8 @@ const UserProfile: React.FC = () => {
   };
   return (
     <>
-      <Row>
-        <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 12, offset: 1 }}>
-          <Title style={{ color: '#2f80ed', fontSize: '32px' }}>
-            بياناتي
-          </Title>
-
-        </Col>
-
+      <div className="topContainer">
+        <Title>بياناتي</Title>
         <div style={{
           display: 'flex',
           justifyContent: 'center',
@@ -77,8 +72,7 @@ const UserProfile: React.FC = () => {
 
           </p>
         </div>
-
-      </Row>
+      </div>
       {loading ? <Loading /> : (
         <div style={{
           backgroundColor: '#fff',

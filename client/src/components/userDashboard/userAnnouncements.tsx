@@ -29,9 +29,11 @@ const UserAnnouncements: React.FC = () => {
 
   return (
     <>
-      <Title className="titleAdmin">
-        الإعلانات الداخلية
-      </Title>
+      <div className="topContainer">
+        <Title>
+          الإعلانات الداخلية
+        </Title>
+      </div>
       {
         (loading) ? <Loading /> : ((announcements.length > 0) ? (
           <List

@@ -127,7 +127,6 @@ const UserBills: React.FC = () => {
           <div>
             <Select
               defaultValue="جميع الشقق"
-              style={{ width: 120 }}
               onChange={handleChange}
               options={
               getIds().map((ele :any) => ({
@@ -138,7 +137,7 @@ const UserBills: React.FC = () => {
             />
             <Select
               defaultValue="مدفوع / غير مدفوع"
-              style={{ width: 120 }}
+              style={{ paddingRight: '8px' }}
               onChange={handleChange}
               options={[
                 {
