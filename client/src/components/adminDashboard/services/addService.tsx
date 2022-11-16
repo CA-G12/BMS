@@ -2,7 +2,6 @@ import {
   Typography, Form, Input, Switch, Button, message, Col, Row,
 } from 'antd';
 import React, { useState } from 'react';
-import './style.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { LeftCircleOutlined } from '@ant-design/icons';
@@ -28,7 +27,7 @@ const AddService: React.FC = () => {
   };
 
   return (
-    <div>
+    <div id="add-service">
       <Row>
         <Col xs={{ span: 24, offset: 0 }} md={{ span: 11, offset: 1 }} lg={{ span: 12, offset: 1 }}>
           <Title style={{
