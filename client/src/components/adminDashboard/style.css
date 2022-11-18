@@ -159,7 +159,17 @@ main#container .ant-card-body:after,
 
 /* add services */
 form.ant-form.ant-form-vertical.ant-form-rtl {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
+}
+
+#add-service .ant-form-item-control-input-content,
+#edit-service .ant-form-item-control-input-content {
+  max-width: 60% !important;
+}
+
+#add-service .ant-row.ant-row-rtl,
+#container .ant-row.ant-row-rtl {
+  justify-content: space-between !important;
 }
 /* footer */
 .ant-layout-footer {

@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import {
   message, Button, Modal,
 } from 'antd';
-import Table, { ColumnsType } from 'antd/lib/table';
+import Table, { ColumnsType } from 'antd/es/table';
 
 import { LeftOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import axios from 'axios';

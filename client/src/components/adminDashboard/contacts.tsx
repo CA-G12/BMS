@@ -1,5 +1,5 @@
 import { Typography, message } from 'antd';
-import Table, { ColumnsType } from 'antd/lib/table';
+import Table, { ColumnsType } from 'antd/es/table';
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import axios from 'axios';
