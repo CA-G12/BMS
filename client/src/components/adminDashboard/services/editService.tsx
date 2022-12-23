@@ -2,7 +2,6 @@ import {
   Typography, Form, Input, Switch, Button, message,
 } from 'antd';
 import React, { useState, useEffect } from 'react';
-import './style.css';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { InferAddServicesModel } from '../../../Interfaces/addService';
@@ -48,7 +47,7 @@ const EditService: React.FC = () => {
   };
 
   return (
-    <div>
+    <div id="edit-service">
       <Title className="addService">تعديل الخدمة</Title>
 
       <Form

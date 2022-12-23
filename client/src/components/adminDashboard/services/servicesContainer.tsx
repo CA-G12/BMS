@@ -1,8 +1,7 @@
 import { Typography, Button, message } from 'antd';
-import Table, { ColumnsType } from 'antd/lib/table';
+import Table, { ColumnsType } from 'antd/es/table';
 import React, { useEffect, useState } from 'react';
 import { PlusCircleOutlined, EditOutlined } from '@ant-design/icons';
-import './style.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { InferServicesModel } from '../../../Interfaces/services';

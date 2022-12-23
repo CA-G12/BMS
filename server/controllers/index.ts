@@ -5,7 +5,7 @@ export {
   getAnnouncement, postAnnouncement, getAnnouncementById, putAnnouncement, deleteAnnouncement,
 } from './announcements';
 
-export { getAllBills, sendBillMessage } from './Bills';
+export { getAllBills, sendBillMessage, payBill } from './Bills';
 export {
   getFlats, flatById, updateFlat, availableFlats,
 } from './flats';

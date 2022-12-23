@@ -31,10 +31,10 @@ const sendBillMessage = async (req: Request, res: Response, next: NextFunction) 
     At ${new Date(data.createdAt).getMonth()}/${new Date(data.createdAt).getFullYear()} \n
     is ${data.total_price}.00 NIS \n
     BMS`;
-    console.log(message);
+    const recipient = data['Flat.User.phone_number'];
 
-    const messageResult = SendSMS({ recipient: data.User.phone_number, message });
-    if (messageResult) { res.json({ message: 'Send Successfully ' }); } else throw new Error();
+    SendSMS({ recipient, message })
+      .then(() => res.json({ message: 'Send Successfully ' }));
   } catch (err) {
     next(err);
   }
