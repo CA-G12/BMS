@@ -14,17 +14,18 @@ const SendSMS = ({ recipient, message }) => {
         apiSecret: SMS_SECRET,
     });
     const sender = 'BMS';
-    vonage.message.sendSms(sender, PHONE_NUMBER_CODE + recipient, message, {}, (err, responseData) => {
-        if (err) {
-            throw new Error(err.status);
-        }
-        else if (responseData.messages[0].status === '0') {
-            return true;
-        }
-        else {
-            throw new customError_1.default(400, `Message failed with error: ${responseData.messages[0]['error-text']}`);
-        }
+    return new Promise((resolve) => {
+        vonage.message.sendSms(sender, PHONE_NUMBER_CODE + recipient, message, {}, (err, responseData) => {
+            if (err) {
+                throw new Error(err.status);
+            }
+            else if (responseData.messages[0].status === '0') {
+                resolve(true);
+            }
+            else {
+                throw new customError_1.default(400, `Message failed with error: ${responseData.messages[0]['error-text']}`);
+            }
+        });
     });
-    return false;
 };
 exports.default = SendSMS;

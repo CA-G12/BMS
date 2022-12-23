@@ -22,7 +22,7 @@ const users = [
         first_name: 'سمير',
         last_name: 'عبد الله',
         email: 'tlobe2@angelfire.com',
-        phone_number: '498-722-9258',
+        phone_number: '595264875',
         role: 'user',
         hashed_password: '$2b$10$Jmmc3q92bmJIx4HeRMvnZOHs4yXwEjQi0mcf0x.Z2LyJ9VBcVQA1W',
     },

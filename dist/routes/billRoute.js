@@ -7,4 +7,5 @@ const router = (0, express_1.Router)();
 router.use((req, _, next) => (0, middleware_1.Authorize)(req, _, next, 'admin'));
 router.get('/', controllers_1.getAllBills);
 router.get('/sendmessage/:billID', controllers_1.sendBillMessage);
+router.get('/paybill/:id', controllers_1.payBill);
 exports.default = router;

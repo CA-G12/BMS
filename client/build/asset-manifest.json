@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.8c2e2b81.css",
-    "main.js": "/static/js/main.dfda5400.js",
-    "static/media/login.jpg": "/static/media/login.cb1dfdbfe91f4ddcb992.jpg",
+    "main.css": "/static/css/main.f1765e54.css",
+    "main.js": "/static/js/main.e9ac4b34.js",
     "static/media/about.jpg": "/static/media/about.976b6e3095c6f1dd8022.jpg",
     "static/media/header.jpg": "/static/media/header.feb230f5fe3e4aed81d1.jpg",
     "static/media/Services.jpg": "/static/media/Services.02337ad7926767f319ec.jpg",
+    "static/media/login.jpg": "/static/media/login.bdeb0f4c4c946a53747d.jpg",
     "static/media/404 Error-pana.svg": "/static/media/404 Error-pana.961f81ba08b86cbd0dac5ea59b8e920b.svg",
     "static/media/500 Internal Server Error-bro.svg": "/static/media/500 Internal Server Error-bro.1754f866c9082818066305a61daf5ae9.svg",
     "index.html": "/index.html",
-    "main.8c2e2b81.css.map": "/static/css/main.8c2e2b81.css.map",
-    "main.dfda5400.js.map": "/static/js/main.dfda5400.js.map"
+    "main.f1765e54.css.map": "/static/css/main.f1765e54.css.map",
+    "main.e9ac4b34.js.map": "/static/js/main.e9ac4b34.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c2e2b81.css",
-    "static/js/main.dfda5400.js"
+    "static/css/main.f1765e54.css",
+    "static/js/main.e9ac4b34.js"
   ]
 }

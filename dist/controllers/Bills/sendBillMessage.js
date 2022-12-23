@@ -39,13 +39,9 @@ const sendBillMessage = (req, res, next) => __awaiter(void 0, void 0, void 0, fu
     At ${new Date(data.createdAt).getMonth()}/${new Date(data.createdAt).getFullYear()} \n
     is ${data.total_price}.00 NIS \n
     BMS`;
-        console.log(message);
-        const messageResult = (0, SMS_1.default)({ recipient: data.User.phone_number, message });
-        if (messageResult) {
-            res.json({ message: 'Send Successfully ' });
-        }
-        else
-            throw new Error();
+        const recipient = data['Flat.User.phone_number'];
+        (0, SMS_1.default)({ recipient, message })
+            .then(() => res.json({ message: 'Send Successfully ' }));
     }
     catch (err) {
         next(err);

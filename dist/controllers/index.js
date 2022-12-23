@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAdvById = exports.deleteAdv = exports.updateAdv = exports.adddAdve = exports.getAdvertisements = exports.allUserPayments = exports.getUsersBills = exports.adminStatistics = exports.profile = exports.getUsers = exports.addUser = exports.getSingleComplaint = exports.getAllComplaints = exports.deleteSingleComplaint = exports.addComplaints = exports.logout = exports.login = exports.getServiceById = exports.updateServices = exports.postServices = exports.getServices = exports.availableFlats = exports.updateFlat = exports.flatById = exports.getFlats = exports.sendBillMessage = exports.getAllBills = exports.deleteAnnouncement = exports.putAnnouncement = exports.getAnnouncementById = exports.postAnnouncement = exports.getAnnouncement = exports.getFlatsUsers = exports.getContact = exports.addContact = void 0;
+exports.getAdvById = exports.deleteAdv = exports.updateAdv = exports.adddAdve = exports.getAdvertisements = exports.allUserPayments = exports.getUsersBills = exports.adminStatistics = exports.profile = exports.getUsers = exports.addUser = exports.getSingleComplaint = exports.getAllComplaints = exports.deleteSingleComplaint = exports.addComplaints = exports.logout = exports.login = exports.getServiceById = exports.updateServices = exports.postServices = exports.getServices = exports.availableFlats = exports.updateFlat = exports.flatById = exports.getFlats = exports.payBill = exports.sendBillMessage = exports.getAllBills = exports.deleteAnnouncement = exports.putAnnouncement = exports.getAnnouncementById = exports.postAnnouncement = exports.getAnnouncement = exports.getFlatsUsers = exports.getContact = exports.addContact = void 0;
 var contactUs_1 = require("./contactUs");
 Object.defineProperty(exports, "addContact", { enumerable: true, get: function () { return contactUs_1.addContact; } });
 Object.defineProperty(exports, "getContact", { enumerable: true, get: function () { return contactUs_1.getContact; } });
@@ -18,6 +18,7 @@ Object.defineProperty(exports, "deleteAnnouncement", { enumerable: true, get: fu
 var Bills_1 = require("./Bills");
 Object.defineProperty(exports, "getAllBills", { enumerable: true, get: function () { return Bills_1.getAllBills; } });
 Object.defineProperty(exports, "sendBillMessage", { enumerable: true, get: function () { return Bills_1.sendBillMessage; } });
+Object.defineProperty(exports, "payBill", { enumerable: true, get: function () { return Bills_1.payBill; } });
 var flats_1 = require("./flats");
 Object.defineProperty(exports, "getFlats", { enumerable: true, get: function () { return flats_1.getFlats; } });
 Object.defineProperty(exports, "flatById", { enumerable: true, get: function () { return flats_1.flatById; } });
