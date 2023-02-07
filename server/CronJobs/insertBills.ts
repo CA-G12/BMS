@@ -15,7 +15,7 @@ const InseertBillsTask = () => {
   //     });
 
   //     let total = 0;
-  //     // eslint-disable-next-line no-plusplus
+  // eslint-disable-next-line no-plusplus
   //     for (let i = 0; i < AllServices.length; i++) {
   //       total += AllServices[i].price;
   //     }
